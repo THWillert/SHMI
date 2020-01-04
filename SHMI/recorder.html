@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" src="./js/main.js" async></script>
+<script type="text/javascript" src="./js/moment.min.js" async></script>
+
+<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+<script type="text/javascript" src="./js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="./js/jquery.flot.time.min.js"></script>
+<script type="text/javascript" src="./js/jquery.flot.selection.min.js"></script>
+<script type="text/javascript" src="./js/jquery.flot.curved.min.js"></script>
+
+<script type="text/javascript" src="./js/bootstrap-dialog.min.js"></script>
+
+<script type="text/javascript" src="./js/recorder.js"></script>
+
+<link href="./css/default.css" rel="stylesheet" type="text/css">
+
+<style>
+.flot-tick-label {
+	color:#aaa;
+	font-size:1.1em;
+}
+body {
+background: radial-gradient(ellipse at center, #767676 0%,#525252 60%,#3a3a3a 100%);
+background-attachment: fixed;
+}
+</style>
+</head>
+<body>
+<p>
+<div class="main w100">
+
+	<div class="col-md-12">
+		<div class="panel panel-default shadow">
+			<div class="chart_container" style="padding:20px">
+				<div id="chart" style="height:400px;width:100%"></div>
+			</div>
+			<div class="overview_container" style="padding-left:20px;padding-right:20px">
+				<div id="overview" class="hidden-xs" style="height:100px;width:100%"></div>
+
+			<form role="form" class="visible-xs">
+				<table class="table">
+				<tr>
+				<td><input class="cur_value analog form-control input-sm" style="font-size:1.2em" type="number" disabled="disabled"></td>
+				<td><input type="number" class="min_value analog form-control input-sm" disabled="disabled"></td>
+				<td><input type="number" class="avg_value analog form-control input-sm" disabled="disabled"></td>
+				<td><input type="number" class="max_value analog form-control input-sm" disabled="disabled"></td>
+				</tr>
+				</table>
+			</form>
+			</div>
+		</div>
+
+	</div>
+
+	<div  class="hide" id="choices">
+	</div>
+
+	<div class="col-md-6" >
+		<div class="panel panel-default shadow">
+			<div class="panel-heading">
+				<h3 class="panel-title">Control</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group input-group-sm col-sm-6" id="ID_analog_sel">
+					Data: <select class="form-control" id="IDdataSelect">
+						</select>
+				</div>
+				<div class="form-group input-group-sm col-sm-6" id="updateInt">
+					Update Interval (sec): <select class="form-control" id="updateInterval" size="1" onChange="UpdateInterval=this.value">
+					</select>
+				</div>
+
+				<div class="btn-group btn-group-justified">
+					<div class="btn-group btn-group-sm">
+						<input type="button" class="btn btn-default" data-toggle="button" id="IDsmooth" value="Smooth Line">
+					</div>
+					<div class="btn-group btn-group-sm">
+						<input type="button" class="btn btn-default active" data-toggle="button" id="IDfill" value="Fill Line">
+					</div>
+					<div class="btn-group btn-group-sm">
+						<input type="button" class="btn btn-default" data-toggle="button" id="IDlight" value="Light">
+					</div>
+				</div>
+				<hr>
+				<div class="btn-group btn-group-justified">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" data-toggle="button" id="IDPause">
+						<span class="glyphicon glyphicon glyphicon-pause" id="IDPauseIcon"></span></button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" id="IDSave" onClick="Download()">
+						<span class="glyphicon glyphicon-save"></span> Save Data ...</button>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" id="IDDataReset">
+						<span class="glyphicon glyphicon-trash"></span> Data Reset</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6 hidden-xs">
+		<div class="panel panel-default shadow">
+			<div class="panel-heading">
+				<h3 class="panel-title">Data</h3>
+			</div>
+			<div class="panel-body">
+				<form role="form">
+					<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<th>Current value:</th><th>Minimum:</th><th>Average:</th><th>Maximum:</th><th>Data-Points:</th>
+						</tr>
+						<tr>
+							<td><input id="current_value" class="cur_value analog form-control input-sm" style="font-size:1.2em" type="number" disabled="disabled"></td>
+							<td><input id="min" type="number" class="min_value analog form-control input-sm" disabled="disabled"></td>
+							<td><input id="mid" type="number" class="avg_value analog form-control input-sm" disabled="disabled"></td>
+							<td><input id="max" type="number"  class="max_value analog form-control input-sm" disabled="disabled"></td>
+							<td><input id="DataSize"  type="number" class="analog form-control input-sm" disabled="disabled"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="button" class="btn btn-default form-control" id="IDminReset" value="Reset"></td>
+							<td></td>
+							<td><input type="button" class="btn btn-default form-control" id="IDmaxReset" value="Reset"></td>
+							<td></td>
+						</tr>
+					</table>
+					</div>
+				</form>
+			</div>
+		</div
+	</div>
+
+
+</div>
+<script>
+UpdateIntervalOptions();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./js/main.js"></script>
+<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
+<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
+
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/bootstrap-dialog.min.js"></script>
+
+<script src="./js/jquery.peity.min.js"></script>
+
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+<link href="./css/default.css" rel="stylesheet" type="text/css">
+
+<base target="vzfBVwMAo2PBTsBIb4Aa">
+<script type='text/javascript'>
+$(function() {
+
+	var timer_Update;
+
+	var toggle = 0;
+
+	$(".liveBit").peity("bar")
+
+	$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+	})
+//==============================================================================
+	moment.lang("de", moment_de);
+
+	function timeUpdate()
+	{
+		if($(window).width() > 768 ){
+			$("#IDtime").text( moment().format('LLLL') );
+		} else {
+			$("#IDtime").text( moment().format('HH:mm') );
+		};
+		timer_Update = setTimeout(timeUpdate, getRandomInt(9000,10000));
+	}
+	timer_Update = setTimeout(timeUpdate, 10002);
+//==============================================================================
+	$("#IDabout").click(function () {
+		var html = '<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>' +
+			'jQuery, Flot, Flot.curved, Flot.selection, Flot.time, Bootstrap, Bootstrap-dialog, moment.js, Peity';
+
+		BootstrapDialog.show({
+			title: 'About:',
+			message: html,
+			type: BootstrapDialog.TYPE_WARNING,
+			buttons: [{
+				label: 'OK',
+				action: function(dialogItself){dialogItself.close();}
+			}]
+		});
+	});
+//==============================================================================
+
+	function writeIO() {
+		$.getJSON( "./data/data.json", function( data ) {
+			var data_container = $("#IDdata");
+			$.each( data, function( id, val) {
+				data_container.append('<tr><td>' + id + '</td><td><input class="analog" id="' + id + '"></td><td id="TXT_' + id+ '"></td></tr>')
+			});
+		});
+	}
+	writeIO();
+//==============================================================================
+	function updateVal()
+	{
+		$.getJSON( "./data/data.json", function( data ) {
+			$.each( data, function( id, val) {
+				$("#" + id).each( function() {
+					$(this).val( val );
+				});
+			})
+			setTimeout(updateVal, 1000);
+		});
+
+		var updatingChart = $(".liveBit").peity("bar", { width: 100 })
+
+		/* ToDo: Live-Bit von Steuerung*/
+		var values = updatingChart.text().split(",")
+		values.shift()
+		toggle = toggle ? 0: 1
+		values.push(toggle)
+		updatingChart
+			.text(values.join(","))
+			.change()
+	}
+	$(function(){updateVal();});
+//==============================================================================
+
+	timeUpdate();
+//==============================================================================
+});
+</script>
+<style>
+.icon-bar-v {
+  background-color: #666;
+  border-radius: 1px;
+  display: inline-block;
+  height: 1.2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 2px;
+}
+</style>
+</head>
+
+<div class="navbar navbar-default navbar-fixed-top downlight">
+	<div class="container">
+		<div class="navbar-header">
+			<span class="navbar-brand">SHMI</span>
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-main">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navigation">Navigation <span class="caret"></span></a>
+				<ul class="dropdown-menu" aria-labelledby="themes">
+					<li><a href="index.htm" target="_top">Start</a></li>
+					<li class="divider"></li>
+					<li><a href="status.html">Status</a></li>
+					<li><a href="kurven.html">Kurven</a></li>
+					<li><a href="recorder.html">Recorder</a></li>
+					<li class="divider"></li>
+					<li><a href="ri.html">Fließbild V1</a></li>
+					<li><a href="ri_2.html">Fließbild V2</a></li>
+					<li><a href="ri_3.html">Fließbild V3</a></li>
+				</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a data-toggle="modal" data-target=".bs-example-modal-sm" id="IDabout">About</a></li>
+				<li><a href="https://github.com/THWillert/SHMI" target="_blank">SHMI&nbsp;
+				<img style="display:inline-block" src="./pict/logo.svg" height="20"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- <div  style="position:relative;top:80px;z-index:100;"> -->
+<div  style="height:0;position:relative;top:80px;z-index:100;visibility: hidden;">
+<div class="col-md-3" style="height:0">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Data</h3>
+		</div>
+		<div class="panel-body table-responsive">
+			<table class="table" id="IDdata">
+				<tr><th>I/O</th><th>Value</th><th></th></tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+
+<div style="position:relative;top:55px;">
+	<iframe name="vzfBVwMAo2PBTsBIb4Aa" src="status.html" id="content" scrolling="auto">
+	</iframe>
+</div>
+
+<div style="width:100%;position:fixed;bottom:0px;background-color:#3a3f44;border-color:#000;text-align:right;box-shadow: 3px 3px 10px black;padding-top:3px">
+	<span data-toggle="tooltip" data-placement="top" title="Live-Bit" style="display:inline-block;border:20px;" class="liveBit" id="liveBit">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</span> | <span style="margin-left:2em;margin-right:2em" id="IDtime"></span>
+</div>
+</body>
+</html>
