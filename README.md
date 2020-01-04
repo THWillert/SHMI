@@ -68,7 +68,8 @@ Als Beispiel:
 "AO1":49.4759655464441,
 "AI0_SP":20,
 "AI1_SP":40,
-"AO1_SP":60}
+"AO1_SP":60
+}
 ```
 
 Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut. Anschließend werden nur noch die Werte aus der Datei abgefragt.
@@ -81,7 +82,8 @@ und werden ebenfalls beim ersten Aufruf der Seite eingelesen.
 
 Beispiel:
 ```json
-{"DI0":"Steuerspannung",
+{
+"DI0":"Steuerspannung",
 "DI1":"Lampentest",
 "DI2":"Störung quittieren",
 "DI4":"Durchflussmessung",
@@ -99,7 +101,8 @@ Beispiel:
 "AI3":"Durchfluss",
 "AO0":"Regelventil 1",
 "AO1":"Regelventil 2",
-"AO2":"Regelventil 3"}
+"AO2":"Regelventil 3"
+}
 ```
 
  
@@ -107,7 +110,7 @@ Beispiel:
 
 ## ToDo
 
-Rehenfolge entspricht nicht der Priorität:
+Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Bibliotheken aktalisieren
 - [ ] Dateien vollständig hochladen
