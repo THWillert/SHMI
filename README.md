@@ -1,5 +1,7 @@
 # SHMI
 
+> Achtung: WIP - nicht für den Produktiv-Einsatz geeignet.
+
 ## Übersicht
 
 Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
