@@ -36,13 +36,13 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
    <dt>DIn</dt>
    <dd>Digitaleingang</dd>
    <dt>DOn</dt>
-   <dd>Digitalausgang/dd>
+   <dd>Digitalausgang</dd>
     <dt>AIn</dt>
-   <dd>Analogeingang/dd>
+   <dd>Analogeingang</dd>
     <dt>AOn</dt>
-   <dd>Analogausgang/dd>
+   <dd>Analogausgang</dd>
     <dt>AIn_SP</dt>
-   <dd>Analogeingang Sollwert/dd>
+   <dd>Analogeingang Sollwert</dd>
      <dt>AOn_SP</dt>
    <dd>Analogausgang Sollwert</dd>
 </dl>
