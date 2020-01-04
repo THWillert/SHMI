@@ -8,10 +8,11 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
 ### Features
 
-- Darstellung von Digital und Analogwerten
-- Für die Analog-Werte können auch die Sollwerte angezeigt werden
-- Für die grundlegende Konfiguration und Darstellung muß nur eine JSON-Datei von der Steuerung erzeugt werden
-- Die Darstellung aller Werte und deren Beschriftung auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
+- Für die Darstellung ist nur ein Browser nötig
+- Responsives Design
+- Darstellung von Digital, Analogwert und Sollwerten
+- Für die grundlegende Konfiguration und Darstellung muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
+- Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 - Design per CSS anpassbar
 - Das Ganze basiert auf den Bibliotheken:
