@@ -11,7 +11,7 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 - Für die Darstellung ist nur ein Browser nötig
 - Responsives Design
 - Darstellung von Digital, Analogwert und Sollwerten
-- Für die grundlegende Konfiguration und Darstellung muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
+- Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 - Design per CSS anpassbar
@@ -19,7 +19,7 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
   - jQuery
   - Bootstap
   - Moment
-  - Flot
+  - Flot (Chart)
   - Peity
 
 ## Voraussetzungen
@@ -32,12 +32,22 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
 ### Datenpunkte
 
-- DIn: Digitaleingang 
-- DOn: Digitalausgang
-- AIn: Analogeingang
-- AOn: Analogausgang
-- AIn_SP: Analogeingang Sollwert
-- AOn_SP: Analogausgang Sollwert
+<dl>
+   <dt>DIn</dt>
+   <dd>Digitaleingang</dd>
+   <dt>DOn</dt>
+   <dd>Digitalausgang/dd>
+    <dt>AIn</dt>
+   <dd>Analogeingang/dd>
+    <dt>AOn</dt>
+   <dd>Analogausgang/dd>
+    <dt>AIn_SP</dt>
+   <dd>Analogeingang Sollwert/dd>
+     <dt>AOn_SP</dt>
+   <dd>Analogausgang Sollwert</dd>
+</dl>
+
+### Schnittstelle
 
 Von der Steuerung muss eine entsprechende Datei erzeugt werden:
 `data/data.json`
@@ -74,7 +84,7 @@ Als Beispiel:
 
 Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut. Anschließend werden nur noch die Werte aus der Datei abgefragt.
 
-### Beschriftung
+### Beschriftung der Datenpunkte
 
 Die Texte für die Beschriftung befinden sich in der Datei:
 `lng/de.json`
@@ -104,6 +114,8 @@ Beispiel:
 "AO2":"Regelventil 3"
 }
 ```
+
+### Beschriftung der Oberfläche
 
  
 ## Diskussion / Vorschläge
