@@ -126,7 +126,7 @@ Beispiel:
 
 Reihenfolge entspricht nicht der Priorität:
 
-- [ ] Bibliotheken aktalisieren
+- [ ] Bibliotheken aktualisieren
 - [ ] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Min / Max für Analog-Anzeige
