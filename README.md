@@ -38,13 +38,13 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
    <dt>DOn</dt>
    <dd>Digitalausgang</dd>
     <dt>AIn</dt>
-   <dd>Analogeingang</dd>
+   <dd>Analogeingang in &</dd>
     <dt>AOn</dt>
-   <dd>Analogausgang</dd>
+   <dd>Analogausgang in %</dd>
     <dt>AIn_SP</dt>
-   <dd>Analogeingang Sollwert</dd>
+   <dd>Analogeingang Sollwert in %</dd>
      <dt>AOn_SP</dt>
-   <dd>Analogausgang Sollwert</dd>
+   <dd>Analogausgang Sollwert in %</dd>
 </dl>
 
 ### Schnittstelle
@@ -127,6 +127,8 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Bibliotheken aktalisieren
 - [ ] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
+- [ ] Min / Max für Analog-Anzeige
+- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Anzeigen in Anlagen-Bild integrieren
 - [ ] Dokumentation vervollständigen
 - [ ] Hintergrund anpassbar gestalten
