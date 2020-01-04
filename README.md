@@ -4,7 +4,7 @@
 
 Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
-![Start](/images/SHMI_index.jpg)
+![Start](/images/SHMI_index.png)
 
 ### Features
 
