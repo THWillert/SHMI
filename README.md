@@ -6,12 +6,20 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
 ![Start](/images/SHMI_index.jpg)
 
-Das Ganze basiert auf den Bibliotheken:
-- jQuery
-- Bootstap
-- Moment
-- Flot
-- Peity
+### Features
+
+- Darstellung von Digital und Analogwerten
+- Für die Analog-Werte können auch die Sollwerte angezeigt werden
+- Für die grundlegende Konfiguration und Darstellung muß nur eine JSON-Datei von der Steuerung erzeugt werden
+- Die Darstellung aller Werte und deren Beschriftung auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
+- Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
+- Design per CSS anpassbar
+- Das Ganze basiert auf den Bibliotheken:
+  - jQuery
+  - Bootstap
+  - Moment
+  - Flot
+  - Peity
 
 ## Voraussetzungen
 
@@ -21,13 +29,18 @@ Das Ganze basiert auf den Bibliotheken:
 
 ## Konfiguration
 
-Die Darstellung aller Werte auf der Startseite wird automatisch erzeugt.
+### Datenpunkte
 
-Bei Analog-Werten können auch die Sollwerte angezeigt werden.
+- DIn: Digitaleingang 
+- DOn: Digitalausgang
+- AIn: Analogeingang
+- AOn: Analogausgang
+- AIn_SP: Analogeingang Sollwert
+- AOn_SP: Analogausgang Sollwert
 
-Von der Steuerung muss eine entsprechnde Datei erzeugt werden:
+Von der Steuerung muss eine entsprechende Datei erzeugt werden:
 `data/data.json`
-in die Werte eingetragen werden.
+in der die Werte eingetragen werden.
 
 Der Aufbau der Datei ist selbsterklärend.
 
@@ -57,14 +70,9 @@ Als Beispiel:
 "AO1_SP":60}
 ```
 
-- DIn: Digitaleingang 
-- DOn: Digitalausgang
-- AIn: Analogeingang
-- AOn: Analogausgang
-- AIn_SP: Analogeingang Sollwert
-- AOn_SP: Analogausgang Sollwert
-
 Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut. Anschließend werden nur noch die Werte aus der Datei abgefragt.
+
+### Beschriftung
 
 Die Texte für die Beschriftung befinden sich in der Datei:
 `lng/de.json`
@@ -97,6 +105,15 @@ Beispiel:
 ## Diskussion / Vorschläge
 
 ## ToDo
+
+Rehenfolge entspricht nicht der Priorität:
+
+- [ ] Bibliotheken aktalisieren
+- [ ] Dateien vollständig hochladen
+- [ ] Wechsel der Anzeigensprache über die Oberfläche
+- [ ] Anzeigen in Anlagen-Bild integrieren
+- [ ] Dokumentation vervollständigen
+- [ ] Hintergrund anpassbar gestalten
 
 ## Author
 Thorsten Willert
