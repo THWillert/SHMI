@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html>
+<meta name="author" content="Thorsten Willert">
+<meta name="license" content="MIT">
+<!--
+Copyright (c) 2020 Thorsten Willert
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/default.css">
+
 <script type="text/javascript" src="./js/main.js"></script>
+
+<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+
 <script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
 <script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
 
-<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script language="javascript" type="text/javascript" src="./js/bootstrap-dialog.min.js"></script>
 
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/bootstrap-dialog.min.js"></script>
-
-<script src="./js/jquery.peity.min.js"></script>
-
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-
-<link href="./css/default.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 
 <base target="vzfBVwMAo2PBTsBIb4Aa">
+
 <script type='text/javascript'>
+//==============================================================================
 $(function() {
 
 	var timer_Update;
@@ -30,6 +56,7 @@ $(function() {
 			$('[data-toggle="tooltip"]').tooltip()
 	})
 //==============================================================================
+// Time in footer
 	moment.lang("de", moment_de);
 
 	function timeUpdate()
@@ -42,7 +69,9 @@ $(function() {
 		timer_Update = setTimeout(timeUpdate, getRandomInt(9000,10000));
 	}
 	timer_Update = setTimeout(timeUpdate, 10002);
+
 //==============================================================================
+// About dialog
 	$("#IDabout").click(function () {
 		var html = '<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>' +
 			'jQuery, Flot, Flot.curved, Flot.selection, Flot.time, Bootstrap, Bootstrap-dialog, moment.js, Peity';
@@ -57,8 +86,9 @@ $(function() {
 			}]
 		});
 	});
-//==============================================================================
 
+//==============================================================================
+// Data for all pages
 	function writeIO() {
 		$.getJSON( "./data/data.json", function( data ) {
 			var data_container = $("#IDdata");
@@ -68,7 +98,9 @@ $(function() {
 		});
 	}
 	writeIO();
+
 //==============================================================================
+// Update values
 	function updateVal()
 	{
 		$.getJSON( "./data/data.json", function( data ) {
@@ -77,12 +109,12 @@ $(function() {
 					$(this).val( val );
 				});
 			})
-			setTimeout(updateVal, 1000);
+			setTimeout(updateVal, 1000); // update intervall for all values
 		});
 
 		var updatingChart = $(".liveBit").peity("bar", { width: 100 })
 
-		/* ToDo: Live-Bit von Steuerung*/
+		/* ToDo: Live-bit from PLC */
 		var values = updatingChart.text().split(",")
 		values.shift()
 		toggle = toggle ? 0: 1
@@ -111,65 +143,94 @@ $(function() {
 </style>
 </head>
 
-<div class="navbar navbar-default navbar-fixed-top downlight">
-	<div class="container">
-		<div class="navbar-header">
-			<span class="navbar-brand">SHMI</span>
-			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
-		</div>
-		<div class="navbar-collapse collapse" id="navbar-main">
-			<ul class="nav navbar-nav">
-				<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navigation">Navigation <span class="caret"></span></a>
-				<ul class="dropdown-menu" aria-labelledby="themes">
-					<li><a href="index.htm" target="_top">Start</a></li>
-					<li class="divider"></li>
-					<li><a href="status.html">Status</a></li>
-					<li><a href="kurven.html">Kurven</a></li>
-					<li><a href="recorder.html">Recorder</a></li>
-					<li class="divider"></li>
-					<li><a href="ri.html">Fließbild V1</a></li>
-					<li><a href="ri_2.html">Fließbild V2</a></li>
-					<li><a href="ri_3.html">Fließbild V3</a></li>
+<body>
+
+<!-- ==============================================================================
+Header and navigation -->
+	<div class="navbar navbar-default navbar-fixed-top downlight">
+		<div class="container">
+			<div class="navbar-header">
+				<span class="navbar-brand">SHMI</span>
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar-main">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navigation">Navigation <span class="caret"></span></a>
+					<ul class="dropdown-menu" aria-labelledby="themes">
+						<li><a href="index.htm" target="_top">Start</a></li>
+						<li class="divider"></li>
+						<li><a href="status.html">Status</a></li>
+						<li><a href="kurven.html">Kurven</a></li>
+						<li><a href="recorder.html">Recorder</a></li>
+						<li class="divider"></li>
+						<li><a href="ri.html">Fließbild V1</a></li>
+						<li><a href="ri_2.html">Fließbild V2</a></li>
+						<li><a href="ri_3.html">Fließbild V3</a></li>
+					</ul>
+					</li>
 				</ul>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a data-toggle="modal" data-target=".bs-example-modal-sm" id="IDabout">About</a></li>
-				<li><a href="https://github.com/THWillert/SHMI" target="_blank">SHMI&nbsp;
-				<img style="display:inline-block" src="./pict/logo.svg" height="20"></a></li>
-			</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a data-toggle="modal" data-target=".bs-example-modal-sm" id="IDabout">About</a></li>
+					<li><a href="https://github.com/THWillert/SHMI" target="_blank">SHMI&nbsp;
+					<img style="display:inline-block" src="./pict/logo.svg" height="20"></a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 
-<!-- <div  style="position:relative;top:80px;z-index:100;"> -->
-<div  style="height:0;position:relative;top:80px;z-index:100;visibility: hidden;">
-<div class="col-md-3" style="height:0">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Data</h3>
-		</div>
-		<div class="panel-body table-responsive">
-			<table class="table" id="IDdata">
-				<tr><th>I/O</th><th>Value</th><th></th></tr>
-			</table>
+<!-- ============================================================================== -->
+	<!--
+	Data-source for all pages.
+	Unhide it for debugging -->
+
+	<!-- <div  style="position:relative;top:80px;z-index:100;"> -->
+	<div  style="height:0;position:relative;top:80px;z-index:100;visibility: hidden;">
+
+	<div class="col-md-3" style="height:0">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Data</h3>
+			</div>
+			<div class="panel-body table-responsive">
+				<table class="table" id="IDdata">
+					<tr><th>I/O</th><th>Value</th><th></th></tr>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
-</div>
+	</div>
 
-<div style="position:relative;top:55px;">
-	<iframe name="vzfBVwMAo2PBTsBIb4Aa" src="status.html" id="content" scrolling="auto">
-	</iframe>
-</div>
+<!-- ==============================================================================
+Pages -->
+	<div style="position:relative;top:55px;">
+		<iframe
+			id="content"
+			name="vzfBVwMAo2PBTsBIb4Aa"
+			scrolling="auto"
+			src="status.html"
+		></iframe>
+	</div>
 
-<div style="width:100%;position:fixed;bottom:0px;background-color:#3a3f44;border-color:#000;text-align:right;box-shadow: 3px 3px 10px black;padding-top:3px">
-	<span data-toggle="tooltip" data-placement="top" title="Live-Bit" style="display:inline-block;border:20px;" class="liveBit" id="liveBit">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</span> | <span style="margin-left:2em;margin-right:2em" id="IDtime"></span>
-</div>
+<!-- ==============================================================================
+Footer -->
+	<div style="width:100%;position:fixed;bottom:0px;background-color:#3a3f44;border-color:#000;text-align:right;box-shadow: 3px 3px 10px black;padding-top:3px">
+	<span
+		class="liveBit"
+		data-placement="top"
+		data-toggle="tooltip"
+		id="liveBit"
+		style="display:inline-block;border:20px;"
+		title="Live-Bit"
+	>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</span> |
+	<span
+		id="IDtime"
+		style="margin-left:2em;margin-right:2em"
+	></span>
+	</div>
 </body>
 </html>
