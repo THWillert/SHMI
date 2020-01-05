@@ -17,20 +17,18 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 - Design per CSS anpassbar
-- Das Ganze basiert auf den Bibliotheken:
-  - jQuery
-  - Bootstap
-  - Moment
-  - Flot (Chart)
-  - Peity
 
 ## Voraussetzungen
+
+Auf dem Automatiserungs-Gerät muß ein Web-Server vorhanden sein.
 
 
 ## Installation
 
+Das Inhalt des Verzeichnisses SHMI auf den Web-Server kopieren und diesen passend konfigurieren.
 
-## Konfiguration
+
+## Konfiguration von SHMI
 
 ### Datenpunkte
 
@@ -127,13 +125,16 @@ Beispiel:
 Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Bibliotheken aktualisieren
-- [ ] Dateien vollständig hochladen
+- [ ] Auf die aktuelle Bootstrap Version aktualisieren
+- [ ] Recorder an die akutellen Bibliotheks-Versionen anpassen und optimieren
+- [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Min / Max für Analog-Anzeige
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Anzeigen in Anlagen-Bild integrieren
 - [ ] Dokumentation vervollständigen
-- [ ] Hintergrund anpassbar gestalten
+- [ ] CSS zusammenfassen
+- [ ] Dokumentation der Quelltexte überarbeiten
 
 ## Author
 Thorsten Willert
