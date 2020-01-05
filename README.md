@@ -6,6 +6,8 @@
 
 Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
+Es dient als reine Anzeige von Werten. Eine Änderung von Daten ist noch nicht möglich.
+
 ![Start](/images/SHMI_index.png)
 
 ### Features
@@ -180,6 +182,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
+- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 
 ## Author
 Thorsten Willert
