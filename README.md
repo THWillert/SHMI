@@ -93,6 +93,14 @@ und werden ebenfalls beim ersten Aufruf der Seite eingelesen.
 Beispiel:
 ```json
 {
+"DI":"Digitaleingänge",
+"DO":"Digitalausgänge",
+"AI":"Analogeingänge",
+"AO":"Analogausgänge",
+
+"Setpoint_AI":"Sollwert",
+"Setpoint_AO":"Sollwert",
+
 "DI0":"Steuerspannung",
 "DI1":"Lampentest",
 "DI2":"Störung quittieren",
@@ -117,6 +125,8 @@ Beispiel:
 
 ### Beschriftung der Oberfläche
 
+(siehe Beschriftung der Datenpunkte)
+
  
 ## Diskussion / Vorschläge
 
@@ -135,6 +145,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Dokumentation vervollständigen
 - [ ] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
+- [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 
 ## Author
 Thorsten Willert
