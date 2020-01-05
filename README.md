@@ -8,6 +8,9 @@ Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
 Es dient als reine Anzeige von Werten. Eine Änderung von Daten ist noch nicht möglich.
 
+Vor allem dient es dazu, ohne großen Aufwand, Werte aus einer Steuerung dazustellen.
+Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
+
 ![Start](/images/SHMI_index.png)
 
 ### Features
@@ -159,6 +162,10 @@ Beispiel:
 ### Beschriftung der Oberfläche
 
 (siehe Beschriftung der Datenpunkte)
+
+### Logo
+
+Im Verzeichnis pict die Datei logo.svg gegen ein eigenes SVG-Bild ersetzen.
 
  
 ## Diskussion / Vorschläge
