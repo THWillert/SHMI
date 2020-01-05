@@ -153,5 +153,5 @@ Thorsten Willert
 [Homepage](http://www.thorsten-willert.de/)
 
 ## Lizenz
-Das ganze steht unter der [Apache 2.0](https://github.com/THWillert/HomeMatic_CSS/blob/master/LICENSE) Lizenz.
+Das ganze steht unter der [MIT](https://github.com/THWillert/HomeMatic_CSS/blob/master/LICENSE) Lizenz.
 .
