@@ -86,7 +86,7 @@ Als Beispiel:
 
 Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut. Anschließend werden nur noch die Werte aus der Datei abgefragt.
 
-#### Schnittstelle Siemens S7-1200 / S7-1500
+#### Schnittstelle Siemens S7-1500
 
 Beispiel-Schnittstelle zur Ausgabe von CPU-Variablen:
 
