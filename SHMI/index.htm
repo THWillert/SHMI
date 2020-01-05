@@ -1,147 +1,155 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="author" content="Thorsten Willert">
-<meta name="license" content="MIT">
-<!--
-Copyright (c) 2020 Thorsten Willert
+<head profile="http://dublincore.org/documents/dcq-html/">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
+	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
+	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/index.htm">
+	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
+	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
+	<meta name="DC.title"         content="Dublin Core" />
+	<meta name="DC.publisher"     content="Thorsten Willert" />
+	<meta name="DC.subject"       content="SHMI index page" />
+	<meta name="DC.creator"       content="Thorsten Willert" />
+	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
+	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-05-01" />
+	<!--
+	Copyright (c) 2020 Thorsten Willert
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+	Permission is hereby granted, free of charge, to any person obtaining a copy of
+	this software and associated documentation files (the "Software"), to deal in
+	the Software without restriction, including without limitation the rights to use,
+	copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is furnished to do so,
+	subject to the following conditions:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--->
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
 
-<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="./css/default.css">
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+	INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+	PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	-->
 
-<script type="text/javascript" src="./js/main.js"></script>
+	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/default.css">
 
-<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
 
-<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
-<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/bootstrap-dialog.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 
-<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script language="javascript" type="text/javascript" src="./js/bootstrap-dialog.min.js"></script>
+	<base target="vzfBVwMAo2PBTsBIb4Aa">
 
-<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
+	<script type='text/javascript'>
+	//==============================================================================
+	$(function() {
 
-<base target="vzfBVwMAo2PBTsBIb4Aa">
+		var timer_Update;
 
-<script type='text/javascript'>
-//==============================================================================
-$(function() {
+		var toggle = 0;
 
-	var timer_Update;
+		$(".liveBit").peity("bar")
 
-	var toggle = 0;
+		$(function () {
+				$('[data-toggle="tooltip"]').tooltip()
+		})
+	//==============================================================================
+	// Time in footer
+		moment.lang("de", moment_de);
 
-	$(".liveBit").peity("bar")
+		function timeUpdate()
+		{
+			if($(window).width() > 768 ){
+				$("#IDtime").text( moment().format('LLLL') );
+			} else {
+				$("#IDtime").text( moment().format('HH:mm') );
+			};
+			timer_Update = setTimeout(timeUpdate, getRandomInt(9000,10000));
+		}
+		timer_Update = setTimeout(timeUpdate, 10002);
 
-	$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-	})
-//==============================================================================
-// Time in footer
-	moment.lang("de", moment_de);
+	//==============================================================================
+	// About dialog
+		$("#IDabout").click(function () {
+			var html = '<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>' +
+				'jQuery, Flot, Flot.curved, Flot.selection, Flot.time, Bootstrap, Bootstrap-dialog, moment.js, Peity';
 
-	function timeUpdate()
-	{
-		if($(window).width() > 768 ){
-			$("#IDtime").text( moment().format('LLLL') );
-		} else {
-			$("#IDtime").text( moment().format('HH:mm') );
-		};
-		timer_Update = setTimeout(timeUpdate, getRandomInt(9000,10000));
-	}
-	timer_Update = setTimeout(timeUpdate, 10002);
-
-//==============================================================================
-// About dialog
-	$("#IDabout").click(function () {
-		var html = '<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>' +
-			'jQuery, Flot, Flot.curved, Flot.selection, Flot.time, Bootstrap, Bootstrap-dialog, moment.js, Peity';
-
-		BootstrapDialog.show({
-			title: 'About:',
-			message: html,
-			type: BootstrapDialog.TYPE_WARNING,
-			buttons: [{
-				label: 'OK',
-				action: function(dialogItself){dialogItself.close();}
-			}]
-		});
-	});
-
-//==============================================================================
-// Data for all pages
-	function writeIO() {
-		$.getJSON( "./data/data.json", function( data ) {
-			var data_container = $("#IDdata");
-			$.each( data, function( id, val) {
-				data_container.append('<tr><td>' + id + '</td><td><input class="analog" id="' + id + '"></td><td id="TXT_' + id+ '"></td></tr>')
+			BootstrapDialog.show({
+				title: 'About:',
+				message: html,
+				type: BootstrapDialog.TYPE_WARNING,
+				buttons: [{
+					label: 'OK',
+					action: function(dialogItself){dialogItself.close();}
+				}]
 			});
 		});
-	}
-	writeIO();
 
-//==============================================================================
-// Update values
-	function updateVal()
-	{
-		$.getJSON( "./data/data.json", function( data ) {
-			$.each( data, function( id, val) {
-				$("#" + id).each( function() {
-					$(this).val( val );
+	//==============================================================================
+	// Data for all pages
+		function writeIO() {
+			$.getJSON( "./data/data.json", function( data ) {
+				var data_container = $("#IDdata");
+				$.each( data, function( id, val) {
+					data_container.append('<tr><td>' + id + '</td><td><input class="analog" id="' + id + '"></td><td id="TXT_' + id+ '"></td></tr>')
 				});
-			})
-			setTimeout(updateVal, 1000); // update intervall for all values
-		});
+			});
+		}
+		writeIO();
 
-		var updatingChart = $(".liveBit").peity("bar", { width: 100 })
+	//==============================================================================
+	// Update values
+		function updateVal()
+		{
+			$.getJSON( "./data/data.json", function( data ) {
+				$.each( data, function( id, val) {
+					$("#" + id).each( function() {
+						$(this).val( val );
+					});
+				})
+				setTimeout(updateVal, 1000); // update intervall for all values
+			});
 
-		/* ToDo: Live-bit from PLC */
-		var values = updatingChart.text().split(",")
-		values.shift()
-		toggle = toggle ? 0: 1
-		values.push(toggle)
-		updatingChart
-			.text(values.join(","))
-			.change()
+			var updatingChart = $(".liveBit").peity("bar", { width: 100 })
+
+			/* ToDo: Live-bit from PLC */
+			var values = updatingChart.text().split(",")
+			values.shift()
+			toggle = toggle ? 0: 1
+			values.push(toggle)
+			updatingChart
+				.text(values.join(","))
+				.change()
+		}
+		$(function(){updateVal();});
+	//==============================================================================
+
+		timeUpdate();
+	//==============================================================================
+	});
+	</script>
+	<style>
+	.icon-bar-v {
+	  background-color: #666;
+	  border-radius: 1px;
+	  display: inline-block;
+	  height: 1.2em;
+	  margin-left: 1em;
+	  margin-right: 1em;
+	  width: 2px;
 	}
-	$(function(){updateVal();});
-//==============================================================================
-
-	timeUpdate();
-//==============================================================================
-});
-</script>
-<style>
-.icon-bar-v {
-  background-color: #666;
-  border-radius: 1px;
-  display: inline-block;
-  height: 1.2em;
-  margin-left: 1em;
-  margin-right: 1em;
-  width: 2px;
-}
-</style>
+	</style>
 </head>
 
 <body>
