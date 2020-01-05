@@ -84,6 +84,39 @@ Als Beispiel:
 
 Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut. Anschließend werden nur noch die Werte aus der Datei abgefragt.
 
+#### Schnittstelle Siemens S7-1200 / S7-1500
+
+> Diese Methode für SHMI ist wesentlich effektiver, als die Methode in den Beispielen von Siemens, denn in diesen werden die Variablen in den HTML-Dateien direkt ersetzt.
+
+Beispiel-Schnittstelle zur Ausgabe von CPU-Variablen:
+
+```
+{
+"DI0":":="webdata".DI[0]:",
+"DI1":":="webdata".DI[1]:",
+"DI2":":="webdata".DI[2]:",
+"DI4":":="webdata".DI[4]:",
+"DI7":":="webdata".DI[7]:",
+"DO0":":="webdata".DO[0]:",
+"DO1":":="webdata".DO[1]:",
+"DO2":":="webdata".DO[2]:",
+"DO9":":="webdata".DO[8]:",
+"DO10":":="webdata".DO[9]:",
+"DO10":":="webdata".DO[10]:",
+"DO14":":="webdata".DO[14]:",
+"AI0":":="webdata".AI[0]:",
+"AI1":":="webdata".AI[1]:",
+"AI2":":="webdata".AI[2]:",
+"AI3":":="webdata".AI[3]:",
+"AO0":":="webdata".AO[0]:",
+"AO1":":="webdata".AO[1]:"
+}
+```
+
+Die Werte befinden sich in einem entsprechend aufgebauten Datenbaustein "webdata".
+
+Siehe auch Siemens: [Eigene Webseiten für S7-1200 / S7-1500 erstellen und einsetzen](https://support.industry.siemens.com/cs/document/68011496/eigene-webseiten-f%C3%BCr-s7-1200-s7-1500-erstellen-und-einsetzen?dti=0&lc=de-DE).
+
 ### Beschriftung der Datenpunkte
 
 Die Texte für die Beschriftung befinden sich in der Datei:
