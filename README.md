@@ -87,7 +87,7 @@ Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut
 ### Beschriftung der Datenpunkte
 
 Die Texte für die Beschriftung befinden sich in der Datei:
-`lng/de.json`
+`lng/de.jsn`
 und werden ebenfalls beim ersten Aufruf der Seite eingelesen.
 
 Beispiel:
