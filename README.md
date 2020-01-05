@@ -30,7 +30,7 @@ Auf dem Automatiserungs-Gerät muß ein Web-Server vorhanden sein.
 
 ## Installation
 
-Das Inhalt des Verzeichnisses SHMI auf den Web-Server kopieren und diesen passend konfigurieren.
+Den Inhalt des Verzeichnisses SHMI auf den Web-Server kopieren und diesen passend konfigurieren.
 
 
 ## Konfiguration von SHMI
@@ -165,7 +165,7 @@ Beispiel:
 
 ### Logo
 
-Im Verzeichnis pict die Datei logo.svg gegen ein eigenes SVG-Bild ersetzen.
+Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 
  
 ## Diskussion / Vorschläge
@@ -187,6 +187,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
+
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 
 ## Author
