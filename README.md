@@ -88,8 +88,6 @@ Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut
 
 #### Schnittstelle Siemens S7-1200 / S7-1500
 
-> Diese Methode für SHMI ist wesentlich effektiver, als die Methode in den Beispielen von Siemens, denn in diesen werden die Variablen in den HTML-Dateien direkt ersetzt.
-
 Beispiel-Schnittstelle zur Ausgabe von CPU-Variablen:
 
 ```
