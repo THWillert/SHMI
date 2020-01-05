@@ -1,156 +1,191 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<head profile="http://dublincore.org/documents/dcq-html/">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-<script type="text/javascript" src="./js/main.js"></script>
-<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="./js/jquery.peity.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
+	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
+	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/status.html">
+	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
+	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
+	<meta name="DC.title"         content="Dublin Core" />
+	<meta name="DC.publisher"     content="Thorsten Willert" />
+	<meta name="DC.subject"       content="SHMI status page" />
+	<meta name="DC.creator"       content="Thorsten Willert" />
+	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
+	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-05-01" />
+	<!--
+	Copyright (c) 2020 Thorsten Willert
 
-<script src="./js/jquery.peity.js"></script>
+	Permission is hereby granted, free of charge, to any person obtaining a copy of
+	this software and associated documentation files (the "Software"), to deal in
+	the Software without restriction, including without limitation the rights to use,
+	copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is furnished to do so,
+	subject to the following conditions:
 
-<link rel="stylesheet" href="./css/bootstrap.min.css">
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
 
-<link href="./css/default.css" rel="stylesheet" type="text/css">
-<script type='text/javascript'>
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+	INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+	PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	-->
 
-$(function() {
-//==============================================================================
-	var digital_in_container = $("#ID_digital_in");
-	var digital_out_container = $("#ID_digital_out");
-	var analog_in_container = $("#ID_analog_in");
-	var analog_out_container = $("#ID_analog_out");
-//==============================================================================
-	function init()
-	{
-		// Anzeigen einfügen
-		$.getJSON( "./data/data.json", function( data ) {
-			$.each( data, function( id, val) {
+	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/default.css">
 
-			if ( id.indexOf("SP") == -1){
-				if ( id.indexOf("DI") != -1) {
-					digital_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-							'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi input">&nbsp;</span></div></td></tr>');
-				} else if ( id.indexOf("DO") != -1) {
-					digital_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-							'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi output">&nbsp;</span></div></td></tr>');
-				} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
-					analog_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-							'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-							'<td width="60%">' +
-							'<div class="meter_back">' +
-							'<span id="ID_' + id + '_M" class="meter input">&nbsp;</span>' +
-							'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
-							'</div></td>' +
-							'<td><input class="analog ' + id + '_SP" disabled></td>' +
-							'</tr>');
+	<script language="javascript" type="text/javascript" src="./js/main.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.peity.js"></script>
 
-				}  else if ( id.indexOf("AO") != -1) {
-					analog_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-							'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-							'<td width="60%">' +
-							'<div class="meter_back">' +
-							'<span id="ID_' + id + '_M" class="meter output">&nbsp;</span>' +
-							'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
-							'</div></td>' +
-							'<td><input class="analog ' + id + '_SP" disabled></td>' +
-							'</tr>');
+	<script type='text/javascript'>
+	//==============================================================================
+	$(function() {
+	//==============================================================================
+		var digital_in_container = $("#ID_digital_in");
+		var digital_out_container = $("#ID_digital_out");
+		var analog_in_container = $("#ID_analog_in");
+		var analog_out_container = $("#ID_analog_out");
+	//==============================================================================
+		function init()
+		{
+			// Anzeigen einfügen
+			$.getJSON( "./data/data.json", function( data ) {
+				$.each( data, function( id, val) {
+
+				if ( id.indexOf("SP") == -1){
+					if ( id.indexOf("DI") != -1) {
+						digital_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi input">&nbsp;</span></div></td></tr>');
+					} else if ( id.indexOf("DO") != -1) {
+						digital_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi output">&nbsp;</span></div></td></tr>');
+					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
+						analog_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
+								'<td width="60%">' +
+								'<div class="meter_back">' +
+								'<span id="ID_' + id + '_M" class="meter input">&nbsp;</span>' +
+								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
+								'</div></td>' +
+								'<td><input class="analog ' + id + '_SP" disabled></td>' +
+								'</tr>');
+
+					}  else if ( id.indexOf("AO") != -1) {
+						analog_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
+								'<td width="60%">' +
+								'<div class="meter_back">' +
+								'<span id="ID_' + id + '_M" class="meter output">&nbsp;</span>' +
+								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
+								'</div></td>' +
+								'<td><input class="analog ' + id + '_SP" disabled></td>' +
+								'</tr>');
+					};
 				};
-			};
-			});
-		});
-
-		// Beschriftung einfügen
-		$.getJSON( "./lng/de.jsn", function( data ) {
-			$.each( data, function( id, val) {
-				$("#TXT_" + id).each( function() {
-					$(this).text(val);
 				});
 			});
-		});
 
-
-	}
-	init();
-
-//==============================================================================
-	function updateValues()
-	{
-	var id;
-	var val;
-		parent.top.$("#IDdata").find("input").each( function() {
-			id = this.id;
-			val = Round( this.value,2);
-
-			$("#IDAnalogIO").find( "." + id).each( function() {
-				//$(this).text( val);
-				this.value = val;
+			// Beschriftung einfügen
+			$.getJSON( "./lng/de.jsn", function( data ) {
+				$.each( data, function( id, val) {
+					$("#TXT_" + id).each( function() {
+						$(this).text(val);
+					});
+				});
 			});
-			$("#ID_" + id + "_M").css("width", val + "%" ); // meter
-			$("#ID_" + id + "_SP").css("width", val  + "%" ) ; // sollwert
-			$("#ID_" + id + "_D").css("opacity",  val ); // digital
-		});
-		setTimeout(updateValues, 1000);
-	};
-	$(function(){updateValues();});
 
-//==============================================================================
-});
 
-</script>
+		}
+		init();
+
+	//==============================================================================
+		function updateValues()
+		{
+		var id;
+		var val;
+			parent.top.$("#IDdata").find("input").each( function() {
+				id = this.id;
+				val = Round( this.value,2);
+
+				$("#IDAnalogIO").find( "." + id).each( function() {
+					//$(this).text( val);
+					this.value = val;
+				});
+				$("#ID_" + id + "_M").css("width", val + "%" ); // meter
+				$("#ID_" + id + "_SP").css("width", val  + "%" ) ; // sollwert
+				$("#ID_" + id + "_D").css("opacity",  val ); // digital
+			});
+			setTimeout(updateValues, 1000); // update intervall for all values
+		};
+		$(function(){updateValues();});
+
+	//==============================================================================
+	});
+
+	</script>
 </head>
 <body>
-<div class="main w100">
-	<div class="col-md-6">
-	<div class="panel panel-default shadow">
-		<div class="panel-heading">
-			<h3 class="panel-title" id="TXT_DI">DI</h3>
-		</div>
-		<div class="panel-body">
-			<table id="ID_digital_in"></table>
-		</div>
-	</div>
-	</div>
-
-	<div class="col-md-6">
-	<div class="panel panel-default shadow">
-		<div class="panel-heading">
-			<h3 class="panel-title" id="TXT_DO">DO</h3>
-		</div>
-		<div class="panel-body">
-			<table id="ID_digital_out"></table>
-		</div>
-	</div>
-	</div>
-
-	<div id="IDAnalogIO">
-		<div class="col-md-12">
+	<div class="main w100">
+	<!-- Digital input ------------------------------------------------------------>
+		<div class="col-md-6">
 		<div class="panel panel-default shadow">
 			<div class="panel-heading">
-				<h3 class="panel-title" id="TXT_AI">AI</h3>
+				<h3 class="panel-title" id="TXT_DI">DI</h3>
 			</div>
-			<div class="panel-body table-responsive">
-				<table id="ID_analog_in">
-				<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AI">SP</th></tr>
-				</table>
+			<div class="panel-body">
+				<table id="ID_digital_in"></table>
 			</div>
 		</div>
 		</div>
-
-		<div class="col-md-12">
+	<!-- Digital output ----------------------------------------------------------->
+		<div class="col-md-6">
 		<div class="panel panel-default shadow">
 			<div class="panel-heading">
-				<h3 class="panel-title" id="TXT_AO">AO</h3>
+				<h3 class="panel-title" id="TXT_DO">DO</h3>
 			</div>
-			<div class="panel-body table-responsive">
-				<table id="ID_analog_out">
-					<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AO">SP</th></tr>
-				</table>
+			<div class="panel-body">
+				<table id="ID_digital_out"></table>
 			</div>
 		</div>
+		</div>
+
+		<div id="IDAnalogIO">
+	<!-- Analog input ------------------------------------------------------------->
+			<div class="col-md-12">
+			<div class="panel panel-default shadow">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="TXT_AI">AI</h3>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="ID_analog_in">
+					<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AI">SP</th></tr>
+					</table>
+				</div>
+			</div>
+			</div>
+	<!-- Analog output ------------------------------------------------------------>
+			<div class="col-md-12">
+			<div class="panel panel-default shadow">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="TXT_AO">AO</h3>
+				</div>
+				<div class="panel-body table-responsive">
+					<table id="ID_analog_out">
+						<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AO">SP</th></tr>
+					</table>
+				</div>
+			</div>
+			</div>
 		</div>
 	</div>
-
-</div>
 </body>
 </html>
