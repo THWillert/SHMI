@@ -189,6 +189,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 - [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
+- [ ] Variable Anzahl an Status-Seiten
 
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 
