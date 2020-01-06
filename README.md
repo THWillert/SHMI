@@ -21,7 +21,7 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
-- Design per CSS anpassbar
+- Design einfach per Bootstrap-Theme zu ändern (aktuelles Design: [Slate](https://bootswatch.com/slate/))
 
 ## Voraussetzungen
 
