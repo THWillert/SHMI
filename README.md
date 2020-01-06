@@ -180,6 +180,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Min / Max für Analog-Anzeige
+- [ ] Peak-Hold für Analog-Anzeige
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Live-Bit von Steuerung visualisieren
 - [ ] Anzeigen in Anlagen-Bild integrieren
@@ -187,6 +188,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
+- [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
 
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 
