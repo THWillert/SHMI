@@ -168,6 +168,10 @@ Beispiel:
 
 Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 
+### Design der Oberfläche
+
+Die Datei `css/bootstrap.min.css` gegen die entsrechende Theme-Datei austauschen.
+
  
 ## Diskussion / Vorschläge
 
@@ -176,7 +180,7 @@ Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Bibliotheken aktualisieren
-- [ ] Auf die aktuelle Bootstrap Version aktualisieren
+- [x] Auf die aktuelle Bootstrap Version aktualisieren
 - [ ] Recorder an die akutellen Bibliotheks-Versionen anpassen und optimieren
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
@@ -186,7 +190,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Live-Bit von Steuerung visualisieren
 - [ ] Anzeigen in Anlagen-Bild integrieren
 - [ ] Dokumentation vervollständigen
-- [ ] CSS zusammenfassen
+- [x] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 - [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
