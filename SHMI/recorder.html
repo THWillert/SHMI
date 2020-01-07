@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-06-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-07-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -53,120 +53,108 @@
 	<script language="javascript" type="text/javascript" src="./js/recorder.js"></script>
 
 
-<style>
-.flot-tick-label {
-	color:#aaa;
-	font-size:1.1em;
-}
-</style>
 </head>
 <body>
 	<p>
-	<div class="main w100">
+	<div class="main w100 container-fluid">
 
-		<div class="col-md-12">
-			<div class="panel panel-default shadow">
+		<div class="row">
+		<div class="col-md-12  p-3">
+			<div class="card card-default shadow">
 				<div class="chart_container" style="padding:20px">
 					<div id="chart" style="height:400px;width:100%"></div>
 				</div>
 				<div class="overview_container" style="padding-left:20px;padding-right:20px">
 					<div id="overview" class="hidden-xs" style="height:100px;width:100%"></div>
-
-				<form role="form" class="visible-xs">
-					<table class="table">
-					<tr>
-					<td><input class="cur_value analog form-control input-sm" style="font-size:1.2em" type="number" disabled="disabled"></td>
-					<td><input type="number" class="min_value analog form-control input-sm" disabled="disabled"></td>
-					<td><input type="number" class="avg_value analog form-control input-sm" disabled="disabled"></td>
-					<td><input type="number" class="max_value analog form-control input-sm" disabled="disabled"></td>
-					</tr>
-					</table>
-				</form>
 				</div>
 			</div>
-
 		</div>
-
-		<div  class="hide" id="choices">
 		</div>
-
-		<div class="col-md-6" >
-			<div class="panel panel-default shadow">
-				<div class="panel-heading">
-					<h3 class="panel-title">Control</h3>
-				</div>
-				<div class="panel-body">
-					<div class="form-group input-group-sm col-sm-6" id="ID_analog_sel">
-						Data: <select class="form-control" id="IDdataSelect">
+<!--
+		<div class="hide" id="choices">
+		</div>
+-->
+		<div class="row">
+			<div class="col-md-6 p-3" >
+				<div class="card card-default shadow">
+					<div class="card-header">
+						<h5 class="card-title">Control</h5>
+					</div>
+					<div class="card-body">
+						<div class="row">
+						<div class="form-group input-group-sm col-sm-6" id="ID_analog_sel">
+							Data source: <select class="form-control" id="IDdataSelect">
+								</select>
+						</div>
+						<div class="form-group input-group-sm col-sm-6" id="updateInt">
+							Update Interval (sec): <select class="form-control" id="updateInterval" size="1" onChange="UpdateInterval=this.value">
 							</select>
-					</div>
-					<div class="form-group input-group-sm col-sm-6" id="updateInt">
-						Update Interval (sec): <select class="form-control" id="updateInterval" size="1" onChange="UpdateInterval=this.value">
-						</select>
-					</div>
+						</div>
+						</div>
 
-					<div class="btn-group btn-group-justified">
-						<div class="btn-group btn-group-sm">
-							<input type="button" class="btn btn-default" data-toggle="button" id="IDsmooth" value="Smooth Line">
+						<div class="btn-group d-flex">
+							<div class="btn-group btn-group-sm flex-fill">
+								<input type="button" class="btn btn-primary" data-toggle="button" id="IDsmooth" value="Smooth Line">
+							</div>
+							<div class="btn-group btn-group-sm flex-fill">
+								<input type="button" class="btn btn-primary active" data-toggle="button" id="IDfill" value="Fill Line">
+							</div>
+							<div class="btn-group btn-group-sm flex-fill">
+								<input type="button" class="btn btn-primary" data-toggle="button" id="IDlight" value="Light">
+							</div>
 						</div>
-						<div class="btn-group btn-group-sm">
-							<input type="button" class="btn btn-default active" data-toggle="button" id="IDfill" value="Fill Line">
-						</div>
-						<div class="btn-group btn-group-sm">
-							<input type="button" class="btn btn-default" data-toggle="button" id="IDlight" value="Light">
-						</div>
-					</div>
-					<hr>
-					<div class="btn-group btn-group-justified">
-						<div class="btn-group">
-							<button type="button" class="btn btn-default" data-toggle="button" id="IDPause">
-							<span class="glyphicon glyphicon glyphicon-pause" id="IDPauseIcon"></span></button>
-						</div>
-						<div class="btn-group">
-							<button type="button" class="btn btn-default" id="IDSave" onClick="Download()">
-							<span class="glyphicon glyphicon-save"></span> Save Data ...</button>
-						</div>
-						<div class="btn-group">
-							<button type="button" class="btn btn-default" id="IDDataReset">
-							<span class="glyphicon glyphicon-trash"></span> Data Reset</button>
+						<hr>
+						<div class="d-flex justify-content-between">
+							<div class="btn-group">
+								<button type="button" class="btn btn-primary" data-toggle="button" id="IDPause">
+								<span class="glyphicon glyphicon glyphicon-pause" id="IDPauseIcon"></span>Pause / Start</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-primary" id="IDSave" onClick="Download()">
+								<span class="glyphicon glyphicon-save"></span> Save Data ...</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-primary" id="IDDataReset">
+								<span class="glyphicon glyphicon-trash"></span> Data Reset</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col-md-6 hidden-xs">
-			<div class="panel panel-default shadow">
-				<div class="panel-heading">
-					<h3 class="panel-title">Data</h3>
-				</div>
-				<div class="panel-body">
-					<form role="form">
-						<div class="table-responsive">
-						<table class="table">
-							<tr>
-								<th>Current value:</th><th>Minimum:</th><th>Average:</th><th>Maximum:</th><th>Data-Points:</th>
-							</tr>
-							<tr>
-								<td><input id="current_value" class="cur_value analog form-control input-sm" style="font-size:1.2em" type="number" disabled="disabled"></td>
-								<td><input id="min" type="number" class="min_value analog form-control input-sm" disabled="disabled"></td>
-								<td><input id="mid" type="number" class="avg_value analog form-control input-sm" disabled="disabled"></td>
-								<td><input id="max" type="number"  class="max_value analog form-control input-sm" disabled="disabled"></td>
-								<td><input id="DataSize"  type="number" class="analog form-control input-sm" disabled="disabled"></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td><input type="button" class="btn btn-default form-control" id="IDminReset" value="Reset"></td>
-								<td></td>
-								<td><input type="button" class="btn btn-default form-control" id="IDmaxReset" value="Reset"></td>
-								<td></td>
-							</tr>
-						</table>
-						</div>
-					</form>
+			<div class="col-md-6 hidden-xs p-3">
+				<div class="card card-default shadow">
+					<div class="card-header">
+						<h5 class="card-title">Data</h5>
+					</div>
+					<div class="card-body">
+						<form role="form">
+							<div class="table-responsive">
+							<table class="table">
+								<tr>
+									<th>Current value:</th><th>Minimum:</th><th>Average:</th><th>Maximum:</th><th>Data-Points:</th>
+								</tr>
+								<tr>
+									<td><input id="current_value" class="cur_value analog form-control input-sm" style="font-size:1.2em" type="number" disabled="disabled"></td>
+									<td><input id="min" type="number" class="min_value analog form-control input-sm" disabled="disabled"></td>
+									<td><input id="mid" type="number" class="avg_value analog form-control input-sm" disabled="disabled"></td>
+									<td><input id="max" type="number"  class="max_value analog form-control input-sm" disabled="disabled"></td>
+									<td><input id="DataSize"  type="number" class="analog form-control input-sm" disabled="disabled"></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><input type="button" class="btn btn-primary form-control" id="IDminReset" value="Reset"></td>
+									<td></td>
+									<td><input type="button" class="btn btn-primary form-control" id="IDmaxReset" value="Reset"></td>
+									<td></td>
+								</tr>
+							</table>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
+		</div><!-- row -->
 	</div>
 
 	<script>UpdateIntervalOptions();</script>
