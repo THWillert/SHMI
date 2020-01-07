@@ -184,10 +184,10 @@ Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version aktualisieren
-- [ ] Recorder an die akutellen Bibliotheks-Versionen anpassen und optimieren
+- [ ] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
-- [ ] Min / Max für Analog-Anzeige
+- [ ] Min / Max für Analog-Anzeige (Skalierung)
 - [ ] Peak-Hold für Analog-Anzeige
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Live-Bit von Steuerung visualisieren
