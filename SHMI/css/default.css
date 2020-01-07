@@ -27,18 +27,8 @@ th {
 text-align:center;
 }
 
-/*
-input {
-color:white;
-border-radius:3px;
-border:solid 1px #222;
-background: linear-gradient(to bottom, #2e3338 0%,#7d7e7d 100%);
-}
-*/
-
-
 .analog{
-width:6em;
+width:5em;
 text-align:center;
 font-weight:bold;
 }
