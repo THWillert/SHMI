@@ -1,9 +1,21 @@
+/* decoration =================================================================*/
+
+/*
 body {
 background: radial-gradient(ellipse at center, #767676 0%,#525252 60%,#3a3a3a 100%) fixed;
 background-attachment: fixed;
 }
+*/
+
+.downlight {
+box-shadow: 1px 1px 10px 2px black;
+}
+.shadow {
+box-shadow: 4px 4px 20px #333;
+}
 
 
+/* table ======================================================================*/
 table {
 font-size:small;
 text-align:left;
@@ -14,67 +26,64 @@ padding:3px;
 th {
 text-align:center;
 }
+
+/*
 input {
 color:white;
 border-radius:3px;
 border:solid 1px #222;
 background: linear-gradient(to bottom, #2e3338 0%,#7d7e7d 100%);
 }
-.downlight {
-box-shadow: 1px 1px 10px 2px red;
-}
-.shadow {
-box-shadow: 4px 4px 20px #333;
-}
+*/
+
+
 .analog{
 width:6em;
 text-align:center;
 font-weight:bold;
 }
 
-/*-----------------------
- analog meter */
+/* analog meter ===============================================================*/
 .meter_back {
 height:20px; /* !!! */
 border-radius:3px;
-color:#000;
-border:1px solid #222;
-background: linear-gradient(to bottom, #2e3338 0%,#7d7e7d 100%);
+border:1px solid #666;
+background: linear-gradient(to bottom, #2e333833 0%,#7d7e7d33 100%);
 }
 .meter {
 height:18px;
 border-radius:3px;
 display:block;
-transition: width 1s ease-in-out;
+transition: width 1s ease-in-out; /* meter speed */
 width:0%;
+border-radius:3px;
 }
 .setpoint_bar {
-position: relative; top:-20px; /* !!! */
-height:22px;
+position: relative; top:-18px; /* !!! */
+height:18px;
 display:block;
-border:solid 1px black;
+border-right:solid 3px #666;
 width:0%;
 border-radius:3px;
 background:grey;
-opacity: 0.5;
+opacity: 0.6;
 transition: width 2s ease-in-out;
 background: linear-gradient(to right, #666 0%,#fff 100%);
 }
-/*-----------------------
-digital IO */
+/* digital IO =================================================================*/
 .digi {
 opacity:0;
-transition: opacity 0.2s ease;
+transition: opacity 0.2s ease; /* "led" speed */
 display:block;
 border-radius:10px;
 }
 .digi_back {
 width:20px;
 border-radius:10px;
-border:1px solid #222;
-background: linear-gradient(to top, #2e3338 0%,#7d7e7d 100%);
+border:1px solid #666;
+background: linear-gradient(to top, #2e333833 0%,#7d7e7d33 100%);
 }
-/*-----------------------*/
+/* I/O ========================================================================*/
 .input {
 background: linear-gradient(to bottom, #51ff3a 0%,#09c400 49%,#27ff0f 100%);
 }
@@ -82,6 +91,7 @@ background: linear-gradient(to bottom, #51ff3a 0%,#09c400 49%,#27ff0f 100%);
 .output{
 background: linear-gradient(to bottom, #ff3950 0%,#c60d00 49%,#ff110d 100%);
 }
+
 
 #content {
 width:100%;
@@ -94,4 +104,20 @@ transition: background-color 2s ease-in-out;
 .main {
 position:absolute;
 top:25px;
+}
+
+/* Flot =======================================================================*/
+.flot-tick-label {
+	color:#999;
+	font-size:1.1em;
+}
+
+/* RI =========================================================================*/
+.rotated {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -moz-transform: rotate(90deg); /* Firefox */
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -o-transform: rotate(90deg); /* Opera */
+  height:100%;
 }
