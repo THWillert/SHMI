@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-05-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-07-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -37,13 +37,15 @@
 	-->
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/default.css">
+
 
 	<script language="javascript" type="text/javascript" src="./js/main.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/default.css">
 
 	<script type='text/javascript'>
 	//==============================================================================
@@ -91,16 +93,17 @@
 					};
 				};
 				});
-			});
-
-			// Beschriftung einfügen
-			$.getJSON( "./lng/de.jsn", function( data ) {
-				$.each( data, function( id, val) {
-					$("#TXT_" + id).each( function() {
-						$(this).text(val);
+			})
+				.done(function() {
+					// Beschriftung einfügen
+					$.getJSON( "./lng/de.jsn", function( data ) {
+						$.each( data, function( id, val) {
+							$("#TXT_" + id).each( function() {
+								$(this).text(val);
+							});
+						});
 					});
 				});
-			});
 
 
 		}
@@ -133,56 +136,57 @@
 	</script>
 </head>
 <body>
-	<div class="main w100">
-	<!-- Digital input ------------------------------------------------------------>
-		<div class="col-md-6">
-		<div class="panel panel-default shadow">
-			<div class="panel-heading">
-				<h3 class="panel-title" id="TXT_DI">DI</h3>
-			</div>
-			<div class="panel-body">
-				<table id="ID_digital_in"></table>
-			</div>
-		</div>
-		</div>
-	<!-- Digital output ----------------------------------------------------------->
-		<div class="col-md-6">
-		<div class="panel panel-default shadow">
-			<div class="panel-heading">
-				<h3 class="panel-title" id="TXT_DO">DO</h3>
-			</div>
-			<div class="panel-body">
-				<table id="ID_digital_out"></table>
-			</div>
-		</div>
-		</div>
-
-		<div id="IDAnalogIO">
-	<!-- Analog input ------------------------------------------------------------->
-			<div class="col-md-12">
-			<div class="panel panel-default shadow">
-				<div class="panel-heading">
-					<h3 class="panel-title" id="TXT_AI">AI</h3>
+	<div class="main container-fluid W100">
+	<div class="row">
+		<!-- Digital input ------------------------------------------------------------>
+		<div class="col-md-6 p-3">
+			<div class="card shadow">
+				<div class="card-header">
+					<h5 class="card-title" id="TXT_DI">DI</h5>
 				</div>
-				<div class="panel-body table-responsive">
-					<table id="ID_analog_in">
-					<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AI">SP</th></tr>
-					</table>
+				<div class="card-body">
+					<table id="ID_digital_in"></table>
 				</div>
 			</div>
-			</div>
-	<!-- Analog output ------------------------------------------------------------>
-			<div class="col-md-12">
-			<div class="panel panel-default shadow">
-				<div class="panel-heading">
-					<h3 class="panel-title" id="TXT_AO">AO</h3>
+		</div>
+		<!-- Digital output ----------------------------------------------------------->
+		<div class="col-md-6 p-3">
+			<div class="card shadow">
+				<div class="card-header">
+					<h5 class="card-title" id="TXT_DO">DO</h5>
 				</div>
-				<div class="panel-body table-responsive">
-					<table id="ID_analog_out">
-						<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AO">SP</th></tr>
-					</table>
+				<div class="card-body">
+					<table id="ID_digital_out"></table>
 				</div>
 			</div>
+		</div>
+	</div>
+		<div class="row" id="IDAnalogIO">
+			<!-- Analog input ------------------------------------------------------------->
+			<div class="col-md-12 p-3">
+				<div class="card shadow">
+					<div class="card-header">
+						<h5 class="card-title" id="TXT_AI">AI</h5>
+					</div>
+					<div class="card-body">
+						<table id="ID_analog_in">
+						<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AI">SP</th></tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- Analog output ------------------------------------------------------------>
+			<div class="col-md-12 p-3">
+				<div class="card shadow">
+					<div class="card-header">
+						<h5 class="card-title" id="TXT_AO">AO</h5>
+					</div>
+					<div class="card-body">
+						<table id="ID_analog_out">
+							<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AO">SP</th></tr>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
