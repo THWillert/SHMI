@@ -11,7 +11,7 @@ Es dient als reine Anzeige von Werten. Eine Änderung von Daten ist noch nicht m
 Vor allem dient es dazu, ohne großen Aufwand, Werte aus einer Steuerung dazustellen.
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
-![Start](/images/SHMI_index.png)
+![Start](/images/SHMI_index_b.png)
 
 ### Features
 
