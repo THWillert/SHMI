@@ -1,3 +1,7 @@
+V0.1.1-beta 08.01.2020
+
+- updated About-dialog to Bootstrap V4
+
 V0.1-beta 08.01.2020
 
 - first release
