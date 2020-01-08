@@ -188,7 +188,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Min / Max für Analog-Anzeige (Skalierung)
-- [ ] Peak-Hold für Analog-Anzeige
+- [x] Peak-Hold für Analog-Anzeige
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Live-Bit von Steuerung visualisieren
 - [ ] Anzeigen in Anlagen-Bild integrieren
