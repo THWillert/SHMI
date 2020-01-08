@@ -198,6 +198,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 - [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
 - [ ] Variable Anzahl an Status-Seiten
+- [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 
