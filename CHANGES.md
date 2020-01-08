@@ -2,6 +2,7 @@ V0.1.2-beta 08.01.2020
 
 - status.html: added peak-hold to the analog levels
 ![Start](/images/SHMI_peak.png)
+- status.html: changed the analog form
 - status.html: fixed error in analog-out card (collapse)
 - splitted default.css into SHMI.css and SHMI_Instruments.css
 
