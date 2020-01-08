@@ -1,6 +1,8 @@
+- status.html: fixed error in analog-out card (collapse)
+
 V0.1.1-beta 08.01.2020
 
-- updated About-dialog to Bootstrap V4
+- index.htm: updated About-dialog to Bootstrap V4
 
 V0.1-beta 08.01.2020
 
