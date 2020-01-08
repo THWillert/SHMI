@@ -55,11 +55,23 @@ display:block;
 border-right:solid 3px #666;
 width:0%;
 border-radius:3px;
-background:grey;
 opacity: 0.6;
 transition: width 2s ease-in-out;
 background: linear-gradient(to right, #666 0%,#fff 100%);
 }
+/*
+.peak {
+position: relative; top:-36px; /* !!!
+height:18px;
+display:block;
+border-right:solid 5px #ffb43f;
+width:0%;
+background:transparent;
+transition: width 2s ease-out; /* dummy - no peak
+}
+*/
+
+
 /* digital IO =================================================================*/
 .digi {
 opacity:0;

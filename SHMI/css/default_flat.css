@@ -60,6 +60,17 @@ opacity: 0.6;
 transition: width 2s ease-in-out;
 background: #666);
 }
+/*
+.peak {
+position: relative; top:-36px; /* !!!
+height:18px;
+display:block;
+border-right:solid 5px #ffb43f;
+width:0%;
+background:transparent;
+transition: width 2s ease-out; /* dummy - no peak
+}
+*/
 /* digital IO =================================================================*/
 .digi {
 opacity:0;
