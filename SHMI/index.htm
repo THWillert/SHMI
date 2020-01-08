@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-07-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-08-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -38,7 +38,7 @@
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/default.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 
 	<script type="text/javascript" src="./js/main.js"></script>
 
@@ -61,9 +61,10 @@
 
 		$(".liveBit").peity("bar")
 
+		/*
 		$(function () {
 				$('[data-toggle="tooltip"]').tooltip()
-		})
+		})*/
 	//==============================================================================
 	// Time in footer
 		moment.lang("de", moment_de);
@@ -169,7 +170,11 @@ About Dialog -->
 					</button>
 				</div>
 				<div class="modal-body">
-					<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>
+					<h1><img src="pict/logo.svg" height=100px>  SHMI</h1>
+					&copy; 2014 - 2020, by Thorsten Willert |
+					MIT license</a>
+
+					<hr><h4>Verwendete Bilbliotheken:</h4>
 					<ul>
 					<li>jQuery <script> document.write( jQuery.fn.jquery ) </script></li>
 					<li>Bootstrap <script> document.write( $.fn.tooltip.Constructor.VERSION ) </script></li>

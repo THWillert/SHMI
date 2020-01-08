@@ -45,7 +45,8 @@
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/default.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
 
 	<script type='text/javascript'>
 	//==============================================================================
@@ -71,6 +72,7 @@
 								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi output">&nbsp;</span></div></td></tr>');
 					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
 						analog_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
 								'<td width="60%">' +
 								'<div class="meter_back">' +
@@ -78,11 +80,12 @@
 								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
 								'<span id="ID_' + id + '_P" class="peak">&nbsp;</span>' +
 								'</div></td>' +
-								'<td><input class="analog ' + id + '_SP" disabled></td>' +
+								'<td><input class="invisible analog disabled" id="ID_' + id + '_PK" ></td>' +
 								'</tr>');
 
 					}  else if ( id.indexOf("AO") != -1) {
 						analog_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
 								'<td width="60%">' +
 								'<div class="meter_back">' +
@@ -90,7 +93,7 @@
 								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
 								'<span id="ID_' + id + '_P" class="peak">&nbsp;</span>' +
 								'</div></td>' +
-								'<td><input class="analog ' + id + '_SP" disabled></td>' +
+								'<td><input class="invisible analog disabled" id="ID_' + id + '_PK"></td>' +
 								'</tr>');
 					};
 				};
@@ -116,22 +119,47 @@
 		{
 		var id;
 		var val;
+		var peak;
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
 				val = Round( this.value,2);
 
 				$("#IDAnalogIO").find( "." + id).each( function() {
 					//$(this).text( val);
-					this.value = val;
+					this.value = parseFloat(val).toFixed(2);
 				});
-				$("#ID_" + id + "_M").css("width", val + "%" ); // meter
-				$("#ID_" + id + "_P").css("width", val + "%" ); // meter
-				$("#ID_" + id + "_SP").css("width", val  + "%" ) ; // sollwert
-				$("#ID_" + id + "_D").css("opacity",  val ); // digital
+
+				// digital
+				$("#ID_" + id + "_D" ).css("opacity",  val );
+
+				// analog
+				$("#ID_" + id + "_M" ).css("width",    val + "%" ); // meter
+				$("#ID_" + id + "_P" ).css("width",    val + "%" ); // meter
+				$("#ID_" + id + "_SP").css("width",    val + "%" ); // setpoint
+
+				// analog peak
+				peak = $("#ID_" + id + "_PK");
+				if ( val >  peak.val() ) peak.val( val ); // max
+				$("#ID_" + id + "_P" ).css("width",    peak.val()  + "%" ); // peak
+
+
 			});
 			setTimeout(updateValues, 1000); // update intervall for all values
 		};
 		$(function(){updateValues();});
+
+		//==========================================================================
+
+		function relasePeak()
+		{
+			parent.top.$("#IDdata").find("input").each( function() {
+				id = this.id;
+
+				$("#ID_" + id + "_PK").val( 0 );
+			});
+			setTimeout(relasePeak, 10000); // intervall for peak relase
+		};
+		$(function(){relasePeak();});
 
 	//==============================================================================
 	});
@@ -179,7 +207,13 @@
 					</div>
 					<div class="card-body collapse show" id="collapseAI">
 						<table id="ID_analog_in">
-						<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AI">SP</th></tr>
+							<tr>
+							<th></th>
+							<th id="TXT_Setpoint_AI">Setpoint</th>
+							<th id="TXT_Value_AI">Value</th>
+							<th></th>
+							<th id="TXT_Peak_AI"></th>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -194,7 +228,13 @@
 					</div>
 					<div class="card-body collapse show" id="collapseAO">
 						<table id="ID_analog_out">
-							<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AO">SP</th></tr>
+							<tr>
+							<th></th>
+							<th id="TXT_Setpoint_AO">Setpoint</th>
+							<th id="TXT_Value_AO">Value</th>
+							<th></th>
+							<th id="TXT_Peak_AO"></th>
+							</tr>
 						</table>
 					</div>
 				</div>
