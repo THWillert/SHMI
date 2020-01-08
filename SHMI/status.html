@@ -76,6 +76,7 @@
 								'<div class="meter_back">' +
 								'<span id="ID_' + id + '_M" class="meter input">&nbsp;</span>' +
 								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
+								'<span id="ID_' + id + '_P" class="peak">&nbsp;</span>' +
 								'</div></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'</tr>');
@@ -87,6 +88,7 @@
 								'<div class="meter_back">' +
 								'<span id="ID_' + id + '_M" class="meter output">&nbsp;</span>' +
 								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
+								'<span id="ID_' + id + '_P" class="peak">&nbsp;</span>' +
 								'</div></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'</tr>');
@@ -123,6 +125,7 @@
 					this.value = val;
 				});
 				$("#ID_" + id + "_M").css("width", val + "%" ); // meter
+				$("#ID_" + id + "_P").css("width", val + "%" ); // meter
 				$("#ID_" + id + "_SP").css("width", val  + "%" ) ; // sollwert
 				$("#ID_" + id + "_D").css("opacity",  val ); // digital
 			});
@@ -142,9 +145,11 @@
 		<div class="col-md-6 p-3">
 			<div class="card shadow">
 				<div class="card-header">
-					<h5 class="card-title" id="TXT_DI">DI</h5>
+					 <a class="" data-toggle="collapse" href="#collapseDI" role="button" aria-expanded="false" aria-controls="collapseDI">
+					 <h5 class="card-title" id="TXT_DI">DI</h5>
+					 </a>
 				</div>
-				<div class="card-body">
+				<div class="card-body collapse show" id="collapseDI">
 					<table id="ID_digital_in"></table>
 				</div>
 			</div>
@@ -153,9 +158,11 @@
 		<div class="col-md-6 p-3">
 			<div class="card shadow">
 				<div class="card-header">
+					<a class="" data-toggle="collapse" href="#collapseDO" role="button" aria-expanded="false" aria-controls="collapseDO">
 					<h5 class="card-title" id="TXT_DO">DO</h5>
+					</a>
 				</div>
-				<div class="card-body">
+				<div class="card-body collapse show" id="collapseDO">
 					<table id="ID_digital_out"></table>
 				</div>
 			</div>
@@ -166,9 +173,11 @@
 			<div class="col-md-12 p-3">
 				<div class="card shadow">
 					<div class="card-header">
+						<a class="" data-toggle="collapse" href="#collapseAI" role="button" aria-expanded="false" aria-controls="collapseAI">
 						<h5 class="card-title" id="TXT_AI">AI</h5>
+						</a>
 					</div>
-					<div class="card-body">
+					<div class="card-body collapse show" id="collapseAI">
 						<table id="ID_analog_in">
 						<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AI">SP</th></tr>
 						</table>
@@ -179,9 +188,10 @@
 			<div class="col-md-12 p-3">
 				<div class="card shadow">
 					<div class="card-header">
+						<a class="" data-toggle="collapse" href="#collapseAO" role="button" aria-expanded="false" aria-controls="collapseAO">
 						<h5 class="card-title" id="TXT_AO">AO</h5>
 					</div>
-					<div class="card-body">
+					<div class="card-body collapse show" id="collapseAO">
 						<table id="ID_analog_out">
 							<tr><th></th><th></th><th></th><th id="TXT_Setpoint_AO">SP</th></tr>
 						</table>
