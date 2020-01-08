@@ -1,7 +1,11 @@
+V0.1-beta 08.01.2020
+
+- First release
+
 07.01.2020
 
 - added peak-hold bar to html and css (not working now)
-- now you can collapse all cards on the "Overview / Übersicht" page by clicking on the title
+- now you can collapse all cards on the "Overview / Ãœbersicht" page by clicking on the title
 - removed glyphicons (not supported by Bootstrap 4)
 
 05.01.2020
