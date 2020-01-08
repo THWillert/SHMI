@@ -43,9 +43,10 @@
 	<script type="text/javascript" src="./js/main.js"></script>
 
 	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 
 	<base target="vzfBVwMAo2PBTsBIb4Aa">
@@ -77,23 +78,6 @@
 			timer_Update = setTimeout(timeUpdate, getRandomInt(9000,10000));
 		}
 		timer_Update = setTimeout(timeUpdate, 10002);
-
-	//==============================================================================
-	// About dialog
-		$("#IDabout").click(function () {
-			var html = '<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>' +
-				'jQuery, Flot, Flot.curved, Flot.selection, Flot.time, Bootstrap, Bootstrap-dialog, moment.js, Peity';
-
-			BootstrapDialog.show({
-				title: 'About:',
-				message: html,
-				type: BootstrapDialog.TYPE_WARNING,
-				buttons: [{
-					label: 'OK',
-					action: function(dialogItself){dialogItself.close();}
-				}]
-			});
-		});
 
 	//==============================================================================
 	// Data for all pages
@@ -138,17 +122,6 @@
 	//==============================================================================
 	});
 	</script>
-<!--	<style>
-	.icon-bar-v {
-	  background-color: #666;
-	  border-radius: 1px;
-	  display: inline-block;
-	  height: 1.2em;
-	  margin-left: 1em;
-	  margin-right: 1em;
-	  width: 2px;
-	}
-	</style>-->
 </head>
 
 <body>
@@ -156,7 +129,7 @@
 <!-- ==============================================================================
 Header and navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top downlight">
-		<img style="display:inline-block" src="./pict/logo.svg" height="40">&nbsp;&nbsp;&nbsp;</a>
+		<img style="display:inline-block" src="./pict/logo.svg" height="40">&nbsp;&nbsp;&nbsp;
 		<a class="navbar-brand" href="https://github.com/THWillert/SHMI" target="_blank">SHMI</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -177,10 +150,43 @@ Header and navigation -->
 						<a href="ri_03.html" class="dropdown-item">Fließbild V3</a>
 					</div>
 				</li>
-				<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target=".bs-example-modal-sm" id="IDabout">About</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" id="IDabout">About</a></li>
 			</ul>
 		</div>
 	</nav>
+
+
+<!-- ==============================================================================
+About Dialog -->
+
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">About</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h1><img src="pict/logo.svg" height=100px>  SHMI</h1><hr><h4>Verwendete Bilbliotheken:</h4>
+					<ul>
+					<li>jQuery <script> document.write( jQuery.fn.jquery ) </script></li>
+					<li>Bootstrap <script> document.write( $.fn.tooltip.Constructor.VERSION ) </script></li>
+					<li>Moment.js <script> document.write( moment.version ) </script></li>
+					<li>Flot <script> document.write( $.plot.version ) </script></li>
+					<li>Flot.curved</li>
+					<li>Flot.selection</li>
+					<li>Flot.time</li>
+					<li>Peity</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <!-- ============================================================================== -->
 	<!--
