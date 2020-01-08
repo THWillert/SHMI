@@ -1,6 +1,6 @@
 V0.1-beta 08.01.2020
 
-- First release
+- first release
 
 07.01.2020
 
