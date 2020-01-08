@@ -1,0 +1,60 @@
+/* decoration =================================================================*/
+/* body {
+     background: radial-gradient(ellipse at center, #767676 0%,#525252 60%,#3a3a3a 100%) fixed;
+     background-attachment: fixed;
+}
+ */
+.downlight {
+	box-shadow: 1px 1px 10px 2px black;
+}
+
+.shadow {
+	box-shadow: 4px 4px 20px #333;
+}
+/* table ======================================================================*/
+table {
+	font-size: small;
+	text-align: left;
+}
+
+td {
+	padding: 3px;
+}
+
+th {
+	text-align: center;
+}
+/* Flot =======================================================================*/
+.flot-tick-label {
+	color: #999;
+	font-size: 1.1em;
+}
+
+.bg-light {
+	transition: background-color 2s ease-in-out;
+}
+
+/* RI =========================================================================*/
+.rotated {
+	transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    /* IE 9 */
+	-moz-transform: rotate(90deg);
+    /* Firefox */
+	-webkit-transform: rotate(90deg);
+    /* Safari and Chrome */
+	-o-transform: rotate(90deg);
+    /* Opera */
+	height: 100%;
+}
+/* ============================================================================*/
+#content {
+	width: 100%;
+	height: 1200px;
+	border: none;
+}
+
+.main {
+	position: absolute;
+	top: 25px;
+}

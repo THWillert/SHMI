@@ -1,0 +1,62 @@
+.analog{
+	width:5em;
+	text-align:center;
+	font-weight:bold;
+}
+/* analog meter ===============================================================*/
+.meter_back {
+	height:20px; /* !!! */
+	border-radius:1px;
+	border:1px solid #666;
+	background: #2e333833;
+}
+.meter {
+	height:18px;
+	border-radius:1px;
+	display:block;
+	transition: width 1s ease-in-out;
+	width:0%;
+	border-radius:1px;
+}
+.setpoint_bar {
+	position: relative; top:-18px;
+	height:18px;
+	display:block;
+	border-right:solid 1px #666;
+	width:0%;
+	border-radius:1px;
+	background:grey;
+	opacity: 0.6;
+	transition: width 2s ease-in-out;
+	background: #666);
+}
+.peak {
+	position: relative; top:-36px;
+	height:18px;
+	display:block;
+	border-right:solid 5px #ffb43f;
+	width:0%;
+	background:transparent;
+	transition:  width 1s linear;
+}
+/* digital IO =================================================================*/
+.digi {
+	opacity:0;
+	transition: opacity 0.2s ease;
+	display:block;
+	border-radius:10px;
+}
+.digi_back {
+	width:20px;
+	border-radius:10px;
+	border:1px solid #666;
+	background: #2e333833;
+}
+/* I/O ========================================================================*/
+.input {
+	background: #27ff0f;
+}
+
+.output{
+	background: #ff110d;
+}
