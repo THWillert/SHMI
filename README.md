@@ -173,7 +173,7 @@ Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 
 Die Datei `css/bootstrap.min.css` gegen die entsrechende Theme-Datei austauschen.
 
-Für ein "flaches" Design der Anzeigen die Datei `css/default.css` gegen `css/default_flat.css` austauschen.
+Für ein "flaches" Design der Anzeigen die Datei `css/SHMI_Instruments.css` gegen `css/SHMI_Instruments_flat.css` austauschen.
 
  
 ## Diskussion / Vorschläge
