@@ -185,25 +185,38 @@ Für ein "flaches" Design der Anzeigen die Datei `css/SHMI_Instruments.css` gege
 
 Reihenfolge entspricht nicht der Priorität:
 
+#### Allgemein
+
 - [ ] Bibliotheken aktualisieren
-- [x] Auf die aktuelle Bootstrap Version aktualisieren
-- [ ] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
-- [x] Dateien vollständig hochladen
-- [ ] Wechsel der Anzeigensprache über die Oberfläche
-- [ ] Min / Max für Analog-Anzeige (Skalierung)
-- [x] Peak-Hold für Analog-Anzeige
-- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
+- [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 - [ ] Live-Bit von Steuerung visualisieren
 - [ ] Anzeigen in Anlagen-Bild integrieren
 - [ ] Dokumentation vervollständigen
 - [x] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
+- [x] Dateien vollständig hochladen
+- [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
-- [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
+- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
+
+#### Übersicht
+
+- [ ] Min / Max für Analog-Anzeige (Skalierung)
+- [x] Peak-Hold für Analog-Anzeige
+- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Variable Anzahl an Status-Seiten
+- [ ] Level-Meter als jQuery-Plugin?
+
+#### Recorder / Kurven
+
+- [ ] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
+- [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
+- [ ] Oberfläche optimieren
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 
-- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
+#### Fließbilder
+
+- [ ] Werte in Bild anzeigen
 
 ## Author
 Thorsten Willert
