@@ -206,7 +206,8 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Einstellung für die Haltezeit / Peak-Hold
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Variable Anzahl an Status-Seiten
-- [ ] Level-Meter als jQuery-Plugin?
+- [ ] Analog-Anzeige optimieren
+- [ ] Zeit-Anzeige für letzte Änderzung
 
 #### Recorder / Kurven
 
@@ -214,6 +215,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
 - [ ] Oberfläche optimieren
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
+- [ ] Zeit-Format in CSV ändern (-> Timestamp)
 
 #### Fließbilder
 
