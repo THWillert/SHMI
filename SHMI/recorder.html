@@ -86,25 +86,21 @@
 						<form>
 							<div class="form-row p-3">
 								<div class="col" id="ID_analog_sel">
-									Data source: <select class="form-control form-control-sm" id="IDdataSelect">
-									</select>
+									Data source:
+									<select class="form-control form-control-sm" id="IDdataSelect"></select>
 								</div>
 								<div class="col" id="updateInt">
-									Update Interval (sec): <select class="form-control form-control-sm" id="updateInterval" size="1" onChange="UpdateInterval=this.value">
-									</select>
+									Update Interval (sec):
+									<select class="form-control form-control-sm" id="updateInterval" size="1" onChange="UpdateInterval=this.value"></select>
 								</div>
 							</div>
 						</form>
-						<div class="btn-group d-flex p-3">
-							<div class="btn-group btn-group-sm flex-fill">
-								<input type="button" class="btn btn-primary" data-toggle="button" id="IDsmooth" value="Smooth Line">
-							</div>
-							<div class="btn-group btn-group-sm flex-fill">
-								<input type="button" class="btn btn-primary active" data-toggle="button" id="IDfill" value="Fill Line">
-							</div>
-							<div class="btn-group btn-group-sm flex-fill">
-								<input type="button" class="btn btn-primary" data-toggle="button" id="IDlight" value="Light">
-							</div>
+						<div class="btn-group d-flex">
+
+								<button type="button" class="btn btn-primary" id="IDsmooth">Smooth Line</button>
+								<button type="button" class="btn btn-primary" id="IDfill">Fill Line</button>
+								<button type="button" class="btn btn-primary invisible" id="IDlight">Light</button>
+
 						</div>
 					</div><!-- / card-body -->
 

@@ -126,7 +126,7 @@
 				id = this.id;
 				val = Round( this.value,2);
 
-
+				// fill forms
 				$("#IDAnalogIO").find( "." + id).each( function() {
 					this.value = parseFloat(val).toFixed(2);
 				});
@@ -134,16 +134,16 @@
 				// digital
 				$("#ID_" + id + "_D" ).css("opacity",  val );
 
-				// analog
-				$("#ID_" + id + "_M" ).css("width",    val + "%" ); // meter
-				$("." + id + "_M" ).text(val + "%" ); // test
+				// analog meter
+				$("#ID_" + id + "_M" ).css("width",    val + "%" );
 
-				 // setpoint
+				 // analog meter setpoint
 				$("#ID_" + id + "_SP").css("width",    val + "%" );
 
-				// analog peak
+				// analog meter peak
 				peak = $("#ID_" + id + "_PK");
-				if ( val >  peak.val() ) peak.val( val ); // max
+				if ( val >  peak.val() )
+					peak.val( val ); // max
 				$("#ID_" + id + "_P" ).css("width",    peak.val()  + "%" ); // peak
 
 
