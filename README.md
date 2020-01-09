@@ -203,6 +203,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Min / Max für Analog-Anzeige (Skalierung)
 - [x] Peak-Hold für Analog-Anzeige
+- [ ] Einstellung für die Haltezeit / Peak-Hold
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Variable Anzahl an Status-Seiten
 - [ ] Level-Meter als jQuery-Plugin?
