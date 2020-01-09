@@ -11,7 +11,7 @@ Es dient als reine Anzeige von Werten. Eine Änderung von Daten ist noch nicht m
 Vor allem dient es dazu, ohne großen Aufwand, Werte aus einer Steuerung dazustellen.
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
-![Start](/images/SHMI_index_b.png)
+![Start](/images/SHMI_index.png)
 
 ### Features
 
@@ -176,8 +176,6 @@ Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 
 Die Datei `css/bootstrap.min.css` gegen die entsrechende Theme-Datei austauschen.
 
-Für ein "flaches" Design der Anzeigen die Datei `css/SHMI_Instruments.css` gegen `css/SHMI_Instruments_flat.css` austauschen.
-
  
 ## Diskussion / Vorschläge
 
@@ -205,7 +203,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Einstellung für die Haltezeit / Peak-Hold
 - [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 - [ ] Variable Anzahl an Status-Seiten
-- [ ] Analog-Anzeige optimieren
+- [x] Analog-Anzeige optimieren
 - [ ] Zeit-Anzeige für letzte Änderzung
 
 #### Recorder / Kurven
