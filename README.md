@@ -17,7 +17,7 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
 - Für die Darstellung ist nur ein Browser nötig
 - Responsives Design
-- Darstellung von Digital, Analogwert und Sollwerten
+- Darstellung von Digital, Analogwert, Sollwerten und Peak-Hold
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
@@ -198,13 +198,19 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Übersicht
 
+- [ ] Variable Anzahl an Status-Seiten
+
+##### Analog
 - [ ] Min / Max für Analog-Anzeige (Skalierung)
 - [x] Peak-Hold für Analog-Anzeige
 - [ ] Einstellung für die Haltezeit / Peak-Hold
-- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
-- [ ] Variable Anzahl an Status-Seiten
 - [x] Analog-Anzeige optimieren
+- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
+
+##### Digital
+
 - [ ] Zeit-Anzeige für letzte Änderzung
+- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
 
 #### Recorder / Kurven
 
