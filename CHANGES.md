@@ -1,4 +1,10 @@
-V0.1.3-beta ß9.01.2020
+V0.1.4-beta 09.01.2020
+
+- recorder.html: updated design ot the chart
+![Start](/images/SHMI_Chart.png)
+- recorder.html: chart now with tooltips
+
+V0.1.3-beta 09.01.2020
 
 - Analog- und Digital-Anzeigen an Bootstrap angepasst:
   - Themes werden nun darauf angewandt
