@@ -190,7 +190,6 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 - [ ] Live-Bit von Steuerung visualisieren
-- [ ] Anzeigen in Anlagen-Bild integrieren
 - [ ] Dokumentation vervollständigen
 - [x] CSS zusammenfassen
 - [ ] Dokumentation der Quelltexte überarbeiten
