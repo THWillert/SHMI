@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-06-01
+	Modified: 2020-09-01
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -95,7 +95,7 @@ $(function() {
 					lineWidth: 1.5,
 					fill: true,
 					steps: false,
-					fillColor: "rgba(128, 128, 128, 0.3)"
+					fillColor:  { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] }
 				},
 				curvedLines: {
 					active: false,
@@ -109,17 +109,50 @@ $(function() {
 					radius: 2.0,
 					symbol: "circle"
 				},
-				shadowSize: 5
+				shadowSize: 0
 			},
-			colors: ["rgba(255,0,0,0.8)"],
+			colors:  ["#F00"],
 			selection: {
 				mode: "x"
 			},
 			grid: {
-				backgroundColor: "#ccc",
+				hoverable: true,
 				markings: []
 			}
 		}
+
+//==============================================================================
+// Tooltip in chart
+
+	$("<div id='tooltip'></div>").css({
+			position: "absolute",
+			display: "none",
+			padding: "0.5em",
+			color: "white",
+			"text-align": "center",
+			"border-radius": "0.3em",
+			"background-color": "black",
+			opacity: 0.90
+		}).appendTo("body");
+
+		$("#chart").bind("plothover", function (event, pos, item) {
+
+			if (!pos.x || !pos.y) return;
+
+			if (item) {
+				var x = item.datapoint[0].toFixed(2),
+					y = item.datapoint[1].toFixed(2);
+
+				$("#tooltip").html("<b>" + y + "</b><br>" + moment().format('HH:mm:ss'))
+					.css({top: item.pageY+5, left: item.pageX+5})
+					.fadeIn(200);
+			} else {
+				$("#tooltip").hide();}
+		});
+
+		$("#chart").bind("plothovercleanup", function (event, pos, item) {
+				$("#tooltip").hide();
+		});
 //==============================================================================
 	function plotAccordingToChoices() {
 
@@ -144,7 +177,7 @@ $(function() {
 				show: true,
 				lineWidth: 1,
 				fill: true,
-				fillColor: "rgba(64, 64, 64, 0.8)",
+				fillColor: { colors: [{ opacity: 0.0 },{ opacity: 0.05}, { opacity: 0.2}] },
 				steps: false
 			},
 			curvedLines: {
@@ -215,14 +248,14 @@ $(function() {
 		if(c > 3600 ) data.shift();
 		if(viewData.length > 120) viewData.shift();
 
-		if (min > newVal) min = newVal;
+		if (newVal < min) min = newVal;
 		if (newVal > max) max = newVal;
-		mid = (max-min) / 2 + min;
+		mid = ((max-min) / 2) + min;
 
 			options.grid.markings = [{
-				yaxis: { from: max, to: max }, color:"rgba(0,0,255,0.6)", lineWidth: 1.5 },{
-				yaxis: { from: min, to: min }, color:"rgba(0,255,0,0.7)", lineWidth: 1.5 },{
-				yaxis: { from: mid, to: mid }, color:"rgba(64,64,64,0.5)",lineWidth: 2 }
+				yaxis: { from: max, to: max }, color:"rgba(68,135,255)", lineWidth: 2 },{
+				yaxis: { from: min, to: min }, color:"rgba(0,215,145)", lineWidth: 2 },{
+				yaxis: { from: mid, to: mid }, color:"rgba(255,170,0)",lineWidth: 2 }
 				];
 
 			data.push( [ moment() , newVal ] );
@@ -278,10 +311,12 @@ $(function() {
 //==============================================================================
 	$("#IDmaxReset").click(function () {
 			max = 0;
+			mid = 0;
 		});
 //==============================================================================
 	$("#IDminReset").click(function () {
 			min = max;
+			mid = 0;
 		});
 //==============================================================================
 	$("#IDPause").click(function () {
