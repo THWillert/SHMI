@@ -1,3 +1,9 @@
+V0.1.3-beta ß9.01.2020
+
+- Analog- und Digital-Anzeigen an Bootstrap angepasst:
+  - Themes werden nun darauf angewandt
+  - Analog-Anzeige verwendet nun die Progress-Bar
+
 V0.1.2-beta 08.01.2020
 
 - status.html: added peak-hold to the analog levels
