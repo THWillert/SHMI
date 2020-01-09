@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-08-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-09-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -66,34 +66,36 @@
 				if ( id.indexOf("SP") == -1){
 					if ( id.indexOf("DI") != -1) {
 						digital_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi input">&nbsp;</span></div></td></tr>');
+								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-success">&nbsp;</span></div></td></tr>');
 					} else if ( id.indexOf("DO") != -1) {
 						digital_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi output">&nbsp;</span></div></td></tr>');
+								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-danger">&nbsp;</span></div></td></tr>');
 					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
-						analog_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+						analog_in_container.append(
+								'<tr><td width="300px" id="TXT_' + id + '"></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="60%">' +
-								'<div class="meter_back">' +
-								'<span id="ID_' + id + '_M" class="meter input">&nbsp;</span>' +
-								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
-								'<span id="ID_' + id + '_P" class="peak">&nbsp;</span>' +
-								'</div></td>' +
-								'<td><input class="invisible analog disabled" id="ID_' + id + '_PK" ></td>' +
+								'<td width="70%">' +
+									'<div class="progress">' +
+										'<div id="ID_' + id + '_M" class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>' +
+										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
+										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
+									'</div>' +
+								'<td><input class="invisible analog" id="ID_' + id + '_PK" ></td>' +
 								'</tr>');
 
 					}  else if ( id.indexOf("AO") != -1) {
-						analog_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
+						analog_out_container.append(
+								'<tr><td width="300px" id="TXT_' + id + '"></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="60%">' +
-								'<div class="meter_back">' +
-								'<span id="ID_' + id + '_M" class="meter output">&nbsp;</span>' +
-								'<span id="ID_' + id + '_SP_SP" class="setpoint_bar">&nbsp;</span>' +
-								'<span id="ID_' + id + '_P" class="peak">&nbsp;</span>' +
-								'</div></td>' +
-								'<td><input class="invisible analog disabled" id="ID_' + id + '_PK"></td>' +
+								'<td width="70%">' +
+									'<div class="progress">' +
+										'<div id="ID_' + id + '_M" class="progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>' +
+										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
+										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
+									'</div>' +
+								'<td><input class="invisible analog" id="ID_' + id + '_PK" ></td>' +
 								'</tr>');
 					};
 				};
@@ -124,8 +126,8 @@
 				id = this.id;
 				val = Round( this.value,2);
 
+
 				$("#IDAnalogIO").find( "." + id).each( function() {
-					//$(this).text( val);
 					this.value = parseFloat(val).toFixed(2);
 				});
 
@@ -134,8 +136,10 @@
 
 				// analog
 				$("#ID_" + id + "_M" ).css("width",    val + "%" ); // meter
-				$("#ID_" + id + "_P" ).css("width",    val + "%" ); // meter
-				$("#ID_" + id + "_SP").css("width",    val + "%" ); // setpoint
+				$("." + id + "_M" ).text(val + "%" ); // test
+
+				 // setpoint
+				$("#ID_" + id + "_SP").css("width",    val + "%" );
 
 				// analog peak
 				peak = $("#ID_" + id + "_PK");
