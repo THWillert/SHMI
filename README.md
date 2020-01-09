@@ -23,7 +23,10 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 
-![Start](/images/SHMI_index_sketchy_sm.png)![Start](/images/SHMI_index_flatly_sm.png)
+![Start](/images/SHMI_index_01.png)
+
+![Start](/images/SHMI_index_02.png)
+
 
 ## Voraussetzungen
 
