@@ -196,6 +196,8 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
+- [ ] Einstellungen lokal speichern
+- [ ] Fonts lokal speichern und abfragen
 
 #### Übersicht
 
@@ -204,14 +206,14 @@ Reihenfolge entspricht nicht der Priorität:
 ##### Analog
 - [ ] Min / Max für Analog-Anzeige (Skalierung)
 - [x] Peak-Hold für Analog-Anzeige
-- [ ] Einstellung für die Haltezeit / Peak-Hold
+- [X] Einstellung für die Haltezeit / Peak-Hold
 - [x] Analog-Anzeige optimieren
-- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
+- [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
 
 ##### Digital
 
 - [ ] Zeit-Anzeige für letzte Änderzung
-- [ ] Einstellung des Updateintervalls (Digital / Analog getrennt)
+- [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
 
 #### Recorder / Kurven
 
