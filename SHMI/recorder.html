@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-08-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-12-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -49,14 +49,35 @@
 	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.flot.time.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.flot.selection.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.curved.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.spline.js"></script>
 
 	<script language="javascript" type="text/javascript" src="./js/recorder.js"></script>
 
 
 </head>
 <body>
-	<p>
+
+<div class="modal fade" id="DataReset" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content border-warning">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="exampleModalLongTitle">Reset</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<h5>Achtung!</h5>
+        Daten wirklich zurücksetzen?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" id="IDDataReset">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 	<div class="main w100 container-fluid">
 
 		<div class="row">
@@ -95,28 +116,31 @@
 								</div>
 							</div>
 						</form>
-						<div class="btn-group d-flex">
-
-								<button type="button" class="btn btn-primary" id="IDsmooth">Smooth Line</button>
-								<button type="button" class="btn btn-primary" id="IDfill">Fill Line</button>
-								<button type="button" class="btn btn-primary invisible" id="IDlight">Light</button>
-
+						<div class="d-flex justify-content-center">
+							<div class="btn-group-toggle" data-toggle="buttons" >
+									<label class="btn btn-secondary">
+										<input type="checkbox"  autocomplete="off"  id="IDsmooth">Spline Curve
+									</label>
+							</div>
+							<div class="btn-group-toggle" data-toggle="buttons" >
+								<label class="btn btn-secondary ">
+									<input type="checkbox" checked autocomplete="off"  id="IDfill">Fill Curves
+								</label>
+							</div>
+							<div class="btn-group-toggle" data-toggle="buttons" >
+								<label class="btn btn-secondary">
+									<input type="checkbox" checked autocomplete="off"  id="IDShowPoints">Show Points
+								</label>
+							</div>
 						</div>
+
 					</div><!-- / card-body -->
 
 					<div class="card-footer">
-						<div class="d-flex justify-content-between">
+						<div class="d-flex justify-content-center">
 							<div class="btn-group">
 								<button type="button" class="btn btn-primary" data-toggle="button" id="IDPause">
 								Pause / Start</button>
-							</div>
-							<div class="btn-group">
-								<button type="button" class="btn btn-primary" id="IDSave" onClick="Download()">
-								Save Data ...</button>
-							</div>
-							<div class="btn-group">
-								<button type="button" class="btn btn-primary" id="IDDataReset">
-								Data Reset</button>
 							</div>
 						</div>
 					</div><!-- / card-footer -->
@@ -153,6 +177,16 @@
 							</table>
 							</div>
 						</form>
+					</div>
+					<div class="card-footer  d-flex justify-content-between">
+							<div class="btn-group">
+								<button type="button" class="btn btn-primary" id="IDSave" onClick="Download()">
+								Save Data ...</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#DataReset">
+								Data Reset</button>
+							</div>
 					</div>
 				</div>
 			</div><!-- / Data -->
