@@ -47,6 +47,8 @@
 	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.time.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.selection.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 
 	<base target="vzfBVwMAo2PBTsBIb4Aa">
@@ -163,7 +165,7 @@ About Dialog -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header bg-secondary">
 					<h5 class="modal-title" id="exampleModalLongTitle">About</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -171,11 +173,11 @@ About Dialog -->
 				</div>
 				<div class="modal-body">
 					<h1><img src="pict/logo.svg" height=100px>  SHMI</h1>
-					&copy; 2014 - 2020, by Thorsten Willert |
-					MIT license</a>
+					&copy; 2014 - 2020, by Thorsten Willert
 
-					<hr><h4>Verwendete Bilbliotheken:</h4>
-					<ul>
+					<hr>
+					<h4>Verwendete Bilbliotheken:</h4>
+					<ul id"=vbersion">
 					<li>jQuery <script> document.write( jQuery.fn.jquery ) </script></li>
 					<li>Bootstrap <script> document.write( $.fn.tooltip.Constructor.VERSION ) </script></li>
 					<li>Moment.js <script> document.write( moment.version ) </script></li>
@@ -185,6 +187,10 @@ About Dialog -->
 					<li>Flot.time</li>
 					<li>Peity</li>
 					</ul>
+					<hr>
+					<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/THWillert/SHMI?include_prereleases">&nbsp;
+					<img alt="GitHub Release Date" src="https://img.shields.io/github/release-date-pre/THWillert/SHMI">&nbsp;
+					<img alt="GitHub tag (lincense)" src="https://img.shields.io/github/license/THWillert/SHMI">&nbsp;
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
