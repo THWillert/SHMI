@@ -21,7 +21,7 @@ V0.1.5-beta 12.01.2020
   - added: preferences for update intervall digital values 
   - added: preferences for update intervall analog values
   - added: preferences for peak / valleys hold
-  ![Start](/images/SHMI_prefs_status.png)
+![Start](/images/SHMI_prefs_status.png)
   - changed: smaller spaces
   
 - index.htm:
