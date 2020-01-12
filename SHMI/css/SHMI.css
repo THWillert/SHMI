@@ -5,11 +5,7 @@
 }
  */
 .downlight {
-	box-shadow: 1px 1px 10px 2px black;
-}
-
-.shadow {
-	box-shadow: 4px 4px 20px #333;
+	box-shadow: 1px 1px 1.5em 0.1em var(--secondary);
 }
 /* table ======================================================================*/
 table {
