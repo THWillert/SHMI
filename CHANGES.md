@@ -1,3 +1,32 @@
+V0.1.5-beta 12.01.2020
+
+- SHMI_instruments.css:
+  - changed trasition of the progress bars
+  - changed background color of the instruments
+  - optimized file
+  
+- SHMI.css
+  - changed: shadow color on the top now the secondary color of the theme
+  
+- recorder.html / recorder.js
+  - added: tooltip for data points
+  - changed: support for curvedLines-plugin with splines-plugin
+  - changed: colors of min / max markers
+  - changed: BootstrapDialog.confirm updated to Bootstrap V4 modal
+  - changed: Button layout
+  - removed: "light" function
+   
+- status.html:
+  - added: colors depends now of the thems (css variables)
+  - added: preferences for update intervall digital values 
+  - added: preferences for update intervall analog values
+  - added: preferences for peak / valleys hold
+  ![Start](/images/SHMI_prefs_status.png)
+  - changed: smaller spaces
+  
+- index.htm:
+  - added: shields.io for SHMI
+
 V0.1.4-beta 09.01.2020
 
 - recorder.html: updated design ot the chart
