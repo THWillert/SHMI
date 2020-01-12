@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-09-01
+	Modified: 2020-10-01
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -20,7 +20,6 @@
 	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-
 
 //==============================================================================
 
@@ -81,49 +80,48 @@ $(function() {
 	choiceContainer.find("input").click(plotAccordingToChoices);
 //==============================================================================
 	var options = {
-			yaxis: {
-				min: 0
+		yaxis: {
+
+		},
+		xaxis: {
+			mode: "time",
+			timeformat: "%H:%M:%S",
+			minTickSize: [1, "second"]
+		},
+		series: {
+			lines: {
+				show: true,
+				lineWidth: 1.5,
+				fill: true,
+				steps: false,
+				fillColor:  { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] }
 			},
-			xaxis: {
-				mode: "time",
-				timeformat: "%H:%M:%S",
-				minTickSize: [1, "second"]
+			splines: {
+				show: false,
+				tension: 0.35,
+				lineWidth: 1.5,
+				fill:  0.10
 			},
-			series: {
-				lines: {
-					show: true,
-					lineWidth: 1.5,
-					fill: true,
-					steps: false,
-					fillColor:  { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] }
-				},
-				curvedLines: {
-					active: false,
-					apply:true,
-					fit:true,
-					curvePointFactor: 15,
-					fitPointDist: 10
-				},
-				points: {
-					show:true,
-					radius: 2.0,
-					symbol: "circle"
-				},
-				shadowSize: 0
+			points: {
+				show:true,
+				radius: 2.0,
+				symbol: "circle"
 			},
-			colors:  ["#F00"],
-			selection: {
-				mode: "x"
-			},
-			grid: {
-				hoverable: true,
-				markings: []
-			}
+			shadowSize: 0
+		},
+		colors:  ["#F00"],
+		selection: {
+			mode: "x"
+		},
+		grid: {
+			hoverable: true,
+			markings: []
 		}
+	}
 
 //==============================================================================
-// Tooltip in chart
-
+// Tooltip for datapoints in chart
+	/* Tooltip */
 	$("<div id='tooltip'></div>").css({
 			position: "absolute",
 			display: "none",
@@ -131,28 +129,30 @@ $(function() {
 			color: "white",
 			"text-align": "center",
 			"border-radius": "0.3em",
-			"background-color": "black",
-			opacity: 0.90
-		}).appendTo("body");
+			"background-color": "black"
+	}).appendTo("body");
 
-		$("#chart").bind("plothover", function (event, pos, item) {
+	/* Show tooltip */
+	$("#chart").bind("plothover", function (event, pos, item) {
 
-			if (!pos.x || !pos.y) return;
+		if (!pos.x || !pos.y) return;
 
-			if (item) {
-				var x = item.datapoint[0].toFixed(2),
-					y = item.datapoint[1].toFixed(2);
+		if (item) {
+			var x = item.datapoint[0].toFixed(2),
+				y = item.datapoint[1].toFixed(2);
 
-				$("#tooltip").html("<b>" + y + "</b><br>" + moment().format('HH:mm:ss'))
-					.css({top: item.pageY+5, left: item.pageX+5})
-					.fadeIn(200);
-			} else {
-				$("#tooltip").hide();}
-		});
+			/* shows value and time */
+			$("#tooltip").html( "<b>" + y + "</b><br>" + moment().format('HH:mm:ss') )
+				.css({top: item.pageY+5, left: item.pageX+5})
+				.fadeIn(200);
+		} else {
+			$("#tooltip").hide();}
+	});
 
-		$("#chart").bind("plothovercleanup", function (event, pos, item) {
-				$("#tooltip").hide();
-		});
+	/* Hide tooltip */
+	$("#chart").bind("plothovercleanup", function (event, pos, item) {
+			$("#tooltip").hide();
+	});
 //==============================================================================
 	function plotAccordingToChoices() {
 
@@ -177,15 +177,9 @@ $(function() {
 				show: true,
 				lineWidth: 1,
 				fill: true,
-				fillColor: { colors: [{ opacity: 0.0 },{ opacity: 0.05}, { opacity: 0.2}] },
+				fillColor: { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] },
 				steps: false
 			},
-			curvedLines: {
-					active:false,
-					fit:true,
-					apply:true,
-					curvePointFactor: 10
-				},
 			shadowSize: 0
 		},
 		xaxis: {
@@ -195,7 +189,6 @@ $(function() {
 		},
 		yaxis: {
 			ticks: [],
-			min: 0,
 			autoscaleMargin: 0.1
 		},
 		selection: {
@@ -243,8 +236,6 @@ $(function() {
 			document.getElementById("IDsmooth").setAttribute("disabled", "disabled");
 		};
 
-		if(c > 200) overview_options.series.curvedLines.curvePointFactor = 5;
-		if(c > 400) overview_options.series.curvedLines.active = false;
 		if(c > 3600 ) data.shift();
 		if(viewData.length > 120) viewData.shift();
 
@@ -252,25 +243,26 @@ $(function() {
 		if (newVal > max) max = newVal;
 		mid = ((max-min) / 2) + min;
 
-			options.grid.markings = [{
-				yaxis: { from: max, to: max }, color:"rgba(68,135,255)", lineWidth: 2 },{
-				yaxis: { from: min, to: min }, color:"rgba(0,215,145)", lineWidth: 2 },{
-				yaxis: { from: mid, to: mid }, color:"rgba(255,170,0)",lineWidth: 2 }
-				];
+		options.grid.markings = [{
+			yaxis: { from: max, to: max }, color:"rgba(255,170,0)", lineWidth: 2 },{
+			yaxis: { from: min, to: min }, color:"rgba(68,135,255)", lineWidth: 2 },{
+			yaxis: { from: mid, to: mid }, color:"grey",lineWidth: 2 }
+			];
+		// orange 0,215,145
 
-			data.push( [ moment() , newVal ] );
-			viewData.push( [ moment() , newVal ] );
+		data.push( [ moment() , newVal ] );
+		viewData.push( [ moment() , newVal ] );
 
-			if (pause == false) {
-				plot = $.plot('#chart',  [viewData] , options);
-				overview = $.plot('#overview',  [data], overview_options);
-				$(".cur_value").val( Round(newVal,2) + " " + einheit);
-				$(".min_value").val( Round(min,2) + " " + einheit);
-				$(".max_value").val( Round(max,2) + " " + einheit);
-				$(".avg_value").val( Round(mid,2) + " " + einheit);
+		if (pause == false) {
+			plot = $.plot('#chart',  [viewData] , options);
+			overview = $.plot('#overview',  [data], overview_options);
+			$(".cur_value").val( Round(newVal,2) + " " + einheit);
+			$(".min_value").val( Round(min,2) + " " + einheit);
+			$(".max_value").val( Round(max,2) + " " + einheit);
+			$(".avg_value").val( Round(mid,2) + " " + einheit);
 
-			};
-			$("#DataSize").val( c );
+		};
+		$("#DataSize").val( c );
 
 
 		setTimeout(GraphUpdate, UpdateInterval);
@@ -284,40 +276,49 @@ $(function() {
 
 //==============================================================================
 	$("#IDsmooth").click(function () {
-			options.series.curvedLines.active = ( options.series.curvedLines.active  ? false : true );
-			overview_options.series.curvedLines.active = ( overview_options.series.curvedLines.active  ? false : true );
-			options.series.points.show = ( options.series.points.show  ? false : true );
-			refreshGraph();
-		});
+
+		if (  options.series.lines.show ) {
+			options.series.lines.show = false;
+			options.series.splines.show = true;
+		} else {
+			options.series.lines.show = true;
+			options.series.splines.show = false;
+		};
+
+		refreshGraph();
+	});
 //==============================================================================
 	$("#IDfill").click(function () {
-			options.series.lines.fill = ( options.series.lines.fill  ? false : true );
-			refreshGraph();
-		});
-//==============================================================================
-	$("#IDlight").click(function () {
-			if ( $("#IDlight").hasClass('active') ) {
-				options.grid.backgroundColor = "#ccc";
-				options.xaxis.font= { size:12,color:"#ccc", weight: "normal"};
-				options.yaxis.font= { size:12,color:"#ccc", weight: "normal"};
 
-			} else {
-				options.grid.backgroundColor = "#fff";
-				options.xaxis.font= {size:12,color:"#fff", weight: "bold"};
-				options.yaxis.font= {size:12, color:"#fff", weight: "bold"};
-			};
-			refreshGraph();
-		});
+		options.series.lines.fill = ( options.series.lines.fill  ? false : true );
+		overview_options.series.lines.fill = options.series.lines.fill;
+
+		if ( options.series.splines.fill > 0 )
+			options.series.splines.fill = 0;
+		else
+			options.series.splines.fill = 0.15;
+
+		refreshGraph();
+	});
+
+//==============================================================================
+	$("#IDShowPoints").click(function () {
+
+		options.series.points.show = ( options.series.points.show  ? false : true );
+
+		refreshGraph();
+	});
+
 //==============================================================================
 	$("#IDmaxReset").click(function () {
-			max = 0;
-			mid = 0;
-		});
+		max = 0;
+		mid = 0;
+	});
 //==============================================================================
 	$("#IDminReset").click(function () {
-			min = max;
-			mid = 0;
-		});
+		min = max;
+		mid = 0;
+	});
 //==============================================================================
 	$("#IDPause").click(function () {
 		pause = ( pause ? false : true);
@@ -339,13 +340,9 @@ $(function() {
 	}
 //==============================================================================
 	$("#IDDataReset").click(function () {
-		BootstrapDialog.confirm('<div class="alert alert-warning">Really Reset Data?</div>', function(r) {
-		if (r) {
 			viewData = [];
 			data = [];
 			refreshGraph();
-		}
-		});
 	});
 //==============================================================================
 	$( window ).resize(function() {
