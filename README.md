@@ -237,4 +237,5 @@ Das ganze steht unter der [MIT](https://github.com/THWillert/SHMI/blob/master/LI
 
 ### Weitere
 - R&I Fließbild (RI_01.svg): [Von Con-struct - Eigenes Werk, CC BY-SA 3.0](https://commons.wikimedia.org/w/index.php?curid=18266732)
-.
+
+- Bootstrap Theme: [Von Thomas Park / Bootswatch, MIT](https://github.com/thomaspark/bootswatch)
