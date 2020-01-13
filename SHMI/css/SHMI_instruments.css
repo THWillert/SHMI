@@ -2,10 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-09.01.2020*/
-
-.nodisplay {
-	display: none; }
+13.01.2020*/
 .analog {
 	width: 5em;
 	text-align: center; }
@@ -13,11 +10,11 @@ License: MIT
 /* analog meter ===============================================================*/
 .progress {
     position: relative;
-    height: 25px;
+    height: 22px;
 	background: linear-gradient(to bottom, #00000022 0%,#66666622 100%) !important; }
 .progress-bar {
 	transition: width 1s ease-in-out; }
-/* colors are set in the jQuery init() */
+/* colors are set in the jQuery init() status.html */
 .progress > .progress-setpoint {
 	position: absolute;
 	height: inherit;
