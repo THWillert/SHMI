@@ -44,8 +44,6 @@
 	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/bootstrap-input-spinner.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
@@ -122,14 +120,13 @@
 
 				// color settings depending on theme
 					// color of the peaks bar
-					$('.progress-peak').css("border-right", "solid 0.5em var(--warning)" );
+					$('.progress-peak').css("border-right", "solid 0.5em rgb(255,170,0)" );
 
 					// color of the valleys bar
 					$('.progress-low').css("border-right", "solid 0.5em rgb(68,135,255)" );
-					//$('.progress-low').css("border-right", "solid 0.5em var(--info)" );
 
 					// color of the setpoint bar
-					$('.progress-setpoint').css("border-right", "solid 0.4em var(--white)") ;
+					$('.progress-setpoint').css("border-right", "solid 0.3em var(--white)") ;
 
 					// color of the digital IO bar
 					$('.digi_back').css("border", "solid 0.15em var(--secondary)" );
@@ -152,7 +149,7 @@
 
 
 			});
-			setTimeout(updateValuesD, updateIntervalD); // update intervall for all values
+			setTimeout(updateValuesD, updateIntervalD);
 		};
 		$(function(){updateValuesD();});
 
@@ -192,12 +189,11 @@
 
 
 			});
-			setTimeout(updateValuesA, updateIntervalA); // update intervall for all values
+			setTimeout(updateValuesA, updateIntervalA);
 		};
 		$(function(){updateValuesA();});
 
 		//==========================================================================
-
 
 		function relasePeak()
 		{
@@ -207,12 +203,9 @@
 				$("#ID_" + id + "_PK").val( Number.MIN_VALUE );
 				$("#ID_" + id + "_LO").val( Number.MAX_VALUE );
 			});
-			setTimeout(relasePeak, PeakInterval); // intervall for peak relase
-
-			//$(".progress-bar").css("transition-duration", updateIntervalA / 1000 / 2 + "s");
+			setTimeout(relasePeak, PeakInterval);
 		};
 		$(function(){relasePeak();});
-		//setTimeout(relasePeak, PeakInterval);
 
 	//==============================================================================
 	});
@@ -228,7 +221,7 @@
 				<div class="card shadow">
 					<div class="card-header">
 						 <a class="" data-toggle="collapse" href="#collapseDI" role="button" aria-expanded="false" aria-controls="collapseDI">
-						 <h5 class="card-title" id="TXT_DI">DI</h5>
+						 <div id="TXT_DI">DI</div>
 						 </a>
 					</div>
 					<div class="card-body collapse show" id="collapseDI">
@@ -241,7 +234,7 @@
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseDO" role="button" aria-expanded="false" aria-controls="collapseDO">
-						<h5 class="card-title" id="TXT_DO">DO</h5>
+						<div id="TXT_DO">DO</div>
 						</a>
 					</div>
 					<div class="card-body collapse show" id="collapseDO">
@@ -256,7 +249,7 @@
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseAI" role="button" aria-expanded="false" aria-controls="collapseAI">
-						<h5 class="card-title" id="TXT_AI">AI</h5>
+						<div id="TXT_AI">AI</div>
 						</a>
 					</div>
 					<div class="card-body collapse show" id="collapseAI">
@@ -277,7 +270,7 @@
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseAO" role="button" aria-expanded="false" aria-controls="collapseAO">
-						<h5 class="card-title" id="TXT_AO">AO</h5>
+						<div id="TXT_AO">AO</div>
 						</a>
 					</div>
 					<div class="card-body collapse show" id="collapseAO">
@@ -300,13 +293,13 @@
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapsePrefs" role="button" aria-expanded="false" aria-controls="collapsePrefs">
-						<h5 class="card-title" id="TXT_Prefs">Einstellungen</h5>
+						<div id="TXT_Prefs">Einstellungen</div>
 						</a>
 					</div>
 					<div class="card-body collapse" id="collapsePrefs">
 
 					<div class="container">
-						<h5>Analog</h5>
+						<h5 class="card-title" id="TXT_Prefs_A">Analog</h5>
 
 						<div class="row ">
 							<div class="col">
@@ -347,17 +340,18 @@
 								</select>
 							</div>
 							<div class="col">
-
+								<!--  -->
 							</div>
 						</div>
 
 						<hr>
-						<h5>Digital</h5>
+						<h5 class="card-title" id="TXT_Prefs_D">Digital</h5>
 
 						<div class="row ">
 							<div class="col">
 								Update Intervall
 							</div>
+							<!--<label for="ID_Prefs_Digi_Int"  class="col-sm-2 col-form-label">Intervall</label>-->
 							<div class="col" id="ID_Prefs_Digi_Int">
 								<select class="form-control form-control-sm" id="UpdateIntervalD" size="1" onChange="updateIntervalD=this.value*1000">
 									<option value="1" selected>1 sec.</option>
@@ -369,7 +363,7 @@
 								</select>
 							</div>
 							<div class="col">
-
+								<!--  -->
 							</div>
 						</div>
 					</div>
