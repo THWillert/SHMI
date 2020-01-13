@@ -60,7 +60,7 @@
 <div class="modal fade" id="DataReset" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content border-warning">
-      <div class="modal-header bg-warning">
+      <div class="modal-header bg-warning text-white">
         <h5 class="modal-title" id="exampleModalLongTitle">Reset</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -71,7 +71,7 @@
         Daten wirklich zurücksetzen?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-warning" id="IDDataReset">Reset</button>
       </div>
     </div>
@@ -100,14 +100,14 @@
 			<div class="col-md-6 p-3" ><!-- Control -->
 				<div class="card card-default shadow">
 					<div class="card-header">
-						<h5 class="card-title">Control</h5>
+						<div>Einstellungen</div>
 					</div>
 
 					<div class="card-body">
 						<form>
 							<div class="form-row p-3">
 								<div class="col" id="ID_analog_sel">
-									Data source:
+									Datenquelle:
 									<select class="form-control form-control-sm" id="IDdataSelect"></select>
 								</div>
 								<div class="col" id="updateInt">
@@ -151,7 +151,7 @@
 			<div class="col-md-6 hidden-xs p-3">
 				<div class="card card-default shadow">
 					<div class="card-header">
-						<h5 class="card-title">Data</h5>
+						<div>Data</div>
 					</div>
 					<div class="card-body">
 						<form>
@@ -198,4 +198,3 @@
 
 </body>
 </html>
-
