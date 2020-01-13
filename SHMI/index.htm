@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-08-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-13-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -62,11 +62,10 @@
 		var toggle = 0;
 
 		$(".liveBit").peity("bar")
+		$(".bar-colours-1").peity("bar", {
+		  fill: ["var(--light)"]
+		})
 
-		/*
-		$(function () {
-				$('[data-toggle="tooltip"]').tooltip()
-		})*/
 	//==============================================================================
 	// Time in footer
 		moment.lang("de", moment_de);
@@ -153,7 +152,7 @@ Header and navigation -->
 						<a href="ri_03.html" class="dropdown-item">Fließbild V3</a>
 					</div>
 				</li>
-				<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" id="IDabout">About</a></li>
+				<li class="nav-item"><a class="nav-link cursor-pointer" data-toggle="modal" data-target="#exampleModalCenter" id="IDabout">About</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -165,7 +164,7 @@ About Dialog -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header bg-secondary">
+				<div class="modal-header bg-primary text-white">
 					<h5 class="modal-title" id="exampleModalLongTitle">About</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -193,7 +192,7 @@ About Dialog -->
 					<img alt="GitHub tag (lincense)" src="https://img.shields.io/github/license/THWillert/SHMI">&nbsp;
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
@@ -205,7 +204,7 @@ About Dialog -->
 	Unhide it for debugging -->
 
 	<!-- <div  style="position:relative;top:80px;z-index:100;"> -->
-	<div  style="height:0;position:relative;top:80px;z-index:100;visibility: hidden;">
+	<div  style="height:0;position:relative;top:80px;z-index:100;" class="nodisplay">
 
 	<div class="col-md-3" style="height:0">
 		<div class="card panel-default">
@@ -220,7 +219,7 @@ About Dialog -->
 
 <!-- ==============================================================================
 Pages -->
-	<div style="position:relative;top:55px;">
+	<div id="pageContainer" style="position:relative;top:55px;height:1200px;overflow:hidden;">
 		<iframe
 			id="content"
 			name="vzfBVwMAo2PBTsBIb4Aa"
@@ -233,9 +232,7 @@ Pages -->
 Footer -->
 	<div class="bg-dark" style="width:100%;position:fixed;bottom:0px;border-color:#000;text-align:right;box-shadow: 3px 3px 10px black;padding-top:3px;color:white">
 	<span
-		class="liveBit"
-		data-placement="top"
-		data-toggle="tooltip"
+		class="liveBit bar-colours-1"
 		id="liveBit"
 		style="display:inline-block;border:20px;"
 		title="Live-Bit"
