@@ -5,7 +5,7 @@
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
-	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/recorder.html">
+	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_recorder.html">
 	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
 	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
 	<meta name="DC.title"         content="Dublin Core" />
@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-12-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-16-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -43,15 +43,26 @@
 
 	<script language="javascript" type="text/javascript" src="./js/main.js" async></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/bootstrap-dialog.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/moment.min.js" async></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.time.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.selection.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.spline.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.canvaswrapper.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.colorhelpers.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/recorder.js"></script>
+
+	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/moment.min.js" async></script>
+	<script language="javascript" type="text/javascript" src="./js/simple-statistics.min.js"></script>
+
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.saturated.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.browser.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.drawSeries.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.uiConstants.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.time.min.js"></script>
+
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.hover.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.selection.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.flot.spline.min.js"></script>
+
+	<script language="javascript" type="text/javascript" src="./js/SHMI_recorder.js"></script>
 
 
 </head>
@@ -71,8 +82,8 @@
         Daten wirklich zurücksetzen?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-warning" id="IDDataReset">Reset</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
@@ -114,8 +125,57 @@
 									Update Interval (sec):
 									<select class="form-control form-control-sm" id="updateInterval" size="1" onChange="UpdateInterval=this.value"></select>
 								</div>
+								<div class="col" id="updateInt">
+									Auto Zoom:
+									<select class="form-control form-control-sm" id="ID_AutoZoom" size="1">
+										<option type="select" name="AutoZoom" value="0">Off</option>
+										<option type="select" name="AutoZoom" value="10">Fit loosely</option>
+										<option type="select" name="AutoZoom" value="11">Fit exactly</option>
+										<option type="select" name="AutoZoom" value="20">Grow loosley</option>
+										<option type="select" name="AutoZoom" value="21">Grow exactly</option>
+										<option type="select" name="AutoZoom" value="30">Slding Window</option>
+									</select>
+								</div>
+								<!--
+								<div class="col" id="updateInt">
+									Time Scale:
+									<select class="form-control form-control-sm" id="ID_TimeScale" size="1" onChange="TimeScale=this.value">
+										<option type="select" name="" value="60">1</option>
+										<option type="select" name="" value="300">5</option>
+										<option type="select" name="" value="1500">15</option>
+										<option type="select" name="" value="3000">30</option>
+										<option type="select" name="" value="6000">60</option>
+									</select>
+								</div>-->
+							</div>
+							<div class="form-row p-3">
+								<div class="col" id="ID_smooth">
+									Statistics:
+									<select class="form-control form-control-sm" id="ID_Smooth" size="1"  onChange="smoothType=parseInt(this.value)">
+										<option type="select" name="" value="0" title="Simple Moving Average">SMA</option>
+										<option type="select" name="" value="1" title="Median">Median</option>
+										<option type="select" name="" value="2" title="Root Mean Square">RMS</option>
+									</select>
+								</div>
+								<div class="col" id="ID_smooth">
+									Statistics sample:
+									<select class="form-control form-control-sm" id="ID_Smooth" size="1"  onChange="fag_Average = [];smooth=parseFloat(this.value)">
+										<option type="select" name="" value="0">Off</option>
+										<option type="select" name="" value="3">3</option>
+										<option type="select" name="" value="5" selected>5</option>
+										<option type="select" name="" value="7">7</option>
+										<option type="select" name="" value="9">9</option>
+										<option type="select" name="" value="11">11</option>
+										<option type="select" name="" value="13">13</option>
+										<option type="select" name="" value="15">15</option>
+										<option type="select" name="" value="30">30</option>
+										<option type="select" name="" value="45">45</option>
+										<option type="select" name="" value="60">60</option>
+									</select>
+								</div>
 							</div>
 						</form>
+
 						<div class="d-flex justify-content-center">
 							<div class="btn-group-toggle" data-toggle="buttons" >
 									<label class="btn btn-secondary">
@@ -198,3 +258,4 @@
 
 </body>
 </html>
+
