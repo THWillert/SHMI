@@ -1,3 +1,16 @@
+V0.2.0-beta 16.01.2020
+
+- minified all JavaScript-files
+- recorder.html renamed to SHMI_recorder.html (SHMI_recorder.js)
+  - updated Flot
+  - added statistics curve (SMA, median or RMs)
+  - added auto zoom functions
+  ![Start](/images/SHMI_Recorder_2.png)
+  
+- status.html renamed to SHMI_status.html
+- ri_01.html renamed to SHMI_RI_01.html
+  - updated layout
+
 V0.1.5-beta 12.01.2020
 
 - SHMI_instruments.css:
