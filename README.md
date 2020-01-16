@@ -217,8 +217,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Recorder / Kurven
 
-- [ ] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
-- [ ] Min / Max Anzeige in Recorder auf Plugin umstellen
+- [x] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
 - [ ] Oberfläche optimieren
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
@@ -226,6 +225,15 @@ Reihenfolge entspricht nicht der Priorität:
 #### Fließbilder
 
 - [ ] Werte in Bild anzeigen
+
+## Benutzte Bibliotheken
+
+- [jQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Flot](http://www.flotcharts.org/)
+- [Moment.js](https://momentjs.com/)
+- [Peity](http://benpickles.github.io/peity/)
+- [Simple Statistics](https://simplestatistics.org/)
 
 ## Author
 Thorsten Willert
