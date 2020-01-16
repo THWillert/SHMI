@@ -5,7 +5,7 @@
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
-	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/ri.html">
+	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_ri_01.html">
 	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
 	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
 	<meta name="DC.title"         content="Dublin Core" />
@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-07-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-16-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -75,29 +75,34 @@
 	</script>
 </head>
 <body>
-<p>
-	<div id="IDpanel" class="main col-md-12">
-	<div class="card card-default shadow">
-		<div class="card-header">
-			<h5 class="card-title">Fließbild</h5>
-		</div>
-		<div class="card-body">
-			<div id="IDpict" class="bg-light" style="background-color:#ccc">
-				<img src="./pict/RI_01.svg" data-zoom-image="./pict/RI_01.svg" alt="RI_01" id="IDimg" class="img-fluid">
-			</div
-			<hr>
-			<p>
-			<div class="btn-group d-flex">
-				<div class="btn-group btn-group-sm flex-fill">
-					<input type="button" class="btn btn-primary" data-toggle="button" id="IDlight" value="Light">
-				</div>
-				<div class="btn-group btn-group-sm flex-fill">
-					<input type="button" class="btn btn-primary" data-toggle="button" id="IDrotate" value="Rotate 90°">
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
+	<div class="main w100 container-fluid">
+			<div class="row" id="IDpanel">
+				<div class="col-md-12 p-3">
+					<div class="card card-default shadow">
+
+						<div class="card-header">
+							<h5 class="card-title">Fließbild</h5>
+						</div><!-- /header -->
+
+						<div class="card-body">
+							<div id="IDpict" class="bg-light">
+								<img src="./pict/RI_01.svg" data-zoom-image="./pict/RI_01.svg" alt="RI_01" id="IDimg" class="img-fluid">
+							</div
+						</div><!-- /body -->
+
+						<div class="card-footer d-flex">
+							<div class="btn-group btn-group-sm flex-fill">
+								<input type="button" class="btn btn-primary" data-toggle="button" id="IDlight" value="Light">
+							</div>
+							<div class="btn-group btn-group-sm flex-fill">
+								<input type="button" class="btn btn-primary" data-toggle="button" id="IDrotate" value="Rotate 90°">
+							</div>
+						</div><!-- /footer -->
+
+					</div><!-- /card -->
+				</div><!-- /col -->
+			</div><!-- /row -->
+	</div><!-- /main -->
 </body>
 </html>
 
