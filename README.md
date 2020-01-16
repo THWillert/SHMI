@@ -21,7 +21,7 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
-![Start](/images/SHMI_Chart.png)
+![Start](/images/SHMI_Recorder_2.png)
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 
 ![Start](/images/SHMI_index_01.png)
