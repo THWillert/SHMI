@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-16-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-17-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -111,12 +111,14 @@
 			<div class="col-md-6 p-3" ><!-- Control -->
 				<div class="card card-default shadow">
 					<div class="card-header">
+						<a class="" data-toggle="collapse" href="#collapsePrefs" role="button" aria-expanded="false" aria-controls="collapsePrefs">
 						<div>Einstellungen</div>
+						</a>
 					</div>
 
-					<div class="card-body">
+					<div class="card-body collapse show" id="collapsePrefs">
 						<form>
-							<div class="form-row p-3">
+							<div class="form-row p-2">
 								<div class="col" id="ID_analog_sel">
 									Datenquelle:
 									<select class="form-control form-control-sm" id="IDdataSelect"></select>
@@ -131,7 +133,7 @@
 										<option type="select" name="AutoZoom" value="0">Off</option>
 										<option type="select" name="AutoZoom" value="10">Fit loosely</option>
 										<option type="select" name="AutoZoom" value="11">Fit exactly</option>
-										<option type="select" name="AutoZoom" value="20">Grow loosley</option>
+										<option type="select" name="AutoZoom" value="20" selected>Grow loosley</option>
 										<option type="select" name="AutoZoom" value="21">Grow exactly</option>
 										<option type="select" name="AutoZoom" value="30">Slding Window</option>
 									</select>
@@ -148,7 +150,7 @@
 									</select>
 								</div>-->
 							</div>
-							<div class="form-row p-3">
+							<div class="form-row p-2">
 								<div class="col" id="ID_smooth">
 									Statistics:
 									<select class="form-control form-control-sm" id="ID_Smooth" size="1"  onChange="smoothType=parseInt(this.value)">
@@ -162,10 +164,10 @@
 									<select class="form-control form-control-sm" id="ID_Smooth" size="1"  onChange="fag_Average = [];smooth=parseFloat(this.value)">
 										<option type="select" name="" value="0">Off</option>
 										<option type="select" name="" value="3">3</option>
-										<option type="select" name="" value="5" selected>5</option>
+										<option type="select" name="" value="5">5</option>
 										<option type="select" name="" value="7">7</option>
 										<option type="select" name="" value="9">9</option>
-										<option type="select" name="" value="11">11</option>
+										<option type="select" name="" value="11" selected>11</option>
 										<option type="select" name="" value="13">13</option>
 										<option type="select" name="" value="15">15</option>
 										<option type="select" name="" value="30">30</option>
@@ -211,31 +213,35 @@
 			<div class="col-md-6 hidden-xs p-3">
 				<div class="card card-default shadow">
 					<div class="card-header">
+						<a class="" data-toggle="collapse" href="#collapseData" role="button" aria-expanded="false" aria-controls="collapseData">
 						<div>Data</div>
+						</a>
 					</div>
-					<div class="card-body">
+					<div class="card-body collapse show" id="collapseData">
 						<form>
+
 							<div class="table-responsive">
-							<table class="table">
+							<table class="table table-borderless">
 								<tr>
-									<th>Current value</th><th>Minimum</th><th>Average</th><th>Maximum</th><th>Data-Points</th>
+									<td>Current value</td><td>Minimum</td><td>Average</td><td>Maximum</td><td>Data-Points</td>
 								</tr>
 								<tr>
-									<td><input id="current_value" class="cur_value analog input-sm"></td>
-									<td><input id="min" class="min_value analog  input-sm" ></td>
-									<td><input id="mid" class="avg_value analog input-sm"></td>
-									<td><input id="max" class="max_value analog  input-sm"></td>
-									<td><input id="DataSize" class="analog input-sm"></td>
+									<td><input id="current_value" class="cur_value analog input-sm" readonly></td>
+									<td><input id="min" class="min_value analog  input-sm" readonly></td>
+									<td><input id="mid" class="avg_value analog input-sm" readonly></td>
+									<td><input id="max" class="max_value analog  input-sm" readonly></td>
+									<td><input id="DataSize" class="analog input-sm" disabled></td>
 								</tr>
 								<tr>
 									<td></td>
-									<td><input type="button" class="btn btn-primary form-control" id="IDminReset" value="Reset"></td>
+									<td><input type="button" class="btn btn-outline-warning form-control" id="IDminReset" value="Reset"></td>
 									<td></td>
-									<td><input type="button" class="btn btn-primary form-control" id="IDmaxReset" value="Reset"></td>
+									<td><input type="button" class="btn btn-outline-warning form-control" id="IDmaxReset" value="Reset"></td>
 									<td></td>
 								</tr>
 							</table>
 							</div>
+
 						</form>
 					</div>
 					<div class="card-footer  d-flex justify-content-between">
