@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-16-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-17-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -162,7 +162,7 @@ About Dialog -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header bg-primary text-white">
+				<div class="modal-header bg-primary">
 					<h5 class="modal-title" id="exampleModalLongTitle">About</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -179,10 +179,8 @@ About Dialog -->
 					<li>Bootstrap <script> document.write( $.fn.tooltip.Constructor.VERSION ) </script></li>
 					<li>Moment.js <script> document.write( moment.version ) </script></li>
 					<li>Flot <script> document.write( $.plot.version ) </script></li>
-					<li>Flot.curved</li>
-					<li>Flot.selection</li>
-					<li>Flot.time</li>
 					<li>Peity</li>
+					<li>Simple Statistics</li>
 					</ul>
 					<hr>
 					<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/THWillert/SHMI?include_prereleases">&nbsp;
@@ -217,12 +215,14 @@ About Dialog -->
 
 <!-- ==============================================================================
 Pages -->
-	<div id="pageContainer" style="position:relative;top:55px;height:1200px;overflow:hidden;">
+	<div id="pageContainer" class="embed-responsive embed-responsive-1by1">
 		<iframe
+			class="embed-responsive-item"
 			id="content"
 			name="vzfBVwMAo2PBTsBIb4Aa"
 			scrolling="auto"
 			src="SHMI_status.html"
+			allowfullscreen
 		></iframe>
 	</div>
 
