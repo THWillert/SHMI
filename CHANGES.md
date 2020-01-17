@@ -9,7 +9,7 @@ V0.2.2-beta 17.01.2020
 
 - SHMI_recorder.html / SHMI_recorder.js
   - changed layout
-  - changed default preferences
+  - changed default preferences (first analog-value viewed, SMA / 11, Zoom: Grow loosley)
   - added "collapse" to the cards:
  ![Start](/images/SHMI_Recorder_3.png)
 
