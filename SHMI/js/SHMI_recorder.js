@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-16-01
+	Modified: 2020-17-01
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -24,10 +24,10 @@
 //==============================================================================
 
 var UpdateInterval = 1000;
-var smooth = 10;
+var smooth = 11;
 var smoothType = 0;
 var data = [];
-var einheit = "";
+var einheit = "%";
 var fag_Average = [0];
 
 //==============================================================================
@@ -45,12 +45,21 @@ $(function() {
 
 	function DataSelectOptions() {
 		var oOption;
+		var bSelect = false;
+
 		parent.top.$("#IDdata").find("input").each( function() {
 			id = this.id;
 
 			oOption = document.createElement("option");
 			oOption.text = id;
 			oOption.value = id;
+
+			// select first analog chanel
+			if ( bSelect == false && id.indexOf("A") != -1 ) {
+				oOption.selected = "selected";
+				bSelect = true;
+			};
+
 			document.getElementById("IDdataSelect").add(oOption);
 
 		});
@@ -85,9 +94,11 @@ $(function() {
 //==============================================================================
 	var options = {
 		yaxis: {
-			autoScale: 'none',
-			datamin: '0',
-			datamax: '100'
+			autoScale: 'loose',
+			autoScaleMargin: 0.1,
+			growOnly: true,
+			datamin: 0,
+			datamax: 100
 		},
 		xaxis: {
 			mode: "time",
@@ -341,7 +352,7 @@ $(function() {
                 case '11':
                     options.yaxis.autoScale = "exact";
                     break;
-                case '20':
+                case '20': // default
                     options.yaxis.autoScaleMargin = 0.1;
                     options.yaxis.autoScale = "loose";
                     options.yaxis.growOnly = true;
