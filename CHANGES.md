@@ -1,3 +1,22 @@
+V0.2.2-beta 17.01.2020
+
+- index.htm
+  - updated iframe
+  
+- SHMI.css
+  - updated iframe
+  - removed some unused selectors
+
+- SHMI_recorder.html / SHMI_recorder.js
+  - changed layout
+  - changed default preferences
+  - added "collapse" to the cards:
+ ![Start](/images/SHMI_Recorder_3.png)
+
+V0.2.1-beta 16.01.2020
+
+- fixed some errors in index.htm
+
 V0.2.0-beta 16.01.2020
 
 - minified all JavaScript-files
