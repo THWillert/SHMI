@@ -175,7 +175,9 @@ Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 
 ### Design der Oberfläche
 
-Die Datei `css/bootstrap.min.css` gegen die entsrechende Theme-Datei austauschen.
+Die Datei `css/bootstrap.min.css` gegen die entsprechende Theme-Datei austauschen.
+
+Für ein "flaches" Design die Datei `css/SGMI_glow.css` umbenennen.
 
  
 ## Diskussion / Vorschläge
