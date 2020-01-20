@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-16-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-20-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -41,12 +41,13 @@
 
 	<script language="javascript" type="text/javascript" src="./js/main.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	<!--<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>-->
+	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 
 	<script type='text/javascript'>
 
@@ -70,17 +71,19 @@
 
 				if ( id.indexOf("SP") == -1){
 					if ( id.indexOf("DI") != -1) {
-						digital_in_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-success">&nbsp;</span></div></td></tr>');
+						digital_in_container.append('<tr><td id="TXT_' + id + '"></td>' +
+								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-success">&nbsp;</span></div></td>' +
+								'</tr>');
 					} else if ( id.indexOf("DO") != -1) {
-						digital_out_container.append('<tr><td width="300px" id="TXT_' + id + '"></td>' +
-								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-danger">&nbsp;</span></div></td></tr>');
+						digital_out_container.append('<tr><td id="TXT_' + id + '"></td>' +
+								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-danger">&nbsp;</span></div></td></tr>' +
+								'</tr>');
 					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
 						analog_in_container.append(
-								'<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<tr><td width="200em" id="TXT_' + id + '"></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="70%">' +
+								'<td width="60%">' +
 									'<div class="progress">' +
 										'<div id="ID_' + id + '_M" class="progress-bar bg-success" role="progressbar"></div>' +
 										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
@@ -88,14 +91,15 @@
 										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
 									'</div>' +
 								'<td><input class="nodisplay analog" id="ID_' + id + '_LO" ><input class="nodisplay analog" id="ID_' + id + '_PK" ></td>' +
+								'<td><span id="ID_' + id + '_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
 								'</tr>');
 
 					}  else if ( id.indexOf("AO") != -1) {
 						analog_out_container.append(
-								'<tr><td width="300px" id="TXT_' + id + '"></td>' +
+								'<tr><td width="200em" id="TXT_' + id + '"></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="70%">' +
+								'<td width="60%">' +
 									'<div class="progress">' +
 										'<div id="ID_' + id + '_M" class="progress-bar bg-danger" role="progressbar"></div>' +
 										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
@@ -103,6 +107,7 @@
 										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
 									'</div>' +
 								'<td><input class="nodisplay analog" id="ID_' + id + '_LO" ><input class="nodisplay analog" id="ID_' + id + '_PK" ></td>' +
+								'<td id="ID_' + id + '_td_spark"><span id="ID_' + id + '_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
 								'</tr>');
 					};
 				};
@@ -131,6 +136,22 @@
 					// color of the digital IO bar
 					$('.digi_back').css("border", "solid 0.15em var(--secondary)" );
 
+					$(".peity-ai").peity("line", {
+							fill: ["var(--sparkline_ai_fill)"],
+							stroke: "var(--sparkline_ai_stroke)",
+							min: 0,
+							max: 100,
+							width: 128
+					});
+
+					$(".peity-ao").peity("line", {
+							fill: ["var(--sparkline_ao_fill)"],
+							stroke: "var(--sparkline_ao_stroke)",
+							min: 0,
+							max: 100,
+							width: 128
+					});
+
 				});
 
 			$("#ID_PeakHold_Reset").click(function () {
@@ -142,11 +163,16 @@
 	//==============================================================================
 		function updateValuesD()
 		{
+			var val, id;
+			var updatingChart;
+			var values;
+
 			parent.top.$("#IDdata").find("input").each( function() {
+				val = this.value;
+				id = this.id;
 
 				// digital
-				$("#ID_" + this.id + "_D" ).css("opacity",  this.value );
-
+				$("#ID_" + id + "_D" ).css("opacity", val );
 
 			});
 			setTimeout(updateValuesD, updateIntervalD);
@@ -160,33 +186,47 @@
 		var val;
 		var peak;
 		var low;
+
+		var updatingChart;
+		var values;
+		var chartWidth;
+
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
 				val = Round( this.value,2);
 
-				// fill forms
+				// fill forms --------------------------------------------------
 				$("#IDAnalogIO").find( "." + id).each( function() {
 					this.value = parseFloat(val).toFixed(2);
 				});
 
-				// analog meter
+				// analog meter ------------------------------------------------
 				$("#ID_" + id + "_M" ).css("width",    val + "%" );
 
-				 // analog meter setpoint
+				 // analog meter setpoint --------------------------------------
 				$("#ID_" + id + "_SP").css("width",    val + "%" );
 
-				// analog meter peak
+				// analog meter peak -------------------------------------------
 				peak = $("#ID_" + id + "_PK");
 				if ( val >  peak.val() )
 					peak.val( val ); // max
 				$("#ID_" + id + "_P" ).css("width",    peak.val()  + "%" ); // peak
 
-				// analog meter low
+				// analog meter low --------------------------------------------
 				low = $("#ID_" + id + "_LO");
 				if ( val <  low.val() )
 					low.val( val ); // min
 				$("#ID_" + id + "_L" ).css("width",    low.val()  + "%" ); // low
 
+				// sparklines --------------------------------------------------
+				updatingChart = $("#ID_" + id + "_spark" ).peity("line")
+				values = updatingChart.text().split(",")
+				values.shift()
+				values.push(Round(val,0))
+
+				updatingChart
+					.text(values.join(","))
+					.change()
 
 			});
 			setTimeout(updateValuesA, updateIntervalA);
@@ -217,7 +257,7 @@
 	<div class="main container-fluid W100">
 		<div class="row p-2">
 			<!-- Digital input ------------------------------------------------------------>
-			<div class="col-md-6 p-2">
+			<div class="col-md-6 p-2" id="ID_DI">
 				<div class="card shadow">
 					<div class="card-header">
 						 <a class="" data-toggle="collapse" href="#collapseDI" role="button" aria-expanded="false" aria-controls="collapseDI">
@@ -230,7 +270,7 @@
 				</div>
 			</div>
 			<!-- Digital output ----------------------------------------------------------->
-			<div class="col-md-6 p-2">
+			<div class="col-md-6 p-2" id="ID_DO">
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseDO" role="button" aria-expanded="false" aria-controls="collapseDO">
@@ -245,7 +285,7 @@
 		</div>
 		<div class="row p-2" id="IDAnalogIO">
 			<!-- Analog input ------------------------------------------------------------->
-			<div class="col-md-12 p-2">
+			<div class="col-md-12 p-2" ID="ID_AI">
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseAI" role="button" aria-expanded="false" aria-controls="collapseAI">
@@ -260,13 +300,14 @@
 							<th id="TXT_Value_AI">Value</th>
 							<th></th>
 							<th id="TXT_Peak_AI"></th>
+							<th></th>
 							</tr>
 						</table>
 					</div>
 				</div>
 			</div>
 			<!-- Analog output ------------------------------------------------------------>
-			<div class="col-md-12 p-2">
+			<div class="col-md-12 p-2" ID="ID_AO">
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseAO" role="button" aria-expanded="false" aria-controls="collapseAO">
@@ -281,6 +322,7 @@
 							<th id="TXT_Value_AO">Value</th>
 							<th></th>
 							<th id="TXT_Peak_AO"></th>
+							<th></th>
 							</tr>
 						</table>
 					</div>
@@ -301,7 +343,7 @@
 					<div class="container">
 						<h5 class="card-title" id="TXT_Prefs_A">Analog</h5>
 
-						<div class="row ">
+						<div class="row p-1">
 							<div class="col">
 								Peak hold
 							</div>
@@ -325,7 +367,7 @@
 							</div>
 						</div>
 
-						<div class="row ">
+						<div class="row p-1">
 							<div class="col">
 								Update Intervall
 							</div>
@@ -347,7 +389,7 @@
 						<hr>
 						<h5 class="card-title" id="TXT_Prefs_D">Digital</h5>
 
-						<div class="row ">
+						<div class="row p-1">
 							<div class="col">
 								Update Intervall
 							</div>
