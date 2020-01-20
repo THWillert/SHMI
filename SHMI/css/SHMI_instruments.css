@@ -26,7 +26,7 @@ License: MIT
 .progress > .progress-setpoint {
 	position: absolute;
 	height: inherit;
-	left: -2em;
+	left: 0em;
 	background-color: rgba(25, 25, 25, 0.4);}
 /* colors are set in the jQuery init() status.html */
 .progress > .progress-peak {
@@ -37,6 +37,20 @@ License: MIT
 	position: absolute;
 	height: inherit;
 	transition: width 1s linear; }
+
+/* scale --------------------------- */
+.scale-table {
+	table-layout: fixed;
+    width: 100%;
+	color: var(--secondary);
+	font-weight: normal;
+	font-size: 0.9em;
+    text-align: center;
+}
+.scale td  {
+    width: 10%;
+	white-space: nowrap;
+}
 
 /* digital IO =================================================================*/
 /* border are set in the jQuery init() */
