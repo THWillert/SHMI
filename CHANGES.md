@@ -1,3 +1,11 @@
+V0.2.3-beta 20.01.2020
+
+- SHMI_status.html
+  - added sparklines for the analog values
+  
+- CSS
+  - added SHMI_glow.css (if you rename it, you have the flat-design back)
+
 V0.2.2-beta 17.01.2020
 
 - index.htm
