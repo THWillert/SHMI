@@ -83,12 +83,13 @@
 								'<tr><td width="200em" id="TXT_' + id + '"></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="60%">' +
+								'<td width="65%" style="padding-right: 1em;padding-left: 1em">' +
 									'<div class="progress">' +
 										'<div id="ID_' + id + '_M" class="progress-bar bg-success" role="progressbar"></div>' +
 										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
 										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
 										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
+										//'<ul id="scale"><li style="width: 5%"><span></span></li><li><span id="scale">10</span></li><li><span id="scale">20</span></li> <li><span id="scale">30</span></li><li><span id="scale">40</span></li> <li><span id="scale"><b>50</b></span></li><li><span id="scale">60</span></li> <li><span id="scale">70</span></li> <li><span id="scale">80</span></li><li><span id="scale">90</span></li><li style="width: 5%"><span id="scale"></span></li></ul>' +
 									'</div>' +
 								'<td><input class="nodisplay analog" id="ID_' + id + '_LO" ><input class="nodisplay analog" id="ID_' + id + '_PK" ></td>' +
 								'<td><span id="ID_' + id + '_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
@@ -99,12 +100,13 @@
 								'<tr><td width="200em" id="TXT_' + id + '"></td>' +
 								'<td><input class="analog ' + id + '_SP" disabled></td>' +
 								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="60%">' +
+								'<td width="65%" style="padding-right: 1em;padding-left: 1em">' +
 									'<div class="progress">' +
 										'<div id="ID_' + id + '_M" class="progress-bar bg-danger" role="progressbar"></div>' +
 										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
 										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
 										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
+										//'<ul id="scale"><li style="width: 5%"><span></span></li><li><span id="scale">10</span></li><li><span id="scale">20</span></li> <li><span id="scale">30</span></li><li><span id="scale">40</span></li> <li><span id="scale"><b>50</b></span></li><li><span id="scale">60</span></li> <li><span id="scale">70</span></li> <li><span id="scale">80</span></li><li><span id="scale">90</span></li><li style="width: 5%"><span id="scale"></span></li></ul>' +
 									'</div>' +
 								'<td><input class="nodisplay analog" id="ID_' + id + '_LO" ><input class="nodisplay analog" id="ID_' + id + '_PK" ></td>' +
 								'<td id="ID_' + id + '_td_spark"><span id="ID_' + id + '_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
@@ -298,7 +300,23 @@
 							<th></th>
 							<th id="TXT_Setpoint_AI">Setpoint</th>
 							<th id="TXT_Value_AI">Value</th>
-							<th></th>
+							<th id="ID_Scale_AI">
+								<table class="scale-table">
+									<tr>
+										<td class="scale" style="width: 5%"></td>
+										<td class="scale">10</td>
+										<td class="scale"><span class="d-none d-lg-block">20</span></td>
+										<td class="scale">30</td>
+										<td class="scale"><span class="d-none d-lg-block">40</span></td>
+										<td class="scale">50</td>
+										<td class="scale"><span class="d-none d-lg-block">60</span></td>
+										<td class="scale">70</td>
+										<td class="scale"><span class="d-none d-lg-block">80</span></td>
+										<td class="scale">90</td>
+										<td class="scale" style="width: 5%"></td>
+									</tr>
+								</table>
+							</th>
 							<th id="TXT_Peak_AI"></th>
 							<th></th>
 							</tr>
@@ -320,7 +338,23 @@
 							<th></th>
 							<th id="TXT_Setpoint_AO">Setpoint</th>
 							<th id="TXT_Value_AO">Value</th>
-							<th></th>
+							<th id="ID_Scale_AI">
+								<table class="scale-table">
+									<tr>
+										<td class="scale" style="width: 5%"></td>
+										<td class="scale">10</td>
+										<td class="scale"><span class="d-none d-lg-block">20</span></td>
+										<td class="scale">30</td>
+										<td class="scale"><span class="d-none d-lg-block">40</span></td>
+										<td class="scale">50</td>
+										<td class="scale"><span class="d-none d-lg-block">60</span></td>
+										<td class="scale">70</td>
+										<td class="scale"><span class="d-none d-lg-block">80</span></td>
+										<td class="scale">90</td>
+										<td class="scale" style="width: 5%"></td>
+									</tr>
+								</table>
+							</th>
 							<th id="TXT_Peak_AO"></th>
 							<th></th>
 							</tr>
