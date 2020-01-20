@@ -8,6 +8,7 @@ body {
 .downlight {
 	box-shadow: 1px 1px 2em 0.1em black;
 }
+
 /* table ======================================================================*/
 
 #ID_DI td, #ID_DO td {
@@ -19,6 +20,9 @@ body {
 	white-space: nowrap;
 }
 
+#ID_AI td:nth-child(1), #ID_AO td:nth-child(1) {
+	min-width: 15em;
+}
 
 /* Flot =======================================================================*/
 
