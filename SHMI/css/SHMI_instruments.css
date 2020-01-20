@@ -2,7 +2,15 @@
 2020 by Thorsten Willert
 License: MIT
 
-13.01.2020*/
+20.01.2020*/
+
+:root {
+  --sparkline_ai_fill: var(--success);
+  --sparkline_ai_stroke: #0F0;
+  --sparkline_ao_fill: var(--danger);
+  --sparkline_ao_stroke: #F00;
+}
+
 .analog {
 	width: 5em;
 	text-align: center; }
@@ -10,16 +18,17 @@ License: MIT
 /* analog meter ===============================================================*/
 .progress {
     position: relative;
-    height: 22px;
-	background: linear-gradient(to bottom, #00000022 0%,#66666622 100%) !important; }
+    height: 2em;
+	/*background: linear-gradient(to bottom, #00000022 0%,#66666622 100%) !important;*/ }
 .progress-bar {
-	transition: width 1s ease-in-out; }
-/* colors are set in the jQuery init() status.html */
+	transition: width 1s ease-in-out;
+}
 .progress > .progress-setpoint {
 	position: absolute;
 	height: inherit;
 	left: -2em;
-	background-color: rgba(25, 25, 25, 0.4); }
+	background-color: rgba(25, 25, 25, 0.4);}
+/* colors are set in the jQuery init() status.html */
 .progress > .progress-peak {
 	position: absolute;
 	height: inherit;;
@@ -30,15 +39,24 @@ License: MIT
 	transition: width 1s linear; }
 
 /* digital IO =================================================================*/
+/* border are set in the jQuery init() */
+
+#ID_digital_in td, #ID_digital_out td {
+	padding:0.3em
+}
+
+.digi_back {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 90%; /* circle */
+	background: linear-gradient(to top, #00000022 0%,#66666622 100%) !important;
+	/* background: ##1c1e22 !important; */
+}
 .digi {
 	opacity: 0;
+	width: inherit;
+	height: inherit;
 	transition: opacity 0.5s ease; /* "led" speed */
 	display: block;
-	border-radius: 90%; }
-
-/* border are set in the jQuery init() */
-.digi_back {
-	width: 20px;
-	border-radius: 90%;
-	/*background: linear-gradient(to top, #2e333833 0%,#7d7e7d33 100%);*/
-	background: linear-gradient(to top, #00000022 0%,#66666622 100%) !important;}
+	border-radius: inherit; /* circle */
+}

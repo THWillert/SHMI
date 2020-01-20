@@ -5,10 +5,20 @@ body {
      background-attachment: fixed;
 }
 */
-
 .downlight {
-	box-shadow: 1px 1px 1.5em 0.1em var(--secondary);
+	box-shadow: 1px 1px 2em 0.1em black;
 }
+/* table ======================================================================*/
+
+#ID_DI td, #ID_DO td {
+	min-width: 15em;
+	white-space: nowrap;
+}
+
+#ID_AI td, #ID_AO td {
+	white-space: nowrap;
+}
+
 
 /* Flot =======================================================================*/
 
