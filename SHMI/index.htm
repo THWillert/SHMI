@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-17-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-20-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -39,6 +39,7 @@
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 
 	<script type="text/javascript" src="./js/main.js"></script>
 
@@ -46,6 +47,8 @@
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
+
+	<script language="javascript" type="text/javascript" src="./js/jquery.canvaswrapper.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 
@@ -61,7 +64,7 @@
 
 		$(".liveBit").peity("bar")
 		$(".bar-colours-1").peity("bar", {
-		  fill: ["var(--light)"]
+				fill: ["var(--light)"]
 		})
 
 	//==============================================================================
@@ -179,8 +182,8 @@ About Dialog -->
 					<li>Bootstrap <script> document.write( $.fn.tooltip.Constructor.VERSION ) </script></li>
 					<li>Moment.js <script> document.write( moment.version ) </script></li>
 					<li>Flot <script> document.write( $.plot.version ) </script></li>
-					<li>Peity</li>
-					<li>Simple Statistics</li>
+					<li>Peity 3.3.0</li>
+					<li>Simple Statistics 7.0.7</li>
 					</ul>
 					<hr>
 					<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/THWillert/SHMI?include_prereleases">&nbsp;
