@@ -1,6 +1,11 @@
 V0.2.3-beta 20.01.2020
 
 - SHMI_status.html
+  - added scale for analog values
+
+V0.2.3-beta 20.01.2020
+
+- SHMI_status.html
   - added sparklines for the analog values
   
 - CSS
