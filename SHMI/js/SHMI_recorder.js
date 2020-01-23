@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-17-01
+	Modified: 2020-23-01
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -101,6 +101,7 @@ $(function() {
 			datamax: 100
 		},
 		xaxis: {
+			timezone: "browser",
 			mode: "time",
 			timeformat: "%H:%M:%S",
 			minTickSize: [1, "second"]
@@ -134,13 +135,42 @@ $(function() {
 		grid: {
 			hoverable: true,
 			markings: [],
-			color: "white",
-			borderColor: "#00000033"
+			color: "#aaa",
+			borderColor: "#00000000"
 		}
 	}
-// test - not working
-	options.xaxis.font= { size:12,color:"#fff", weight: "normal"};
-	options.yaxis.font= { size:12,color:"#fff", weight: "normal"};
+//==============================================================================
+	var overview_options =  {
+		series: {
+			lines: {
+				show: true,
+				lineWidth: 1,
+				fill: true,
+				fillColor: { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] },
+				steps: false
+			},
+			shadowSize: 0
+		},
+		xaxis: {
+			timeformat: "%H:%M:%S",
+			mode: "time",
+			minTickSize: [1, "minute"]
+		},
+		yaxis: {
+			ticks: [],
+			autoscaleMargin: 0.1
+		},
+		selection: {
+			mode: "x"
+		},
+		colors: ["#bbb"],
+		grid: {
+			color: "#aaa",
+			borderColor: "#00000000"
+		}
+	}
+	//overview = $.plot("#overview", [ ], overview_options);
+
 //==============================================================================
 // Tooltip for datapoints in chart
 	/* Tooltip */
@@ -193,34 +223,6 @@ $(function() {
 	}
 	plotAccordingToChoices();
 //==============================================================================
-	var overview_options =  {
-		series: {
-			lines: {
-				show: true,
-				lineWidth: 1,
-				fill: true,
-				fillColor: { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] },
-				steps: false
-			},
-			shadowSize: 0
-		},
-		xaxis: {
-			timeformat: "%H:%M:%S",
-			mode: "time",
-			minTickSize: [1, "minute"]
-		},
-		yaxis: {
-			ticks: [],
-			autoscaleMargin: 0.1
-		},
-		selection: {
-			mode: "x"
-		},
-		colors: ["#bbb"]
-	}
-
-	//overview = $.plot("#overview", [ ], overview_options);
-//==============================================================================
 	$("#chart").bind("plotselected", function (event, ranges) {
 
 		// do the zooming
@@ -243,7 +245,7 @@ $(function() {
 	{
 		var mid;
 		var d = [];
-		var zeit = moment().format('HH:mm:ss');
+		//var zeit = moment().format('HH:mm:ss');
 		var c = data.length;
 		var srcID = $("#IDdataSelect").val()
 		var newVal = parent.top.$( "#" + srcID ).val();
