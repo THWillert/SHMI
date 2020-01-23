@@ -226,7 +226,9 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Fließbilder
 
-- [ ] Werte in Bild anzeigen
+- [ ] Werte in Bild anzeigen. Vorschau - Einfügen von Anzeigen per Drag und Drop mit Hintergrundbild:
+
+![Start](/images/SHMI_RI_1.png)
 
 ## Benutzte Bibliotheken
 
