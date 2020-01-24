@@ -179,6 +179,10 @@ Die Datei `css/bootstrap.min.css` gegen die entsprechende Theme-Datei austausche
 
 Für ein "flaches" Design die Datei `css/SGMI_glow.css` umbenennen.
 
+#### Icons
+
+Um Platz im Zielgerät zu sparen kann man das Verzeichnis `fontsawesome` komplett weglassen. Es werden dann nur die Icons in der Oberfläche nicht angezeigt, auf die Funktion hat dies keine Auswirkung.
+
  
 ## Diskussion / Vorschläge
 
@@ -188,7 +192,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
-- [ ] Bibliotheken aktualisieren
+- [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 - [ ] Live-Bit von Steuerung visualisieren
 - [ ] Dokumentation vervollständigen
@@ -200,6 +204,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Einstellungen lokal speichern
 - [ ] Fonts lokal speichern und abfragen
+- [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
 
 #### Übersicht
 
