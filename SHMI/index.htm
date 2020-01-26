@@ -73,14 +73,24 @@
 
 		function timeUpdate()
 		{
-			if($(window).width() > 768 ){
-				$("#IDtime").text( moment().format('LLLL') );
-			} else {
-				$("#IDtime").text( moment().format('HH:mm') );
-			};
-			timer_Update = setTimeout(timeUpdate, getRandomInt(9000,10000));
+			var Time = new Date();
+			var TimeOption;
+
+			$("#IDtime").text( moment().format('LLLL') );
+			/*
+			TimeOption = {
+					weekday: "long",
+					year: "numeric",
+					month: "long",
+					day: "numeric",
+					hour: "2-digit",
+					minute: "2-digit"
+				}
+			$("#IDtime").text( Time.toLocaleString('de-DE', TimeOption ) );*/
+
+			setTimeout(timeUpdate, 10000);
 		}
-		timer_Update = setTimeout(timeUpdate, 10002);
+		setTimeout(timeUpdate, 10000);
 
 	//==============================================================================
 	// Data for all pages
@@ -88,7 +98,7 @@
 			$.getJSON( "./data/data.json", function( data ) {
 				var data_container = $("#IDdata");
 				$.each( data, function( id, val) {
-					data_container.append('<tr><td>' + id + '</td><td><input class="analog" id="' + id + '"></td><td id="TXT_' + id+ '"></td></tr>')
+					data_container.append('<tr><td>' + id + '</td><td><input readonly id="' + id + '"></td><td id="TXT_' + id+ '"></td></tr>')
 				});
 			});
 		}
@@ -153,9 +163,10 @@ Header and navigation -->
 						<a href="SHMI_RI_03.html" class="dropdown-item">Fließbild V3</a>
 					</div>
 				</li>
-				<li class="nav-item"><a class="nav-link cursor-pointer" data-toggle="modal" data-target="#exampleModalCenter" id="IDabout">About</a></li>
+			<li class="float-right"></li>
 			</ul>
 		</div>
+		<a class="nav-link cursor-pointer" data-toggle="modal" data-target="#exampleModalCenter" id="IDabout">About</a>
 	</nav>
 
 
@@ -203,7 +214,7 @@ About Dialog -->
 	Unhide it for debugging -->
 
 	<!-- <div  style="position:relative;top:80px;z-index:100;"> -->
-	<div  style="height:0;position:relative;top:80px;z-index:100;" class="nodisplay">
+	<div  style="height:0;position:relative;top:80px;z-index:100;" class="d-none">
 
 	<div class="col-md-3" style="height:0">
 		<div class="card panel-default">
