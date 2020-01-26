@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-17-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-23-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -37,8 +37,12 @@
 	-->
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
+
+	<link rel="stylesheet" type="text/css" href="./fontsawesome/css/all.min.css" >
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
 
 	<script language="javascript" type="text/javascript" src="./js/main.js" async></script>
@@ -192,17 +196,17 @@
 						<div class="d-flex justify-content-center">
 							<div class="btn-group-toggle" data-toggle="buttons" >
 									<label class="btn btn-secondary">
-										<input type="checkbox"  autocomplete="off"  id="IDsmooth">Spline Curve
+										<input type="checkbox"  autocomplete="off"  id="IDsmooth"><i class="fas fa-bezier-curve"></i>&nbsp;&nbsp;Spline Curve
 									</label>
 							</div>
 							<div class="btn-group-toggle" data-toggle="buttons" >
 								<label class="btn btn-secondary ">
-									<input type="checkbox" checked autocomplete="off"  id="IDfill">Fill Curves
+									<input type="checkbox" checked autocomplete="off"  id="IDfill"><i class="fas fa-fill"></i>&nbsp;&nbsp;Fill Curves
 								</label>
 							</div>
 							<div class="btn-group-toggle" data-toggle="buttons" >
 								<label class="btn btn-secondary">
-									<input type="checkbox" checked autocomplete="off"  id="IDShowPoints">Show Points
+									<input type="checkbox" checked autocomplete="off"  id="IDShowPoints"><i class="fas fa-dot-circle"></i>&nbsp;&nbsp;Show Points
 								</label>
 							</div>
 						</div>
@@ -212,8 +216,8 @@
 					<div class="card-footer">
 						<div class="d-flex justify-content-center">
 							<div class="btn-group">
-								<button type="button" class="btn btn-primary" data-toggle="button" id="IDPause">
-								Pause / Start</button>
+								<button type="button" class="btn btn-primary active" data-toggle="button" id="IDPause">
+								<i id="IDPauseIcon" class="fas fa-pause"></i>&nbsp;&nbsp;<span id="TXT_Pause">Start / Pause</span></button>
 							</div>
 						</div>
 					</div><!-- / card-footer -->
@@ -256,11 +260,11 @@
 					<div class="card-footer  d-flex justify-content-between">
 						<div class="btn-group">
 							<button type="button" class="btn btn-primary" id="IDSave" onClick="Download()" title="Save data as CSV">
-							Save Data ...</button>
+							<i class="fas fa-save"></i>&nbsp;&nbsp;Save Data ...</button>
 						</div>
 						<div class="btn-group">
 							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#DataReset" title="Reset Data">
-							Data Reset</button>
+							<i class="fas fa-eraser"></i>&nbsp;&nbsp;Data Reset</button>
 						</div>
 					</div>
 				</div>
