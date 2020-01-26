@@ -22,7 +22,7 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 ![Start](/images/SHMI_Recorder_2.png)
-- Fließbilder können per Drag und Drop mit anzeigen ausgestattet werden:
+- Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
 
 ![Start](/images/SHMI_RI_1.png)
 
