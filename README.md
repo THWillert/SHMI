@@ -23,11 +23,8 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 ![Start](/images/SHMI_Recorder_2.png)
 - Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
-
 ![Start](/images/SHMI_RI_1.png)
-
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
-
 ![Start](/images/SHMI_index_01.png)
 
 ![Start](/images/SHMI_index_02.png)
