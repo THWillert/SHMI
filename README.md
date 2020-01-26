@@ -22,6 +22,10 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 ![Start](/images/SHMI_Recorder_2.png)
+- Fließbilder können per Drag und Drop mit anzeigen ausgestattet werden:
+
+![Start](/images/SHMI_RI_1.png)
+
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 
 ![Start](/images/SHMI_index_01.png)
@@ -165,6 +169,29 @@ Beispiel:
 }
 ```
 
+### Fließbild
+
+Das Bild selbst wird als Hintergrundbild geladen. Es muß den gleichen Namen wie die HTML-Datei haben, nur mit dem Suffix "svg".
+
+Alle verfügbaren Datenpunkte können als kleine Anzeigen (Design noch nicht fertig) in das Bild eingefügt werden.
+
+Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
+
+![Start](/images/SHMI_RI_1.png)
+
+#### Speichern / Laden / Löschen
+
+##### Speichern
+Ein Speichern der Elemente ist nicht notwendig.
+
+Sobald diese postioniert oder deren Größe verändert wurde, werden Position und die Größe der Anzeigen werden im Local-Storage des Browser gespeichert. Für jedes Element wird ein entsprechender Eintrag gespeichert.
+
+##### Laden
+Beim Laden der Seite werden die Elemente automatisch wieder angezeigt.
+
+##### Löschen
+Zum Löschen eines Elementes dieses in den Einstellungen wieder abwählen.
+
 ### Beschriftung der Oberfläche
 
 (siehe Beschriftung der Datenpunkte)
@@ -231,11 +258,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Fließbilder
 
-- [ ] Werte in Bild anzeigen.
-
-Vorschau - Einfügen von Anzeigen per Drag und Drop mit Hintergrundbild:
-
-![Start](/images/SHMI_RI_1.png)
+- [x] Werte in Bild anzeigen.
 
 ## Benutzte Bibliotheken
 
