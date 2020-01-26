@@ -25,8 +25,6 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
 ![Start](/images/SHMI_RI_1.png)
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
-![Start](/images/SHMI_index_01.png)
-
 ![Start](/images/SHMI_index_02.png)
 
 
@@ -38,7 +36,6 @@ Auf dem Automatiserungs-Gerät muß ein Web-Server vorhanden sein.
 ## Installation
 
 Den Inhalt des Verzeichnisses SHMI auf den Web-Server kopieren und diesen passend konfigurieren.
-
 
 ## Konfiguration von SHMI
 
