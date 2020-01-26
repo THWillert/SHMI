@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-20.01.2020*/
+26.01.2020*/
 
 :root {
   --sparkline_ai_fill: var(--success);
@@ -73,4 +73,35 @@ License: MIT
 	transition: opacity 0.5s ease; /* "led" speed */
 	display: block;
 	border-radius: inherit; /* circle */
+}
+
+/* RI =========================================================================*/
+
+.SHMI_drag {
+	position: absolute;
+	display: block;
+	width: 10em;
+	padding: 0.5em;
+	color: var(--light);
+	text-align: center;
+	border-radius: 0.3em;
+	background-color: var(--dark);
+	opacity: 0.9;
+	font-weight: bold;
+}
+.SHMI_drag_DO {
+	transition: opacity 0.5s ease;
+}
+.SHMI_drag_DO .fas {
+	color: #F00;
+}
+.SHMI_drag_DI {
+	transition: opacity 0.5s ease;
+}
+.SHMI_drag_DI .fas {
+	color: #0F0;
+}
+.SHMI_drag_AI {
+}
+.SHMI_drag_AO {
 }
