@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-20-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-21-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -89,10 +89,9 @@
 										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
 										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
 										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
-										//'<ul id="scale"><li style="width: 5%"><span></span></li><li><span id="scale">10</span></li><li><span id="scale">20</span></li> <li><span id="scale">30</span></li><li><span id="scale">40</span></li> <li><span id="scale"><b>50</b></span></li><li><span id="scale">60</span></li> <li><span id="scale">70</span></li> <li><span id="scale">80</span></li><li><span id="scale">90</span></li><li style="width: 5%"><span id="scale"></span></li></ul>' +
 									'</div>' +
-								'<td><input class="nodisplay analog" id="ID_' + id + '_LO" ><input class="nodisplay analog" id="ID_' + id + '_PK" ></td>' +
-								'<td><span id="ID_' + id + '_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
+								'<td><input class="d-none analog" id="ID_' + id + '_LO" ><input class="d-none analog" id="ID_' + id + '_PK" ></td>' +
+								'<td class="d-none d-md-block"><span id="ID_' + id + '_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
 								'</tr>');
 
 					}  else if ( id.indexOf("AO") != -1) {
@@ -106,10 +105,9 @@
 										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
 										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
 										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
-										//'<ul id="scale"><li style="width: 5%"><span></span></li><li><span id="scale">10</span></li><li><span id="scale">20</span></li> <li><span id="scale">30</span></li><li><span id="scale">40</span></li> <li><span id="scale"><b>50</b></span></li><li><span id="scale">60</span></li> <li><span id="scale">70</span></li> <li><span id="scale">80</span></li><li><span id="scale">90</span></li><li style="width: 5%"><span id="scale"></span></li></ul>' +
 									'</div>' +
-								'<td><input class="nodisplay analog" id="ID_' + id + '_LO" ><input class="nodisplay analog" id="ID_' + id + '_PK" ></td>' +
-								'<td id="ID_' + id + '_td_spark"><span id="ID_' + id + '_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
+								'<td><input class="d-none analog" id="ID_' + id + '_LO" ><input class="d-none analog" id="ID_' + id + '_PK" ></td>' +
+								'<td class="d-none d-md-block"><span id="ID_' + id + '_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
 								'</tr>');
 					};
 				};
@@ -159,6 +157,7 @@
 			$("#ID_PeakHold_Reset").click(function () {
 					relasePeak();
 			});
+
 		}
 		init();
 
@@ -301,21 +300,23 @@
 							<th id="TXT_Setpoint_AI">Setpoint</th>
 							<th id="TXT_Value_AI">Value</th>
 							<th id="ID_Scale_AI">
-								<table class="scale-table">
-									<tr>
-										<td class="scale" style="width: 5%"></td>
-										<td class="scale">10</td>
-										<td class="scale"><span class="d-none d-lg-block">20</span></td>
-										<td class="scale">30</td>
-										<td class="scale"><span class="d-none d-lg-block">40</span></td>
-										<td class="scale">50</td>
-										<td class="scale"><span class="d-none d-lg-block">60</span></td>
-										<td class="scale">70</td>
-										<td class="scale"><span class="d-none d-lg-block">80</span></td>
-										<td class="scale">90</td>
-										<td class="scale" style="width: 5%"></td>
-									</tr>
-								</table>
+								<div>
+									<table class="scale-table">
+										<tr>
+											<td class="scale" style="width: 5%"></td>
+											<td class="scale">10</td>
+											<td class="scale"><span class="d-none d-lg-block">20</span></td>
+											<td class="scale"><span class="d-none d-sm-block">30</span></td>
+											<td class="scale"><span class="d-none d-lg-block">40</span></td>
+											<td class="scale">50</td>
+											<td class="scale"><span class="d-none d-lg-block">60</span></td>
+											<td class="scale"><span class="d-none d-sm-block">70</span></td>
+											<td class="scale"><span class="d-none d-lg-block">80</span></td>
+											<td class="scale">90</td>
+											<td class="scale" style="width: 5%"></td>
+										</tr>
+									</table>
+								</div>
 							</th>
 							<th id="TXT_Peak_AI"></th>
 							<th></th>
@@ -339,21 +340,23 @@
 							<th id="TXT_Setpoint_AO">Setpoint</th>
 							<th id="TXT_Value_AO">Value</th>
 							<th id="ID_Scale_AI">
-								<table class="scale-table">
-									<tr>
-										<td class="scale" style="width: 5%"></td>
-										<td class="scale">10</td>
-										<td class="scale"><span class="d-none d-lg-block">20</span></td>
-										<td class="scale">30</td>
-										<td class="scale"><span class="d-none d-lg-block">40</span></td>
-										<td class="scale">50</td>
-										<td class="scale"><span class="d-none d-lg-block">60</span></td>
-										<td class="scale">70</td>
-										<td class="scale"><span class="d-none d-lg-block">80</span></td>
-										<td class="scale">90</td>
-										<td class="scale" style="width: 5%"></td>
-									</tr>
-								</table>
+								<div>
+									<table class="scale-table">
+										<tr>
+											<td class="scale" style="width: 5%"></td>
+											<td class="scale">10</td>
+											<td class="scale"><span class="d-none d-lg-block">20</span></td>
+											<td class="scale"><span class="d-none d-sm-block">30</span></td>
+											<td class="scale"><span class="d-none d-lg-block">40</span></td>
+											<td class="scale">50</td>
+											<td class="scale"><span class="d-none d-lg-block">60</span></td>
+											<td class="scale"><span class="d-none d-sm-block">70</span></td>
+											<td class="scale"><span class="d-none d-lg-block">80</span></td>
+											<td class="scale">90</td>
+											<td class="scale" style="width: 5%"></td>
+										</tr>
+									</table>
+								</div>
 							</th>
 							<th id="TXT_Peak_AO"></th>
 							<th></th>
