@@ -9,38 +9,7 @@ body {
 	box-shadow: 1px 1px 2em 0.1em black;
 }
 
-/* table ======================================================================*/
-
-#ID_DI td, #ID_DO td {
-	min-width: 15em;
-	white-space: nowrap;
-}
-
-#ID_AI td, #ID_AO td {
-	white-space: nowrap;
-}
-
-#ID_AI td:nth-child(1), #ID_AO td:nth-child(1) {
-	min-width: 15em;
-}
-
-/* Flot =======================================================================*/
-
-
-/* RI =========================================================================*/
-.rotated {
-	transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-    /* IE 9 */
-	-moz-transform: rotate(90deg);
-    /* Firefox */
-	-webkit-transform: rotate(90deg);
-    /* Safari and Chrome */
-	-o-transform: rotate(90deg);
-    /* Opera */
-	height: 100%;
-}
-/* ============================================================================*/
+/* page / frame ===============================================================*/
 
 #pageContainer {
 	top: 5em;
@@ -51,43 +20,23 @@ body {
 	top: 20px;
 }
 
-.nodisplay {
-	display: none; }
+/* table ======================================================================*/
 
-/* ============================================================================*/
+#ID_DI td,
+#ID_DO td,
+#ID_AI td:nth-child(1),
+#ID_AO td:nth-child(1) {
+	min-width: 15em;
+	white-space: nowrap;
+}
 
-.cursor-alias {cursor: alias;}
-.cursor-all-scroll {cursor: all-scroll;}
-.cursor-auto {cursor: auto;}
-.cursor-cell {cursor: cell;}
-.cursor-context-menu {cursor: context-menu;}
-.cursor-col-resize {cursor: col-resize;}
-.cursor-copy {cursor: copy;}
-.cursor-crosshair {cursor: crosshair;}
-.cursor-default {cursor: default;}
-.cursor-e-resize {cursor: e-resize;}
-.cursor-ew-resize {cursor: ew-resize;}
-.cursor-grab {cursor: -webkit-grab; cursor: grab;}
-.cursor-grabbing {cursor: -webkit-grabbing; cursor: grabbing;}
-.cursor-help {cursor: help;}
-.cursor-move {cursor: move;}
-.cursor-n-resize {cursor: n-resize;}
-.cursor-ne-resize {cursor: ne-resize;}
-.cursor-nesw-resize {cursor: nesw-resize;}
-.cursor-ns-resize {cursor: ns-resize;}
-.cursor-nw-resize {cursor: nw-resize;}
-.cursor-nwse-resize {cursor: nwse-resize;}
-.cursor-no-drop {cursor: no-drop;}
-.cursor-none {cursor: none;}
-.cursor-not-allowed {cursor: not-allowed;}
+/* Flot =======================================================================*/
+
+.flot-y1-axis,
+.flot-x1-axis {
+	fill: var(--secondary);
+}
+
+/* Misc =======================================================================*/
+
 .cursor-pointer {cursor: pointer;}
-.cursor-progress {cursor: progress;}
-.cursor-row-resize {cursor: row-resize;}
-.cursor-s-resize {cursor: s-resize;}
-.cursor-se-resize {cursor: se-resize;}
-.cursor-sw-resize {cursor: sw-resize;}
-.cursor-text {cursor: text;}
-.cursor-w-resize {cursor: w-resize;}
-.cursor-wait {cursor: wait;}
-.cursor-zoom-in {cursor: zoom-in;}
-.cursor-zoom-out {cursor: zoom-out;}
