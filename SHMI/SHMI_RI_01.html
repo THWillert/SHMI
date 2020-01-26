@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-16-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-24-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -39,69 +39,81 @@
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
+
+	<link rel="stylesheet" type="text/css" href="./fontsawesome/css/all.min.css" >
+	<link rel="stylesheet" type="text/css" href="./css/select2.min.css" rel="stylesheet" />
+
 
 	<script language="javascript" type="text/javascript" src="./js/main.js" async></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/select2.min.js"></script>
 
 
-	<script type='text/javascript'>
+	<script language="javascript" type="text/javascript" src="./js/clayfy.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/clayfy.min.css" ><!-- must be in the last position !!! -->
 
-	$(function() {
-	//==============================================================================
-		$("#IDlight").click(function () {
-			if ( $(this).hasClass('active') ) {
-				$("#IDpict").css("background-color","#ccc");
+	<script language="javascript" type="text/javascript" src="./js/SHMI_RI.min.js"></script>
 
-			} else {
-				$("#IDpict").css("background-color","#fff");
-			};
-		});
-	//==============================================================================
-		$("#IDrotate").click(function () {
-			var pict = $("#IDpict");
-			if ( $(this).hasClass('active') ) {
-				pict.removeClass("rotated");
-				pict.css("height", "100%");
-			} else {
-				var w = pict.css("width");
-				pict.addClass('rotated');
-				pict.css("height", w);
-			};
-		});
-
-	//==============================================================================
-	});
-	</script>
 </head>
 <body>
 	<div class="main w100 container-fluid">
 			<div class="row" id="IDpanel">
-				<div class="col-md-12 p-3">
-					<div class="card card-default shadow">
-
+				<div class="col-md-12 p-2">
+					<div class="card shadow">
 						<div class="card-header">
 							<h5 class="card-title">Fließbild</h5>
 						</div><!-- /header -->
 
 						<div class="card-body">
-							<div id="IDpict" class="bg-light">
-								<img src="./pict/RI_01.svg" data-zoom-image="./pict/RI_01.svg" alt="RI_01" id="IDimg" class="img-fluid">
-							</div
+							<div id="IDpict" class="bg-light" style="overflow:hidden;">
+								<img id="ID_RI_image" src="./pict/RI.svg" alt="RI" id="IDimg">
+							</div>
 						</div><!-- /body -->
-
-						<div class="card-footer d-flex">
-							<div class="btn-group btn-group-sm flex-fill">
-								<input type="button" class="btn btn-primary" data-toggle="button" id="IDlight" value="Light">
-							</div>
-							<div class="btn-group btn-group-sm flex-fill">
-								<input type="button" class="btn btn-primary" data-toggle="button" id="IDrotate" value="Rotate 90°">
-							</div>
-						</div><!-- /footer -->
 
 					</div><!-- /card -->
 				</div><!-- /col -->
 			</div><!-- /row -->
+			<div class="row">
+				<div class="col-md-12 p-2">
+					<div class="card shadow">
+						<div class="card-header">
+							<a class="" data-toggle="collapse" href="#collapseStorage" role="button" aria-expanded="false" aria-controls="collapseStorage">
+							<div id="TXT_Data_Storage">Einstellungen</div>
+							</a>
+						</div><!-- /header -->
+
+						<div class="card-body collapse" id="collapseStorage">
+							<div class="row p-1">
+								<div class="col col-md-6">
+									<label for="id_label_multiple">Digital:</label>
+									<select id="ID_Select_D" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
+										<optgroup label="DI" id="ID_option_DI"></optgroup>
+										<optgroup label="DO" id="ID_option_DO"></optgroup>
+									</select>
+								</div>
+								<div class="col col-md-6">
+									<label for="id_label_multiple">Analog:</label>
+									<select  id="ID_Select_A" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
+										<optgroup label="AI Level" id="ID_option_AI"></optgroup>
+										<optgroup label="AI Sparkline" id="ID_option_AIS"></optgroup>
+										<optgroup label="AO Level" id="ID_option_AO"></optgroup>
+										<optgroup label="AO Sparkline" id="ID_option_AOS"></optgroup>
+									</select>
+								</div>
+							</div>
+						</div><!-- /body -->
+
+						<!--<div class="card-footer d-flex ">
+						</div>
+						-->
+					</div><!-- /card -->
+				</div><!-- /col -->
+			</div><!-- /row -->
+
 	</div><!-- /main -->
 </body>
 </html>
