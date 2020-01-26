@@ -225,6 +225,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Einstellungen lokal speichern
 - [ ] Fonts lokal speichern und abfragen
+- [ ] Minimierte Version aller Dateien erzeugen
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
 
 #### Übersicht
@@ -252,7 +253,9 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Fließbilder
 
-- [x] Werte in Bild anzeigen.
+- [x] Werte in Bild anzeigen
+- [ ] Design der Anzeigen überarbeiten
+- [ ] mehr Darstellungsmöglichkeiten
 
 ## Benutzte Bibliotheken
 
@@ -262,6 +265,8 @@ Reihenfolge entspricht nicht der Priorität:
 - [Moment.js](https://momentjs.com/)
 - [Peity](http://benpickles.github.io/peity/)
 - [Simple Statistics](https://simplestatistics.org/)
+- [Select2](https://select2.org/)
+- [Clayfy](https://github.com/aewebsolutions/clayfy)
 
 ## Author
 Thorsten Willert
