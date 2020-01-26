@@ -1,3 +1,9 @@
+V0.3.0-beta 26.01.2020
+
+- SHMI_RI_x.html
+  - now you can add all datapoints as "instruments" to the P&ID
+- updated all files
+
 V0.2.3-beta 20.01.2020
 
 - SHMI_status.html
