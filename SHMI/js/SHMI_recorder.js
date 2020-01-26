@@ -430,9 +430,13 @@ $(function() {
 //==============================================================================
 	function changePause(){
 		if ( $("#IDPause").hasClass('active') ) {
-			if (!pause) $("#IDPauseIcon").removeClass( "glyphicon-play" ).addClass( "glyphicon-pause" );
+			if (!pause) {
+				$("#IDPauseIcon").removeClass( "fa-play" ).addClass( "fa-pause" );
+				//$("#TXT_Pause").text('Pause');
+			}
 		} else {
-			$("#IDPauseIcon").removeClass( "glyphicon-pause" ).addClass( "glyphicon-play" );
+			$("#IDPauseIcon").removeClass( "fa-pause" ).addClass( "fa-play" );
+			//$("#TXT_Pause").text('Start');
 		};
 	}
 //==============================================================================
