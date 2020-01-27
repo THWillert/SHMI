@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-26-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-27-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -63,7 +63,7 @@
 		var toggle = 0;
 
 		$(".liveBit").peity("bar")
-		$(".bar-colours-1").peity("bar", {
+		$(".bar-colour").peity("bar", {
 				fill: ["var(--light)"]
 		})
 
@@ -98,7 +98,7 @@
 			$.getJSON( "./data/data.json", function( data ) {
 				var data_container = $("#IDdata");
 				$.each( data, function( id, val) {
-					data_container.append('<tr><td>' + id + '</td><td><input readonly id="' + id + '"></td><td id="TXT_' + id+ '"></td></tr>')
+					data_container.append(`<tr><td>${id}</td><td><input readonly id="${id}"></td><td id="TXT_${id}"></td></tr>`)
 				});
 			});
 		}
@@ -115,7 +115,10 @@
 					});
 				})
 				setTimeout(updateVal, 1000); // update intervall for all values
-			});
+			})
+				.fail(function() {
+						console.log( "updateVal: error" );
+				});
 
 			var updatingChart = $(".liveBit").peity("bar", { width: 100 })
 
@@ -196,7 +199,7 @@ About Dialog -->
 					<li>Peity 3.3.0</li>
 					<li>Select2 4.0.12</li>
 					<li>Clayfy (12.06.2020)</li>
-					<li>Font Awesome 5.12.9</li>
+					<li>Font Awesome 5.12.0</li>
 					</ul>
 					<hr>
 					<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/THWillert/SHMI?include_prereleases">&nbsp;
@@ -246,7 +249,7 @@ Pages -->
 Footer -->
 	<div class="bg-dark" style="width:100%;position:fixed;bottom:0px;border-color:#000;text-align:right;box-shadow: 3px 3px 10px black;padding-top:3px;color:white">
 	<span
-		class="liveBit bar-colours-1"
+		class="liveBit bar-colour"
 		id="liveBit"
 		style="display:inline-block;border:20px;"
 		title="Live-Bit"
