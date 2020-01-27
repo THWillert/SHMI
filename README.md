@@ -51,7 +51,7 @@ Getestet mit:
 
 Den Inhalt des Verzeichnisses SHMI auf den Web-Server kopieren und diesen passend konfigurieren.
 
-Oder lokal installieren ( siehe auch [Voraussetzungen](https://github.com/THWillert/SHMI#voraussetzungen) )
+Oder lokal installieren ( siehe auch [Voraussetzungen](#voraussetzungen) )
 
 ## Konfiguration von SHMI
 
