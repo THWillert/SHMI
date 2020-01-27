@@ -14,8 +14,9 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-21-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-27-01" />
 	<!--
+
 	Copyright (c) 2020 Thorsten Willert
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -71,44 +72,56 @@
 
 				if ( id.indexOf("SP") == -1){
 					if ( id.indexOf("DI") != -1) {
-						digital_in_container.append('<tr><td id="TXT_' + id + '"></td>' +
-								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-success">&nbsp;</span></div></td>' +
-								'</tr>');
+						digital_in_container.append(
+								`<tr>
+									<td id="TXT_${id}"></td>
+									<td><div class="digi_back"><span id="ID_${id}_D" class="digi bg-success">&nbsp;</span></div></td>
+								</tr>`
+								);
 					} else if ( id.indexOf("DO") != -1) {
-						digital_out_container.append('<tr><td id="TXT_' + id + '"></td>' +
-								'<td><div class="digi_back"><span id="ID_' + id + '_D" class="digi bg-danger">&nbsp;</span></div></td></tr>' +
-								'</tr>');
+						digital_out_container.append(
+								`<tr>
+									<td id="TXT_${id}"></td>
+									<td><div class="digi_back"><span id="ID_${id}_D" class="digi bg-danger">&nbsp;</span></div></td>
+								</tr>`
+								);
 					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
 						analog_in_container.append(
-								'<tr><td width="200em" id="TXT_' + id + '"></td>' +
-								'<td><input class="analog ' + id + '_SP" disabled></td>' +
-								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="65%" style="padding-right: 1em;padding-left: 1em">' +
-									'<div class="progress">' +
-										'<div id="ID_' + id + '_M" class="progress-bar bg-success" role="progressbar"></div>' +
-										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
-										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
-										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
-									'</div>' +
-								'<td><input class="d-none analog" id="ID_' + id + '_LO" ><input class="d-none analog" id="ID_' + id + '_PK" ></td>' +
-								'<td class="d-none d-md-block"><span id="ID_' + id + '_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
-								'</tr>');
+								`<tr>
+									<td width="200em" id="TXT_${id}"></td>
+									<td><input class="analog ${id}_SP" disabled></td>
+									<td width="6em"><input class="analog ${id}" disabled></td>
+									<td width="65%" style="padding-right: 1em;padding-left: 1em">
+										<div class="progress">
+											<div id="ID_${id}_M" class="progress-bar bg-success" role="progressbar"></div>
+											<span id="ID_${id}_SP_SP" class="text-light progress-setpoint"></span>
+											<span id="ID_${id}_P" class="progress-peak ${id}_P"></span>
+											<span id="ID_${id}_L" class="progress-low ${id}_L"></span>
+										</div>
+									</td>
+									<td><input class="d-none analog" id="ID_${id}_LO" ><input class="d-none analog" id="ID_${id}_PK" ></td>
+									<td class="d-none d-md-block"><span id="ID_${id}_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
+								</tr>`
+								);
 
 					}  else if ( id.indexOf("AO") != -1) {
 						analog_out_container.append(
-								'<tr><td width="200em" id="TXT_' + id + '"></td>' +
-								'<td><input class="analog ' + id + '_SP" disabled></td>' +
-								'<td width="6em"><input class="analog ' + id + '" disabled></td>' +
-								'<td width="65%" style="padding-right: 1em;padding-left: 1em">' +
-									'<div class="progress">' +
-										'<div id="ID_' + id + '_M" class="progress-bar bg-danger" role="progressbar"></div>' +
-										'<span id="ID_' + id + '_SP_SP" class="text-light progress-setpoint"></span>' +
-										'<span id="ID_' + id + '_P" class="progress-peak ' + id + '_P"></span>' +
-										'<span id="ID_' + id + '_L" class="progress-low ' + id + '_L"></span>' +
-									'</div>' +
-								'<td><input class="d-none analog" id="ID_' + id + '_LO" ><input class="d-none analog" id="ID_' + id + '_PK" ></td>' +
-								'<td class="d-none d-md-block"><span id="ID_' + id + '_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>' +
-								'</tr>');
+								`<tr>
+									<td width="200em" id="TXT_${id}"></td>
+									<td><input class="analog ${id}_SP" disabled></td>
+									<td width="6em"><input class="analog ${id}" disabled></td>
+									<td width="65%" style="padding-right: 1em;padding-left: 1em">
+										<div class="progress">
+											<div id="ID_${id}_M" class="progress-bar bg-danger" role="progressbar"></div>
+											<span id="ID_${id}_SP_SP" class="text-light progress-setpoint"></span>
+											<span id="ID_${id}_P" class="progress-peak ${id}_P"></span>
+											<span id="ID_${id}_L" class="progress-low ${id}_L"></span>
+										</div>
+									</td>
+									<td><input class="d-none analog" id="ID_${id}_LO" ><input class="d-none analog" id="ID_${id}_PK" ></td>
+									<td class="d-none d-md-block"><span id="ID_${id}_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
+								</tr>`
+								);
 					};
 				};
 				});
@@ -125,13 +138,13 @@
 
 				// color settings depending on theme
 					// color of the peaks bar
-					$('.progress-peak').css("border-right", "solid 0.5em rgb(255,170,0)" );
+					$('.progress-peak').css("border-right", "solid .5em rgb(255,170,0)" );
 
 					// color of the valleys bar
-					$('.progress-low').css("border-right", "solid 0.5em rgb(68,135,255)" );
+					$('.progress-low').css("border-right", "solid .5em rgb(68,135,255)" );
 
 					// color of the setpoint bar
-					$('.progress-setpoint').css("border-right", "solid 0.3em var(--white)") ;
+					$('.progress-setpoint').css("border-right", "solid .3em var(--white)") ;
 
 					// color of the digital IO bar
 					$('.digi_back').css("border", "solid 0.15em var(--secondary)" );
