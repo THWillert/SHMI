@@ -36,15 +36,14 @@ Auf dem Automatiserungs-Gerät muß ein Web-Server vorhanden sein.
 
 Getestet mit:
 - FireFox (> V71.0 64bit, Windows 7)
-- Edge ( >V78.0, Windows 10)
-- Chromium (Raspian 10)
+- Edge ( >V79.0, Windows 10)
 
 #### Browser Einstellungen bei lokaler Datenquelle
 ... wenn kein Web-Server installiert ist.
 
 - FireFox: about:config
 `security.fileuri.strict_origin_policy = false`
-- Edge, Chromium usw.: Start-Parameter
+- Edge, Chrom usw.: Start-Parameter
 `--allow-file-access-from-files`
 
 
