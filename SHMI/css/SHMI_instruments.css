@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-26.01.2020*/
+28.01.2020*/
 
 :root {
   --sparkline_ai_fill: var(--success);
@@ -83,25 +83,80 @@ License: MIT
 	width: 10em;
 	padding: 0.5em;
 	color: var(--light);
-	text-align: center;
 	border-radius: 0.3em;
 	background-color: var(--dark);
 	opacity: 0.9;
 	font-weight: bold;
 }
+
+.SHMI_drag_level {
+	position: absolute;
+	display: block;
+	height: 10em;
+	width: 10em;
+	color: var(--light);
+	border-radius: 0.3em;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	font-weight: bold;
+}
+
+.SHMI_level {
+	bottom: 0;
+	width: inherit;
+	height: 10em;
+	position: absolute;
+	display: block;
+   /* background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(58,136,255,0.6) 100%);*/
+    background: linear-gradient(to top, rgba(255,255,255,0.7) 0%, var(--success) 100%);
+    border-top: 3px solid  #0F0;
+	border-radius: inherit;
+	font-weight: bold;
+	transition: height 1s ease;
+	mix-blend-mode: multiply;
+}
+
+.SHMI_level_value {
+	bottom: 0;
+	position: absolute;
+	right: 0px;
+	color: var(--light);
+	width: 4em;
+	padding:0.3em;
+	border-radius: inherit;
+	background:var(--dark);
+	opacity:0.9;
+
+}
+
 .SHMI_drag_DO {
 	transition: opacity 0.5s ease;
-}
-.SHMI_drag_DO .fas {
-	color: #F00;
+	text-align: center;
 }
 .SHMI_drag_DI {
 	transition: opacity 0.5s ease;
+	text-align: center;
 }
 .SHMI_drag_DI .fas {
-	color: #0F0;
+	color:  var(--success);
+}
+.SHMI_drag_DO .fas {
+	color: var(--danger);
 }
 .SHMI_drag_AI {
 }
 .SHMI_drag_AO {
+}
+
+.circle {
+	font-size: 10em;
+	display: inline-block;
+	width: 0.4em;
+	box-sizing: content-box;
+	height: 0.4em;
+	border: 0.1em solid red;
+	position: relative;
+	border-radius: 0.35em;
 }
