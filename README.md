@@ -245,6 +245,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Einstellungen lokal speichern
 - [ ] Fonts lokal speichern und abfragen
+- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
 - [ ] Minimierte Version aller Dateien erzeugen
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
 
@@ -275,6 +276,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 - [x] Werte in Bild anzeigen
 - [ ] Design der Anzeigen überarbeiten
+- [ ] Anzeigen rotierbar (90°) machen
 - [ ] mehr Darstellungsmöglichkeiten
 - [ ] Animation (Färbung) der SVG-Bilder
 
