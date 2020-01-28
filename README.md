@@ -214,6 +214,10 @@ Die Datei `pict/logo.svg` gegen ein eigenes SVG-Bild ersetzen.
 
 Die Datei `css/bootstrap.min.css` gegen die entsprechende Theme-Datei austauschen.
 
+> Achtung!
+>
+> Dadurch können sich evtl. die Anzeigen im Fließbild verschieben
+
 Für ein "flaches" Design die Datei `css/SGMI_glow.css` umbenennen.
 
 #### Icons
@@ -272,6 +276,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [x] Werte in Bild anzeigen
 - [ ] Design der Anzeigen überarbeiten
 - [ ] mehr Darstellungsmöglichkeiten
+- [ ] Animation (Färbung) der SVG-Bilder
 
 ## Benutzte Bibliotheken
 
