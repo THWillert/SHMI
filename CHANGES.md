@@ -1,3 +1,8 @@
+V0.3.1-beta 28.01.2020
+
+- added new type of level-meter for analog inputs:
+   ![Start](/images/SHMI_RI_1.png)
+
 V0.3.0-beta 26.01.2020
 
 - SHMI_RI_x.html
