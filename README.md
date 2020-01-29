@@ -27,6 +27,22 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)
 
+### Vorschau
+
+In der nächsten Version können ein einem SVG-Bild die Elemente direkt animiert werden z.B.:
+
+<ol>
+   <li>Dem Element eine entsprechende ID geben (Schema: <b>SHMI_Dxx_D</b> - Dxx = Datenpunkt):
+
+![Start](/images/SHMI_Inkscape_1.png)</li>
+
+<li>Ergebnis im Betrieb:
+
+![Start](/images/SHMI_Inkscape_1b.png)</li>
+</ol>
+
+Design und Farben stehen noch nicht fest.
+
 
 ## Voraussetzungen
 
