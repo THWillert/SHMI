@@ -27,6 +27,8 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)
 
+___
+
 ### Vorschau
 
 In der nächsten Version können ein einem SVG-Bild die Elemente direkt animiert werden z.B.:
@@ -43,6 +45,7 @@ In der nächsten Version können ein einem SVG-Bild die Elemente direkt animiert
 
 Design und Farben stehen noch nicht fest.
 
+___
 
 ## Voraussetzungen
 
