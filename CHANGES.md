@@ -1,6 +1,7 @@
 V0.4.0-beta 30.01.2020
 
-- added: direct animation (coloring) for DI/DO in the SVG-image
+- added: direct animation (coloring) for DI/DO in the SVG-image  
+![Start](/images/SHMI_Inkscape_1b.png)
 - added: fallback for the RI-images SVG -> PNG -> JPG
 - removed: original bootstrap css
 - removed fontawesome (because of the size)
