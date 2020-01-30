@@ -24,19 +24,9 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 ![Start](/images/SHMI_Recorder_2.png)
 - Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
 ![Start](/images/SHMI_RI_1.png)
-- Die Elemente (momentan nur DI/DO) in einem SVG-Bild können direkt animiert werden z.B.:
-
-<ol>
-   <li>Dem Element eine entsprechende ID geben (Schema: <b>SHMI_Dxx_D</b> - Dxx = Datenpunkt):
-
-![Start](/images/SHMI_Inkscape_1.png)</li>
-
-<li>Ergebnis im Betrieb:
-
-![Start](/images/SHMI_Inkscape_1b.png)</li>
+- Die Elemente (momentan nur DI/DO) in einem SVG-Bild können direkt animiert werden z.B.:  
+![Start](/images/SHMI_Inkscape_1b.png)  
 Design und Farben stehen noch nicht fest.
-</ol>
-
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)
 
@@ -201,6 +191,22 @@ Alle verfügbaren Datenpunkte können als kleine Anzeigen (Design noch nicht fer
 Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
 
 ![Start](/images/SHMI_RI_1.png)
+
+#### Direkte Animation im Bild (nur SVG):
+
+> Momentan nur DI/DO
+
+Dem Element eine entsprechende ID (bei Inkscape: "Kennung") geben.  
+Schema: `SHMI_Dxx_D`  
+Dxx = Datenpunkt
+
+![Start](/images/SHMI_Inkscape_1.png)
+
+Ergebnis im Betrieb:
+
+![Start](/images/SHMI_Inkscape_1b.png)
+
+Design und Farben stehen noch nicht fest!
 
 #### Speichern / Laden / Löschen
 
