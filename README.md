@@ -30,7 +30,7 @@ Design und Farben stehen noch nicht fest.
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)
 
-
+___
 ## Voraussetzungen
 
 Auf dem Automatiserungs-Gerät muß ein Web-Server vorhanden sein.
@@ -49,13 +49,14 @@ Getestet mit:
 - Edge, Chrom usw.: Start-Parameter
 `--allow-file-access-from-files`
 
-
+___
 ## Installation
 
 Den Inhalt des Verzeichnisses SHMI auf den Web-Server kopieren und diesen passend konfigurieren.
 
 Oder lokal installieren ( siehe auch [Voraussetzungen](#voraussetzungen) )
 
+___
 ## Konfiguration von SHMI
 
 ### Datenpunkte
@@ -239,9 +240,9 @@ Für ein "flaches" Design die Datei `css/SGMI_glow.css` umbenennen.
 
 #### Icons
 
-Um Platz im Zielgerät zu sparen kann man das Verzeichnis `fontsawesome` komplett weglassen. Es werden dann nur die Icons in der Oberfläche nicht angezeigt, auf die Funktion hat dies keine Auswirkung.
+...
 
- 
+ ___
 ## Diskussion / Vorschläge
 
 ## ToDo
