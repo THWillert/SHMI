@@ -24,14 +24,7 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 ![Start](/images/SHMI_Recorder_2.png)
 - Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
 ![Start](/images/SHMI_RI_1.png)
-- Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
-![Start](/images/SHMI_index_02.png)
-
-___
-
-### Vorschau
-
-In der nächsten Version können ein einem SVG-Bild die Elemente direkt animiert werden z.B.:
+- Die Elemente (momentan nur DI/DO) in einem SVG-Bild können direkt animiert werden z.B.:
 
 <ol>
    <li>Dem Element eine entsprechende ID geben (Schema: <b>SHMI_Dxx_D</b> - Dxx = Datenpunkt):
@@ -41,11 +34,12 @@ In der nächsten Version können ein einem SVG-Bild die Elemente direkt animiert
 <li>Ergebnis im Betrieb:
 
 ![Start](/images/SHMI_Inkscape_1b.png)</li>
+Design und Farben stehen noch nicht fest.
 </ol>
 
-Design und Farben stehen noch nicht fest.
+- Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
+![Start](/images/SHMI_index_02.png)
 
-___
 
 ## Voraussetzungen
 
