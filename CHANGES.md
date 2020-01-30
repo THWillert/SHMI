@@ -1,3 +1,9 @@
+V0.4.0-beta 30.01.2020
+
+- added: direct animation (coloring) for DI/DO in the SVG-image
+- added: fallback for the RI-images SVG -> PNG -> JPG
+- removed fontawesome (because of the size)
+
 V0.3.1-beta 28.01.2020
 
 - added new type of level-meter for analog inputs:
