@@ -1,3 +1,7 @@
+V0.4.1-beta 30.01.2020
+
+- fixed: animation error with mixed style / attributes in svg files
+
 V0.4.0-beta 30.01.2020
 
 - added: direct animation (coloring) for DI/DO in the SVG-image  
