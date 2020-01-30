@@ -251,20 +251,28 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
+- [ ] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
 - [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
-- [ ] Live-Bit von Steuerung visualisieren
-- [ ] Dokumentation vervollständigen
+
+- [ ] Live-Bit von Steuerung in Schnittstelle (visualisieren)
+- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
+
+- [ ] Einstellungen lokal speichern
 - [x] CSS zusammenfassen
-- [ ] Dokumentation der Quelltexte überarbeiten
+
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
-- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
-- [ ] Einstellungen lokal speichern
+
+
 - [ ] Fonts lokal speichern und abfragen
-- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
+
+- [ ] Dokumentation der Quelltexte überarbeiten
+- [ ] Dokumentation vervollständigen
 - [ ] Minimierte Version aller Dateien erzeugen
+
+- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
 
 #### Übersicht
