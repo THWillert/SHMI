@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-27-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-30-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -90,7 +90,7 @@
 
 			setTimeout(timeUpdate, 10000);
 		}
-		setTimeout(timeUpdate, 10000);
+		timeUpdate();
 
 	//==============================================================================
 	// Data for all pages
@@ -132,9 +132,6 @@
 				.change()
 		}
 		$(function(){updateVal();});
-	//==============================================================================
-
-		timeUpdate();
 	//==============================================================================
 	});
 	</script>
@@ -199,7 +196,6 @@ About Dialog -->
 					<li>Peity 3.3.0</li>
 					<li>Select2 4.0.12</li>
 					<li>Clayfy (12.06.2020)</li>
-					<li>Font Awesome 5.12.0</li>
 					</ul>
 					<hr>
 					<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/THWillert/SHMI?include_prereleases">&nbsp;
