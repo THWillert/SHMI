@@ -83,16 +83,16 @@ ___
    <dt>DOn</dt>
    <dd>Digitalausgang</dd>
    
-    <dt>AIn</dt>
+   <dt>AIn</dt>
    <dd>Analogeingang in &</dd>
    
-    <dt>AOn</dt>
+   <dt>AOn</dt>
    <dd>Analogausgang in %</dd>
    
-    <dt>AIn_SP</dt>
+   <dt>AIn_SP</dt>
    <dd>Analogeingang Sollwert in %</dd>
    
-     <dt>AOn_SP</dt>
+    <dt>AOn_SP</dt>
    <dd>Analogausgang Sollwert in %</dd>
 </dl>
 
