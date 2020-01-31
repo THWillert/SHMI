@@ -5,6 +5,7 @@ V0.5.0-beta 31.01.2020
  - updated: design for the RI instruments
  - updated: added sample animations (color change) to the RI SVG-image
  - changed: spltted language files and changed suffix to json
+ - changed: renamed randomdata.exe to SHMI_randomdata.exe and added more data-points
  - fixed: error with AO selection for RI
  
 V0.4.1-beta 30.01.2020
