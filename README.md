@@ -92,7 +92,7 @@ ___
    <dt>AIn_SP</dt>
    <dd>Analogeingang Sollwert in %</dd>
    
-    <dt>AOn_SP</dt>
+   <dt>AOn_SP</dt>
    <dd>Analogausgang Sollwert in %</dd>
 </dl>
 
