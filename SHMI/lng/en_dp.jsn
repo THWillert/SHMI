@@ -1,12 +1,4 @@
 {
-"DI":"Digital input",
-"DO":"Digital output",
-"AI":"Analog input",
-"AO":"Analog output",
-
-"Setpoint_AI":"Setpoint",
-"Setpoint_AO":"Setpoint",
-
 "DI0":"Control voltage",
 "DI1":"Lamp testing",
 "DI2":"Quit",
