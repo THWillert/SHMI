@@ -62,16 +62,36 @@ ___
 ### Datenpunkte
 
 <dl>
+   <dt>LIVE-BIT (noch nicht in Gebrauch)</dt>
+   <dd>Toggelt bei jedem neuen Datensatz</dd>
+   
+   <dt>TIMESTAMP (noch nicht in Gebrauch)</dt>
+   <dd>Zeitstempel</dd>
+   
+   <dt>WARN (noch nicht in Gebrauch)</dt>
+   <dd>Nummer der Warnmeldung - oder Text</dd>
+   
+   <dt>ALARM (noch nicht in Gebrauch)</dt>
+   <dd>Nummer der Alarmmeldung - oder Text</dd>
+   
+   <dt>MESSAGE (noch nicht in Gebrauch)</dt>
+   <dd>Nummer der Betriebsmeldung - oder Text</dd>
+   
    <dt>DIn</dt>
    <dd>Digitaleingang</dd>
+   
    <dt>DOn</dt>
    <dd>Digitalausgang</dd>
+   
     <dt>AIn</dt>
    <dd>Analogeingang in &</dd>
+   
     <dt>AOn</dt>
    <dd>Analogausgang in %</dd>
+   
     <dt>AIn_SP</dt>
    <dd>Analogeingang Sollwert in %</dd>
+   
      <dt>AOn_SP</dt>
    <dd>Analogausgang Sollwert in %</dd>
 </dl>
@@ -79,7 +99,7 @@ ___
 ### Schnittstelle
 
 Von der Steuerung muss eine entsprechende Datei erzeugt werden:
-`data/data.json`
+`data/data.json`  
 in der die Werte eingetragen werden.
 
 Der Aufbau der Datei ist selbsterklärend.
@@ -87,26 +107,31 @@ Der Aufbau der Datei ist selbsterklärend.
 Als Beispiel:
 ```json
 {
-"DI0":0,
-"DI1":0,
-"DI2":1,
+"LIVE-BIT":0,
+"TIMESTAMP":-1,
+"WARN":-1,
+"ALARM":-1,
+"MESSAGE":-1,
+"DI0":1,
+"DI1":1,
+"DI2":0,
 "DI4":0,
-"DI7":0,
-"DO0":1,
-"DO1":1,
+"DI7":1,
+"DO0":0,
+"DO1":0,
 "DO2":1,
-"DO8":0,
-"DO9":1,
+"DO8":1,
+"DO9":0,
 "DO10":1,
 "DO14":1,
-"AI0":36.9535665865988,
-"AI1":26.1963949818164,
-"AI2":31.7761578597128,
-"AI3":53.5179774835706,
-"AO0":40.1912705320865,
-"AO1":49.4759655464441,
-"AI0_SP":20,
-"AI1_SP":40,
+"AI0":14,
+"AI1":97.07,
+"AI2":44.96,
+"AI3":87.43,
+"AI0_SP":50,
+"AI1_SP":67,
+"AO0":4.77,
+"AO1":8.85,
 "AO1_SP":60
 }
 ```
@@ -146,21 +171,13 @@ Siehe auch Siemens: [Eigene Webseiten für S7-1200 / S7-1500 erstellen und einse
 
 ### Beschriftung der Datenpunkte
 
-Die Texte für die Beschriftung befinden sich in der Datei:
-`lng/de.jsn`
+Die Texte für die Beschriftung der Datenpunkte befinden sich in der Datei:
+`lng/de_dp.json`  
 und werden ebenfalls beim ersten Aufruf der Seite eingelesen.
 
 Beispiel:
 ```json
 {
-"DI":"Digitaleingänge",
-"DO":"Digitalausgänge",
-"AI":"Analogeingänge",
-"AO":"Analogausgänge",
-
-"Setpoint_AI":"Sollwert",
-"Setpoint_AO":"Sollwert",
-
 "DI0":"Steuerspannung",
 "DI1":"Lampentest",
 "DI2":"Störung quittieren",
@@ -224,7 +241,20 @@ Zum Löschen eines Elementes dieses in den Einstellungen wieder abwählen.
 
 ### Beschriftung der Oberfläche
 
-(siehe Beschriftung der Datenpunkte)
+Die Texte für die Beschriftung der Oberflächje befinden sich in der Datei:  
+`lng/de.json`
+
+Die Oberfläche ist noch nicht vollständig übersetzt.
+
+```json
+{
+"DI":"Digitaleingänge",
+"DO":"Digitalausgänge",
+"AI":"Analogeingänge",
+"AO":"Analogausgänge",
+"Prefs":"Einstellungen"
+}
+```
 
 ### Logo
 
@@ -254,6 +284,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
 - [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
+- [ ] Logo: Fallback auf PNG
 
 - [ ] Live-Bit von Steuerung in Schnittstelle (visualisieren)
 - [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
@@ -263,8 +294,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
-- [ ] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
-
+- [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 
 - [ ] Fonts lokal speichern und abfragen
 
