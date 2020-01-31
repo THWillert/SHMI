@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-27-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-30-01" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -52,20 +52,19 @@
 
 	<script type='text/javascript'>
 
-	var PeakInterval = 15000;
-	var updateIntervalA = 1000;
-	var updateIntervalD = 1000;
+	let PeakInterval = 15000;
+	let updateIntervalA = 1000;
+	let updateIntervalD = 1000;
 
 	//==============================================================================
 	$(function() {
 	//==============================================================================
-		var digital_in_container = $("#ID_digital_in");
-		var digital_out_container = $("#ID_digital_out");
-		var analog_in_container = $("#ID_analog_in");
-		var analog_out_container = $("#ID_analog_out");
+		const digital_in_container = $("#ID_digital_in");
+		const digital_out_container = $("#ID_digital_out");
+		const analog_in_container = $("#ID_analog_in");
+		const analog_out_container = $("#ID_analog_out");
 	//==============================================================================
-		function init()
-		{
+		function init() {
 			// Anzeigen einfügen
 			$.getJSON( "./data/data.json", function( data ) {
 				$.each( data, function( id, val) {
@@ -74,7 +73,7 @@
 					if ( id.indexOf("DI") != -1) {
 						digital_in_container.append(
 								`<tr>
-									<td id="TXT_${id}"></td>
+									<td id="TXT_${id}""></td>
 									<td><div class="digi_back"><span id="ID_${id}_D" class="digi bg-success">&nbsp;</span></div></td>
 								</tr>`
 								);
@@ -127,24 +126,32 @@
 				});
 			})
 				.done(function() {
-					// Beschriftung einfügen
-					$.getJSON( "./lng/de.jsn", function( data ) {
+					// UI
+					$.getJSON( "./lng/de.json", function( data ) {
 						$.each( data, function( id, val) {
 							$("#TXT_" + id).each( function() {
 								$(this).text(val);
 							});
 						});
 					});
+					// data points
+					$.getJSON( "./lng/de_dp.json", function( data ) {
+						$.each( data, function( id, val) {
+							$("#TXT_" + id).each( function() {
+								$(this).text(val);
+							});
+						});
+					})
 
 				// color settings depending on theme
 					// color of the peaks bar
-					$('.progress-peak').css("border-right", "solid .5em rgb(255,170,0)" );
+					$('.progress-peak').css("border-right", "solid .5em var(--level_peak)" );
 
 					// color of the valleys bar
-					$('.progress-low').css("border-right", "solid .5em rgb(68,135,255)" );
+					$('.progress-low').css("border-right", "solid .5em var(--level_valley)" );
 
 					// color of the setpoint bar
-					$('.progress-setpoint').css("border-right", "solid .3em var(--white)") ;
+					$('.progress-setpoint').css("border-right", "solid .3em var(--level_setpoint)") ;
 
 					// color of the digital IO bar
 					$('.digi_back').css("border", "solid 0.15em var(--secondary)" );
@@ -166,27 +173,18 @@
 					});
 
 				});
-
-			$("#ID_PeakHold_Reset").click(function () {
-					relasePeak();
-			});
-
 		}
 		init();
 
 	//==============================================================================
-		function updateValuesD()
-		{
-			var val, id;
-			var updatingChart;
-			var values;
+		function updateValuesD() {
+			let val, id;
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				val = this.value;
 				id = this.id;
 
-				// digital
-				$("#ID_" + id + "_D" ).css("opacity", val );
+				$(`#ID_${id}_D` ).css("opacity", val );
 
 			});
 			setTimeout(updateValuesD, updateIntervalD);
@@ -194,16 +192,9 @@
 		$(function(){updateValuesD();});
 
 	//==============================================================================
-		function updateValuesA()
-		{
-		var id;
-		var val;
-		var peak;
-		var low;
-
-		var updatingChart;
-		var values;
-		var chartWidth;
+		function updateValuesA() {
+			let id, val, peak, low;
+			let updatingChart, values;
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
@@ -215,28 +206,26 @@
 				});
 
 				// analog meter ------------------------------------------------
-				$("#ID_" + id + "_M" ).css("width",    val + "%" );
+				$(`#ID_${id}_M` ).css("width", val + "%" );
 
 				 // analog meter setpoint --------------------------------------
-				$("#ID_" + id + "_SP").css("width",    val + "%" );
+				$(`#ID_${id}_SP`).css("width", val + "%" );
 
 				// analog meter peak -------------------------------------------
-				peak = $("#ID_" + id + "_PK");
-				if ( val >  peak.val() )
-					peak.val( val ); // max
-				$("#ID_" + id + "_P" ).css("width",    peak.val()  + "%" ); // peak
+				peak = $(`#ID_${id}_PK`);
+				if ( val >  peak.val() ) peak.val( val );
+				$(`#ID_${id}_P` ).css("width", peak.val()  + "%" );
 
 				// analog meter low --------------------------------------------
-				low = $("#ID_" + id + "_LO");
-				if ( val <  low.val() )
-					low.val( val ); // min
-				$("#ID_" + id + "_L" ).css("width",    low.val()  + "%" ); // low
+				low = $(`#ID_${id}_LO`);
+				if ( val <  low.val() ) low.val( val );
+				$(`#ID_${id}_L` ).css("width", low.val()  + "%" );
 
 				// sparklines --------------------------------------------------
-				updatingChart = $("#ID_" + id + "_spark" ).peity("line")
+				updatingChart = $(`#ID_${id}_spark` ).peity("line")
 				values = updatingChart.text().split(",")
 				values.shift()
-				values.push(Round(val,0))
+				values.push(parseInt(val))
 
 				updatingChart
 					.text(values.join(","))
@@ -248,14 +237,18 @@
 		$(function(){updateValuesA();});
 
 		//==========================================================================
+		$("#ID_PeakHold_Reset").click(function () {
+			relasePeak();
+		});
+		//==========================================================================
+		function relasePeak() {
+			let id;
 
-		function relasePeak()
-		{
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
 
-				$("#ID_" + id + "_PK").val( Number.MIN_VALUE );
-				$("#ID_" + id + "_LO").val( Number.MAX_VALUE );
+				$(`#ID_${id}_PK`).val( Number.MIN_VALUE );
+				$(`#ID_${id}_LO`).val( Number.MAX_VALUE );
 			});
 			setTimeout(relasePeak, PeakInterval);
 		};
@@ -385,7 +378,7 @@
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapsePrefs" role="button" aria-expanded="false" aria-controls="collapsePrefs">
-						<div id="TXT_Prefs">Einstellungen</div>
+						<div id="TXT_Prefs">Settings</div>
 						</a>
 					</div>
 					<div class="card-body collapse" id="collapsePrefs">
@@ -394,7 +387,7 @@
 						<h5 class="card-title" id="TXT_Prefs_A">Analog</h5>
 
 						<div class="row p-1">
-							<div class="col">
+							<div class="col" id="TXT_Peak_Hold">
 								Peak hold
 							</div>
 							<div class="col" id="ID_Prefs_PeakHold">
@@ -418,8 +411,8 @@
 						</div>
 
 						<div class="row p-1">
-							<div class="col">
-								Update Intervall
+							<div class="col" id="TXT_Update_Interval">
+								Update Interval
 							</div>
 							<div class="col" id="ID_Prefs_Ana_Digi">
 								<select class="form-control form-control-sm" id="UpdateIntervalA" size="1" onChange="updateIntervalA=this.value*1000">
@@ -441,7 +434,7 @@
 
 						<div class="row p-1">
 							<div class="col">
-								Update Intervall
+								Update Interval
 							</div>
 							<!--<label for="ID_Prefs_Digi_Int"  class="col-sm-2 col-form-label">Intervall</label>-->
 							<div class="col" id="ID_Prefs_Digi_Int">
