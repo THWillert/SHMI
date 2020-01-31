@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-23-01
+	Modified: 2020-31-01
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -50,17 +50,20 @@ $(function() {
 		parent.top.$("#IDdata").find("input").each( function() {
 			id = this.id;
 
-			oOption = document.createElement("option");
-			oOption.text = id;
-			oOption.value = id;
+			if (id.indexOf("DI") !== -1 || id.indexOf("DO") !== -1 || id.indexOf("AI") !== -1 || id.indexOf("AO") !== -1 ) {
 
-			// select first analog chanel
-			if ( bSelect == false && id.indexOf("A") != -1 ) {
-				oOption.selected = "selected";
-				bSelect = true;
+				oOption = document.createElement("option");
+				oOption.text = id;
+				oOption.value = id;
+
+				// select first analog chanel
+				if ( bSelect == false && id.indexOf("AI") != -1 ) {
+					oOption.selected = "selected";
+					bSelect = true;
+				};
+
+				document.getElementById("IDdataSelect").add(oOption);
 			};
-
-			document.getElementById("IDdataSelect").add(oOption);
 
 		});
 	};
