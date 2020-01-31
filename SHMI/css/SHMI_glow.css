@@ -26,3 +26,15 @@ border-right: solid 0.35em #F00 !important;
 	background: radial-gradient(circle, #00000011 0%, #FF000055 50%, #FF000077 100%) !important;
 	border: 1px solid #F00;
 }
+
+.SHMI_level {
+	bottom: 0;
+	width: inherit;
+	height: 10em;
+	position: absolute;
+    background: linear-gradient(to top, #FFFFFF11 0%, #00ff0033 50%, #00FF0077 100%) !important;
+    border-top: 3px solid  #0F0;
+	border-radius: inherit;
+	transition: height 1s ease;
+	mix-blend-mode: multiply;
+}
