@@ -35,6 +35,8 @@ ___
 
 Auf dem Automatiserungs-Gerät muß ein Web-Server vorhanden sein.
 
+Eine lokale Installation ist ebenfalls möglich.
+
 ### Browser
 
 Getestet mit:
