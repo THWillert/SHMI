@@ -1,3 +1,12 @@
+V0.5.0-beta 31.01.2020
+
+ - added: more CSS-variables in SHMI_instruments.css
+ - added: more data points to data.json
+ - updated: design for the RI instruments
+ - updated: added sample animations (color change) to the RI SVG-image
+ - changed: spltted language files and changed suffix to json
+ - fixed: error with AO selection for RI
+ 
 V0.4.1-beta 30.01.2020
 
 - fixed: animation error with mixed style / attributes in svg files
