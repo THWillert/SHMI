@@ -59,7 +59,7 @@
 	let updateIntervalD = 1000;
 
 	//==============================================================================
-	$(function() {
+	$( () => {
 	//==============================================================================
 		const digital_in_container = $("#ID_digital_in");
 		const digital_out_container = $("#ID_digital_out");
@@ -71,8 +71,8 @@
 		function init() {
 
 			// Anzeigen einfügen
-			$.getJSON( "./data/data.json", function( data ) {
-				$.each( data, function( id, val) {
+			$.getJSON( "./data/data.json", ( data ) => {
+				$.each( data, ( id, val) => {
 
 				if ( id.indexOf("SP") == -1){
 					if ( id.indexOf("DI") != -1) {
@@ -84,7 +84,7 @@
 											<span id="ID_${id}_D" class="digi">&nbsp;</span>
 										</div>
 									</td>
-									<td id="TS_${id}"></td>
+									<td id="TS_${id}" class="value_out"></td>
 								</tr>`
 								);
 					} else if ( id.indexOf("DO") != -1) {
@@ -96,15 +96,19 @@
 											<span id="ID_${id}_D" class="digi">&nbsp;</span>
 										</div>
 									</td>
-									<td id="TS_${id}"></td>
+									<td id="TS_${id}" class="value_out"></td>
 								</tr>`
 								);
 					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
 						analog_in_container.append(
 								`<tr>
 									<td width="200em" id="TXT_${id}"></td>
-									<td><input class="analog ${id}_SP" disabled></td>
-									<td width="6em"><input class="analog ${id}" disabled></td>
+									<td  class="value_out">
+										<span class="${id}_SP"></span>
+									</td>
+									<td class="value_out value_big">
+										<span class="${id}"></span>
+									</td>
 									<td width="65%" style="padding-right: 1em;padding-left: 1em">
 										<div class="progress">
 											<div id="ID_${id}_M" class="progress-bar" role="progressbar"></div>
@@ -122,8 +126,12 @@
 						analog_out_container.append(
 								`<tr>
 									<td width="200em" id="TXT_${id}"></td>
-									<td><input class="analog ${id}_SP" disabled></td>
-									<td width="6em"><input class="analog ${id}" disabled></td>
+									<td  class="value_out">
+										<span class="${id}_SP"></span>
+									</td>
+									<td class="value_out value_big">
+										<span class="${id}"></span>
+									</td>
 									<td width="65%" style="padding-right: 1em;padding-left: 1em">
 										<div class="progress">
 											<div id="ID_${id}_M" class="progress-bar" role="progressbar"></div>
@@ -140,18 +148,18 @@
 				};
 				});
 			})
-				.done(function() {
+				.done( () => {
 					// UI
-					$.getJSON( "./lng/de.json", function( data ) {
-						$.each( data, function( id, val) {
+					$.getJSON( "./lng/de.json", ( data ) => {
+						$.each( data, ( id, val) => {
 							$("#TXT_" + id).each( function() {
 								$(this).text(val);
 							});
 						});
 					});
 					// data points
-					$.getJSON( "./lng/de_dp.json", function( data ) {
-						$.each( data, function( id, val) {
+					$.getJSON( "./lng/de_dp.json", ( data ) => {
+						$.each( data, ( id, val) => {
 							$("#TXT_" + id).each( function() {
 								$(this).text(val);
 							});
@@ -200,13 +208,13 @@
 				id = this.id;
 
 				$(`#ID_${id}_D` ).css("opacity", val );
-				timeStamp = moment.unix(  parent.top.$('#' + id + '_TS_upd').val() )
+				timeStamp = moment.unix(  parent.top.$(`#${id}_TS_upd`).val() )
 				$(`#TS_${id}` ).text( timeStamp.format('ll HH:mm:ss')  );
 
 			});
 			setTimeout(updateValuesD, updateIntervalD);
-		};
-		$(function(){updateValuesD();});
+		}
+		$(() => { updateValuesD(); });
 
 	//==============================================================================
 		function updateValuesA() {
@@ -220,6 +228,7 @@
 				// fill forms --------------------------------------------------
 				$("#IDAnalogIO").find( "." + id).each( function() {
 					this.value = parseFloat(val).toFixed(2);
+					this.textContent = parseFloat(val).toFixed(2);
 				});
 
 				// analog meter ------------------------------------------------
@@ -250,11 +259,11 @@
 
 			});
 			setTimeout(updateValuesA, updateIntervalA);
-		};
-		$(function(){updateValuesA();});
+		}
+		 $(() => { updateValuesA(); });
 
 		//==========================================================================
-		$("#ID_PeakHold_Reset").click(function () {
+		$("#ID_PeakHold_Reset").click( () => {
 			relasePeak();
 		});
 		//==========================================================================
@@ -268,8 +277,8 @@
 				$(`#ID_${id}_LO`).val( Number.MAX_VALUE );
 			});
 			setTimeout(relasePeak, PeakInterval);
-		};
-		$(function(){relasePeak();});
+		}
+		$(() => { relasePeak(); });
 
 	//==============================================================================
 	});
@@ -277,7 +286,6 @@
 	</script>
 </head>
 <body>
-
 	<div class="main container-fluid W100">
 		<div class="row p-2">
 			<!-- Digital input ------------------------------------------------------------>
@@ -389,7 +397,7 @@
 				</div>
 			</div>
 		</div>
-
+		<!-- settings --------------------------------------------------------->
 		<div class="row p-2">
 			<div class="col-md-7 p-2">
 				<div class="card shadow">
@@ -408,7 +416,7 @@
 								Peak hold
 							</div>
 							<div class="col" id="ID_Prefs_PeakHold">
-								<select class="form-control form-control-sm" id="PeakInterval" size="1" onChange="PeakInterval=this.value*1000">
+								<select class="form-control form-control-sm custom-select custom-select-sm" id="PeakInterval" size="1" onChange="PeakInterval=this.value*1000">
 									<option value="86400">Hold</option>
 									<option value="5">5 sec.</option>
 									<option value="10">10 sec.</option>
@@ -419,6 +427,7 @@
 									<option value="60">1 min.</option>
 									<option value="300">5 min.</option>
 									<option value="600">10 min.</option>
+									<option value="1800">30 min.</option>
 								</select>
 							</div>
 							<div class="col">
@@ -432,7 +441,7 @@
 								Update Interval
 							</div>
 							<div class="col" id="ID_Prefs_Ana_Digi">
-								<select class="form-control form-control-sm" id="UpdateIntervalA" size="1" onChange="updateIntervalA=this.value*1000">
+								<select class="form-control form-control-sm custom-select custom-select-sm" id="UpdateIntervalA" size="1" onChange="updateIntervalA=this.value*1000">
 									<option value="1" selected>1 sec.</option>
 									<option value="2">2 sec.</option>
 									<option value="3">3 sec.</option>
@@ -455,7 +464,7 @@
 							</div>
 							<!--<label for="ID_Prefs_Digi_Int"  class="col-sm-2 col-form-label">Intervall</label>-->
 							<div class="col" id="ID_Prefs_Digi_Int">
-								<select class="form-control form-control-sm" id="UpdateIntervalD" size="1" onChange="updateIntervalD=this.value*1000">
+								<select class="form-control form-control-sm custom-select custom-select-sm" id="UpdateIntervalD" size="1" onChange="updateIntervalD=this.value*1000">
 									<option value="1" selected>1 sec.</option>
 									<option value="2">2 sec.</option>
 									<option value="3">3 sec.</option>
