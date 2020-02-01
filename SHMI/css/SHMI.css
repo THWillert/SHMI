@@ -22,12 +22,24 @@ body {
 
 /* table ======================================================================*/
 
-#ID_DI td,
-#ID_DO td,
+#ID_digital_out,
+#ID_digital_in {
+	width: 100%
+}
+
+#ID_DI td:nth-child(1),
+#ID_DO td:nth-child(1),
 #ID_AI td:nth-child(1),
 #ID_AO td:nth-child(1) {
-	min-width: 15em;
+	width: 15em;
 	white-space: nowrap;
+	padding-right:3em;
+}
+
+#ID_DI td:last-child,
+#ID_DO td:last-child {
+	padding-left:3em;
+	text-align:center;
 }
 
 /* Flot =======================================================================*/
@@ -40,3 +52,4 @@ body {
 /* Misc =======================================================================*/
 
 .cursor-pointer {cursor: pointer;}
+.nobr {white-space:nowrap;}
