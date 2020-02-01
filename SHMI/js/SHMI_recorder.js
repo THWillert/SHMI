@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-31-01
+	Modified: 2020-01-02
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -50,7 +50,7 @@ $(function() {
 		parent.top.$("#IDdata").find("input").each( function() {
 			id = this.id;
 
-			if (id.indexOf("DI") !== -1 || id.indexOf("DO") !== -1 || id.indexOf("AI") !== -1 || id.indexOf("AO") !== -1 ) {
+			if ((id.indexOf("DI") !== -1 || id.indexOf("DO") !== -1 || id.indexOf("AI") !== -1 || id.indexOf("AO") !== -1 ) && id.indexOf("_") == -1) {
 
 				oOption = document.createElement("option");
 				oOption.text = id;
