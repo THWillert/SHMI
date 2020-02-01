@@ -1,3 +1,8 @@
+V0.6.0-beta 01.02.2020
+
+ - added: DI/DO shows the timestamp of the last change now
+
+
 V0.5.0-beta 31.01.2020
 
  - added: more CSS-variables in SHMI_instruments.css
