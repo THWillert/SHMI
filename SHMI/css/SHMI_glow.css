@@ -10,14 +10,14 @@
 }
 
 #ID_AI .progress-bar {
-background: linear-gradient(to right, #00000000 0%, #00FF0011 50%, #00FF0055 100%) !important;
-filter: saturate(100%);
-border-right: solid 0.35em #0F0;
+	background: linear-gradient(to right, #00000000 0%, #00FF0011 50%, #00FF0055 100%) !important;
+	filter: saturate(100%);
+	border-right: solid 0.35em #0F0;
 }
 #ID_AO .progress-bar {
-background: linear-gradient(to right, #00000000 0%, #FF000011 50%, #FF000055 100%) !important;
-filter: saturate(100%);
-border-right: solid 0.35em #F00;
+	background: linear-gradient(to right, #00000000 0%, #FF000011 50%, #FF000055 100%) !important;
+	filter: saturate(100%);
+	border-right: solid 0.35em #F00;
 }
 
 #ID_DI .digi {
