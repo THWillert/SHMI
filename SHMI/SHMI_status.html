@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-30-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-01-02" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -44,6 +44,8 @@
 	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
@@ -63,8 +65,11 @@
 		const digital_out_container = $("#ID_digital_out");
 		const analog_in_container = $("#ID_analog_in");
 		const analog_out_container = $("#ID_analog_out");
+
+		moment.lang("de", moment_de);
 	//==============================================================================
 		function init() {
+
 			// Anzeigen einfügen
 			$.getJSON( "./data/data.json", function( data ) {
 				$.each( data, function( id, val) {
@@ -74,14 +79,24 @@
 						digital_in_container.append(
 								`<tr>
 									<td id="TXT_${id}""></td>
-									<td><div class="digi_back"><span id="ID_${id}_D" class="digi bg-success">&nbsp;</span></div></td>
+									<td>
+										<div class="digi_back">
+											<span id="ID_${id}_D" class="digi">&nbsp;</span>
+										</div>
+									</td>
+									<td id="TS_${id}"></td>
 								</tr>`
 								);
 					} else if ( id.indexOf("DO") != -1) {
 						digital_out_container.append(
 								`<tr>
 									<td id="TXT_${id}"></td>
-									<td><div class="digi_back"><span id="ID_${id}_D" class="digi bg-danger">&nbsp;</span></div></td>
+									<td>
+										<div class="digi_back">
+											<span id="ID_${id}_D" class="digi">&nbsp;</span>
+										</div>
+									</td>
+									<td id="TS_${id}"></td>
 								</tr>`
 								);
 					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
@@ -92,7 +107,7 @@
 									<td width="6em"><input class="analog ${id}" disabled></td>
 									<td width="65%" style="padding-right: 1em;padding-left: 1em">
 										<div class="progress">
-											<div id="ID_${id}_M" class="progress-bar bg-success" role="progressbar"></div>
+											<div id="ID_${id}_M" class="progress-bar" role="progressbar"></div>
 											<span id="ID_${id}_SP_SP" class="text-light progress-setpoint"></span>
 											<span id="ID_${id}_P" class="progress-peak ${id}_P"></span>
 											<span id="ID_${id}_L" class="progress-low ${id}_L"></span>
@@ -111,7 +126,7 @@
 									<td width="6em"><input class="analog ${id}" disabled></td>
 									<td width="65%" style="padding-right: 1em;padding-left: 1em">
 										<div class="progress">
-											<div id="ID_${id}_M" class="progress-bar bg-danger" role="progressbar"></div>
+											<div id="ID_${id}_M" class="progress-bar" role="progressbar"></div>
 											<span id="ID_${id}_SP_SP" class="text-light progress-setpoint"></span>
 											<span id="ID_${id}_P" class="progress-peak ${id}_P"></span>
 											<span id="ID_${id}_L" class="progress-low ${id}_L"></span>
@@ -143,7 +158,6 @@
 						});
 					})
 
-				// color settings depending on theme
 					// color of the peaks bar
 					$('.progress-peak').css("border-right", "solid .5em var(--level_peak)" );
 
@@ -179,12 +193,15 @@
 	//==============================================================================
 		function updateValuesD() {
 			let val, id;
+			let timeStamp
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				val = this.value;
 				id = this.id;
 
 				$(`#ID_${id}_D` ).css("opacity", val );
+				timeStamp = moment.unix(  parent.top.$('#' + id + '_TS_upd').val() )
+				$(`#TS_${id}` ).text( timeStamp.format('ll HH:mm:ss')  );
 
 			});
 			setTimeout(updateValuesD, updateIntervalD);
@@ -451,6 +468,7 @@
 								<!--  -->
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
