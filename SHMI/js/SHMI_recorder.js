@@ -23,53 +23,59 @@
 
 //==============================================================================
 
-var UpdateInterval = 1000;
-var smooth = 11;
-var smoothType = 0;
-var data = [];
-var einheit = "%";
-var fag_Average = [0];
+let UpdateInterval = 1000;
+let smooth = 11;
+let smoothType = 0;
+let data = [];
+let einheit = "%";
+let fag_Average = [0];
 
 //==============================================================================
 
-$(function() {
-	var viewData = [];
-	var MVA = [];
+$( () => {
+	let viewData = [];
+	let MVA = [];
 
-	var pause = false;
-	var max, min, len;
+	let pause = false;
+	let max, min, len;
 
 	min = Number.MAX_VALUE;
 	max = Number.MIN_VALUE;
 //==============================================================================
 
 	function DataSelectOptions() {
-		var oOption;
-		var bSelect = false;
+		let oOption;
+		let bSelect = false;
 
 		parent.top.$("#IDdata").find("input").each( function() {
 			id = this.id;
 
-			if ((id.indexOf("DI") !== -1 || id.indexOf("DO") !== -1 || id.indexOf("AI") !== -1 || id.indexOf("AO") !== -1 ) && id.indexOf("_") == -1) {
+			if ((
+				id.indexOf("DI") !== -1||
+				id.indexOf("DO") !== -1 ||
+				id.indexOf("AI") !== -1 ||
+				id.indexOf("AO") !== -1
+				) &&
+					id.indexOf("_") == -1) {
 
-				oOption = document.createElement("option");
-				oOption.text = id;
-				oOption.value = id;
+					oOption = document.createElement("option");
+					oOption.text = id;
+					oOption.value = id;
 
-				// select first analog chanel
-				if ( bSelect == false && id.indexOf("AI") != -1 ) {
-					oOption.selected = "selected";
-					bSelect = true;
-				};
+					// select first analog chanel
+					if ( bSelect == false && id.indexOf("AI") != -1 ) {
+						oOption.selected = "selected";
+						bSelect = true;
+					}
 
-				document.getElementById("IDdataSelect").add(oOption);
-			};
+					document.getElementById("IDdataSelect").add(oOption);
+			}
 
 		});
-	};
+	}
 	DataSelectOptions();
 //==============================================================================
-	var datasets = {
+	let datasets = {
 		"data": {
 			lines: { show: true, lineWidth: 2 },
 			data: data
@@ -78,24 +84,24 @@ $(function() {
 //==============================================================================
 	// hard-code color indices to prevent them from shifting as
 	// lines are turned on/off
-	var i = 0;
-	$.each(datasets, function(key, val) {
+	let i = 0;
+	$.each(datasets, (key, val) => {
 		val.color = i;
 		++i;
 	});
 //==============================================================================
 	// insert checkboxes
-	var choiceContainer = $("#choices");
-	$.each(datasets, function(key, val) {
-		choiceContainer.append("<br/><input style='display:hidden' type='checkbox' name='" + key +
-			"' checked='checked' id='id" + key + "'></input>" +
-			"<label for='id" + key + "'>"
-			+ val.label + "</label>");
+	let choiceContainer = $("#choices");
+	$.each(datasets, (key, val) => {
+		choiceContainer.append(
+			 `<br/><input style='display:hidden' type='checkbox' name='${key}' checked='checked' id='id${key}'>
+			 </input><label for='id${key}'>${key.label}</label>`
+			);
 	});
 //==============================================================================
 	choiceContainer.find("input").click(plotAccordingToChoices);
 //==============================================================================
-	var options = {
+	let options = {
 		yaxis: {
 			autoScale: 'loose',
 			autoScaleMargin: 0.1,
@@ -143,7 +149,7 @@ $(function() {
 		}
 	}
 //==============================================================================
-	var overview_options =  {
+	let overview_options =  {
 		series: {
 			lines: {
 				show: true,
@@ -184,20 +190,20 @@ $(function() {
 			color: "white",
 			"text-align": "center",
 			"border-radius": "0.3em",
-			"background-color": "black"
+			"background-color": "black",
 	}).appendTo("body");
 
 	/* Show tooltip */
-	$("#chart").bind("plothover", function (event, pos, item) {
+	$("#chart").bind("plothover", (event, pos, item) => {
 
 		if (!pos.x || !pos.y) return;
 
 		if (item) {
-			var x = item.datapoint[0].toFixed(2),
+			let x = item.datapoint[0].toFixed(2),
 				y = item.datapoint[1].toFixed(2);
 
 			/* shows value and time */
-			$("#tooltip").html( "<b>" + y + "</b><br>" + moment().format('HH:mm:ss') )
+			$("#tooltip").html( `<span class="value_big">${y}</span><br>` + moment().format('HH:mm:ss') )
 				.css({top: item.pageY+5, left: item.pageX+5})
 				.fadeIn(500);
 		} else {
@@ -205,7 +211,7 @@ $(function() {
 	});
 
 	/* Hide tooltip */
-	$("#chart").bind("plothovercleanup", function (event, pos, item) {
+	$("#chart").bind("plothovercleanup", (event, pos, item) => {
 			$("#tooltip").hide();
 	});
 //==============================================================================
@@ -214,7 +220,7 @@ $(function() {
 		var data = [];
 
 		choiceContainer.find("input:checked").each(function () {
-			var key = $(this).attr("name");
+			let key = $(this).attr("name");
 			if (key && datasets[key]) {
 				data.push(datasets[key]);
 			}
@@ -226,7 +232,7 @@ $(function() {
 	}
 	plotAccordingToChoices();
 //==============================================================================
-	$("#chart").bind("plotselected", function (event, ranges) {
+	$("#chart").bind("plotselected", (event, ranges) => {
 
 		// do the zooming
 		plot = $.plot("#chart", [data], $.extend(true, {}, options, {
@@ -240,19 +246,19 @@ $(function() {
 		overview.setSelection(ranges, true);
 	});
 //==============================================================================
-	$("#overview").bind("plotselected", function (event, ranges) {
+	$("#overview").bind("plotselected", (event, ranges) => {
 		plot.setSelection(ranges);
 	});
 //==============================================================================
 	function GraphUpdate()
 	{
-		var mid;
-		var d = [];
+		let mid;
+		let d = [];
 		//var zeit = moment().format('HH:mm:ss');
-		var c = data.length;
-		var srcID = $("#IDdataSelect").val()
-		var newVal = parent.top.$( "#" + srcID ).val();
-		var x =  moment();
+		let c = data.length;
+		let srcID = $("#IDdataSelect").val()
+		let newVal = parent.top.$( "#" + srcID ).val();
+		let x =  moment();
 
 		if (srcID.indexOf("D") == -1 ) {
 			overview_options.series.lines.steps = false;
@@ -262,13 +268,13 @@ $(function() {
 			overview_options.series.lines.steps = true;
 			options.series.lines.steps = true;
 			document.getElementById("IDsmooth").setAttribute("disabled", "disabled");
-		};
+		}
 
 		if(c > 3600 ) data.shift();
 		if(viewData.length > 240) {
 			viewData.shift();
 			MVA.shift();
-		};
+		}
 
 		if (newVal < min) min = newVal;
 		if (newVal > max) max = newVal;
@@ -301,12 +307,12 @@ $(function() {
 					mid = ss.median(fag_Average); break;
 				case 2:
 					mid = ss.rootMeanSquare(fag_Average); break;
-			};
+			}
 
 			MVA.push( [ x , mid  ] );
 		} else {
 			fag_Average = [];
-		};
+		}
 		// ---------------------------------------------------------------------
 
 		if (pause == false) {
@@ -320,13 +326,13 @@ $(function() {
 
 			overview = $.plot('#overview',  [data], overview_options);
 
-			$(".cur_value").val( Round(newVal,2) + " " + einheit);
-			$(".min_value").val( Round(min,2) + " " + einheit);
-			$(".max_value").val( Round(max,2) + " " + einheit);
-			$(".avg_value").val( Round(mid,2) + " " + einheit);
+			$(".cur_value").text( Round(newVal,2) + " " + einheit);
+			$(".min_value").text( Round(min,2) + " " + einheit);
+			$(".max_value").text( Round(max,2) + " " + einheit);
+			$(".avg_value").text( Round(mid,2) + " " + einheit);
 
-		};
-		$("#DataSize").val( c );
+		}
+		$("#DataSize").text( c );
 
 
 		setTimeout(GraphUpdate, UpdateInterval);
@@ -336,7 +342,7 @@ $(function() {
 	function refreshGraph() {
 		overview = $.plot("#overview", [data], overview_options);
 		plot = $.plot('#chart',  [viewData] , options);
-	};
+	}
 
 //==============================================================================
 		$('#ID_AutoZoom').on('change', function() {
@@ -375,7 +381,7 @@ $(function() {
         });
 
 //==============================================================================
-	$("#IDsmooth").click(function () {
+	$("#IDsmooth").click( () => {
 
 		if (  options.series.lines.show ) {
 			options.series.lines.show = false;
@@ -388,7 +394,7 @@ $(function() {
 		refreshGraph();
 	});
 //==============================================================================
-	$("#IDfill").click(function () {
+	$("#IDfill").click( () => {
 
 		options.series.lines.fill = ( options.series.lines.fill  ? false : true );
 		overview_options.series.lines.fill = options.series.lines.fill;
@@ -402,7 +408,7 @@ $(function() {
 	});
 
 //==============================================================================
-	$("#IDShowPoints").click(function () {
+	$("#IDShowPoints").click( () => {
 
 		options.series.points.show = ( options.series.points.show  ? false : true );
 
@@ -410,17 +416,17 @@ $(function() {
 	});
 
 //==============================================================================
-	$("#IDmaxReset").click(function () {
+	$("#IDmaxReset").click( () => {
 		max = 0;
 		mid = 0;
 	});
 //==============================================================================
-	$("#IDminReset").click(function () {
+	$("#IDminReset").click( () => {
 		min = max;
 		mid = 0;
 	});
 //==============================================================================
-	$("#IDPause").click(function () {
+	$("#IDPause").click( () => {
 		pause = ( pause ? false : true);
 		changePause();
 	});
@@ -440,10 +446,10 @@ $(function() {
 		} else {
 			$("#IDPauseIcon").removeClass( "fa-pause" ).addClass( "fa-play" );
 			//$("#TXT_Pause").text('Start');
-		};
+		}
 	}
 //==============================================================================
-	$("#IDDataReset").click(function () {
+	$("#IDDataReset").click( () => {
 			viewData = [];
 			MVA = [];
 			fag_Average = [];
@@ -451,7 +457,7 @@ $(function() {
 			refreshGraph();
 	});
 //==============================================================================
-	$( window ).resize(function() {
+	$( window ).resize( () => {
 		plot.resize();
 		plot.setupGrid();
 		plot.draw();
@@ -473,9 +479,9 @@ jQuery.browser={};
 		}
 })();
 //==============================================================================
-var UpdateIntervalOptions = function()
+let UpdateIntervalOptions = function()
 {
-	for (var i = 1; i < 121; i++) {
+	for (let i = 1; i < 121; i++) {
 		oOption = document.createElement("option");
 		oOption.text = i;
 		oOption.value = i * 1000;
@@ -483,14 +489,14 @@ var UpdateIntervalOptions = function()
 	}
 }
 //==============================================================================
-var Download = function()
+let Download = function()
 {
-	var csvRows = [];
-	for (var i = 0, l = data.length ; i<l; ++i) {
+	let csvRows = [];
+	for (let i = 0, l = data.length ; i<l; ++i) {
 		csvRows.push(data[i].join(';'));
 	}
-	var csvString = csvRows.join("%0A");
-	var fileName = moment().format() + "_Data.csv";
+	let csvString = csvRows.join("%0A");
+	let fileName = moment().format() + "_Data.csv";
 
 	if (!$.browser.msie) {
 		var a         = document.createElement('a');
@@ -500,7 +506,7 @@ var Download = function()
 		document.body.appendChild(a);
 		a.click();
 	} else {
-		var blob = new Blob([csvString],{
+		let blob = new Blob([csvString],{
 		type: "text/csv;charset=utf-8;"
 		});
 		navigator.msSaveBlob(blob, fileName)
