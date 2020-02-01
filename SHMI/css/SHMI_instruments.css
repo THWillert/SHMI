@@ -6,21 +6,24 @@ License: MIT
 
 :root {
 /* analog meter + level */
+  --level_ai_meter: var(--teal);
+  --level_ao_meter: var(--teal);
+
   --level_peak: rgb(255,170,0);
   --level_valley: rgb(68,135,255);
   --level_setpoint: var(--white);
 
 /* sparklines */
-  --sparkline_ai_fill: var(--success);
-  --sparkline_ai_stroke: #0F0;
-  --sparkline_ao_fill: var(--danger);
-  --sparkline_ao_stroke: #F00;
+  --sparkline_ai_fill: var(--teal);
+  --sparkline_ai_stroke: var(--teal);
+  --sparkline_ao_fill: var(--teal);
+  --sparkline_ao_stroke: var(--teal);
 
 /* RI instruments */
   --SHMI_drag_bg: var(--dark); /* background-color */
   --SHMI_drag_txt: var(--light); /* text-color */
 
-  --SHMI_level_bg:  var(--success);
+  --SHMI_level_bg:  var(--teal);
 }
 
 .analog {
@@ -31,24 +34,39 @@ License: MIT
 .progress {
     position: relative;
     height: 2em;
-	/*background: linear-gradient(to bottom, #00000022 0%,#66666622 100%) !important;*/ }
+}
 .progress-bar {
 	transition: width 1s ease-in-out;
+
 }
 .progress > .progress-setpoint {
 	position: absolute;
 	height: inherit;
 	left: 0em;
-	background-color: rgba(25, 25, 25, 0.4);}
+	background-color: rgba(25, 25, 25, 0.4)
+}
+
 /* colors are set in the jQuery init() status.html */
 .progress > .progress-peak {
 	position: absolute;
-	height: inherit;;
-	transition: width 1s linear; }
+	height: inherit;
+	transition: width 1s linear;
+}
 .progress > .progress-low {
 	position: absolute;
 	height: inherit;
-	transition: width 1s linear; }
+	transition: width 1s linear;
+}
+#ID_AI .progress-bar {
+	background: var(--level_ai_meter) !important;
+	filter: saturate(50%);
+	border-right: solid 0.35em #0F0 !important;
+}
+#ID_AO .progress-bar {
+	background: var(--level_ao_meter) !important;
+	filter: saturate(80%);
+	border-right: solid 0.35em #F00 !important;
+}
 
 /* scale --------------------------- */
 .scale-table {
@@ -74,9 +92,8 @@ License: MIT
 .digi_back {
 	width: 1.5em;
 	height: 1.5em;
-	border-radius: 90%; /* circle */
+	border-radius: 0.3em; /* circle */
 	background: linear-gradient(to top, #00000022 0%,#66666622 100%) !important;
-	/* background: ##1c1e22 !important; */
 }
 .digi {
 	position: absolute;
@@ -86,6 +103,15 @@ License: MIT
 	transition: opacity 0.5s ease; /* "led" speed */
 	display: block;
 	border-radius: inherit; /* circle */
+}
+
+#ID_DI .digi {
+	background: var(--teal);
+	border: 1px solid #0F0;
+}
+#ID_DO .digi {
+	background: var(--teal);
+	border: 1px solid #F00;
 }
 
 /* RI =========================================================================*/
