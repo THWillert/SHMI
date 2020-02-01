@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-30-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-02-01" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -118,11 +118,11 @@
 							<div class="form-row p-2">
 								<div class="col" id="ID_analog_sel">
 									Data source:
-									<select class="form-control form-control-sm" id="IDdataSelect"></select>
+									<select class="form-control form-control-sm custom-select custom-select-sm" id="IDdataSelect"></select>
 								</div>
 								<div class="col" id="updateInt">
 									Update Interval (sec):
-									<select class="form-control form-control-sm" id="updateInterval" size="1"
+									<select class="form-control form-control-sm custom-select custom-select-sm" id="updateInterval" size="1"
 									onChange="
 										UpdateInterval=this.value
 									">
@@ -130,7 +130,7 @@
 								</div>
 								<div class="col" id="updateInt">
 									Auto Zoom:
-									<select class="form-control form-control-sm" id="ID_AutoZoom" size="1">
+									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_AutoZoom" size="1">
 										<option type="select" name="AutoZoom" value="0">Off</option>
 										<option type="select" name="AutoZoom" value="10">Fit loosely</option>
 										<option type="select" name="AutoZoom" value="11">Fit exactly</option>
@@ -154,7 +154,7 @@
 							<div class="form-row p-2">
 								<div class="col" id="ID_smooth">
 									Statistics:
-									<select class="form-control form-control-sm" id="ID_Smooth" size="1"
+									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Smooth" size="1"
 										onChange="
 											smoothType=parseInt(this.value);
 											document.getElementById('TXT_avg').textContent = this.options[this.selectedIndex].text
@@ -166,7 +166,7 @@
 								</div>
 								<div class="col" id="ID_smooth">
 									Statistic samples:
-									<select class="form-control form-control-sm" id="ID_Smooth" size="1"
+									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Smooth" size="1"
 										onChange="
 											fag_Average = [];smooth=parseFloat(this.value)
 										">
@@ -227,8 +227,8 @@
 					</div>
 					<div class="card-body collapse show" id="collapseData">
 						<form>
-							<div class="table-responsive">
-								<table class="table table-borderless">
+							<div class="table-responsive p-1">
+								<table id="ID_Table_RecData" class="" style="width:100%">
 									<tr>
 										<td>Current value</td>
 										<td>Minimum</td>
@@ -237,11 +237,11 @@
 										<td>Data points</td>
 									</tr>
 									<tr>
-										<td><input id="current_value" class="cur_value analog input-sm" readonly></td>
-										<td><input id="min" class="min_value analog  input-sm" readonly></td>
-										<td><input id="mid" class="avg_value analog input-sm" readonly></td>
-										<td><input id="max" class="max_value analog  input-sm" readonly></td>
-										<td><input id="DataSize" class="analog input-sm" disabled></td>
+										<td><span id="current_value" class="cur_value value_out value_big" ></td>
+										<td><span id="min" class="min_value value_out value_big"></span></td>
+										<td><span id="mid" class="avg_value value_out value_big"></span></td>
+										<td><span id="max" class="max_value value_out value_big"></span></td>
+										<td><span id="DataSize" class=""></span></td>
 									</tr>
 									<tr>
 										<td></td>
