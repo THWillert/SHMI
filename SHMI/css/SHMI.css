@@ -20,11 +20,29 @@ body {
 	top: 20px;
 }
 
+/*
+.shadow {
+box-shadow: 0 0 0 0 !important;
+}
+*/
+
 /* table ======================================================================*/
+
+#ID_Table_RecData th,
+#ID_Table_RecData td {
+	text-align:center;
+	padding: 0.3em;
+	width: 20%;
+}
 
 #ID_digital_out,
 #ID_digital_in {
 	width: 100%
+}
+
+#ID_analog_out th,
+#ID_analog_in th {
+	text-align: center;
 }
 
 #ID_DI td:nth-child(1),
@@ -34,6 +52,16 @@ body {
 	width: 15em;
 	white-space: nowrap;
 	padding-right:3em;
+}
+
+.value_out {
+	text-align: right;
+	padding-right:1em;
+	padding-left:1em;
+	filter: brightness(130%)
+}
+.value_big {
+	font-size: 120%;
 }
 
 #ID_DI td:last-child,
