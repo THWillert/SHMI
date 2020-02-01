@@ -14,7 +14,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-30-01" />
+	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-01-02" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -98,7 +98,16 @@
 			$.getJSON( "./data/data.json", function( data ) {
 				var data_container = $("#IDdata");
 				$.each( data, function( id, val) {
-					data_container.append(`<tr><td>${id}</td><td><input readonly id="${id}"></td><td id="TXT_${id}"></td></tr>`)
+					data_container.append(`
+						<tr>
+						<td>${id}</td>
+						<td><input id="${id}"></td>
+						<td><input id="${id}_old"></td>
+						<td><input readonly id="${id}_TS_upd">
+						</td><td id="TXT_${id}">
+
+						</tr>`
+					)
 				});
 			});
 		}
@@ -112,12 +121,19 @@
 				$.each( data, function( id, val) {
 					$("#" + id).each( function() {
 						$(this).val( val );
+
+						if ( $("#" + id + '_old').val() != $("#" + id).val() ) {
+							$("#" + id + '_TS_upd').val(  moment().unix() );
+						};
+
+						$("#" + id + '_old').val( $(this).val() );
 					});
 				})
 				setTimeout(updateVal, 1000); // update intervall for all values
 			})
 				.fail(function() {
 						console.log( "updateVal: error" );
+						updateVal();
 				});
 
 			var updatingChart = $(".liveBit").peity("bar", { width: 100 })
@@ -215,13 +231,13 @@ About Dialog -->
 	Unhide it for debugging -->
 
 	<!-- <div  style="position:relative;top:80px;z-index:100;"> -->
-	<div  style="height:0;position:relative;top:80px;z-index:100;" class="d-none">
+	<div  style="height:0;position:relative;top:80px;z-index:100;" class="d-none"><!-- d-none -->
 
-	<div class="col-md-3" style="height:0">
+	<div class="col-md-5" style="height:0">
 		<div class="card panel-default">
 			<div class="card-body table-responsive">
-				<table class="table" id="IDdata">
-					<tr><th>I/O</th><th>Value</th><th></th></tr>
+				<table class="table table-sm" id="IDdata">
+					<tr><th>I/O</th><th>Value</th><th>Last Value</th><th>Timestamp</th></tr>
 				</table>
 			</div>
 		</div>
