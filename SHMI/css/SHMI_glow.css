@@ -11,11 +11,13 @@
 
 #ID_AI .progress-bar {
 background: linear-gradient(to right, #00000000 0%, #00FF0011 50%, #00FF0055 100%) !important;
-border-right: solid 0.35em #0F0 !important;
+filter: saturate(100%);
+border-right: solid 0.35em #0F0;
 }
 #ID_AO .progress-bar {
 background: linear-gradient(to right, #00000000 0%, #FF000011 50%, #FF000055 100%) !important;
-border-right: solid 0.35em #F00 !important;
+filter: saturate(100%);
+border-right: solid 0.35em #F00;
 }
 
 #ID_DI .digi {
@@ -25,6 +27,13 @@ border-right: solid 0.35em #F00 !important;
 #ID_DO .digi {
 	background: radial-gradient(circle, #00000011 0%, #FF000055 50%, #FF000077 100%) !important;
 	border: 1px solid #F00;
+}
+
+.SHMI_drag_DI .fas {
+	color: #0F0;
+}
+.SHMI_drag_DO .fas {
+	color: #F00;
 }
 
 .SHMI_level {
