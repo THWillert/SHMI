@@ -56,11 +56,9 @@
 
 	<script type='text/javascript'>
 	//==============================================================================
-	$(function() {
+	$( () => {
 
-		var timer_Update;
-
-		var toggle = 0;
+		let toggle = 0;
 
 		$(".liveBit").peity("bar")
 		$(".bar-colour").peity("bar", {
@@ -73,8 +71,8 @@
 
 		function timeUpdate()
 		{
-			var Time = new Date();
-			var TimeOption;
+			let Time = new Date();
+			let TimeOption;
 
 			$("#IDtime").text( moment().format('LLLL') );
 			/*
@@ -95,17 +93,16 @@
 	//==============================================================================
 	// Data for all pages
 		function writeIO() {
-			$.getJSON( "./data/data.json", function( data ) {
+			$.getJSON( "./data/data.json", ( data ) => {
 				var data_container = $("#IDdata");
-				$.each( data, function( id, val) {
+				$.each( data, ( id, val) => {
 					data_container.append(`
 						<tr>
-						<td>${id}</td>
-						<td><input id="${id}"></td>
-						<td><input id="${id}_old"></td>
-						<td><input readonly id="${id}_TS_upd">
-						</td><td id="TXT_${id}">
-
+							<td>${id}</td>
+							<td><input id="${id}"></td>
+							<td><input id="${id}_old"></td>
+							<td><input readonly id="${id}_TS_upd">
+							</td><td id="TXT_${id}">
 						</tr>`
 					)
 				});
@@ -117,23 +114,23 @@
 	// Update values
 		function updateVal()
 		{
-			$.getJSON( "./data/data.json", function( data ) {
-				$.each( data, function( id, val) {
-					$("#" + id).each( function() {
+			$.getJSON( "./data/data.json", ( data ) => {
+				$.each( data, ( id, val) => {
+					$(`#${id}`).each( function() {
 						$(this).val( val );
 
-						if ( $("#" + id + '_old').val() != $("#" + id).val() ) {
-							$("#" + id + '_TS_upd').val(  moment().unix() );
+						if ( $(`#${id}_old`).val() != $(`#${id}`).val() ) {
+							$(`#${id}_TS_upd`).val(  moment().unix() );
 						};
 
-						$("#" + id + '_old').val( $(this).val() );
+						$(`#${id}_old`).val( $(this).val() );
 					});
 				})
 				setTimeout(updateVal, 1000); // update intervall for all values
 			})
 				.fail(function() {
 						console.log( "updateVal: error" );
-						updateVal();
+						updateVal(); // !!! rec
 				});
 
 			var updatingChart = $(".liveBit").peity("bar", { width: 100 })
@@ -147,7 +144,7 @@
 				.text(values.join(","))
 				.change()
 		}
-		$(function(){updateVal();});
+		$(() => {updateVal();});
 	//==============================================================================
 	});
 	</script>
@@ -184,7 +181,6 @@ Header and navigation -->
 		</div>
 		<a class="nav-link cursor-pointer" data-toggle="modal" data-target="#exampleModalCenter" id="IDabout">About</a>
 	</nav>
-
 
 <!-- ==============================================================================
 About Dialog -->
