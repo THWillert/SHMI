@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-01-02
+	Modified: 2020-02-02
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -287,8 +287,6 @@ $( () => {
 			];
 		// orange 0,215,145
 
-
-
 		data.push( [ x , newVal ] );
 		viewData.push( [ x , newVal ] );
 
@@ -314,7 +312,6 @@ $( () => {
 			fag_Average = [];
 		}
 		// ---------------------------------------------------------------------
-
 		if (pause == false) {
 
 			plot = $.plot('#chart',
@@ -326,14 +323,12 @@ $( () => {
 
 			overview = $.plot('#overview',  [data], overview_options);
 
-			$(".cur_value").text( Round(newVal,2) + " " + einheit);
-			$(".min_value").text( Round(min,2) + " " + einheit);
-			$(".max_value").text( Round(max,2) + " " + einheit);
-			$(".avg_value").text( Round(mid,2) + " " + einheit);
-
+			$(".cur_value").html( Round(newVal,2) + "&nbsp;" + einheit);
+			$(".min_value").html( Round(min,2) + "&nbsp;" + einheit);
+			$(".max_value").html( Round(max,2) + "&nbsp;" + einheit);
+			$(".avg_value").html( Round(mid,2) + "&nbsp;" + einheit);
 		}
 		$("#DataSize").text( c );
-
 
 		setTimeout(GraphUpdate, UpdateInterval);
 	}
