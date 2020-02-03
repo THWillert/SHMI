@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head profile="http://dublincore.org/documents/dcq-html/">
+<html lang="en">
+<head>
+	<title>SHMI- RI</title>
+
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
 	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_ri_01.html">
-	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
-	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
+	<meta name="DC.format"        content="text/html" />
+	<meta name="DC.type"          content="Text" />
 	<meta name="DC.title"         content="Dublin Core" />
 	<meta name="DC.publisher"     content="Thorsten Willert" />
 	<meta name="DC.subject"       content="SHMI status page" />
 	<meta name="DC.creator"       content="Thorsten Willert" />
-	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
+	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-02-01" />
+	<meta name="DCTERMS.modified" content="2020-02-02" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -43,19 +45,18 @@
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 
 	<link rel="stylesheet" type="text/css" href="./fontsawesome/css/all.min.css" >
-	<link rel="stylesheet" type="text/css" href="./css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="./css/select2.min.css" />
 
+	<script src="./js/main.js" async></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.peity.min.js"></script>
+	<script src="./js/select2.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/main.js" async></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/select2.min.js"></script>
+	<script src="./js/clayfy.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/clayfy.min.css" ><!-- must be in the last position (css) !!! -->
 
-	<script language="javascript" type="text/javascript" src="./js/clayfy.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/clayfy.min.css" ><!-- must be in the last position !!! -->
-
-	<script language="javascript" type="text/javascript" src="./js/SHMI_RI.min.js"></script>
+	<script src="./js/SHMI_RI.min.js"></script>
 
 </head>
 <body>
@@ -88,14 +89,14 @@
 						<div class="card-body collapse" id="collapseStorage">
 							<div class="row p-1">
 								<div class="col col-md-6">
-									<label for="id_label_multiple">Digital:</label>
+									<label for="ID_Select_D">Digital:</label>
 									<select id="ID_Select_D" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
 										<optgroup label="DI" id="ID_option_DI"></optgroup>
 										<optgroup label="DO" id="ID_option_DO"></optgroup>
 									</select>
 								</div>
 								<div class="col col-md-6">
-									<label for="id_label_multiple">Analog:</label>
+									<label for="ID_Select_A">Analog:</label>
 									<select  id="ID_Select_A" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
 										<optgroup label="AI Meter" id="ID_option_AI"></optgroup>
 										<optgroup label="AI Level" id="ID_option_AIL"></optgroup>
