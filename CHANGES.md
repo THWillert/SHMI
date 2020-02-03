@@ -6,6 +6,9 @@ V0.6.1-beta 03.02.2020
  - changed: removed some unused links from the menu
  - fixed: data polling restarts after error now
  - fixed: cleaned up the HTML (W3C validator)
+ - SHMI_randomdata.exe:
+   - added: support for live bit and timestamp
+   - changed: first AI ist now a triangle wave
 
 V0.6.0-beta 01.02.2020
 
