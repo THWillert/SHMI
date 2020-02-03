@@ -292,7 +292,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 - [ ] Logo: Fallback auf PNG
 
-- [ ] Live-Bit von Steuerung in Schnittstelle (visualisieren)
+- [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
 - [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
 
 - [ ] Einstellungen lokal speichern
@@ -327,19 +327,27 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Zeit-Anzeige für letzte Änderzung
 - [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
 
-#### Recorder / Kurven
+#### Recorder
 
 - [x] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
 - [ ] Oberfläche optimieren
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
+- [ ] Mehr Statistik Funktionen
+- [ ] Vorfilter für Analog-Werte
+- [ ] Trigger (Schwellwert)
+
+#### Kurven (noch nicht vorhanden)
+- [ ] D/A getrennt
+- [ ] Berechnungen zwischen den Kurven (Differenz, Summe usw.)
+- [ ] Trigger
 
 #### Fließbilder
 
 - [x] Werte in Bild anzeigen
 - [ ] Design der Anzeigen überarbeiten
 - [ ] Anzeigen rotierbar (90°) machen
-- [ ] mehr Darstellungsmöglichkeiten
+- [ ] mehr Darstellungsmöglichkeiten (Gauge, nur Werte, Panel mit allen Daten)
 - [ ] Animation (Färbung) der SVG-Bilder
 
 ## Benutzte Bibliotheken
