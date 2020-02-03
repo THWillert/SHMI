@@ -28,7 +28,9 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 ![Start](/images/SHMI_Inkscape_1b.png)  
 Design und Farben stehen noch nicht fest.
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
-![Start](/images/SHMI_index_02.png)
+![Start](/images/SHMI_index_02.png)  
+  oder per eigener CCS:  
+![Start](/images/SHMI_index_03.png) 
 
 ___
 ## Voraussetzungen
