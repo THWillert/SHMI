@@ -1,3 +1,12 @@
+V0.6.1-beta 03.02.2020
+
+ - added: displays the time difference local / source
+ - added: shows the connection status now (to the data file)
+ - changed: removed some styles from the pages
+ - changed: removed some unused links from the menu
+ - fixed: data polling restarts after error now
+ - fixed: cleaned up the HTML (W3C validator)
+
 V0.6.0-beta 01.02.2020
 
  - added: DI/DO shows the timestamp of the last change now
