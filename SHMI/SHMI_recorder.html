@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head profile="http://dublincore.org/documents/dcq-html/">
+<html lang="en">
+<head>
+	<title>SHMI - Recorder</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
 	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_recorder.html">
-	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
-	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
+	<meta name="DC.format"        content="text/html" />
+	<meta name="DC.type"          content="Text" />
 	<meta name="DC.title"         content="Dublin Core" />
 	<meta name="DC.publisher"     content="Thorsten Willert" />
 	<meta name="DC.subject"       content="SHMI status page" />
 	<meta name="DC.creator"       content="Thorsten Willert" />
-	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
+	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-02-01" />
+	<meta name="DCTERMS.modified" content="2020-02-02" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -43,33 +44,33 @@
 
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
 
-	<script language="javascript" type="text/javascript" src="./js/main.js" async></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.canvaswrapper.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.colorhelpers.min.js"></script>
+	<script src="./js/main.js" async></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/jquery.canvaswrapper.min.js"></script>
+	<script src="./js/jquery.colorhelpers.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/moment.min.js" async></script>
-	<script language="javascript" type="text/javascript" src="./js/simple-statistics.min.js"></script>
+	<script src="./js/moment.min.js" async></script>
+	<script src="./js/simple-statistics.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.browser.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.drawSeries.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.hover.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.saturated.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.selection.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.spline.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.time.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.flot.uiConstants.min.js"></script>
+	<script src="./js/jquery.flot.min.js"></script>
+	<script src="./js/jquery.flot.browser.min.js"></script>
+	<script src="./js/jquery.flot.drawSeries.min.js"></script>
+	<script src="./js/jquery.flot.hover.min.js"></script>
+	<script src="./js/jquery.flot.saturated.min.js"></script>
+	<script src="./js/jquery.flot.selection.min.js"></script>
+	<script src="./js/jquery.flot.spline.min.js"></script>
+	<script src="./js/jquery.flot.time.min.js"></script>
+	<script src="./js/jquery.flot.uiConstants.min.js"></script>
 
-	<script language="javascript" type="text/javascript" src="./js/SHMI_recorder.js"></script>
+	<script src="./js/SHMI_recorder.js"></script>
 
 
 </head>
 <body>
 <!-- reset request ========================================================= -->
-	<div class="modal fade" id="DataReset" tabindex="-1" role="dialog" aria-labelledby="Caution" aria-hidden="true">
+	<div class="modal fade" id="DataReset" tabindex="-1" role="dialog" aria-labelledby="ID_Caution_Reset" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content border-warning">
 				<div class="modal-header bg-warning text-white">
@@ -116,7 +117,7 @@
 					<div class="card-body collapse show" id="collapsePrefs">
 						<form>
 							<div class="form-row p-2">
-								<div class="col" id="ID_analog_sel">
+								<div class="col">
 									Data source:
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="IDdataSelect"></select>
 								</div>
@@ -128,19 +129,19 @@
 									">
 									</select>
 								</div>
-								<div class="col" id="updateInt">
+								<div class="col">
 									Auto Zoom:
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_AutoZoom" size="1">
-										<option type="select" name="AutoZoom" value="0">Off</option>
-										<option type="select" name="AutoZoom" value="10">Fit loosely</option>
-										<option type="select" name="AutoZoom" value="11">Fit exactly</option>
-										<option type="select" name="AutoZoom" value="20" selected>Grow loosley</option>
-										<option type="select" name="AutoZoom" value="21">Grow exactly</option>
+										<option value="0">Off</option>
+										<option value="10">Fit loosely</option>
+										<option value="11">Fit exactly</option>
+										<option value="20" selected>Grow loosley</option>
+										<option value="21">Grow exactly</option>
 										<!--<option type="select" name="AutoZoom" value="30">Sliding Window</option> Not working?-->
 									</select>
 								</div>
 								<!--
-								<div class="col" id="updateInt">
+								<div class="col">
 									Time Scale:
 									<select class="form-control form-control-sm" id="ID_TimeScale" size="1" onChange="TimeScale=this.value">
 										<option type="select" name="" value="60">1</option>
@@ -152,35 +153,36 @@
 								</div>-->
 							</div>
 							<div class="form-row p-2">
-								<div class="col" id="ID_smooth">
+								<div class="col">
 									Statistics:
-									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Smooth" size="1"
+									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Statistic" size="1"
 										onChange="
 											smoothType=parseInt(this.value);
 											document.getElementById('TXT_avg').textContent = this.options[this.selectedIndex].text
 										">
-										<option type="select" name="" value="0" title="Simple Moving Average">SMA</option>
-										<option type="select" name="" value="1" title="Median">Median</option>
-										<option type="select" name="" value="2" title="Root Mean Square">RMS</option>
+										<option value="0" title="Simple Moving Average">SMA</option>
+										<option value="1" title="Median">Median</option>
+										<option value="2" title="Root Mean Square">RMS</option>
 									</select>
 								</div>
-								<div class="col" id="ID_smooth">
+								<div class="col">
 									Statistic samples:
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Smooth" size="1"
 										onChange="
 											fag_Average = [];smooth=parseFloat(this.value)
 										">
-										<option type="select" name="" value="0">Off</option>
-										<option type="select" name="" value="3">3</option>
-										<option type="select" name="" value="5">5</option>
-										<option type="select" name="" value="7">7</option>
-										<option type="select" name="" value="9">9</option>
-										<option type="select" name="" value="11" selected>11</option>
-										<option type="select" name="" value="13">13</option>
-										<option type="select" name="" value="15">15</option>
-										<option type="select" name="" value="30">30</option>
-										<option type="select" name="" value="45">45</option>
-										<option type="select" name="" value="60">60</option>
+										<option value="0">Off</option>
+										<option value="3">3</option>
+										<option value="5">5</option>
+										<option value="7">7</option>
+										<option value="9">9</option>
+										<option value="11" selected>11</option>
+										<option value="13">13</option>
+										<option value="15">15</option>
+										<option value="30">30</option>
+										<option value="45">45</option>
+										<option value="60">60</option>
+										<option value="120">60</option>
 									</select>
 								</div>
 							</div>
@@ -189,17 +191,17 @@
 						<div class="d-flex justify-content-center">
 							<div class="btn-group-toggle" data-toggle="buttons" >
 									<label class="btn btn-secondary">
-										<input type="checkbox"  autocomplete="off"  id="IDsmooth"><i class="fas fa-bezier-curve"></i>&nbsp;&nbsp;Spline Curve
+										<input type="checkbox" id="IDsmooth"><i class="fas fa-bezier-curve"></i>&nbsp;&nbsp;Spline Curve
 									</label>
 							</div>
 							<div class="btn-group-toggle" data-toggle="buttons" >
 								<label class="btn btn-secondary ">
-									<input type="checkbox" checked autocomplete="off"  id="IDfill"><i class="fas fa-fill"></i>&nbsp;&nbsp;Fill Curves
+									<input type="checkbox" checked id="IDfill"><i class="fas fa-fill"></i>&nbsp;&nbsp;Fill Curves
 								</label>
 							</div>
 							<div class="btn-group-toggle" data-toggle="buttons" >
 								<label class="btn btn-secondary">
-									<input type="checkbox" checked autocomplete="off"  id="IDShowPoints"><i class="fas fa-dot-circle"></i>&nbsp;&nbsp;Show Points
+									<input type="checkbox" checked id="IDShowPoints"><i class="fas fa-dot-circle"></i>&nbsp;&nbsp;Show Points
 								</label>
 							</div>
 						</div>
@@ -237,7 +239,7 @@
 										<td>Data points</td>
 									</tr>
 									<tr>
-										<td><span id="current_value" class="cur_value value_out value_big" ></td>
+										<td><span id="current_value" class="cur_value value_out value_big" ></span></td>
 										<td><span id="min" class="min_value value_out value_big"></span></td>
 										<td><span id="mid" class="avg_value value_out value_big"></span></td>
 										<td><span id="max" class="max_value value_out value_big"></span></td>
