@@ -1,50 +1,43 @@
+/* SHMI_Instruments.css
+2020 by Thorsten Willert
+License: MIT
+
+02.02.2020*/
+
 /* decoration =================================================================*/
-/*
+
 body {
-     background: radial-gradient(ellipse at center, #767676 0%,#525252 60%,#3a3a3a 100%) fixed;
-     background-attachment: fixed;
+	margin: 1px /* because of backgrounds */
 }
-*/
+
 .downlight {
 	box-shadow: 1px 1px 2em 0.1em black;
 }
 
 /* page / frame ===============================================================*/
-
 #pageContainer {
-	top: 5em;
+	margin-top: 3em;
 }
-
 .main {
 	position: absolute;
-	top: 20px;
+	padding-top: 20px;
 }
-
-/*
-.shadow {
-box-shadow: 0 0 0 0 !important;
-}
-*/
 
 /* table ======================================================================*/
-
 #ID_Table_RecData th,
 #ID_Table_RecData td {
 	text-align:center;
 	padding: 0.3em;
 	width: 20%;
 }
-
 #ID_digital_out,
 #ID_digital_in {
 	width: 100%
 }
-
 #ID_analog_out th,
 #ID_analog_in th {
 	text-align: center;
 }
-
 #ID_DI td:nth-child(1),
 #ID_DO td:nth-child(1),
 #ID_AI td:nth-child(1),
@@ -53,7 +46,13 @@ box-shadow: 0 0 0 0 !important;
 	white-space: nowrap;
 	padding-right:3em;
 }
+#ID_DI td:last-child,
+#ID_DO td:last-child {
+	padding-left:3em;
+	text-align:center;
+}
 
+/* values =====================================================================*/
 .value_out {
 	text-align: right;
 	padding-right:1em;
@@ -64,20 +63,43 @@ box-shadow: 0 0 0 0 !important;
 	font-size: 120%;
 }
 
-#ID_DI td:last-child,
-#ID_DO td:last-child {
-	padding-left:3em;
-	text-align:center;
-}
-
 /* Flot =======================================================================*/
-
 .flot-y1-axis,
 .flot-x1-axis {
 	fill: var(--secondary);
 }
 
-/* Misc =======================================================================*/
-
+/* Misc ======================================================================*/
 .cursor-pointer {cursor: pointer;}
+.cursor-help {cursor: help;}
+
 .nobr {white-space:nowrap;}
+
+/* Pages #################################################################### */
+/* SHMI.html -----------------------------------------------------------------*/
+#ID_MainFooter {
+	color:var(--text-muted);
+	width:100%;
+	position:fixed;
+	bottom:0;
+	text-align:right;
+	box-shadow: 3px 3px 10px black;
+	padding-top:0.3em;
+	margin-bottom:0.1em
+}
+#ID_Connection_Status {
+	margin-left:0.3em;
+	padding-left:1em;
+	padding-right:1em;
+	transition: border ease 0.5s
+}
+#timeDiff {
+	margin-left:0.3em;
+	padding-right:1em;
+	padding-left:1em;
+	transition: border 0.5s ease
+}
+#IDtime {
+	padding-left:1em;
+	padding-right:3em
+}
