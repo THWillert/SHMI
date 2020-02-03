@@ -66,11 +66,13 @@ ___
 ### Datenpunkte
 
 <dl>
-   <dt>LIVE-BIT (noch nicht in Gebrauch)</dt>
-   <dd>Toggelt bei jedem neuen Datensatz</dd>
+   <dt>LIVE-BIT</dt>
+   <dd>Toggelt bei jedem neuen Datensatz:  
+   Anzeige in der Statusleiste</dd>
    
-   <dt>TIMESTAMP (noch nicht in Gebrauch)</dt>
-   <dd>Zeitstempel</dd>
+   <dt>TIMESTAMP</dt>
+   <dd>Zeitstempel:  
+   Hier wird die Differenz zur System-Zeit berechnet und in der Statusleiste angezeigt</dd>
    
    <dt>WARN (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Warnmeldung - oder Text</dd>
@@ -112,7 +114,7 @@ Als Beispiel:
 ```json
 {
 "LIVE-BIT":0,
-"TIMESTAMP":-1,
+"TIMESTAMP":1580716216,
 "WARN":-1,
 "ALARM":-1,
 "MESSAGE":-1,
