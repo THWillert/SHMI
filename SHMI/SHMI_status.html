@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head profile="http://dublincore.org/documents/dcq-html/">
+	<title>SHMI - Status</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
 	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_status.html">
-	<meta name="DC.format"        scheme="DCTERMS.IMT"      content="text/html" />
-	<meta name="DC.type"          scheme="DCTERMS.DCMIType" content="Text" />
+	<meta name="DC.format"        content="text/html" />
+	<meta name="DC.type"          content="Text" />
 	<meta name="DC.title"         content="Dublin Core" />
 	<meta name="DC.publisher"     content="Thorsten Willert" />
 	<meta name="DC.subject"       content="SHMI status page" />
 	<meta name="DC.creator"       content="Thorsten Willert" />
-	<meta name="DCTERMS.license"  scheme="DCTERMS.URI" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
+	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" scheme="DCTERMS.W3CDTF" content="2020-01-02" />
+	<meta name="DCTERMS.modified" content="2020-01-02" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -40,19 +41,19 @@
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
 
 
-	<script language="javascript" type="text/javascript" src="./js/main.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/jquery.peity.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/bootstrap.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/moment.min.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/moment.de.min.js"></script>
+	<script src="./js/main.js"></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/jquery.peity.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/moment.de.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 
-	<script type='text/javascript'>
+	<script>
 
 	let PeakInterval = 15000;
 	let updateIntervalA = 1000;
@@ -285,10 +286,10 @@
 
 	</script>
 </head>
-<body>
+<body class="">
 	<div class="main container-fluid W100">
 		<div class="row p-2">
-			<!-- Digital input ------------------------------------------------------------>
+			<!-- Digital input ============================================= -->
 			<div class="col-md-6 p-2" id="ID_DI">
 				<div class="card shadow">
 					<div class="card-header">
@@ -301,7 +302,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Digital output ----------------------------------------------------------->
+			<!-- Digital output ============================================ -->
 			<div class="col-md-6 p-2" id="ID_DO">
 				<div class="card shadow">
 					<div class="card-header">
@@ -316,7 +317,7 @@
 			</div>
 		</div>
 		<div class="row p-2" id="IDAnalogIO">
-			<!-- Analog input ------------------------------------------------------------->
+			<!-- Analog input ============================================== -->
 			<div class="col-md-12 p-2" ID="ID_AI">
 				<div class="card shadow">
 					<div class="card-header">
@@ -356,7 +357,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Analog output ------------------------------------------------------------>
+			<!-- Analog output ============================================= -->
 			<div class="col-md-12 p-2" ID="ID_AO">
 				<div class="card shadow">
 					<div class="card-header">
@@ -370,7 +371,7 @@
 							<th></th>
 							<th id="TXT_Setpoint_AO">Setpoint</th>
 							<th id="TXT_Value_AO">Value</th>
-							<th id="ID_Scale_AI">
+							<th id="ID_Scale_AO">
 								<div>
 									<table class="scale-table">
 										<tr>
@@ -397,7 +398,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- settings --------------------------------------------------------->
+		<!-- settings ====================================================== -->
 		<div class="row p-2">
 			<div class="col-md-7 p-2">
 				<div class="card shadow">
@@ -477,11 +478,11 @@
 								<!--  -->
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
