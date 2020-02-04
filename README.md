@@ -291,6 +291,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
+. [ ] Online-Demo
 - [ ] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
 - [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
@@ -328,7 +329,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 ##### Digital
 
-- [ ] Zeit-Anzeige für letzte Änderzung
+- [X] Zeit-Anzeige für letzte Änderzung
 - [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
 
 #### Recorder
@@ -342,7 +343,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Trigger (Schwellwert)
 - [ ] Zeitliche Kompensation der Mittelwerte
 - [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
-- [ ] Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
+- [ ] evtl. Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
 
 #### Kurven (noch nicht vorhanden)
 - [ ] D/A getrennt
