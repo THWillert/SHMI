@@ -29,13 +29,6 @@
 	border: 1px solid #F00;
 }
 
-.SHMI_drag_DI .fas {
-	color: #0F0;
-}
-.SHMI_drag_DO .fas {
-	color: #F00;
-}
-
 .SHMI_level {
 	bottom: 0;
 	width: inherit;
