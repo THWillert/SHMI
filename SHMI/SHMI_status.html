@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-01-02" />
+	<meta name="DCTERMS.modified" content="2020-02-04" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -81,7 +81,8 @@
 								`<tr>
 									<td id="TXT_${id}""></td>
 									<td>
-										<div class="digi_back">
+										<div class="digi_IO">
+											<span class="digi_back"></span>
 											<span id="ID_${id}_D" class="digi">&nbsp;</span>
 										</div>
 									</td>
@@ -93,7 +94,8 @@
 								`<tr>
 									<td id="TXT_${id}"></td>
 									<td>
-										<div class="digi_back">
+										<div class="digi_IO">
+											<span class="digi_back"></span>
 											<span id="ID_${id}_D" class="digi">&nbsp;</span>
 										</div>
 									</td>
@@ -201,26 +203,28 @@
 
 	//==============================================================================
 		function updateValuesD() {
-			let val, id;
+			let val, id, curent;
 			let timeStamp
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				val = this.value;
 				id = this.id;
 
-				$(`#ID_${id}_D` ).css("opacity", val );
+				curent = $(`#ID_${id}_D` ).css("opacity");
+				if (curent != val)
+					$(`#ID_${id}_D` ).css("opacity", val );
+
 				timeStamp = moment.unix(  parent.top.$(`#${id}_TS_upd`).val() )
 				$(`#TS_${id}` ).text( timeStamp.format('ll HH:mm:ss')  );
 
 			});
-			setTimeout(updateValuesD, updateIntervalD);
+			setTimeout(updateValuesD, updateIntervalD + 100);
 		}
 		$(() => { updateValuesD(); });
 
 	//==============================================================================
 		function updateValuesA() {
-			let id, val, peak, low;
-			let updatingChart, values;
+			let id, val, peak, low, curent;
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
@@ -228,25 +232,48 @@
 
 				// fill forms --------------------------------------------------
 				$("#IDAnalogIO").find( "." + id).each( function() {
-					this.value = parseFloat(val).toFixed(2);
-					this.textContent = parseFloat(val).toFixed(2);
+					//this.value = parseFloat(val).toFixed(2);
+					val = parseFloat(val).toFixed(2)
+
+					if ( this.textContent != val)
+						this.textContent = val;
 				});
 
 				// analog meter ------------------------------------------------
-				$(`#ID_${id}_M` ).css("width", val + "%" );
+				curent = $(`#ID_${id}_M` ).css("width");
+				if ( curent != val)
+					$(`#ID_${id}_M` ).css("width", val + "%" );
 
 				 // analog meter setpoint --------------------------------------
-				$(`#ID_${id}_SP`).css("width", val + "%" );
+				curent = $(`#ID_${id}_M` ).css("width");
+				if ( curent != val)
+					$(`#ID_${id}_SP`).css("width", val + "%" );
 
 				// analog meter peak -------------------------------------------
 				peak = $(`#ID_${id}_PK`);
-				if ( val >  peak.val() ) peak.val( val );
-				$(`#ID_${id}_P` ).css("width", peak.val()  + "%" );
+				if ( val >  peak.val() ) {
+					peak.val( val );
+					$(`#ID_${id}_P` ).css("width", peak.val()  + "%" );
+				}
 
 				// analog meter low --------------------------------------------
 				low = $(`#ID_${id}_LO`);
-				if ( val <  low.val() ) low.val( val );
-				$(`#ID_${id}_L` ).css("width", low.val()  + "%" );
+				if ( val <  low.val() ) {
+					low.val( val );
+					$(`#ID_${id}_L` ).css("width", low.val()  + "%" );
+				}
+
+			});
+			setTimeout(updateValuesA, updateIntervalA);
+		}
+		 $(() => { updateValuesA(); });
+		//==========================================================================
+		function updateSparklines() {
+			let updatingChart, values;
+
+			parent.top.$("#IDdata").find("input").each( function() {
+				id = this.id;
+				val = Math.round( this.value);
 
 				// sparklines --------------------------------------------------
 				updatingChart = $(`#ID_${id}_spark` ).peity("line")
@@ -259,9 +286,9 @@
 					.change()
 
 			});
-			setTimeout(updateValuesA, updateIntervalA);
+			setTimeout(updateSparklines, updateIntervalA + 50);
 		}
-		 $(() => { updateValuesA(); });
+		 $(() => { updateSparklines(); });
 
 		//==========================================================================
 		$("#ID_PeakHold_Reset").click( () => {
@@ -329,8 +356,8 @@
 						<table id="ID_analog_in">
 							<tr>
 							<th></th>
-							<th id="TXT_Setpoint_AI">Setpoint</th>
-							<th id="TXT_Value_AI">Value</th>
+							<th id="TXT_Setpoint_AI"></th>
+							<th id="TXT_Value_AI"></th>
 							<th id="ID_Scale_AI">
 								<div>
 									<table class="scale-table">
@@ -369,8 +396,8 @@
 						<table id="ID_analog_out">
 							<tr>
 							<th></th>
-							<th id="TXT_Setpoint_AO">Setpoint</th>
-							<th id="TXT_Value_AO">Value</th>
+							<th id="TXT_Setpoint_AO"></th>
+							<th id="TXT_Value_AO"></th>
 							<th id="ID_Scale_AO">
 								<div>
 									<table class="scale-table">
