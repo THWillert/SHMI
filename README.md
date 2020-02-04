@@ -338,6 +338,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Trigger (Schwellwert)
 - [ ] Zeitliche Kompensation der Mittelwerte
 - [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
+- [ ] Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
 
 #### Kurven (noch nicht vorhanden)
 - [ ] D/A getrennt
