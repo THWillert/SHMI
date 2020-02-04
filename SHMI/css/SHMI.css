@@ -5,10 +5,7 @@ License: MIT
 02.02.2020*/
 
 /* decoration =================================================================*/
-
-body {
-	margin: 1px /* because of backgrounds */
-}
+body { margin: 1px; }
 
 .downlight {
 	box-shadow: 1px 1px 2em 0.1em black;
@@ -22,8 +19,9 @@ body {
 	position: absolute;
 	padding-top: 20px;
 }
-
 /* table ======================================================================*/
+/* ToDo: selectors to classes */
+
 #ID_Table_RecData th,
 #ID_Table_RecData td {
 	text-align:center;
@@ -46,13 +44,6 @@ body {
 	white-space: nowrap;
 	padding-right:3em;
 }
-#ID_DI td:last-child,
-#ID_DO td:last-child {
-	padding-left:3em;
-	text-align:center;
-}
-
-/* values =====================================================================*/
 .value_out {
 	text-align: right;
 	padding-right:1em;
@@ -62,44 +53,21 @@ body {
 .value_big {
 	font-size: 120%;
 }
+#ID_DI td:last-child,
+#ID_DO td:last-child {
+	padding-left:3em;
+	text-align:center;
+}
 
 /* Flot =======================================================================*/
+
 .flot-y1-axis,
 .flot-x1-axis {
 	fill: var(--secondary);
 }
 
 /* Misc ======================================================================*/
+
 .cursor-pointer {cursor: pointer;}
 .cursor-help {cursor: help;}
-
 .nobr {white-space:nowrap;}
-
-/* Pages #################################################################### */
-/* SHMI.html -----------------------------------------------------------------*/
-#ID_MainFooter {
-	color:var(--text-muted);
-	width:100%;
-	position:fixed;
-	bottom:0;
-	text-align:right;
-	box-shadow: 3px 3px 10px black;
-	padding-top:0.3em;
-	margin-bottom:0.1em
-}
-#ID_Connection_Status {
-	margin-left:0.3em;
-	padding-left:1em;
-	padding-right:1em;
-	transition: border ease 0.5s
-}
-#timeDiff {
-	margin-left:0.3em;
-	padding-right:1em;
-	padding-left:1em;
-	transition: border 0.5s ease
-}
-#IDtime {
-	padding-left:1em;
-	padding-right:3em
-}
