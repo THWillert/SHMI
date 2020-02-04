@@ -337,6 +337,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Vorfilter für Analog-Werte
 - [ ] Trigger (Schwellwert)
 - [ ] Zeitliche Kompensation der Mittelwerte
+- [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
 
 #### Kurven (noch nicht vorhanden)
 - [ ] D/A getrennt
