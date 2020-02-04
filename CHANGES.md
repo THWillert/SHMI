@@ -1,6 +1,9 @@
+ß4.02.2020
+ - changed: writing only changed values on the status page
+
 V0.6.1-beta 03.02.2020
 
- - added: displays the time difference local / source
+ - added: display for the time difference local / source
  - added: shows the connection status now (to the data file)
  - changed: removed some styles from the pages
  - changed: removed some unused links from the menu
