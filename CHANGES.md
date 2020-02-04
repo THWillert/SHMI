@@ -1,5 +1,7 @@
-ß4.02.2020
+V0.6.2-beta ß4.02.2020
  - changed: writing only changed values on the status page
+ - changed: increased the reading of the values to 500ms
+ - fixed: offset of the background / color of the digital I/O
 
 V0.6.1-beta 03.02.2020
 
