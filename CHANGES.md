@@ -3,6 +3,7 @@ V0.6.2-beta ß4.02.2020
  - changed: changed the recorder axis to the right side (to see the current value better)
  - changed: writing only changed values on the status page
  - changed: increased the reading of the values to 500ms
+ - added: small delay between the updates of DI, analog-level and sparklines
  - fixed: offset of the background / color of the digital I/O
 
 V0.6.1-beta 03.02.2020
