@@ -66,12 +66,12 @@ ___
 ### Datenpunkte
 
 <dl>
-   <dt>LIVE-BIT</dt>
-   <dd>Toggelt bei jedem neuen Datensatz:  
+   <dt>LIVE-BIT (Format: 1/0)</dt>
+   <dd>Muß bie jedem neuen Datensatz toggeln:  
    Anzeige in der Statusleiste</dd>
    
-   <dt>TIMESTAMP</dt>
-   <dd>Zeitstempel:  
+   <dt>TIMESTAMP (Format: UNIX-Timestamp in Sekunden)</dt>
+   <dd>Zeitstempel vom Gerät o. Anwendung :  
    Hier wird die Differenz zur System-Zeit berechnet und in der Statusleiste angezeigt</dd>
    
    <dt>WARN (noch nicht in Gebrauch)</dt>
@@ -83,22 +83,22 @@ ___
    <dt>MESSAGE (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Betriebsmeldung - oder Text</dd>
    
-   <dt>DIn</dt>
+   <dt>DIn (Format: 1/0)</dt>
    <dd>Digitaleingang</dd>
    
-   <dt>DOn</dt>
+   <dt>DOn (Format: 1/0)</dt>
    <dd>Digitalausgang</dd>
    
-   <dt>AIn</dt>
+   <dt>AIn (Format: Float oder Integer)</dt>
    <dd>Analogeingang in &</dd>
    
-   <dt>AOn</dt>
+   <dt>AOn (Format: Float oder Integer)</dt>
    <dd>Analogausgang in %</dd>
    
-   <dt>AIn_SP</dt>
+   <dt>AIn_SP (Format: Float oder Integer)</dt>
    <dd>Analogeingang Sollwert in %</dd>
    
-   <dt>AOn_SP</dt>
+   <dt>AOn_SP (Format: Float oder Integer)</dt>
    <dd>Analogausgang Sollwert in %</dd>
 </dl>
 
@@ -336,6 +336,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Mehr Statistik Funktionen
 - [ ] Vorfilter für Analog-Werte
 - [ ] Trigger (Schwellwert)
+- [ ] Zeitliche Kompensation der Mittelwerte
 
 #### Kurven (noch nicht vorhanden)
 - [ ] D/A getrennt
