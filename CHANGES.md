@@ -32,7 +32,6 @@ V0.4.1-beta 30.01.2020
 V0.4.0-beta 30.01.2020
 
 - added: direct animation (coloring) for DI/DO in the SVG-image  
-![Start](/images/SHMI_Inkscape_1b.png)
 - added: fallback for the RI-images SVG -> PNG -> JPG
 - removed: original bootstrap css
 - removed fontawesome (because of the size)
@@ -40,13 +39,11 @@ V0.4.0-beta 30.01.2020
 V0.3.1-beta 28.01.2020
 
 - added new type of level-meter for analog inputs:
-   ![Start](/images/SHMI_RI_1.png)
 
 V0.3.0-beta 26.01.2020
 
 - SHMI_RI_x.html
   - now you can add all datapoints as "instruments" to the P&ID
-   ![Start](/images/SHMI_RI_1.png)
 - updated all files
 
 V0.2.3-beta 20.01.2020
@@ -75,7 +72,6 @@ V0.2.2-beta 17.01.2020
   - changed layout
   - changed default preferences (first analog-value viewed, SMA / 11, Zoom: Grow loosley)
   - added "collapse" to the cards:
- ![Start](/images/SHMI_Recorder_3.png)
 
 V0.2.1-beta 16.01.2020
 
@@ -88,7 +84,6 @@ V0.2.0-beta 16.01.2020
   - updated Flot
   - added statistics curve (SMA, median or RMs)
   - added auto zoom functions
-  ![Start](/images/SHMI_Recorder_2.png)
   
 - status.html renamed to SHMI_status.html
 - ri_01.html renamed to SHMI_RI_01.html
@@ -117,7 +112,6 @@ V0.1.5-beta 12.01.2020
   - added: preferences for update intervall digital values 
   - added: preferences for update intervall analog values
   - added: preferences for peak / valleys hold
-![Start](/images/SHMI_prefs_status.png)
   - changed: smaller spaces
   
 - index.htm:
@@ -126,7 +120,6 @@ V0.1.5-beta 12.01.2020
 V0.1.4-beta 09.01.2020
 
 - recorder.html: updated design ot the chart
-![Start](/images/SHMI_Chart.png)
 - recorder.html: chart now with tooltips
 
 V0.1.3-beta 09.01.2020
@@ -138,7 +131,6 @@ V0.1.3-beta 09.01.2020
 V0.1.2-beta 08.01.2020
 
 - status.html: added peak-hold to the analog levels
-![Start](/images/SHMI_peak.png)
 - status.html: changed the analog form
 - status.html: fixed error in analog-out card (collapse)
 - splitted default.css into SHMI.css and SHMI_Instruments.css
