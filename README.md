@@ -206,6 +206,10 @@ Beispiel:
 }
 ```
 
+### Recorder
+
+> :warning:  Da hier alles im Browser aufgezeichnet wird, dürfen während der Aufzeichnung, im Browser keinen weiteren Tabs offen sein. Auch darf das Browser-Fenster nicht minimiert werden. In beiden Fällen entsehen Aussetzer bei den Messwerten. Dies kann durch einen entsprechend hohen Update Interval evtl. kompensiert werden.
+
 ### Fließbild
 
 Das Bild selbst wird als Hintergrundbild geladen. Es muß den gleichen Namen wie die HTML-Datei haben, nur mit dem Suffix "svg".
