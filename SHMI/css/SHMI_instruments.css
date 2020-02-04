@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-02.02.2020*/
+04.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -88,20 +88,23 @@ License: MIT
 #ID_digital_in td, #ID_digital_out td {
 	padding:0.3em
 }
-
-.digi_back {
+.digi_IO {
 	width: 1.5em;
 	height: 1.5em;
-	border-radius: 0.3em; /* circle */
+	border-radius: 0.3em;
+}
+.digi_back,
+.digi {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+}
+.digi_back {
 	background: linear-gradient(to top, #00000022 0%,#66666622 100%) !important;
 }
 .digi {
-	opacity: 0;
-	width: inherit;
-	height: inherit;
-	transition: opacity 0.5s ease; /* "led" speed */
-	display: block;
-	border-radius: inherit; /* circle */
+	transition: opacity 0.5s ease;
 }
 
 #ID_DI .digi {
