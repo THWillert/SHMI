@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-02-02
+	Modified: 2020-02-04
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -107,7 +107,8 @@ $( () => {
 			autoScaleMargin: 0.1,
 			growOnly: true,
 			datamin: 0,
-			datamax: 100
+			datamax: 100,
+			position: 'right'
 		},
 		xaxis: {
 			timezone: "browser",
@@ -118,7 +119,7 @@ $( () => {
 		series: {
 			lines: {
 				show: true,
-				lineWidth: 1.5,
+				lineWidth: 2,
 				fill: true,
 				steps: false,
 				fillColor:  { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] },
@@ -127,7 +128,7 @@ $( () => {
 			splines: {
 				show: false,
 				tension: 0.35,
-				lineWidth: 1.5,
+				lineWidth: 2,
 				fill:  0.10
 			},
 			points: {
@@ -276,20 +277,6 @@ $( () => {
 			MVA.shift();
 		}
 
-		if (newVal < min) min = newVal;
-		if (newVal > max) max = newVal;
-		mid = ((max-min) / 2) + min;
-
-		options.grid.markings = [{
-			yaxis: { from: max, to: max }, color:"rgba(255,170,0)", lineWidth: 2 },{
-			yaxis: { from: min, to: min }, color:"rgba(68,135,255)", lineWidth: 2 },{
-			yaxis: { from: mid, to: mid }, color:"grey",lineWidth: 2 }
-			];
-		// orange 0,215,145
-
-		data.push( [ x , newVal ] );
-		viewData.push( [ x , newVal ] );
-
 		// Statistics ----------------------------------------------------------
 		if ( typeof newVal === "undefined") newVal = 0;
 
@@ -311,6 +298,27 @@ $( () => {
 		} else {
 			fag_Average = [];
 		}
+
+		if (newVal < min) min = newVal;
+		if (newVal > max) max = newVal;
+
+		/*
+		options.grid.markings = [{
+			yaxis: { from: max, to: max }, color:"rgba(255,170,0)", lineWidth: 2 },{
+			yaxis: { from: min, to: min }, color:"rgba(68,135,255)", lineWidth: 2 },{
+			yaxis: { from: newVal, to: newVal }, color:"rgba(255,0,0,0.4)", lineWidth: 2 },{
+			yaxis: { from: mid, to: mid }, color:"rgba(0,255,0,0.3)",lineWidth: 2 }
+			];
+		*/
+		options.grid.markings = [{
+			yaxis: { from: max, to: max }, color:"rgba(255,170,0)", lineWidth: 2 },{
+			yaxis: { from: min, to: min }, color:"rgba(68,135,255)", lineWidth: 2 }
+			];
+		// orange 0,215,145
+
+		data.push( [ x , newVal ] );
+		viewData.push( [ x , newVal ] );
+
 		// ---------------------------------------------------------------------
 		if (pause == false) {
 
