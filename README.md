@@ -289,28 +289,22 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
-. [ ] Online-Demo
+- [ ] Online-Demo
 - [ ] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
 - [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 - [ ] Logo: Fallback auf PNG
-
 - [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
 - [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
-
 - [ ] Einstellungen lokal speichern
 - [x] CSS zusammenfassen
-
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
 - [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
-
 - [ ] Fonts lokal speichern und abfragen
-
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Dokumentation vervollständigen
 - [ ] Minimierte Version aller Dateien erzeugen
-
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
 
