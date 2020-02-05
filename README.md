@@ -26,8 +26,8 @@ In der einfachsten Variante nur ca. 700 KB groß!
 ![Start](/images/SHMI_Recorder_2.png)
 - Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
 ![Start](/images/SHMI_RI_1.png)
-- Die Elemente (momentan nur DI/DO) in einem SVG-Bild können direkt animiert werden z.B.:  
-![Start](/images/SHMI_Inkscape_1b.png)  
+- Die Elemente (aktuell DI/DO und Analog-Werte) in einem SVG-Bild können direkt animiert werden z.B.:  
+![Start](/images/SHMI_RI_03.png)  
 Design und Farben stehen noch nicht fest.
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)  
@@ -248,7 +248,7 @@ Axx = Analoger-Datenpunkt
 
 Ergebnis im Betrieb:
 
-![Start](/images/SHMI_Inkscape_1b.png)
+![Start](/images/SHMI_RI_03.png)
 
 Design und Farben stehen noch nicht fest!
 
