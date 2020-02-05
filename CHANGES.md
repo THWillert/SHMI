@@ -1,5 +1,6 @@
 V0.6.3-beta
  - fixed: no digital in/out in RI-panels
+ - fixed: "glow-style"
 
 
 V0.6.2-beta 05.02.2020
