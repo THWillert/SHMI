@@ -27,7 +27,29 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs1330" />
+     id="defs1330">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1340">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1336" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop1338" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1340"
+       id="linearGradient1342"
+       x1="320.96021"
+       y1="476.09309"
+       x2="348.70109"
+       y2="476.09309"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -37,17 +59,17 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1300"
-     inkscape:window-height="879"
+     inkscape:window-width="1205"
+     inkscape:window-height="822"
      id="namedview1328"
      showgrid="false"
-     inkscape:zoom="3.0326182"
-     inkscape:cx="418.65935"
-     inkscape:cy="554.27746"
-     inkscape:window-x="319"
-     inkscape:window-y="101"
+     inkscape:zoom="6.0652364"
+     inkscape:cx="344.38654"
+     inkscape:cy="329.29214"
+     inkscape:window-x="695"
+     inkscape:window-y="96"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg1326" />
+     inkscape:current-layer="g1188" />
   <link
      id="dark-mode"
      rel="stylesheet"
@@ -977,6 +999,15 @@
            x="933.008">zu Verbraucher</tspan>
       </tspan>
     </text>
+    <rect
+       style="opacity:1;fill:#272b30;fill-opacity:1;stroke:#000025;stroke-width:1.91049123;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect1337"
+       width="77.038795"
+       height="18.161781"
+       x="306.71335"
+       y="444.60394"
+       ry="2.3931961"
+       onmouseover="" />
     <text
        id="text1180"
        space="preserve"
@@ -993,6 +1024,27 @@
            id="tspan1176"
            y="220.92799"
            x="378.57001">L</tspan>
+      </tspan>
+    </text>
+    <text
+       id="SHMI_AI1_A"
+       space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;line-height:36.86055243%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00006497;stroke-opacity:1"
+       text-align="center"
+       y="471.79785"
+       x="336.70151"
+       transform="scale(1.0299331,0.97093686)"
+       inkscape:label="#text1096-9">
+      <tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00006497;stroke-opacity:1"
+         id="tspan1094-4"
+         y="471.79785"
+         x="336.70151">
+        <tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00006497;stroke-opacity:1"
+           id="tspan1092-7"
+           y="471.79785"
+           x="336.70151">B001</tspan>
       </tspan>
     </text>
     <text
