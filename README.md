@@ -309,7 +309,7 @@ Reihenfolge entspricht nicht der Priorität:
 #### Allgemein
 
 - [ ] Online-Demo
-- [ ] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
+- [x] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
 - [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 - [ ] Logo: Fallback auf PNG
@@ -332,7 +332,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Variable Anzahl an Status-Seiten
 
 ##### Analog
-- [ ] Min / Max für Analog-Anzeige (Skalierung)
+- [ ] Skalierung Analog-Werte
 - [x] Peak-Hold für Analog-Anzeige
 - [X] Einstellung für die Haltezeit / Peak-Hold
 - [x] Analog-Anzeige optimieren
