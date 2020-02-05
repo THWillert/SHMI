@@ -212,7 +212,14 @@ Beispiel:
 
 ### Fließbild
 
-Das Bild selbst wird als Hintergrundbild geladen. Es muß den gleichen Namen wie die HTML-Datei haben, nur mit dem Suffix "svg".
+Das Bild selbst wird als Hintergrundbild geladen. Es muß den gleichen Namen wie die HTML-Datei haben, nur mit dem Suffix "svg".  
+Alternativ kann auch ein PNG oder JPG Bild geladen werden.
+> Nur SVG-Bilder können direkt animiert werden!
+
+Priorität beim Laden:
+ - SVG (kann animiert werden)
+ - PNG (am besten transparent)
+ - JPG
 
 Alle verfügbaren Datenpunkte können als kleine Anzeigen (Design noch nicht fertig) in das Bild eingefügt werden.
 
@@ -305,7 +312,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 - [ ] Fonts lokal speichern und abfragen
 - [ ] Dokumentation der Quelltexte überarbeiten
-- [ ] Dokumentation vervollständigen
+- [ ] Dokumentation als Wiki
 - [ ] Minimierte Version aller Dateien erzeugen
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
