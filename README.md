@@ -4,12 +4,12 @@
 
 ## Übersicht
 
-Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
+Eine kleine Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
+
+Mit minimalen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
+Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
 Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
-
-Ohne großen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
-Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
 In der einfachsten Variante nur ca. 700 KB groß!
 
