@@ -65,6 +65,12 @@ ___
 
 ### Datenpunkte
 
+DI/DO dürfen Werte von 0-5 annehmen.
+- 0: aus
+- 1: an
+- 3: Warnung (in SVG orange)
+- 5: Fehler (in SVG rot)
+
 <dl>
    <dt>LIVE-BIT (Format: 1/0)</dt>
    <dd>Muß bie jedem neuen Datensatz toggeln:  
@@ -83,10 +89,10 @@ ___
    <dt>MESSAGE (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Betriebsmeldung - oder Text</dd>
    
-   <dt>DIn (Format: 1/0)</dt>
+   <dt>DIn (Format: Integer 0-5)</dt>
    <dd>Digitaleingang</dd>
    
-   <dt>DOn (Format: 1/0)</dt>
+   <dt>DOn (Format: Integer 0-5)</dt>
    <dd>Digitalausgang</dd>
    
    <dt>AIn (Format: Float oder Integer)</dt>
@@ -229,11 +235,14 @@ Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte aus. Damit w
 
 #### Direkte Animation im Bild (nur SVG):
 
-> Momentan nur DI/DO
+> Momentan nur DI/DO und Analogwert
 
 Dem Element eine entsprechende ID (bei Inkscape: "Kennung") geben.  
 Schema: `SHMI_Dxx_D`  
-Dxx = Datenpunkt
+Dxx = Digitaler-Datenpunkt
+
+Schema: `SHMI_Axx_A`  
+Axx = Analoger-Datenpunkt
 
 ![Start](/images/SHMI_Inkscape_1.png)
 
