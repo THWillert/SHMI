@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-04.02.2020*/
+05.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -14,9 +14,11 @@ License: MIT
   --level_setpoint: var(--white);
 
 /* sparklines */
-  --sparkline_ai_fill: var(--teal);
+  /*--sparkline_ai_fill: var(--teal);*/
+  --sparkline_ai_fill: transparent;
   --sparkline_ai_stroke: var(--teal);
-  --sparkline_ao_fill: var(--teal);
+  /*--sparkline_ao_fill: var(--teal);*/
+  --sparkline_ao_fill: transparent;
   --sparkline_ao_stroke: var(--teal);
 
 /* RI instruments */
@@ -24,6 +26,8 @@ License: MIT
   --SHMI_drag_txt: var(--light); /* text-color */
 
   --SHMI_level_bg:  var(--teal);
+
+  --SHMI_signal_on: var(--teal);
 }
 
 .analog {
@@ -34,6 +38,9 @@ License: MIT
 .progress {
     position: relative;
     height: 2em;
+    border: var(--dark) solid 1px;
+    background: transparent;
+
 }
 .progress-bar {
 	transition: width 1s ease-in-out;
@@ -60,12 +67,12 @@ License: MIT
 #ID_AI .progress-bar {
 	background: var(--level_ai_meter) !important;
 	filter: saturate(50%);
-	border-right: solid 0.35em #0F0 !important;
+	/*border-right: solid 0.35em #0F0 !important;*/
 }
 #ID_AO .progress-bar {
 	background: var(--level_ao_meter) !important;
-	filter: saturate(80%);
-	border-right: solid 0.35em #F00 !important;
+	filter: saturate(110%);
+	/*border-right: solid 0.35em #F00 !important;*/
 }
 
 /* scale --------------------------- */
@@ -89,9 +96,11 @@ License: MIT
 	padding:0.3em
 }
 .digi_IO {
+	position: absolute;
 	width: 1.5em;
 	height: 1.5em;
 	border-radius: 0.3em;
+	border: solid 0.15em var(--dark);
 }
 .digi_back,
 .digi {
@@ -100,20 +109,21 @@ License: MIT
 	height: inherit;
 	border-radius: inherit;
 }
-.digi_back {
-	background: linear-gradient(to top, #00000022 0%,#66666622 100%) !important;
-}
 .digi {
 	transition: opacity 0.5s ease;
 }
 
 #ID_DI .digi {
 	background: var(--teal);
-	border: 1px solid #0F0;
+	filter: saturate(50%);
 }
 #ID_DO .digi {
 	background: var(--teal);
-	border: 1px solid #F00;
+	filter: saturate(110%);
+}
+
+.sparkline {
+	border-bottom: solid 1px var(--dark) !important;
 }
 
 /* RI =========================================================================*/
