@@ -1,10 +1,11 @@
-V0.6.2-beta 04.02.2020
+V0.6.2-beta 05.02.2020
 
+ - added: now you can show analog values direct in the SVG
+ - added: the DI/DO can now have values between 0-5. They are different colors in the RI / SVG
+ - added: small delay between the updates of DI, analog-level and sparklines (because of high CPU usage with FireFox)
  - changed: changed the recorder axis to the right side (to see the current value better)
  - changed: writing only changed values on the status page
  - changed: decreased the reading of the values to 500ms
- - added: small delay between the updates of DI, analog-level and sparklines (because of high CPU usage with FireFox)
- - fixed: offset of the background / color of the digital I/O
 
 V0.6.1-beta 03.02.2020
 
