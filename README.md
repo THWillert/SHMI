@@ -28,7 +28,6 @@ In der einfachsten Variante nur ca. 700 KB groß!
 ![Start](/images/SHMI_RI_1.png)
 - Die Elemente (aktuell DI/DO und Analog-Werte) in einem SVG-Bild können direkt animiert werden z.B.:  
 ![Start](/images/SHMI_RI_03.png)  
-Design und Farben stehen noch nicht fest.
 - Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)  
   oder per eigener Style-Sheets.
@@ -292,7 +291,9 @@ Die Datei `css/bootstrap.min.css` gegen die entsprechende Theme-Datei austausche
 
 > :warning: Dadurch können sich evtl. die Anzeigen im Fließbild verschieben
 
-Für ein "flaches" Design die Datei `css/SGMI_glow.css` umbenennen.
+Für ein anders Design, die Datei `css/_SGMI_glow.css` umbenennen in `css/SGMI_glow.css`
+
+![Start](/images/SHMI_index_03.png)  
 
 #### Icons
 
