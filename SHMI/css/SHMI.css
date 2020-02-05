@@ -8,7 +8,15 @@ License: MIT
 body { margin: 1px; }
 
 .downlight {
-	box-shadow: 1px 1px 2em 0.1em black;
+	box-shadow: 1px 1px 1em 0.1em black;
+}
+
+/* override bootstrap */
+.shadow {
+	box-shadow: 0 0 0 0 !important;
+}
+.card {
+	border: 0px;
 }
 
 /* page / frame ===============================================================*/
