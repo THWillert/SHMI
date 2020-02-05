@@ -6,10 +6,12 @@
 
 Mini-Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
-Es dient als reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
+Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
 
-Vor allem dient es dazu, ohne großen Aufwand, Werte aus einer Steuerung dazustellen.
+Ohne großen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
+
+In der einfachsten Variante nur ca. 700 KB groß!
 
 ![Start](/images/SHMI_index.png)
 
