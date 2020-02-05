@@ -1,3 +1,7 @@
+V0.6.3-beta
+ - fixed: no digital in/out in RI-panels
+
+
 V0.6.2-beta 05.02.2020
 
  - added: now you can show analog values direct in the SVG
