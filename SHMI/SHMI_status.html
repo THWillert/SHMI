@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-04" />
+	<meta name="DCTERMS.modified" content="2020-02-05" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -120,8 +120,8 @@
 											<span id="ID_${id}_L" class="progress-low ${id}_L"></span>
 										</div>
 									</td>
-									<td><input class="d-none analog" id="ID_${id}_LO" ><input class="d-none analog" id="ID_${id}_PK" ></td>
-									<td class="d-none d-md-block"><span id="ID_${id}_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
+									<td  class="d-none"><input id="ID_${id}_LO" ><input analog" id="ID_${id}_PK" ></td>
+									<td class="d-none d-md-block sparkline"><span id="ID_${id}_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
 								</tr>`
 								);
 
@@ -143,8 +143,8 @@
 											<span id="ID_${id}_L" class="progress-low ${id}_L"></span>
 										</div>
 									</td>
-									<td><input class="d-none analog" id="ID_${id}_LO" ><input class="d-none analog" id="ID_${id}_PK" ></td>
-									<td class="d-none d-md-block"><span id="ID_${id}_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
+									<td class="d-none"><input id="ID_${id}_LO" ><input id="ID_${id}_PK" ></td>
+									<td class="d-none d-md-block"><span id="ID_${id}_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
 								</tr>`
 								);
 					};
@@ -178,12 +178,10 @@
 					// color of the setpoint bar
 					$('.progress-setpoint').css("border-right", "solid .3em var(--level_setpoint)") ;
 
-					// color of the digital IO bar
-					$('.digi_back').css("border", "solid 0.15em var(--secondary)" );
-
 					$(".peity-ai").peity("line", {
 							fill: ["var(--sparkline_ai_fill)"],
 							stroke: "var(--sparkline_ai_stroke)",
+							strokeWidth: 2,
 							min: 0,
 							max: 100,
 							width: 128
@@ -192,6 +190,7 @@
 					$(".peity-ao").peity("line", {
 							fill: ["var(--sparkline_ao_fill)"],
 							stroke: "var(--sparkline_ao_stroke)",
+							strokeWidth: 2,
 							min: 0,
 							max: 100,
 							width: 128
@@ -200,6 +199,17 @@
 				});
 		}
 		init();
+		/*
+		$("#SparklineData").on('change', function() {
+				let length = this.value -1;
+				let data = '';
+
+				for (let i = 0; i < length; i++) { data += '0,'}
+				data += '0'
+
+				updateSparklines(data);
+		});
+		*/
 
 	//==============================================================================
 		function updateValuesD() {
@@ -218,7 +228,7 @@
 				$(`#TS_${id}` ).text( timeStamp.format('ll HH:mm:ss')  );
 
 			});
-			setTimeout(updateValuesD, updateIntervalD + 100);
+			setTimeout(updateValuesD, updateIntervalD + 20);
 		}
 		$(() => { updateValuesD(); });
 
@@ -228,7 +238,7 @@
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
-				val = Round( this.value,2);
+				val = parseFloat( Round(this.value) );
 
 				// fill forms --------------------------------------------------
 				$("#IDAnalogIO").find( "." + id).each( function() {
@@ -257,36 +267,42 @@
 				}
 
 				// analog meter low --------------------------------------------
-				low = $(`#ID_${id}_LO`);
-				if ( val <  low.val() ) {
-					low.val( val );
-					$(`#ID_${id}_L` ).css("width", low.val()  + "%" );
-				}
+				low = $("#ID_" + id + "_LO");
+				if ( parseFloat(val) <  low.val() ) // parseFloat ????
+					low.val( val ); // min
+				$("#ID_" + id + "_L" ).css("width",    low.val()  + "%" ); // low
+
 
 			});
 			setTimeout(updateValuesA, updateIntervalA);
 		}
 		 $(() => { updateValuesA(); });
 		//==========================================================================
-		function updateSparklines() {
+		function updateSparklines(sData) {
 			let updatingChart, values;
 
 			parent.top.$("#IDdata").find("input").each( function() {
 				id = this.id;
-				val = Math.round( this.value);
+				val = this.value;
 
-				// sparklines --------------------------------------------------
 				updatingChart = $(`#ID_${id}_spark` ).peity("line")
-				values = updatingChart.text().split(",")
-				values.shift()
-				values.push(parseInt(val))
 
-				updatingChart
-					.text(values.join(","))
-					.change()
+				if ( typeof sData == 'undefined' ) {
+					values = updatingChart.text().split(",")
+					values.shift()
+					values.push(parseInt(val))
+
+					updatingChart
+						.text(values.join(",") )
+						.change()
+				} else {
+					updatingChart
+						.text( sData )
+						.change()
+				}
 
 			});
-			setTimeout(updateSparklines, updateIntervalA + 50);
+			setTimeout(updateSparklines, updateIntervalA + 10);
 		}
 		 $(() => { updateSparklines(); });
 
@@ -441,7 +457,7 @@
 
 						<div class="row p-1">
 							<div class="col" id="TXT_Peak_Hold">
-								Peak hold
+								Peak / valley hold
 							</div>
 							<div class="col" id="ID_Prefs_PeakHold">
 								<select class="form-control form-control-sm custom-select custom-select-sm" id="PeakInterval" size="1" onChange="PeakInterval=this.value*1000">
@@ -482,7 +498,27 @@
 								<!--  -->
 							</div>
 						</div>
+<!--
+						<div class="row p-1">
+							<div class="col" id="TXT_Sparkline_Data">
+								Sparkline data points
+							</div>
+							<div class="col" id="">
+								<select class="form-control form-control-sm custom-select custom-select-sm" id="SparklineData" size="1">
+									<option value="0">OFF</option>
+									<option value="10">10</option>
+									<option value="20" selected>20</option>
+									<option value="30">30.</option>
+									<option value="40">40</option>
+									<option value="50">50</option>
+									<option value="60">60</option>
+								</select>
+							</div>
+							<div class="col">
 
+							</div>
+						</div>
+-->
 						<hr>
 						<h5 class="card-title" id="TXT_Prefs_D">Digital</h5>
 
