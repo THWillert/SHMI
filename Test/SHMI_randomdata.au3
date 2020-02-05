@@ -27,7 +27,7 @@ Dim $tmp = FileRead ( $h )
 FileClose($h)
 
 ; ====================================================================
-While Sleep(  1000 ) ; (random(0,3,1) * 1000) random: simulats bad connection
+While Sleep( 500 ) ; random(0,3,1) * 1000 random: simulats bad connection
 
    $templ = $tmp
 
@@ -39,7 +39,7 @@ While Sleep(  1000 ) ; (random(0,3,1) * 1000) random: simulats bad connection
    $templ = StringReplace($templ, "%1%", $time + $iTimeOffset)
 
    For $i = 0  To 11
-	  $d[$i] = Random(0,1,1)
+	  $d[$i] = Random(0,5,1)
 	  $templ = StringReplace($templ, "%" & $i + 10 & "%", $d[$i])
    Next
 
@@ -54,7 +54,7 @@ While Sleep(  1000 ) ; (random(0,3,1) * 1000) random: simulats bad connection
 
    $templ = StringReplace($templ, "%" & 100 & "%", $a[0])
    For $i = 1 to 5
-	   $a[$i] = Round( Random(0,100),2)
+	   $a[$i] = Round( Random(20,80),2)
 	   $templ = StringReplace($templ, "%" & $i + 100 & "%", $a[$i])
    Next
 
