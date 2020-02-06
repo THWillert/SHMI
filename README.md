@@ -4,14 +4,14 @@
 
 ## Übersicht
 
-Eine kleine Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
+Eine kleine, HTML, JavaScript und SVG basierte, Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
 
 Mit minimalen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
-Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
-
 In der einfachsten Variante nur ca. 700 KB groß!
+
+Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
 
 ![Start](/images/SHMI_index.png)
 
@@ -19,16 +19,15 @@ In der einfachsten Variante nur ca. 700 KB groß!
 
 - Für die Darstellung ist nur ein Browser nötig
 - Responsives Design
-- Darstellung von Digital, Analogwert, Sollwerten und Peak-Hold
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 ![Start](/images/SHMI_Recorder_2.png)
-- Fließbilder können per Drag und Drop mit Anzeige-Elementen ausgestattet werden:
+- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Mini-Panels) ausgestattet werden:
 ![Start](/images/SHMI_RI_1.png)
-- Die Elemente (aktuell DI/DO und Analog-Werte) in einem SVG-Bild können direkt animiert werden z.B.:  
+- Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:  
 ![Start](/images/SHMI_RI_03.png)  
-- Design einfach per Bootstrap-Theme zu ändern (Design oben: [Slate](https://bootswatch.com/slate/)):
+- Design einfach per Bootstrap-Theme zu ändern (Standard-Design: [Slate](https://bootswatch.com/slate/)):
 ![Start](/images/SHMI_index_02.png)  
   oder per eigener Style-Sheets.
 ___
@@ -213,7 +212,8 @@ Beispiel:
 
 ### Recorder
 
-> :warning:  Da hier alles im Browser aufgezeichnet wird, dürfen während der Aufzeichnung, im Browser keinen weiteren Tabs offen sein. Auch darf das Browser-Fenster nicht minimiert werden. In beiden Fällen entsehen Aussetzer bei den Messwerten. Dies kann durch einen entsprechend hohen Update Interval evtl. kompensiert werden.
+> :warning:  
+> Da hier alles im Browser aufgezeichnet wird, dürfen während der Aufzeichnung, im Browser keinen weiteren Tabs offen sein. Auch > darf das Browser-Fenster nicht minimiert werden. In beiden Fällen entsehen Aussetzer bei den Messwerten. Dies kann durch einen > entsprechend hohen Update Interval evtl. kompensiert werden.
 
 ### Fließbild
 
@@ -226,15 +226,36 @@ Priorität beim Laden:
  - PNG (am besten transparent)
  - JPG
 
-Alle verfügbaren Datenpunkte können als kleine Anzeigen (Design noch nicht fertig) in das Bild eingefügt werden.
+Alle verfügbaren Datenpunkte können als kleine Anzeigen (Mini-Panels; Design noch nicht fertig) in das Bild eingefügt werden.
 
-Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
+Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der entsprechenden Darstellungsart, aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
 
 ![Start](/images/SHMI_RI_1.png)
 
+#### Folgende Darstellungsmöglichkeiten (Mini-Panels) sind aktuell vorhanden
+- Digital:
+  - An / Aus
+- Analog:
+  - Meter
+  - Sparkline (Kurve)
+  - Level mit Wertanzeige (vertikal z.B: als Füllstand für Tanks, frei skalierbar)
+  
+#### Speichern / Laden / Löschen der Mini-Panels
+
+##### Speichern
+Ein Speichern der Elemente ist nicht notwendig.
+
+Sobald diese postioniert oder deren Größe verändert wurde, werden Position und die Größe der Anzeigen werden im Local-Storage des Browser gespeichert. Für jedes Element wird ein entsprechender Eintrag gespeichert.
+
+##### Laden
+Beim Laden der Seite werden die Elemente automatisch wieder angezeigt.
+
+##### Löschen
+Zum Löschen eines Elementes dieses in den Einstellungen wieder abwählen.
+
 #### Direkte Animation im Bild (nur SVG):
 
-> Momentan nur DI/DO und Analogwert
+> Momentan nur DI/DO und Analog als Wert
 
 Dem Element eine entsprechende ID (bei Inkscape: "Kennung") geben.  
 Schema: `SHMI_Dxx_D`  
@@ -251,18 +272,6 @@ Ergebnis im Betrieb:
 
 Design und Farben stehen noch nicht fest!
 
-#### Speichern / Laden / Löschen
-
-##### Speichern
-Ein Speichern der Elemente ist nicht notwendig.
-
-Sobald diese postioniert oder deren Größe verändert wurde, werden Position und die Größe der Anzeigen werden im Local-Storage des Browser gespeichert. Für jedes Element wird ein entsprechender Eintrag gespeichert.
-
-##### Laden
-Beim Laden der Seite werden die Elemente automatisch wieder angezeigt.
-
-##### Löschen
-Zum Löschen eines Elementes dieses in den Einstellungen wieder abwählen.
 
 ### Beschriftung der Oberfläche
 
@@ -316,6 +325,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
 - [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
 - [ ] Einstellungen lokal speichern
+- [ ] Im/Export der Einstellungen
 - [x] CSS zusammenfassen
 - [x] Dateien vollständig hochladen
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
@@ -323,9 +333,9 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Fonts lokal speichern und abfragen
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Dokumentation als Wiki
-- [ ] Minimierte Version aller Dateien erzeugen
+- [ ] Minimierte Version aller Dateien
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
-- [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste ...
+- [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste und überflüssigen Code ...
 
 #### Übersicht
 
@@ -368,6 +378,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Anzeigen rotierbar (90°) machen
 - [ ] mehr Darstellungsmöglichkeiten (Gauge, nur Werte, Panel mit allen Daten)
 - [ ] Animation (Färbung) der SVG-Bilder
+- [ ] Zusätzliche Datenpunkte für die Animation (z.B. um geschaltete Wege darzustellen)
 
 ## Benutzte Bibliotheken
 
