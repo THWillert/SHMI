@@ -103,21 +103,23 @@ License: MIT
 	border: solid 0.15em var(--dark);
 }
 .digi_back,
-.digi {
+.digi_in,
+.digi_out {
 	position: absolute;
 	width: inherit;
 	height: inherit;
 	border-radius: inherit;
 }
-.digi {
+.digi_in,
+.digi_out {
 	transition: opacity 0.5s ease;
 }
 
-#ID_DI .digi {
+.digi_in {
 	background: var(--teal);
 	filter: saturate(50%);
 }
-#ID_DO .digi {
+.digi_out {
 	background: var(--teal);
 	filter: saturate(110%);
 }
@@ -157,7 +159,6 @@ License: MIT
 	width: inherit;
 	position: absolute;
     background:  var(--SHMI_level_bg);
-    border-top: 3px solid  #0F0;
 	border-radius: inherit;
 	transition: height 1s ease;
 	mix-blend-mode: multiply;
