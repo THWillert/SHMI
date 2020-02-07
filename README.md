@@ -71,7 +71,7 @@ DI/DO dürfen Werte von 0-5 annehmen.
 
 <dl>
    <dt>LIVE-BIT (Format: 1/0)</dt>
-   <dd>Muß bie jedem neuen Datensatz toggeln:  
+   <dd>Muß bei jedem neuen Datensatz toggeln:  
    Anzeige in der Statusleiste</dd>
    <dt>TIMESTAMP (Format: UNIX-Timestamp in Sekunden)</dt>
    <dd>Zeitstempel vom Gerät o. Anwendung :  
@@ -87,7 +87,7 @@ DI/DO dürfen Werte von 0-5 annehmen.
    <dt>DOn (Format: Integer 0-5)</dt>
    <dd>Digitalausgang</dd>
    <dt>AIn (Format: Float oder Integer)</dt>
-   <dd>Analogeingang in &</dd>
+   <dd>Analogeingang in %</dd>
    <dt>AOn (Format: Float oder Integer)</dt>
    <dd>Analogausgang in %</dd>
    <dt>AIn_SP (Format: Float oder Integer)</dt>
@@ -98,7 +98,7 @@ DI/DO dürfen Werte von 0-5 annehmen.
 
 ### Schnittstelle
 
-Von der Steuerung muss eine entsprechende Datei erzeugt werden:
+Von der Steuerung muss eine entsprechende Datei erzeugt werden:  
 `data/data.json`  
 in der die Werte eingetragen werden.
 
@@ -142,7 +142,7 @@ Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut
 
 Beispiel-Schnittstelle zur Ausgabe von CPU-Variablen:
 
-```json
+```
 {
 "DI0":":="webdata".DI[0]:",
 "DI1":":="webdata".DI[1]:",
@@ -171,7 +171,7 @@ Siehe auch Siemens: [Eigene Webseiten für S7-1200 / S7-1500 erstellen und einse
 
 ### Beschriftung der Datenpunkte
 
-Die Texte für die Beschriftung der Datenpunkte befinden sich in der Datei:
+Die Texte für die Beschriftung der Datenpunkte befinden sich in der Datei:  
 `lng/de_dp.json`  
 und werden ebenfalls beim ersten Aufruf der Seite eingelesen.
 
@@ -212,7 +212,7 @@ Alternativ kann auch ein PNG oder JPG Bild geladen werden.
 > Nur SVG-Bilder können direkt animiert werden!
 
 Priorität beim Laden:
- - SVG (kann animiert werden)
+ - SVG
  - PNG (am besten transparent)
  - JPG
 
@@ -224,7 +224,7 @@ Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der ent
 
 #### Folgende Darstellungsmöglichkeiten (Mini-Panels) sind aktuell vorhanden
 - Digital:
-  - An / Aus
+  - An / Aus ("LED")
 - Analog:
   - Meter
   - Sparkline (Kurve)
@@ -251,8 +251,16 @@ Dem Element eine entsprechende ID (bei Inkscape: "Kennung") geben.
 Schema: `SHMI_Dxx_D`  
 Dxx = Digitaler-Datenpunkt
 
+Wird als Farbe ausgegeben:
+- 0 = schwarz
+- 1 = grün
+- 3 = orange (warning)
+- 5 = rot (alert)
+
 Schema: `SHMI_Axx_A`  
 Axx = Analoger-Datenpunkt
+
+Wird als Text ausgegeben.
 
 ![Start](/images/SHMI_Inkscape_1.png)
 
