@@ -1,6 +1,6 @@
 # SHMI
 
-> :warning: WIP - nicht für den Produktiv-Einsatz geeignet.
+> WIP - nicht für den Produktiv-Einsatz geeignet.
 
 ## Übersicht
 
@@ -202,7 +202,7 @@ Beispiel:
 
 ### Recorder
 
-> :warning:  
+> Achtung!  
 > Da hier alles im Browser aufgezeichnet wird, dürfen während der Aufzeichnung, im Browser keinen weiteren Tabs offen sein. Auch > darf das Browser-Fenster nicht minimiert werden. In beiden Fällen entsehen Aussetzer bei den Messwerten. Dies kann durch einen > entsprechend hohen Update Interval evtl. kompensiert werden.
 
 ### Fließbild
