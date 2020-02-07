@@ -21,13 +21,13 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 - Responsives Design
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
-- Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
+- Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden  
 ![Start](/images/SHMI_Recorder_2.png)
-- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Mini-Panels) ausgestattet werden:
+- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Mini-Panels) ausgestattet werden:  
 ![Start](/images/SHMI_RI_1.png)
 - Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:  
 ![Start](/images/SHMI_RI_03.png)  
-- Design einfach per Bootstrap-Theme zu ändern (Standard-Design: [Slate](https://bootswatch.com/slate/)):
+- Design einfach per Bootstrap-Theme zu ändern (Standard-Design: [Slate](https://bootswatch.com/slate/)):  
 ![Start](/images/SHMI_index_02.png)  
   oder per eigener Style-Sheets.
 ___
