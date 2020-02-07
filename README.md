@@ -73,35 +73,25 @@ DI/DO dürfen Werte von 0-5 annehmen.
    <dt>LIVE-BIT (Format: 1/0)</dt>
    <dd>Muß bie jedem neuen Datensatz toggeln:  
    Anzeige in der Statusleiste</dd>
-   
    <dt>TIMESTAMP (Format: UNIX-Timestamp in Sekunden)</dt>
    <dd>Zeitstempel vom Gerät o. Anwendung :  
-   Hier wird die Differenz zur System-Zeit berechnet und in der Statusleiste angezeigt</dd>
-   
+     Hier wird die Differenz zur System-Zeit berechnet und in der Statusleiste angezeigt</dd>   
    <dt>WARN (noch nicht in Gebrauch)</dt>
-   <dd>Nummer der Warnmeldung - oder Text</dd>
-   
+   <dd>Nummer der Warnmeldung - oder Text</dd> 
    <dt>ALARM (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Alarmmeldung - oder Text</dd>
-   
    <dt>MESSAGE (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Betriebsmeldung - oder Text</dd>
-   
    <dt>DIn (Format: Integer 0-5)</dt>
    <dd>Digitaleingang</dd>
-   
    <dt>DOn (Format: Integer 0-5)</dt>
    <dd>Digitalausgang</dd>
-   
    <dt>AIn (Format: Float oder Integer)</dt>
    <dd>Analogeingang in &</dd>
-   
    <dt>AOn (Format: Float oder Integer)</dt>
    <dd>Analogausgang in %</dd>
-   
    <dt>AIn_SP (Format: Float oder Integer)</dt>
    <dd>Analogeingang Sollwert in %</dd>
-   
    <dt>AOn_SP (Format: Float oder Integer)</dt>
    <dd>Analogausgang Sollwert in %</dd>
 </dl>
@@ -152,7 +142,7 @@ Beim ersten Aufruf der Seite wird diese Datei ausgelesen und die Seite aufgebaut
 
 Beispiel-Schnittstelle zur Ausgabe von CPU-Variablen:
 
-```
+```json
 {
 "DI0":":="webdata".DI[0]:",
 "DI1":":="webdata".DI[1]:",
