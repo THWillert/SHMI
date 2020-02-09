@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-02-04
+	Modified: 2020-02-08
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -74,32 +74,7 @@ $( () => {
 		});
 	}
 	DataSelectOptions();
-//==============================================================================
-	let datasets = {
-		"data": {
-			lines: { show: true, lineWidth: 2 },
-			data: data
-		}
-	};
-//==============================================================================
-	// hard-code color indices to prevent them from shifting as
-	// lines are turned on/off
-	let i = 0;
-	$.each(datasets, (key, val) => {
-		val.color = i;
-		++i;
-	});
-//==============================================================================
-	// insert checkboxes
-	let choiceContainer = $("#choices");
-	$.each(datasets, (key, val) => {
-		choiceContainer.append(
-			 `<br/><input style='display:hidden' type='checkbox' name='${key}' checked='checked' id='id${key}'>
-			 </input><label for='id${key}'>${key.label}</label>`
-			);
-	});
-//==============================================================================
-	choiceContainer.find("input").click(plotAccordingToChoices);
+
 //==============================================================================
 	let options = {
 		yaxis: {
@@ -215,23 +190,7 @@ $( () => {
 	$("#chart").bind("plothovercleanup", (event, pos, item) => {
 			$("#tooltip").hide();
 	});
-//==============================================================================
-	function plotAccordingToChoices() {
 
-		var data = [];
-
-		choiceContainer.find("input:checked").each(function () {
-			let key = $(this).attr("name");
-			if (key && datasets[key]) {
-				data.push(datasets[key]);
-			}
-		});
-
-		if (data.length > 0) {
-			plot = $.plot("#chart", data, options );
-		}
-	}
-	plotAccordingToChoices();
 //==============================================================================
 	$("#chart").bind("plotselected", (event, ranges) => {
 
