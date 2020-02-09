@@ -1,6 +1,7 @@
 V0.6.4-beta
  - added: Timestamp to digital I/O-panels in RI
  - changed: values for digitial I/Os
+ - changed: SHMI_randomdata.au3 for the now digital I/O values
  - removed some useless code in SHMI_recorder.js
 ___
 
