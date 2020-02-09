@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-02" />
+	<meta name="DCTERMS.modified" content="2020-02-09" />
 	<!--
 	Copyright (c)2014 - 2020 Thorsten Willert
 
@@ -70,7 +70,7 @@
 				updateVal();
 			}
 
-			setTimeout(WatchDog, updateRate * 4);
+			setTimeout(WatchDog, updateRate * 2);
 		}
 		WatchDog();
 
@@ -95,7 +95,7 @@
 				}
 			$("#IDtime").text( Time.toLocaleString('de-DE', TimeOption ) );*/
 
-			setTimeout(timeUpdate, 60 * 1000);
+			setTimeout(timeUpdate, 60000);
 		}
 		timeUpdate();
 
@@ -230,7 +230,7 @@ About Dialog -->
 				</div>
 				<div class="modal-body">
 					<h1><img src="pict/logo.svg" height="100" alt="Logo">  SHMI</h1>
-					&copy; 2014 - 2020, by Thorsten Willert, Version 0.6.3-beta
+					&copy; 2014 - 2020, by Thorsten Willert, Version 0.6.4-beta
 
 					<hr>
 					<h4>Verwendete Bilbliotheken:</h4>
@@ -294,12 +294,10 @@ Footer -->
 			Connection
 		</span>
 		<span id="timeDiff" class="float-left timeDiff border cursor-help" title="Time difference data / local time" style="margin-left:0.3em;padding-right:1em;padding-left:1em;transition: border 0.5s ease">
-			0s<!-- time difference -->
+			0s
 		</span>
-		<span
-			id="IDtime"
-			style="padding-left:1em;padding-right:3em"
-		></span>
+		<span id="IDtime" style="padding-left:1em;padding-right:3em">
+		</span>
 	</div>
 </body>
 </html>
