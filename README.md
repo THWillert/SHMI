@@ -225,7 +225,7 @@ Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der ent
 
 #### Folgende Darstellungsmöglichkeiten (Mini-Panels) sind aktuell vorhanden
 - Digital:
-  - An / Aus ("LED")
+  - An / Aus ("LED") inkl. Timestamp
 - Analog:
   - Meter
   - Sparkline (Kurve)
@@ -255,8 +255,8 @@ Dxx = Digitaler-Datenpunkt
 Wird als Farbe ausgegeben:
 - 0 = schwarz
 - 1 = grün
-- 3 = orange (warning)
-- 5 = rot (alert)
+- 2 = orange (warning)
+- 4 = rot (alert)
 
 Schema: `SHMI_Axx_A`  
 Axx = Analoger-Datenpunkt
