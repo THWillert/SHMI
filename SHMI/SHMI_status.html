@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-08" />
+	<meta name="DCTERMS.modified" content="2020-02-09" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -144,7 +144,7 @@
 										</div>
 									</td>
 									<td class="d-none"><input id="ID_${id}_LO" ><input id="ID_${id}_PK" ></td>
-									<td class="d-none d-md-block"><span id="ID_${id}_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
+									<td class="d-none d-md-block sparkline"><span id="ID_${id}_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
 								</tr>`
 								);
 					};
@@ -212,8 +212,7 @@
 				id = this.id;
 
 				curent = $(`#ID_${id}_D` ).css("opacity");
-				if (curent != val)
-					$(`#ID_${id}_D` ).css("opacity", val );
+				if (curent != val) $(`#ID_${id}_D` ).css("opacity", val );
 
 				timeStamp = moment.unix(  parent.top.$(`#${id}_TS_upd`).val() )
 				$(`#TS_${id}` ).text( timeStamp.format('ll HH:mm:ss')  );
@@ -261,8 +260,7 @@
 				low = $(`#ID_${id}_LO`);
 				if ( parseFloat(val) <  low.val() ) // parseFloat ????
 					low.val( val ); // min
-				$(`#ID_${id}_L` ).css("width",    low.val()  + "%" ); // low
-
+				$(`#ID_${id}_L` ).css("width",    low.val()  + "%" );
 
 			});
 			setTimeout(updateValuesA, updateIntervalA);
