@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-04" />
+	<meta name="DCTERMS.modified" content="2020-02-08" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -167,16 +167,7 @@
 								$(this).text(val);
 							});
 						});
-					})
-
-					// color of the peaks bar
-					$('.progress-peak').css("border-right", "solid .5em var(--level_peak)" );
-
-					// color of the valleys bar
-					$('.progress-low').css("border-right", "solid .5em var(--level_valley)" );
-
-					// color of the setpoint bar
-					$('.progress-setpoint').css("border-right", "solid .3em var(--level_setpoint)") ;
+					});
 
 					$(".peity-ai").peity("line", {
 							fill: ["var(--sparkline_ai_fill)"],
@@ -267,10 +258,10 @@
 				}
 
 				// analog meter low --------------------------------------------
-				low = $("#ID_" + id + "_LO");
+				low = $(`#ID_${id}_LO`);
 				if ( parseFloat(val) <  low.val() ) // parseFloat ????
 					low.val( val ); // min
-				$("#ID_" + id + "_L" ).css("width",    low.val()  + "%" ); // low
+				$(`#ID_${id}_L` ).css("width",    low.val()  + "%" ); // low
 
 
 			});
