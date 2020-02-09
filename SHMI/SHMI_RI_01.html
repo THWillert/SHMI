@@ -16,7 +16,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-08" />
+	<meta name="DCTERMS.modified" content="2020-02-09" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -44,7 +44,6 @@
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 
-	<link rel="stylesheet" type="text/css" href="./fontsawesome/css/all.min.css" >
 	<link rel="stylesheet" type="text/css" href="./css/select2.min.css" />
 
 	<script src="./js/main.js" async></script>
@@ -67,7 +66,7 @@
 				<div class="col-md-12 p-2">
 					<div class="card shadow">
 						<div class="card-header">
-							<h5 class="card-title">Fließbild</h5>
+							<h5 class="card-title" id="TXT_RI_Caption">Piping and instrumentation diagram</h5>
 						</div><!-- /header -->
 
 						<div class="card-body">
@@ -84,7 +83,7 @@
 					<div class="card shadow">
 						<div class="card-header">
 							<a class="" data-toggle="collapse" href="#collapseStorage" role="button" aria-expanded="false" aria-controls="collapseStorage">
-							<div id="TXT_Data_Storage">Einstellungen</div>
+							<div id="TXT_RI_Prefs">Settings</div>
 							</a>
 						</div><!-- /header -->
 
@@ -102,8 +101,11 @@
 									<select  id="ID_Select_A" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
 										<optgroup label="AI Meter" id="ID_option_AI"></optgroup>
 										<optgroup label="AI Level" id="ID_option_AIL"></optgroup>
+										<optgroup label="AI Gauge" id="ID_option_AIG"></optgroup>
 										<optgroup label="AI Sparkline" id="ID_option_AIS"></optgroup>
+
 										<optgroup label="AO Meter" id="ID_option_AO"></optgroup>
+										<optgroup label="AO Gauge" id="ID_option_AOG"></optgroup>
 										<optgroup label="AO Sparkline" id="ID_option_AOS"></optgroup>
 									</select>
 								</div>
