@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-05.02.2020*/
+08.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -14,10 +14,8 @@ License: MIT
   --level_setpoint: var(--white);
 
 /* sparklines */
-  /*--sparkline_ai_fill: var(--teal);*/
   --sparkline_ai_fill: transparent;
   --sparkline_ai_stroke: var(--teal);
-  /*--sparkline_ao_fill: var(--teal);*/
   --sparkline_ao_fill: transparent;
   --sparkline_ao_stroke: var(--teal);
 
@@ -50,29 +48,31 @@ License: MIT
 	position: absolute;
 	height: inherit;
 	left: 0em;
-	background-color: rgba(25, 25, 25, 0.4)
+	background-color: rgba(25, 25, 25, 0.4);
+	border-right: solid 0.3em var(--level_setpoint);
 }
 
-/* colors are set in the jQuery init() status.html */
 .progress > .progress-peak {
 	position: absolute;
 	height: inherit;
-	transition: width 1s linear;
+	transition: width 0.5s linear;
+	border-right: solid 0.5em var(--level_peak);
 }
 .progress > .progress-low {
 	position: absolute;
 	height: inherit;
-	transition: width 1s linear;
+	transition: width 0.5s linear;
+	border-right: solid 0.5em var(--level_valley);
 }
 #ID_AI .progress-bar {
 	background: var(--level_ai_meter) !important;
 	filter: saturate(50%);
-	/*border-right: solid 0.35em #0F0 !important;*/
+	border-radius: 0.3em  0.3em 0.3em 0.3em;
 }
 #ID_AO .progress-bar {
 	background: var(--level_ao_meter) !important;
-	filter: saturate(110%);
-	/*border-right: solid 0.35em #F00 !important;*/
+	filter: saturate(120%);
+		border-radius: 0.3em  0.3em 0.3em 0.3em;
 }
 
 /* scale --------------------------- */
@@ -121,7 +121,7 @@ License: MIT
 }
 .digi_out {
 	background: var(--teal);
-	filter: saturate(110%);
+	filter: saturate(120%);
 }
 
 .sparkline {
@@ -133,7 +133,7 @@ License: MIT
 .SHMI_drag {
 	position: absolute;
 	display: block;
-	width: 10em;
+	width: 5em;
 	height: 55px;
 	padding: 0.5em;
 	color: var(--SHMI_drag_txt);
@@ -179,7 +179,6 @@ License: MIT
 .SHMI_drag_DO,
 .SHMI_drag_DI {
 	transition: opacity 0.5s ease;
-	text-align:center;
 }
 .SHMI_drag_AI,
 .SHMI_drag_AO {
