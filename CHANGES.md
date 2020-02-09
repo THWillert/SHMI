@@ -1,7 +1,13 @@
+V0.6.4-beta
+ - added: Timestamp to digital I/O-panels in RI
+ - changed: values for digitial I/Os
+ - removed some useless code in SHMI_recorder.js
+___
+
 V0.6.3-beta
  - fixed: no digital in/out in RI-panels
  - fixed: "glow-style"
-
+___
 
 V0.6.2-beta 05.02.2020
 
@@ -11,7 +17,7 @@ V0.6.2-beta 05.02.2020
  - changed: changed the recorder axis to the right side (to see the current value better)
  - changed: writing only changed values on the status page
  - changed: decreased the reading of the values to 500ms
-
+___
 V0.6.1-beta 03.02.2020
 
  - added: display for the time difference local / source
@@ -23,11 +29,11 @@ V0.6.1-beta 03.02.2020
  - SHMI_randomdata.exe:
    - added: support for live bit and timestamp
    - changed: first AI ist now a triangle wave
-
+___
 V0.6.0-beta 01.02.2020
 
  - added: DI/DO shows the timestamp of the last change now
-
+___
 
 V0.5.0-beta 31.01.2020
 
@@ -38,33 +44,33 @@ V0.5.0-beta 31.01.2020
  - changed: spltted language files and changed suffix to json
  - changed: renamed randomdata.exe to SHMI_randomdata.exe and added more data-points
  - fixed: error with AO selection for RI
- 
+ ___
 V0.4.1-beta 30.01.2020
 
 - fixed: animation error with mixed style / attributes in svg files
-
+___
 V0.4.0-beta 30.01.2020
 
 - added: direct animation (coloring) for DI/DO in the SVG-image  
 - added: fallback for the RI-images SVG -> PNG -> JPG
 - removed: original bootstrap css
 - removed fontawesome (because of the size)
-
+___
 V0.3.1-beta 28.01.2020
 
 - added new type of level-meter for analog inputs:
-
+___
 V0.3.0-beta 26.01.2020
 
 - SHMI_RI_x.html
   - now you can add all datapoints as "instruments" to the P&ID
 - updated all files
-
+___
 V0.2.3-beta 20.01.2020
 
 - SHMI_status.html
   - added scale for analog values
-
+___
 V0.2.3-beta 20.01.2020
 
 - SHMI_status.html
@@ -72,7 +78,7 @@ V0.2.3-beta 20.01.2020
   
 - CSS
   - added SHMI_glow.css (if you rename it, you have the flat-design back)
-
+___
 V0.2.2-beta 17.01.2020
 
 - index.htm
@@ -86,11 +92,11 @@ V0.2.2-beta 17.01.2020
   - changed layout
   - changed default preferences (first analog-value viewed, SMA / 11, Zoom: Grow loosley)
   - added "collapse" to the cards:
-
+___
 V0.2.1-beta 16.01.2020
 
 - fixed some errors in index.htm
-
+___
 V0.2.0-beta 16.01.2020
 
 - minified all JavaScript-files
@@ -102,7 +108,7 @@ V0.2.0-beta 16.01.2020
 - status.html renamed to SHMI_status.html
 - ri_01.html renamed to SHMI_RI_01.html
   - updated layout
-
+___
 V0.1.5-beta 12.01.2020
 
 - SHMI_instruments.css:
@@ -130,43 +136,43 @@ V0.1.5-beta 12.01.2020
   
 - index.htm:
   - added: shields.io for SHMI
-
+___
 V0.1.4-beta 09.01.2020
 
 - recorder.html: updated design ot the chart
 - recorder.html: chart now with tooltips
-
+___
 V0.1.3-beta 09.01.2020
 
 - Analog- und Digital-Anzeigen an Bootstrap angepasst:
   - Themes werden nun darauf angewandt
   - Analog-Anzeige verwendet nun die Progress-Bar
-
+___
 V0.1.2-beta 08.01.2020
 
 - status.html: added peak-hold to the analog levels
 - status.html: changed the analog form
 - status.html: fixed error in analog-out card (collapse)
 - splitted default.css into SHMI.css and SHMI_Instruments.css
-
+___
 V0.1.1-beta 08.01.2020
 
 - index.htm: updated About-dialog to Bootstrap V4
-
+___
 V0.1-beta 08.01.2020
 
 - first release
-
+___
 07.01.2020
 
 - added peak-hold bar to html and css (not working now)
 - now you can collapse all cards on the "Overview / Übersicht" page by clicking on the title
 - removed glyphicons (not supported by Bootstrap 4)
-
+___
 05.01.2020
 
 - uploaded to GitHub
-
+___
 31.03.2014
 
 - first version
