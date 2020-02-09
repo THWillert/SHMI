@@ -1,3 +1,8 @@
+V0.6.5-beta
+ - changed: only PNG as fallback for RI images
+ - changed: check for extisting RI images
+___
+
 V0.6.4-beta
  - added: Timestamp to digital I/O-panels in RI
  - changed: values for digitial I/Os
