@@ -62,7 +62,7 @@ Func Main()
 			EndIf
 		Next
 
-		; AI0 saw tooth curve
+		; AI0 triangle wave
 		If Not $up Then $a[0] -= 1
 		If $up Then $a[0] += 1
 		If $a[0] >= 70 Then
