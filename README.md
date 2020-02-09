@@ -63,11 +63,12 @@ ___
 
 ### Datenpunkte
 
-DI/DO dürfen Werte von 0-5 annehmen.
+DI/DO dürfen folgende Werte annehmen.
 - 0: aus
 - 1: an
-- 3: Warnung (in SVG orange)
-- 5: Fehler (in SVG rot)
+- 2: Warnung (orange)
+- 4: Fehler (rot)
+- 8: Info + 0/1 (in SVG zusätzliche blaue Füllung) - z.B. für Handbetrieb
 
 <dl>
    <dt>LIVE-BIT (Format: 1/0)</dt>
@@ -82,9 +83,9 @@ DI/DO dürfen Werte von 0-5 annehmen.
    <dd>Nummer der Alarmmeldung - oder Text</dd>
    <dt>MESSAGE (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Betriebsmeldung - oder Text</dd>
-   <dt>DIn (Format: Integer 0-5)</dt>
+   <dt>DIn (Format: Integer 0-9)</dt>
    <dd>Digitaleingang</dd>
-   <dt>DOn (Format: Integer 0-5)</dt>
+   <dt>DOn (Format: Integer 0-9)</dt>
    <dd>Digitalausgang</dd>
    <dt>AIn (Format: Float oder Integer)</dt>
    <dd>Analogeingang in %</dd>
@@ -220,7 +221,7 @@ Alle verfügbaren Datenpunkte können als kleine Anzeigen (Mini-Panels; Design n
 
 Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der entsprechenden Darstellungsart, aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
 
-![Start](/images/SHMI_RI_1.png)
+![Start](/images/SHMI_RI_02.png)
 
 #### Folgende Darstellungsmöglichkeiten (Mini-Panels) sind aktuell vorhanden
 - Digital:
