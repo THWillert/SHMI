@@ -217,7 +217,10 @@ Priorität beim Laden:
  - PNG (am besten transparent)
  - JPG
 
-Alle verfügbaren Datenpunkte können als kleine Anzeigen (Mini-Panels; Design noch nicht fertig) in das Bild eingefügt werden.
+Alle verfügbaren Datenpunkte können als kleine Anzeigen (Mini-Panels; Design noch nicht fertig) in das Bild eingefügt werden.  
+Momentan verfügbar:
+
+![Start](/images/SHMI_Instruments.png)
 
 Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der entsprechenden Darstellungsart, aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
 
