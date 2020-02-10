@@ -1,3 +1,7 @@
+V0.6.6-beta
+ - added: gauges for RI
+___
+
 V0.6.5-beta
  - changed: only PNG as fallback for RI images
  - changed: check for extisting RI images
