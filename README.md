@@ -15,6 +15,8 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 
 ![Start](/docs/images/SHMI_index.png)
 
+[Demo (statische Daten)](http://shmi.thorsten-willert.de/index.htm)
+
 ### Features
 
 - Für die Darstellung ist nur ein Browser nötig
