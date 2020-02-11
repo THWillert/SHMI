@@ -13,7 +13,7 @@ In der einfachsten Variante nur ca. 700 KB groß!
 
 Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
 
-![Start](/docs/images/SHMI_index.png)
+![Start](/images/SHMI_index.png)
 
 ### Features
 
@@ -22,13 +22,13 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden  
-![Start](/docs/images/SHMI_Recorder_2.png)
+![Start](/images/SHMI_Recorder_2.png)
 - Fließbilder können per Drag und Drop mit Anzeige-Elementen (Mini-Panels) ausgestattet werden:  
-![Start](/docs/images/SHMI_RI_1.png)
+![Start](/images/SHMI_RI_1.png)
 - Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:  
-![Start](/docs/images/SHMI_RI_03.png)  
+![Start](/images/SHMI_RI_03.png)  
 - Design einfach per Bootstrap-Theme zu ändern (Standard-Design: [Slate](https://bootswatch.com/slate/)):  
-![Start](/docs/images/SHMI_index_02.png)  
+![Start](/images/SHMI_index_02.png)  
   oder per eigener Style-Sheets.
 ___
 ## Voraussetzungen
@@ -219,11 +219,11 @@ Priorität beim Laden:
 Alle verfügbaren Datenpunkte können als kleine Anzeigen (Mini-Panels; Design noch nicht fertig) in das Bild eingefügt werden.  
 Momentan verfügbar:
 
-![Start](/docs/images/SHMI_Instruments.png)
+![Start](/images/SHMI_Instruments.png)
 
 Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der entsprechenden Darstellungsart, aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
 
-![Start](/docs/images/SHMI_RI_02.png)
+![Start](/images/SHMI_RI_02.png)
 
 #### Folgende Darstellungsmöglichkeiten (Mini-Panels) sind aktuell vorhanden
 - Digital:
@@ -265,11 +265,11 @@ Axx = Analoger-Datenpunkt
 
 Wird als Text ausgegeben.
 
-![Start](/docs/images/SHMI_Inkscape_1.png)
+![Start](/images/SHMI_Inkscape_1.png)
 
 Ergebnis im Betrieb:
 
-![Start](/docs/images/SHMI_RI_03.png)
+![Start](/images/SHMI_RI_03.png)
 
 Design und Farben stehen noch nicht fest!
 
@@ -303,7 +303,7 @@ Die Datei `css/bootstrap.min.css` gegen die entsprechende Theme-Datei austausche
 
 Für ein anders Design, die Datei `css/_SGMI_glow.css` umbenennen in `css/SGMI_glow.css`
 
-![Start](/docs/images/SHMI_index_03.png)  
+![Start](/images/SHMI_index_03.png)  
 
 #### Icons
 
