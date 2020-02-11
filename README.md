@@ -231,6 +231,7 @@ Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der ent
 - Analog:
   - Meter
   - Sparkline (Kurve)
+  - Gauge
   - Level mit Wertanzeige (vertikal z.B: als Füllstand für Tanks, frei skalierbar)
   
 #### Speichern / Laden / Löschen der Mini-Panels
@@ -361,8 +362,8 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
 - [ ] Mehr Statistik Funktionen
-- [ ] Vorfilter für Analog-Werte
-- [ ] Trigger (Schwellwert)
+- [ ] Vorfilter für Analog-Werte (Lowpass)
+- [ ] Trigger
 - [ ] Zeitliche Kompensation der Mittelwerte
 - [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
 - [ ] evtl. Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
