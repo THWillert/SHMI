@@ -4,7 +4,7 @@
 
 ## Übersicht
 
-Eine kleine, HTML, JavaScript und SVG basierte, Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
+Eine kleine, webbasierte (HTML, JavaScript und SVG) Visualisierung für SPS oder andere kleine Geräte.
 
 Mit minimalen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
