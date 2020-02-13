@@ -1,6 +1,7 @@
 V0.6.8-beta
  - Recorder:
    - added: Support for curve colors (CSS variables)
+___
 
 V0.6.7-beta 13.02.2020
  - Recoder:
