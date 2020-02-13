@@ -1,6 +1,6 @@
 V0.6.7-beta
  - Recoder:
-   - added: Compansation for the time differenz between value and avg (optional)
+   - added: Compansation for the time differenz between value and statistics curve (optional)
    - added: Statistics Harmonic Mean
    - added: Statistics Geometric Mean
    - added: Statistics Mode
