@@ -1,4 +1,8 @@
-V0.6.7-beta
+V0.6.8-beta
+ - Recorder:
+   - added: Support for curve colors (CSS variables)
+
+V0.6.7-beta 13.02.2020
  - Recoder:
    - added: Compensation for the time differenz between value and statistics curve (optional)
    - added: Statistics Harmonic Mean
