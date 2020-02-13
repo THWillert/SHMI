@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-05" />
+	<meta name="DCTERMS.modified" content="2020-02-13" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -121,7 +121,7 @@
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="IDdataSelect"></select>
 								</div>
 								<div class="col" id="updateInt">
-									Update Interval (sec):
+									Update Interval:
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="updateInterval" size="1"
 									onChange="
 										UpdateInterval=this.value
@@ -162,6 +162,9 @@
 										<option value="0" title="Simple Moving Average">SMA</option>
 										<option value="1" title="Median">Median</option>
 										<option value="2" title="Root Mean Square">RMS</option>
+										<option value="3" title="Harmonic Mean">Harmonic Mean</option>
+										<option value="4" title="Geometric Mean">Geometric Mean</option>
+										<option value="5" title="Mode">Mode</option>
 									</select>
 								</div>
 								<div class="col">
@@ -183,6 +186,12 @@
 										<option value="60">60</option>
 										<option value="120">60</option>
 									</select>
+								</div>
+								<div class="col">
+								Compensate time offset
+									<div class="form-check">
+										<input type="checkbox" class="form-check-input" id="ID_Compensate" checked>
+									</div>
 								</div>
 							</div>
 						</form>
@@ -275,4 +284,3 @@
 
 </body>
 </html>
-
