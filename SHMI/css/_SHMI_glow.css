@@ -3,6 +3,9 @@
   --sparkline_ai_stroke: #0F0;
   --sparkline_ao_fill: rgba(255,0,0,0.2);
   --sparkline_ao_stroke: #F00;
+
+  --recorder_curve: #F00;
+  --recorder_curve_avg: #00FF00aa;
 }
 
 .downlight {
