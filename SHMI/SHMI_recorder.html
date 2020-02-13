@@ -42,6 +42,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_Instruments.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 
 	<script src="./js/main.js" async></script>
 	<script src="./js/jquery-3.4.1.min.js"></script>
@@ -68,6 +69,12 @@
 
 </head>
 <body>
+<!-- colors for the chart -------------------------------------------------- -->
+	<span id="Color_Curve" style="background-color:var(--recorder_curve)"></span>
+	<span id="Color_Curve_Avg" style="background-color:var(--recorder_curve_avg)"></span>
+	<span id="Color_Curve_Max" style="background-color:var(--recorder_min)"></span>
+	<span id="Color_Curve_Min" style="background-color:var(--recorder_max)"></span>
+
 <!-- reset request ========================================================= -->
 	<div class="modal fade" id="DataReset" tabindex="-1" role="dialog" aria-labelledby="ID_Caution_Reset" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
@@ -244,7 +251,7 @@
 										<td>Minimum</td>
 										<td id="TXT_avg">SMA</td>
 										<td>Maximum</td>
-										<td>Data points</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td><span id="current_value" class="cur_value value_out value_big" ></span></td>
