@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-08.02.2020*/
+13.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -26,6 +26,13 @@ License: MIT
   --SHMI_level_bg:  var(--teal);
 
   --SHMI_signal_on: var(--teal);
+
+/* recorder curves */
+ --recorder_curve: var(--teal);
+ --recorder_curve_avg: #00FF00aa;
+
+ --recorder_max: rgb(255,170,0);
+ --recorder_min: rgb(68,135,255);
 }
 
 .analog {
