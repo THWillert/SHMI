@@ -1,5 +1,10 @@
 V0.6.7-beta
- - added: Recorder can compansate the time differenz between value and avg now (optional)
+ - Recoder:
+   - added: Compansation for the time differenz between value and avg (optional)
+   - added: Statistics Harmonic Mean
+   - added: Statistics Geometric Mean
+   - added: Statistics Mode
+   - changed: only 0/1 recorded for digital (I/O)
  ___
 
 V0.6.6-beta
