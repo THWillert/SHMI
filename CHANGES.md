@@ -5,6 +5,7 @@ V0.6.7-beta
    - added: Statistics Geometric Mean
    - added: Statistics Mode
    - changed: only 0/1 recorded for digital (I/O)
+   - fixed: Timestamp on tooltips curve
  ___
 
 V0.6.6-beta
