@@ -363,10 +363,10 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Oberfläche optimieren
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
-- [ ] Mehr Statistik Funktionen
+- [x] Mehr Statistik Funktionen
 - [ ] Vorfilter für Analog-Werte (Lowpass)
 - [ ] Trigger
-- [ ] Zeitliche Kompensation der Mittelwerte
+- [x] Zeitliche Kompensation der Mittelwerte
 - [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
 - [ ] evtl. Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
 
