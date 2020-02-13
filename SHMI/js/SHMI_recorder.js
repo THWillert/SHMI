@@ -42,7 +42,6 @@ $( () => {
 	min = Number.MAX_VALUE;
 	max = Number.MIN_VALUE;
 
-	moment.lang("de", moment_de);
 //==============================================================================
 
 	function DataSelectOptions() {
@@ -231,7 +230,7 @@ $( () => {
 			if ( smooth >= upd) {
 				xAvg = moment().subtract( Math.ceil( (smooth * upd) / 2 - upd), 's'); // ToDo
 			} else {
-				xAvg = moment().add( Math.floor( (smooth * upd) / 2 - upd * 2 -2), 's'); // ToDo
+				xAvg = moment().subtract( Math.floor( (smooth * upd) / 2 - upd * 0.5), 's'); // ToDo
 			}
 		} else
 			xAvg = x;
@@ -321,7 +320,11 @@ $( () => {
 			$(".max_value").html( Round(max,2) + "&nbsp;" + einheit);
 			$(".avg_value").html( Round(mid,2) + "&nbsp;" + einheit);
 		}
-		$("#DataSize").text( c + ' / 3600');
+
+		$("#DataSize").text(
+			c + ' / 3600 / ' +
+			moment.utc( (3600 - c)  * (UpdateInterval) ).format('H:mm:ss') // remaining time
+		);
 
 		setTimeout(GraphUpdate, UpdateInterval);
 	}
@@ -360,7 +363,7 @@ $( () => {
                     options.yaxis.autoScale = "exact";
                     options.yaxis.growOnly = true;
                     break;
-                case '30':
+                case '30': // doen't work?
                     options.yaxis.autoScale = "sliding-window";
                     break;
             };
