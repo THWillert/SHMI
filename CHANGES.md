@@ -1,3 +1,7 @@
+V0.6.7-beta
+ - added: Recorder can compansate the time differenz between value and avg now (optional)
+ ___
+
 V0.6.6-beta
  - added: gauges for RI
 ___
