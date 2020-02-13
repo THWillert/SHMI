@@ -132,7 +132,8 @@ $( () => {
 				lineWidth: 1,
 				fill: true,
 				fillColor: { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] },
-				steps: false
+				steps: false,
+				zero: false
 			},
 			shadowSize: 0
 		},
@@ -221,8 +222,9 @@ $( () => {
 		let x =  moment();
 		let xAvg
 
+		// compensating time offset for statistics curve
 		if ( document.getElementById('ID_Compensate').checked == true )
-			xAvg = moment().subtract( (smooth - 1) / 2, 's');
+			xAvg = moment().subtract( (smooth * (UpdateInterval / 1000) / 2 - (UpdateInterval / 2000) ), 's');
 		else
 			xAvg = x;
 
@@ -231,7 +233,7 @@ $( () => {
 			options.series.lines.steps = false;
 			document.getElementById("IDsmooth").removeAttribute("disabled");
 		} else {
-			newVal = newVal & 1;
+			newVal = newVal & 1; // Filter: show only 0 or 1
 			overview_options.series.lines.steps = true;
 			options.series.lines.steps = true;
 			document.getElementById("IDsmooth").setAttribute("disabled", "disabled");
