@@ -1,9 +1,10 @@
 V0.6.7-beta
  - Recoder:
-   - added: Compansation for the time differenz between value and statistics curve (optional)
+   - added: Compensation for the time differenz between value and statistics curve (optional)
    - added: Statistics Harmonic Mean
    - added: Statistics Geometric Mean
    - added: Statistics Mode
+   - added: remaining time
    - changed: only 0/1 recorded for digital (I/O)
    - fixed: Timestamp on tooltips curve
  ___
