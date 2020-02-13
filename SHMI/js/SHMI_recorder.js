@@ -41,6 +41,8 @@ $( () => {
 
 	min = Number.MAX_VALUE;
 	max = Number.MIN_VALUE;
+
+	moment.lang("de", moment_de);
 //==============================================================================
 
 	function DataSelectOptions() {
@@ -180,7 +182,7 @@ $( () => {
 				y = item.datapoint[1].toFixed(2);
 
 			/* shows value and time */
-			$("#tooltip").html( `<span class="value_big">${y}</span><br>` + moment().format('HH:mm:ss') )
+			$("#tooltip").html( `<span class="value_big">${y}</span><br>` + moment.unix(x / 1000).format('HH:mm:ss') )
 				.css({top: item.pageY+5, left: item.pageX+5})
 				.fadeIn(500);
 		} else {
@@ -220,12 +222,18 @@ $( () => {
 		let srcID = $("#IDdataSelect").val()
 		let newVal = parent.top.$( "#" + srcID ).val();
 		let x =  moment();
-		let xAvg
+		let xAvg;
 
+		let upd =  UpdateInterval / 1000;
 		// compensating time offset for statistics curve
-		if ( document.getElementById('ID_Compensate').checked == true )
-			xAvg = moment().subtract( (smooth * (UpdateInterval / 1000) / 2 - (UpdateInterval / 2000) ), 's');
-		else
+		if ( document.getElementById('ID_Compensate').checked == true ){
+
+			if ( smooth >= upd) {
+				xAvg = moment().subtract( Math.ceil( (smooth * upd) / 2 - upd), 's'); // ToDo
+			} else {
+				xAvg = moment().add( Math.floor( (smooth * upd) / 2 - upd * 2 -2), 's'); // ToDo
+			}
+		} else
 			xAvg = x;
 
 		if (srcID.indexOf("D") == -1 ) {
@@ -313,7 +321,7 @@ $( () => {
 			$(".max_value").html( Round(max,2) + "&nbsp;" + einheit);
 			$(".avg_value").html( Round(mid,2) + "&nbsp;" + einheit);
 		}
-		$("#DataSize").text( c );
+		$("#DataSize").text( c + ' / 3600');
 
 		setTimeout(GraphUpdate, UpdateInterval);
 	}
