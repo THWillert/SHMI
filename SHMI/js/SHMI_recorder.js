@@ -77,6 +77,12 @@ $( () => {
 	DataSelectOptions();
 
 //==============================================================================
+// getting colors, because CSS-variables doesn't work in the options
+	let color_curve = $("#Color_Curve").css('background-color');
+	let color_curve_avg = $("#Color_Curve_Avg").css('background-color');
+	let color_curve_min = $("#Color_Curve_Min").css('background-color');
+	let color_curve_max = $("#Color_Curve_Max").css('background-color');
+
 	let options = {
 		yaxis: {
 			autoScale: 'loose',
@@ -98,7 +104,7 @@ $( () => {
 				lineWidth: 2,
 				fill: true,
 				steps: false,
-				fillColor:  { colors: [{ opacity: 0.0 },{ opacity: 0.1}, { opacity: 0.4}] },
+				fillColor:  { colors: [{ opacity: 0.0 },{ opacity: 0.05}, { opacity: 0.4}] },
 				zero: false
 			},
 			splines: {
@@ -114,7 +120,7 @@ $( () => {
 			},
 			shadowSize: 0
 		},
-		colors:  ["#F00", "#00FF00aa"],
+		colors:  [color_curve, color_curve_avg],
 		selection: {
 			mode: "x"
 		},
@@ -295,8 +301,8 @@ $( () => {
 			];
 		*/
 		options.grid.markings = [{
-			yaxis: { from: max, to: max }, color:"rgba(255,170,0)", lineWidth: 2 },{
-			yaxis: { from: min, to: min }, color:"rgba(68,135,255)", lineWidth: 2 }
+			yaxis: { from: max, to: max }, color: color_curve_min, lineWidth: 2 },{
+			yaxis: { from: min, to: min }, color: color_curve_max, lineWidth: 2 }
 			];
 		// orange 0,215,145
 
@@ -322,7 +328,7 @@ $( () => {
 		}
 
 		$("#DataSize").text(
-			c + ' / 3600 / ' +
+			c + ' / ' +
 			moment.utc( (3600 - c)  * (UpdateInterval) ).format('H:mm:ss') // remaining time
 		);
 
