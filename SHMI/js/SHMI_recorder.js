@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-02-08
+	Modified: 2020-02-13
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -219,12 +219,19 @@ $( () => {
 		let srcID = $("#IDdataSelect").val()
 		let newVal = parent.top.$( "#" + srcID ).val();
 		let x =  moment();
+		let xAvg
+
+		if ( document.getElementById('ID_Compensate').checked == true )
+			xAvg = moment().subtract( (smooth - 1) / 2, 's');
+		else
+			xAvg = x;
 
 		if (srcID.indexOf("D") == -1 ) {
 			overview_options.series.lines.steps = false;
 			options.series.lines.steps = false;
 			document.getElementById("IDsmooth").removeAttribute("disabled");
 		} else {
+			newVal = newVal & 1;
 			overview_options.series.lines.steps = true;
 			options.series.lines.steps = true;
 			document.getElementById("IDsmooth").setAttribute("disabled", "disabled");
@@ -251,9 +258,18 @@ $( () => {
 					mid = ss.median(fag_Average); break;
 				case 2:
 					mid = ss.rootMeanSquare(fag_Average); break;
+				case 3:
+					try {
+					mid = ss.harmonicMean(fag_Average);
+					} catch(e) {}; break;
+				case 4:
+					try {
+					mid = ss.geometricMean(fag_Average);
+					} catch(e) {}; break;
+				case 5:
+					mid = ss.mode(fag_Average); break;
 			}
-
-			MVA.push( [ x , mid  ] );
+			MVA.push( [ xAvg , mid  ] );
 		} else {
 			fag_Average = [];
 		}
