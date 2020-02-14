@@ -1,6 +1,9 @@
 V0.6.8-beta
+ - Changed: moved styles from index.html to SHMI.css
  - Recorder:
    - added: Support for curve colors (CSS variables)
+ - RI:
+   - changed: splitted selection of D/A in input and output
 ___
 
 V0.6.7-beta 13.02.2020
