@@ -16,7 +16,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-10" />
+	<meta name="DCTERMS.modified" content="2020-02-14" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -53,6 +53,7 @@
 	<script src="./js/select2.min.js"></script>
 	<script src="./js/moment.min.js"></script>
 	<script src="./js/moment.de.min.js"></script>
+
 	<script src="./js/clayfy.min.js"></script><!-- drag & drop -->
 	<link rel="stylesheet" type="text/css" href="./css/clayfy.min.css" ><!-- must be in the last position (css) !!! -->
 
@@ -89,20 +90,32 @@
 						<div class="card-body collapse" id="collapseStorage">
 							<div class="row p-1">
 								<div class="col col-md-6">
-									<label for="ID_Select_D">Digital:</label>
-									<select id="ID_Select_D" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
+									<label for="ID_Select_DI">Digital Input:</label>
+									<select id="ID_Select_DI" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
 										<optgroup label="DI" id="ID_option_DI"></optgroup>
-										<optgroup label="DO" id="ID_option_DO"></optgroup>
 									</select>
 								</div>
 								<div class="col col-md-6">
-									<label for="ID_Select_A">Analog:</label>
-									<select  id="ID_Select_A" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
+									<label for="ID_Select_AI">Analog Input:</label>
+									<select  id="ID_Select_AI" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
 										<optgroup label="AI Meter" id="ID_option_AI"></optgroup>
 										<optgroup label="AI Level" id="ID_option_AIL"></optgroup>
 										<optgroup label="AI Gauge" id="ID_option_AIG"></optgroup>
 										<optgroup label="AI Sparkline" id="ID_option_AIS"></optgroup>
+									</select>
+								</div>
+							</div>
 
+							<div class="row p-1">
+								<div class="col col-md-6">
+									<label for="ID_Select_DO">Digital Output:</label>
+									<select id="ID_Select_DO" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
+										<optgroup label="DO" id="ID_option_DO"></optgroup>
+									</select>
+								</div>
+								<div class="col col-md-6">
+									<label for="ID_Select_AO">Analog Output:</label>
+									<select  id="ID_Select_AO" class="js-example-basic-multiple" style="width: 100%" name="states[]" multiple="multiple">
 										<optgroup label="AO Meter" id="ID_option_AO"></optgroup>
 										<optgroup label="AO Gauge" id="ID_option_AOG"></optgroup>
 										<optgroup label="AO Sparkline" id="ID_option_AOS"></optgroup>
