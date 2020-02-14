@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-02-13
+	Modified: 2020-02-14
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -78,6 +78,7 @@ $( () => {
 
 //==============================================================================
 // getting colors, because CSS-variables doesn't work in the options
+
 	let color_curve = $("#Color_Curve").css('background-color');
 	let color_curve_avg = $("#Color_Curve_Avg").css('background-color');
 	let color_curve_min = $("#Color_Curve_Min").css('background-color');
@@ -241,6 +242,7 @@ $( () => {
 		} else
 			xAvg = x;
 
+		// changing chart point and filling
 		if (srcID.indexOf("D") == -1 ) {
 			overview_options.series.lines.steps = false;
 			options.series.lines.steps = false;
@@ -252,8 +254,9 @@ $( () => {
 			document.getElementById("IDsmooth").setAttribute("disabled", "disabled");
 		}
 
+		// data shift and limit of data-points
 		if(c > 3600 ) data.shift();
-		if(viewData.length > 240) {
+		if(viewData.length > 240) { // data-points in curve
 			viewData.shift();
 			MVA.shift();
 		}
@@ -325,13 +328,12 @@ $( () => {
 			$(".min_value").html( Round(min,2) + "&nbsp;" + einheit);
 			$(".max_value").html( Round(max,2) + "&nbsp;" + einheit);
 			$(".avg_value").html( Round(mid,2) + "&nbsp;" + einheit);
-		}
 
-		$("#DataSize").text(
+			$("#DataSize").text(
 			c + ' / ' +
 			moment.utc( (3600 - c)  * (UpdateInterval) ).format('H:mm:ss') // remaining time
-		);
-
+			);
+		};
 		setTimeout(GraphUpdate, UpdateInterval);
 	}
 	setTimeout(GraphUpdate, UpdateInterval);
@@ -342,40 +344,40 @@ $( () => {
 	}
 
 //==============================================================================
-		$('#ID_AutoZoom').on('change', function() {
+	$('#ID_AutoZoom').on('change', function() {
 
-            var val = $('option[name="AutoZoom"]:selected', '#ID_AutoZoom').val();
+		var val = $('option[name="AutoZoom"]:selected', '#ID_AutoZoom').val();
 
-            options.yaxis.min = "0";
-            options.yaxis.max = "100";
+		options.yaxis.min = "0";
+		options.yaxis.max = "100";
 
-            switch (val) {
-                case '0':
-                    options.yaxis.autoScale = "none";
-                    break;
-                case '10':
-                    options.yaxis.autoScaleMargin = 0.1;
-                    options.yaxis.autoScale = "loose";
-                    break;
-                case '11':
-                    options.yaxis.autoScale = "exact";
-                    break;
-                case '20': // default
-                    options.yaxis.autoScaleMargin = 0.1;
-                    options.yaxis.autoScale = "loose";
-                    options.yaxis.growOnly = true;
-                    break;
-                case '21':
-                    options.yaxis.autoScale = "exact";
-                    options.yaxis.growOnly = true;
-                    break;
-                case '30': // doen't work?
-                    options.yaxis.autoScale = "sliding-window";
-                    break;
-            };
+		switch (val) {
+			case '0':
+				options.yaxis.autoScale = "none";
+				break;
+			case '10':
+				options.yaxis.autoScaleMargin = 0.1;
+				options.yaxis.autoScale = "loose";
+				break;
+			case '11':
+				options.yaxis.autoScale = "exact";
+				break;
+			case '20': // default
+				options.yaxis.autoScaleMargin = 0.1;
+				options.yaxis.autoScale = "loose";
+				options.yaxis.growOnly = true;
+				break;
+			case '21':
+				options.yaxis.autoScale = "exact";
+				options.yaxis.growOnly = true;
+				break;
+			case '30': // doen't work?
+				options.yaxis.autoScale = "sliding-window";
+				break;
+		};
 
-            refreshGraph();
-        });
+		refreshGraph();
+	});
 
 //==============================================================================
 	$("#IDsmooth").click( () => {
@@ -406,9 +408,7 @@ $( () => {
 
 //==============================================================================
 	$("#IDShowPoints").click( () => {
-
 		options.series.points.show = ( options.series.points.show  ? false : true );
-
 		refreshGraph();
 	});
 
@@ -417,22 +417,26 @@ $( () => {
 		max = 0;
 		mid = 0;
 	});
+
 //==============================================================================
 	$("#IDminReset").click( () => {
 		min = max;
 		mid = 0;
 	});
+
 //==============================================================================
 	$("#IDPause").click( () => {
 		pause = ( pause ? false : true);
 		changePause();
 	});
+
 //==============================================================================
 	function setPause() {
 		pause = true;
 		$("#IDPause").addClass('active');
 		changePause();
 	}
+
 //==============================================================================
 	function changePause(){
 		if ( $("#IDPause").hasClass('active') ) {
@@ -445,14 +449,16 @@ $( () => {
 			//$("#TXT_Pause").text('Start');
 		}
 	}
+
 //==============================================================================
 	$("#IDDataReset").click( () => {
-			viewData = [];
-			MVA = [];
-			fag_Average = [];
-			data = [];
-			refreshGraph();
+		viewData = [];
+		MVA = [];
+		fag_Average = [];
+		data = [];
+		refreshGraph();
 	});
+
 //==============================================================================
 	$( window ).resize( () => {
 		plot.resize();
@@ -475,9 +481,9 @@ jQuery.browser={};
 		jQuery.browser.msie=true;jQuery.browser.version=RegExp.$1;
 		}
 })();
+
 //==============================================================================
-let UpdateIntervalOptions = function()
-{
+let UpdateIntervalOptions = function() {
 	for (let i = 1; i < 121; i++) {
 		oOption = document.createElement("option");
 		oOption.text = i;
@@ -485,9 +491,9 @@ let UpdateIntervalOptions = function()
 		document.getElementById("updateInterval").add(oOption);
 	}
 }
+
 //==============================================================================
-let Download = function()
-{
+let Download = function() {
 	let csvRows = [];
 	for (let i = 0, l = data.length ; i<l; ++i) {
 		csvRows.push(data[i].join(';'));
@@ -509,4 +515,3 @@ let Download = function()
 		navigator.msSaveBlob(blob, fileName)
 	}
 }
-//==============================================================================
