@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-13.02.2020*/
+14.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -39,7 +39,13 @@ License: MIT
 	width: 5em;
 	text-align: center; }
 
-/* analog meter ===============================================================*/
+/* flot chart ================================================================ */
+.flot-y1-axis,
+.flot-x1-axis {
+	fill: var(--secondary);
+}
+
+/* analog meter ============================================================= */
 .progress {
     position: relative;
     height: 2em;
@@ -108,6 +114,7 @@ License: MIT
 	height: 1.5em;
 	border-radius: 0.3em;
 	border: solid 0.15em var(--dark);
+	overflow:hidden;
 }
 .digi_back,
 .digi_in,
