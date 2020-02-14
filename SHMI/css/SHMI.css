@@ -2,10 +2,10 @@
 2020 by Thorsten Willert
 License: MIT
 
-02.02.2020*/
+14.02.2020*/
 
 /* decoration =================================================================*/
-body { margin: 1px; }
+body { margin: 1px; } /* backgrounds */
 
 .downlight {
 	box-shadow: 1px 1px 1em 0.1em black;
@@ -67,11 +67,36 @@ body { margin: 1px; }
 	text-align:center;
 }
 
-/* Flot =======================================================================*/
+/* main footer ===============================================================*/
 
-.flot-y1-axis,
-.flot-x1-axis {
-	fill: var(--secondary);
+#ID_MainFooter {
+	color:var(--text-muted);
+	width:100%;
+	position:fixed;
+	bottom:0;
+	text-align:right;
+	box-shadow: 3px 3px 10px black;
+	padding-top:0.3em;
+	margin-bottom:0.1em
+}
+
+#ID_Connection_Status {
+	margin-left:0.3em;
+	padding-left:1em;
+	padding-right:1em;
+	transition: border ease 0.5s
+}
+
+#timeDiff {
+	margin-left:0.3em;
+	padding-right:1em;
+	padding-left:1em;
+	transition: border 0.5s ease
+}
+
+#IDtime {
+	padding-left:1em;
+	padding-right:3em
 }
 
 /* Misc ======================================================================*/
