@@ -25,7 +25,7 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden  
 ![Start](/docs/images/SHMI_Recorder_2.png)
-- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Mini-Panels) ausgestattet werden:  
+- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Widgets) ausgestattet werden:  
 ![Start](/docs/images/SHMI_RI_1.png)
 - Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:  
 ![Start](/docs/images/SHMI_RI_03.png)  
