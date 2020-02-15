@@ -3,7 +3,7 @@ V0.6.8-beta
  - Recorder:
    - added: Support for curve colors (CSS variables)
  - RI:
-   - added: now you can see the coordinates and the size oft a widget on the left top and bottom, if you click, drag or resize it
+   - added: widget resize / drag: The coordinates and the size are now displayed in the status bar
    - changed: splitted selection of D/A in input and output
    - changed: darker background for meters and sparklines
 ___
