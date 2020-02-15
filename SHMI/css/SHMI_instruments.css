@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-14.02.2020*/
+15.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -114,7 +114,6 @@ License: MIT
 	height: 1.5em;
 	border-radius: 0.3em;
 	border: solid 0.15em var(--dark);
-	overflow:hidden;
 }
 .digi_back,
 .digi_in,
@@ -183,9 +182,10 @@ License: MIT
 	bottom: 0.3em;
 	right: 0.3em;
 	color: var(--SHMI_drag_txt);
-	width: 4em;
+	width: 3em;
+	height: 2em;
 	padding:0.3em;
-	border-radius: inherit;
+	border-radius: 0.3em;
 	background:var(--SHMI_drag_bg);
 	text-align: center
 }
@@ -196,4 +196,14 @@ License: MIT
 }
 .SHMI_drag_AI,
 .SHMI_drag_AO {
+}
+
+.coord {
+	position:absolute;
+	width:5em;
+	color:var(--SHMI_drag_txt);
+	background-color:var(--SHMI_drag_bg);
+	border-radius:0.3em;
+	margin:0.3em;
+	opacity:0.8;
 }
