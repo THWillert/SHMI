@@ -3,6 +3,7 @@ V0.6.8-beta
  - Recorder:
    - added: Support for curve colors (CSS variables)
  - RI:
+   - added: "snap to grid" for the widget positions (variable grid, default 10px)
    - added: widget resize / drag: The coordinates and the size are now displayed in the status bar
    - changed: splitted selection of D/A in input and output
    - changed: darker background for meters and sparklines
