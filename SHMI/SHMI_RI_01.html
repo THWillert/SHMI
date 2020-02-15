@@ -121,6 +121,27 @@
 									</select>
 								</div>
 							</div>
+							<hr>
+							<div class="row p-1">
+								<div class="col col-md-3">
+									<label for="ID_Snap">Snap to grid:</label>
+									<select id="ID_Snap" class="form-control form-control-sm custom-select custom-select-sm" style="width: 100%"
+									onChange="
+									ig_Snap = parseInt(this.value);
+									">
+										<option value='0'>Off</option>
+										<option value='5'>5</option>
+										<option value='10' selected>10</option>
+										<option value='15'>15</option>
+										<option value='20'>20</option>
+										<option value='25'>25</option>
+										<option value='30'>30</option>
+										<option value='35'>35</option>
+										<option value='40'>40</option>
+										<option value='50'>50</option>
+									</select>
+								</div>
+							</div>
 						</div><!-- /body -->
 
 						<!--<div class="card-footer d-flex ">
