@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-14.02.2020*/
+15.02.2020*/
 
 /* decoration =================================================================*/
 body { margin: 1px; } /* backgrounds */
@@ -12,12 +12,15 @@ body { margin: 1px; } /* backgrounds */
 }
 
 /* override bootstrap */
+/*
 .shadow {
 	box-shadow: 0 0 0 0 !important;
 }
+
 .card {
 	border: 0px;
 }
+*/
 
 /* page / frame ===============================================================*/
 #pageContainer {
@@ -94,7 +97,7 @@ body { margin: 1px; } /* backgrounds */
 	transition: border 0.5s ease
 }
 
-#IDtime {
+#IDtime, #IDcoord {
 	padding-left:1em;
 	padding-right:3em
 }
