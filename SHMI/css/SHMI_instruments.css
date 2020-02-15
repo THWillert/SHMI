@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-15.02.2020*/
+14.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -161,7 +161,7 @@ License: MIT
 	height: 10em;
 	width: 10em;
 	border-radius: inherit;
-	border-top: 1px solid lightgrey;
+	border-top: transparent;
 	border-bottom: 1px solid grey;
 	border-left: 1px solid grey;
 	border-right: 1px solid grey;
