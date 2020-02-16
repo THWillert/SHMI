@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<title>SHMI- RI</title>
+<meta http-equiv=content-type content="text/html; charset=UTF-8" />
+<link rel=schema.DC href=http://purl.org/dc/elements/1.1/ />
+<link rel=schema.DCTERMS href=http://purl.org/dc/terms/ />
+<link rel=DC.Source href=https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_ri_01.html>
+<meta name=DC.format content=text/html />
+<meta name=DC.type content=Text />
+<meta name=DC.title content="Dublin Core" />
+<meta name=DC.publisher content="Thorsten Willert" />
+<meta name=DC.subject content="SHMI status page" />
+<meta name=DC.creator content="Thorsten Willert" />
+<meta name=DCTERMS.license content=https://github.com/THWillert/SHMI/blob/master/LICENSE />
+<meta name=DCTERMS.rightsHolder content="Thorsten Willert" />
+<meta name=DCTERMS.modified content=2020-02-16 />
+<link rel=icon type=image/svg+xml href=./pict/logo.svg sizes=any>
+<link href=https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css rel=stylesheet integrity=sha384-G9YbB4o4U6WS4wCthMOpAeweY4gQJyyx0P3nZbEBHyz+AtNoeasfRChmek1C2iqV crossorigin=anonymous>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css integrity="sha256-FdatTf20PQr/rWg+cAKfl6j4/IY3oohFAJ7gVC3M34E=" crossorigin=anonymous>
+<script src=https://code.jquery.com/jquery-3.4.1.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js integrity="sha256-AFAYEOkzB6iIKnTYZOdUf9FFje6lOTYdwRJKwTN5mks=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/peity@3.3.0/jquery.peity.min.js integrity="sha256-B+xyblmehefmEUu8NIsuz32NsVFta9t+Y/SpAy6noc4=" crossorigin=anonymous></script>
+<link rel=stylesheet type=text/css href=./css/SHMI.css>
+<link rel=stylesheet type=text/css href=./css/SHMI_instruments.css>
+<link rel=stylesheet type=text/css href=./css/SHMI_glow.css>
+<link rel=stylesheet type=text/css href=./css/clayfy.min.css>
+<script src=./js/clayfy.min.js></script>
+<script src=./js/main.js async></script>
+<script src=./js/SHMI_RI.min.js></script>
+</head>
+<body>
+<div class="main w100 container-fluid">
+<div class=row id=IDpanel>
+<div class="col-md-12 p-2">
+<div class="card shadow">
+<div class=card-header>
+<h5 class=card-title id=TXT_RI_Caption>Piping and instrumentation diagram</h5>
+</div>
+<div class=card-body>
+<div id=IDpict class=bg-light style=overflow:auto>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=row>
+<div class="col-md-12 p-2">
+<div class="card shadow">
+<div class=card-header>
+<a class data-toggle=collapse href=#collapseStorage role=button aria-expanded=false aria-controls=collapseStorage>
+<div id=TXT_RI_Prefs>Settings</div>
+</a>
+</div>
+<div class="card-body collapse" id=collapseStorage>
+<div class="row p-1">
+<div class="col col-md-6">
+<label for=ID_Select_DI>Digital Input:</label>
+<select id=ID_Select_DI class=js-example-basic-multiple style=width:100% name=states[] multiple=multiple>
+<optgroup label=DI id=ID_option_DI></optgroup>
+</select>
+</div>
+<div class="col col-md-6">
+<label for=ID_Select_AI>Analog Input:</label>
+<select id=ID_Select_AI class=js-example-basic-multiple style=width:100% name=states[] multiple=multiple>
+<optgroup label="AI Meter" id=ID_option_AI></optgroup>
+<optgroup label="AI Level" id=ID_option_AIL></optgroup>
+<optgroup label="AI Gauge" id=ID_option_AIG></optgroup>
+<optgroup label="AI Sparkline" id=ID_option_AIS></optgroup>
+</select>
+</div>
+</div>
+<div class="row p-1">
+<div class="col col-md-6">
+<label for=ID_Select_DO>Digital Output:</label>
+<select id=ID_Select_DO class=js-example-basic-multiple style=width:100% name=states[] multiple=multiple>
+<optgroup label=DO id=ID_option_DO></optgroup>
+</select>
+</div>
+<div class="col col-md-6">
+<label for=ID_Select_AO>Analog Output:</label>
+<select id=ID_Select_AO class=js-example-basic-multiple style=width:100% name=states[] multiple=multiple>
+<optgroup label="AO Meter" id=ID_option_AO></optgroup>
+<optgroup label="AO Gauge" id=ID_option_AOG></optgroup>
+<optgroup label="AO Sparkline" id=ID_option_AOS></optgroup>
+</select>
+</div>
+</div>
+<hr>
+<div class="row p-1">
+<div class="col col-md-3">
+<label for=ID_Snap>Snap to grid:</label>
+<select id=ID_Snap class="form-control form-control-sm custom-select custom-select-sm" style=width:100% onChange="ig_Snap=parseInt(this.value)">
+<option value=0>Off</option>
+<option value=5>5</option>
+<option value=10 selected>10</option>
+<option value=15>15</option>
+<option value=20>20</option>
+<option value=25>25</option>
+<option value=30>30</option>
+<option value=35>35</option>
+<option value=40>40</option>
+<option value=50>50</option>
+</select>
+</div>
+<div class="col col-md-3">
+<label for=ID_Style>Widget style:</label>
+<select id=ID_Style class="form-control form-control-sm custom-select custom-select-sm" style=width:100%>
+<option value=0 selected>Dark</option>
+<option value=1>Light</option>
+<option value=2>Primary</option>
+<option value=3>Secondary</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
