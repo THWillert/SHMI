@@ -16,7 +16,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-15" />
+	<meta name="DCTERMS.modified" content="2020-02-16" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -39,24 +39,49 @@
 	-->
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
+
+	<!-- CSS CDN
+	<link
+		href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-G9YbB4o4U6WS4wCthMOpAeweY4gQJyyx0P3nZbEBHyz+AtNoeasfRChmek1C2iqV"
+		crossorigin="anonymous">
+
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css"
+		integrity="sha256-FdatTf20PQr/rWg+cAKfl6j4/IY3oohFAJ7gVC3M34E="
+		crossorigin="anonymous">
+	-->
+
+	<!-- CSS local -->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/select2.min.css" />
+
+	<!-- JS CDN
+	<script	src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js" integrity="sha256-AFAYEOkzB6iIKnTYZOdUf9FFje6lOTYdwRJKwTN5mks=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/peity@3.3.0/jquery.peity.min.js" integrity="sha256-B+xyblmehefmEUu8NIsuz32NsVFta9t+Y/SpAy6noc4=" crossorigin="anonymous"></script>
+	-->
+
+	<!-- JS local -->
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/select2.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/moment_locale/de.js"></script>
+	<script src="./js/jquery.peity.min.js"></script>
+
+	<!-- always local -->
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
-
-	<link rel="stylesheet" type="text/css" href="./css/select2.min.css" />
-
-	<script src="./js/main.js" async></script>
-	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/jquery.peity.min.js"></script>
-	<script src="./js/select2.min.js"></script>
-	<script src="./js/moment.min.js"></script>
-	<script src="./js/moment.de.min.js"></script>
-
-	<script src="./js/clayfy.min.js"></script><!-- drag & drop -->
 	<link rel="stylesheet" type="text/css" href="./css/clayfy.min.css" ><!-- must be in the last position (css) !!! -->
 
+	<script src="./js/clayfy.min.js"></script><!-- drag & drop | no versions on CDNs -->
+	<script src="./js/main.js" async></script>
 	<script src="./js/SHMI_RI.min.js"></script>
 
 </head>
