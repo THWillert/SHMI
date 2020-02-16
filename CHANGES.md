@@ -1,3 +1,10 @@
+v0.6.9-beta
+ - RI:
+   - added: Style selection for the widgets
+   - changed: style sheets for the widgets
+ - Recorder:
+   - fixed: removed "strange" values at the beginn of the statics curve
+
 V0.6.8-beta
  - Changed: moved styles from index.html to SHMI.css
  - Recorder:
