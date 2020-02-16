@@ -1,0 +1,57 @@
+/* SHMI_Instruments.css
+2020 by Thorsten Willert
+License: MIT
+
+16.02.2020*/
+
+:root {
+/* analog meter + level */
+  --level_ai_meter: var(--teal);
+  --level_ao_meter: var(--teal);
+
+  --level_peak: rgb(255,170,0);
+  --level_valley: rgb(68,135,255);
+  --level_setpoint: var(--white);
+
+/* sparklines */
+  --sparkline_ai_fill: transparent;
+  --sparkline_ai_stroke: var(--teal);
+  --sparkline_ao_fill: transparent;
+  --sparkline_ao_stroke: var(--teal);
+
+/* RI widgets ############################################################### */
+
+/* default */
+  --SHMI_drag_bg: var(--dark);
+  --SHMI_drag_txt: var(--light);
+  --SHMI_drag_border: rgba(0,0,0,0.5);
+  --SHMI_widget_bg: rgba(0,0,0,0.5) ;
+
+/* ToDo config / JSON ! */
+  --SHMI_drag_bg_1: var(--light);
+  --SHMI_drag_txt_1: var(--dark);
+  --SHMI_drag_border_1: rgba(0,0,0,0.1);
+  --SHMI_widget_bg_1: rgba(0,0,0,0.1) ;
+
+  --SHMI_drag_bg_2: var(--primary);
+  --SHMI_drag_txt_2: var(--light);
+  --SHMI_drag_border_2: rgba(0,0,0,0.4);
+  --SHMI_widget_bg_2: rgba(0,0,0,0.4) ;
+
+  --SHMI_drag_bg_3: var(--secondary);
+  --SHMI_drag_txt_3: #FFF;
+  --SHMI_drag_border_3: rgba(0,0,0,0.3);
+  --SHMI_widget_bg_3: rgba(0,0,0,0.3) ;
+
+/* ---------------------------------- */
+  --SHMI_level_bg:  var(--teal);
+  --SHMI_signal_on: var(--teal);
+
+/* recorder curves ########################################################## */
+ --recorder_curve: var(--teal);
+ --recorder_curve_avg: #00FF00aa;
+
+ --recorder_max: rgb(255,170,0);
+ --recorder_min: rgb(68,135,255);
+}
+.analog{width:5em;text-align:center;}.flot-y1-axis,.flot-x1-axis{fill:var(--secondary);}.progress{position:relative;height:2em;border:var(--dark) solid 1px;background:transparent;}.progress-bar{transition:width 1s ease-in-out;}.progress > .progress-setpoint{position:absolute;height:inherit;left:0;background-color:rgba(25,25,25,0.4);border-right:solid .3em var(--level_setpoint);}.progress > .progress-peak{position:absolute;height:inherit;transition:width .5s linear;border-right:solid .5em var(--level_peak);}.progress > .progress-low{position:absolute;height:inherit;transition:width .5s linear;border-right:solid .5em var(--level_valley);}#ID_AI .progress-bar{background:var(--level_ai_meter)!important;filter:saturate(50%);border-radius:.3em .3em .3em .3em;}#ID_AO .progress-bar{background:var(--level_ao_meter)!important;filter:saturate(120%);border-radius:.3em .3em .3em .3em;}.scale-table{table-layout:fixed;width:100%;color:var(--secondary);font-weight:400;font-size:.9em;text-align:center;}.scale td{width:10%;white-space:nowrap;}#ID_digital_in td,#ID_digital_out td{padding:.3em;}.digi_IO{position:relative;width:1.5em;height:1.5em;border-radius:.3em;border:solid .15em var(--dark);}.digi_back,.digi_in,.digi_out{position:absolute;width:inherit;height:inherit;border-radius:inherit;}.digi_in{background:var(--teal);filter:saturate(50%);}.digi_out{background:var(--teal);filter:saturate(120%);}.sparkline{border-bottom:solid 1px var(--dark)!important;}.gauge{max-width:55px;max-height:55px;}.SHMI_drag{position:absolute;display:block;width:5em;min-height:55px;color:var(--SHMI_drag_txt);border-radius:.3em;background-color:var(--SHMI_drag_bg);font-weight:700;padding:.5em;}.SHMI_drag_level{position:absolute;display:block;height:10em;width:10em;border-radius:inherit;border-top:transparent;border-bottom:1px solid grey;border-left:1px solid grey;border-right:1px solid grey;font-weight:700;}.SHMI_level{bottom:0;width:inherit;position:absolute;background:var(--SHMI_level_bg);border-radius:inherit;transition:height 1s ease;mix-blend-mode:multiply;}.SHMI_level_value{position:absolute;bottom:.3em;right:.3em;color:var(--SHMI_drag_txt);width:5em;height:2em;border-radius:.3em;background:var(--SHMI_drag_bg);text-align:center;padding:.3em;}.SHMI_drag .progress{border:1px solid rgba(0,0,0,0.2);}.coord{position:absolute;width:5em;color:var(--SHMI_drag_txt);background-color:var(--SHMI_drag_bg);border-radius:.3em;opacity:0.8;margin:.3em;}.digi_in,.digi_out,.SHMI_drag_DO,.SHMI_drag_DI{transition:opacity .5s ease;}
