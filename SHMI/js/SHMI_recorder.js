@@ -1,5 +1,5 @@
 /*
-	Modified: 2020-02-14
+	Modified: 2020-02-15
 
 	Copyright (c) 2020 Thorsten Willert
 
@@ -24,7 +24,7 @@
 //==============================================================================
 
 let UpdateInterval = 1000;
-let smooth = 11;
+let smooth = 5;
 let smoothType = 0;
 let data = [];
 let einheit = "%";
@@ -267,7 +267,10 @@ $( () => {
 		if ( smooth !== 0 ) {
 
 			fag_Average.unshift( parseFloat(newVal) );
-			if(fag_Average.length > smooth) fag_Average.pop();
+			if (fag_Average.length > smooth)
+				fag_Average.pop();
+			else
+				fag_Average.unshift(newVal);
 
 			switch ( smoothType ) {
 				case 0:
