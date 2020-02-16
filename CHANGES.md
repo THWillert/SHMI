@@ -1,9 +1,18 @@
-v0.6.9-beta
+V0.7.0-beta
+
+ - Updated libs and files:
+   - moment.js to V.24.0
+   - select2 to V4.0.13
+ - added CDNs to files (not working)
+___
+
+V.6.9-beta 15.02.2020
  - RI:
    - added: Style selection for the widgets
    - changed: style sheets for the widgets
  - Recorder:
    - fixed: removed "strange" values at the beginn of the statics curve
+___
 
 V0.6.8-beta
  - Changed: moved styles from index.html to SHMI.css
