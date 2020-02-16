@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-14" />
+	<meta name="DCTERMS.modified" content="2020-02-16" />
 	<!--
 
 	Copyright (c) 2020 Thorsten Willert
@@ -40,15 +40,32 @@
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
 
+	<!-- JS CDN -->
+	<script	src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/peity@3.3.0/jquery.peity.min.js" integrity="sha256-B+xyblmehefmEUu8NIsuz32NsVFta9t+Y/SpAy6noc4=" crossorigin="anonymous"></script>
 
-	<script src="./js/main.js"></script>
+	<!-- JS local
 	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/jquery.peity.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/moment.min.js"></script>
-	<script src="./js/moment.de.min.js"></script>
+	<script src="./js/moment_locale/de.js"></script>
+	<script src="./js/jquery.peity.min.js"></script>-->
 
+	<!-- CSS CDN -->
+	<link
+		href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-G9YbB4o4U6WS4wCthMOpAeweY4gQJyyx0P3nZbEBHyz+AtNoeasfRChmek1C2iqV"
+		crossorigin="anonymous">
+
+	<!-- CSS local
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	-->
+
+	<!-- always local -->
+	<script src="./js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
@@ -67,7 +84,7 @@
 		const analog_in_container = $("#ID_analog_in");
 		const analog_out_container = $("#ID_analog_out");
 
-		moment.lang("de", moment_de);
+		moment.locale("de");
 	//==============================================================================
 		function init() {
 
