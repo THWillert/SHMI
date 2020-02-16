@@ -1,0 +1,1 @@
+var Round=function(a,b){var c=Math.pow(10,void 0===b?2:b);return Math.round(a*c)/c};function empty(a){if("number"==typeof a||"boolean"==typeof a)return!1;if("undefined"==typeof a||null===a)return!0;if("undefined"!=typeof a.length)return 0==a.length;var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return 0==b};
