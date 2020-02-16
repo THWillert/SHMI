@@ -2,7 +2,7 @@
 2020 by Thorsten Willert
 License: MIT
 
-14.02.2020*/
+16.02.2020*/
 
 :root {
 /* analog meter + level */
@@ -19,15 +19,35 @@ License: MIT
   --sparkline_ao_fill: transparent;
   --sparkline_ao_stroke: var(--teal);
 
-/* RI instruments */
-  --SHMI_drag_bg: var(--dark); /* background-color */
-  --SHMI_drag_txt: var(--light); /* text-color */
+/* RI widgets ############################################################### */
 
+/* default */
+  --SHMI_drag_bg: var(--dark);
+  --SHMI_drag_txt: var(--light);
+  --SHMI_drag_border: rgba(0,0,0,0.5);
+  --SHMI_widget_bg: rgba(0,0,0,0.5) ;
+
+/* ToDo config / JSON ! */
+  --SHMI_drag_bg_1: var(--light);
+  --SHMI_drag_txt_1: var(--dark);
+  --SHMI_drag_border_1: rgba(0,0,0,0.1);
+  --SHMI_widget_bg_1: rgba(0,0,0,0.1) ;
+
+  --SHMI_drag_bg_2: var(--primary);
+  --SHMI_drag_txt_2: var(--light);
+  --SHMI_drag_border_2: rgba(0,0,0,0.4);
+  --SHMI_widget_bg_2: rgba(0,0,0,0.4) ;
+
+  --SHMI_drag_bg_3: var(--secondary);
+  --SHMI_drag_txt_3: #FFF;
+  --SHMI_drag_border_3: rgba(0,0,0,0.3);
+  --SHMI_widget_bg_3: rgba(0,0,0,0.3) ;
+
+/* ---------------------------------- */
   --SHMI_level_bg:  var(--teal);
-
   --SHMI_signal_on: var(--teal);
 
-/* recorder curves */
+/* recorder curves ########################################################## */
  --recorder_curve: var(--teal);
  --recorder_curve_avg: #00FF00aa;
 
@@ -141,18 +161,24 @@ License: MIT
 	border-bottom: solid 1px var(--dark) !important;
 }
 
+.gauge {
+	max-width:55px;
+	max-height:55px;
+}
+
 /* RI =========================================================================*/
 
 .SHMI_drag {
 	position: absolute;
 	display: block;
 	width: 5em;
-	height: 55px;
+	min-height: 55px;
 	padding: 0.5em;
 	color: var(--SHMI_drag_txt);
 	border-radius: 0.3em;
 	background-color: var(--SHMI_drag_bg);
 	font-weight: bold;
+	/*border: 1px solid var(--SHMI_drag_border); problems with size??? */
 }
 
 .SHMI_drag_level {
@@ -182,7 +208,7 @@ License: MIT
 	bottom: 0.3em;
 	right: 0.3em;
 	color: var(--SHMI_drag_txt);
-	width: 3em;
+	width: 5em;
 	height: 2em;
 	padding:0.3em;
 	border-radius: 0.3em;
@@ -196,6 +222,10 @@ License: MIT
 }
 .SHMI_drag_AI,
 .SHMI_drag_AO {
+}
+
+.SHMI_drag .progress {
+	border: 1px solid rgba(0,0,0,0.2);
 }
 
 .coord {
