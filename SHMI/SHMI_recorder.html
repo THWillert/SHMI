@@ -15,7 +15,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="2020-02-14" />
+	<meta name="DCTERMS.modified" content="2020-02-16" />
 	<!--
 	Copyright (c) 2020 Thorsten Willert
 
@@ -38,22 +38,42 @@
 	-->
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
+
+	<!-- CSS CDN
+	<link
+		href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-G9YbB4o4U6WS4wCthMOpAeweY4gQJyyx0P3nZbEBHyz+AtNoeasfRChmek1C2iqV"
+		crossorigin="anonymous">
+	-->
+	<!-- CSS local -->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 
-	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
-	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
-	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
+	<!-- JS CDN
+	<script	src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/dist/es5/jquery.flot.js" integrity="sha256-f86EPKAj/0UrK6PdMEE+X8ncXezhQZQ+R5Hsq6onqsA=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.canvaswrapper.js" integrity="sha256-aXw6rg4pFmle6NIXz3juRI0MPwhYOt6JmzzEgt3HbKk=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.colorhelpers.js" integrity="sha256-MJ7ymDQJt50zdCPoJUeWtZZCaj7u86i1S9X3y1IYEkY=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.browser.js" integrity="sha256-Ii3plD4sWWFJjLA7zqw0Z+ecORDpoTmShe7tbSW5aQo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.drawSeries.js" integrity="sha256-wgRvSn+9zumUvQIRgI5bquTesYxXER27ijoVsU4vfFc=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.hover.js" integrity="sha256-ztCVAEFCqUOiJU51xYefgFUwVpOwlP+uZ0keNvZlCaI=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.time.js" integrity="sha256-imb80Q7TKXGYFyPA/t1abETHrIWWgneBZO8ubsgWPJE=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.uiConstants.js" integrity="sha256-ckGtLOLJdDdVWZHQ9rp8Vu0Z3QlYgmaVw28V/auhQ9U=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.saturated.js" integrity="sha256-rtVAhzVNNwzHEUZdcopSWXedTkvZA1jyPeb/fHO9vQo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.selection.js" integrity="sha256-GP2yAuAo1QmFoGZbm0ymZ4sT5sFIhnYoE5hIRq7hBPA=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simple-statistics@7.0.8/dist/simple-statistics.min.js" integrity="sha256-z0BIAFy69OW/uUuLOrhALN+H3VfUMTcbl9hScTlPjpo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/peity@3.3.0/jquery.peity.min.js" integrity="sha256-B+xyblmehefmEUu8NIsuz32NsVFta9t+Y/SpAy6noc4=" crossorigin="anonymous"></script>
+	-->
 
-	<script src="./js/main.js" async></script>
+	<!-- JS local -->
 	<script src="./js/jquery-3.4.1.min.js"></script>
 	<script src="./js/jquery.canvaswrapper.min.js"></script>
 	<script src="./js/jquery.colorhelpers.min.js"></script>
-
 	<script src="./js/bootstrap.min.js"></script>
-
 	<script src="./js/moment.min.js" async></script>
 	<script src="./js/simple-statistics.min.js"></script>
-
 	<script src="./js/jquery.flot.min.js"></script>
 	<script src="./js/jquery.flot.browser.min.js"></script>
 	<script src="./js/jquery.flot.drawSeries.min.js"></script>
@@ -64,8 +84,12 @@
 	<script src="./js/jquery.flot.time.min.js"></script>
 	<script src="./js/jquery.flot.uiConstants.min.js"></script>
 
+	<!-- alwaya local -->
+	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
+	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
+	<script src="./js/main.js" async></script>
 	<script src="./js/SHMI_recorder.js"></script>
-
 
 </head>
 <body>
@@ -182,10 +206,10 @@
 										">
 										<option value="0">Off</option>
 										<option value="3">3</option>
-										<option value="5">5</option>
+										<option value="5" selected>5</option>
 										<option value="7">7</option>
 										<option value="9">9</option>
-										<option value="11" selected>11</option>
+										<option value="11">11</option>
 										<option value="13">13</option>
 										<option value="15">15</option>
 										<option value="30">30</option>
@@ -291,4 +315,3 @@
 
 </body>
 </html>
-
