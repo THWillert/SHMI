@@ -1,7 +1,7 @@
 > :warning: Dateien nicht vollständig
 
 
-Alle Bibliotheken in dieser Variante werden über CDN bezogen.
+Alle Bibliotheken (außer Clayfy) werden in dieser Variante über CDN bezogen.
 
 Dadurch ergibt es sich ein sehr geringer lokaler Speicherverbrauch, dafür ist allerdings eine Internet-Verbindung nötig.
 
