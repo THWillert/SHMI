@@ -11,6 +11,8 @@ Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
 In der einfachsten Variante nur ca. 700 KB groß!
 
+Als CDN-Version nur ca. 150 KB!
+
 Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
 
 ![Start](/docs/images/SHMI_index.png)
@@ -323,7 +325,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
-- [ ] Online-Demo
+- [x] Online-Demo
 - [x] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
 - [x] Bibliotheken aktualisieren
 - [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
@@ -340,12 +342,14 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Dokumentation als Wiki
 - [ ] Minimierte Version aller Dateien
+- [ ] Zähler und Zeiten als zus#tzliche Datenpunkte
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste und überflüssigen Code ...
 
 #### Übersicht
 
 - [ ] Variable Anzahl an Status-Seiten
+- [ ] Unbenutzte Cards ausblenden
 
 ##### Analog
 - [ ] Skalierung Analog-Werte
@@ -380,10 +384,10 @@ Reihenfolge entspricht nicht der Priorität:
 #### Fließbilder
 
 - [x] Werte in Bild anzeigen
-- [ ] Design der Anzeigen überarbeiten
+- [x] Design der Anzeigen überarbeiten
 - [ ] Anzeigen rotierbar (90°) machen
 - [ ] mehr Darstellungsmöglichkeiten (Gauge, nur Werte, Panel mit allen Daten)
-- [ ] Animation (Färbung) der SVG-Bilder
+- [x] Animation (Färbung) der SVG-Bilder
 - [ ] Zusätzliche Datenpunkte für die Animation (z.B. um geschaltete Wege darzustellen)
 
 ## Benutzte Bibliotheken
