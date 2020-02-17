@@ -1,0 +1,109 @@
+/* SHMI_Instruments.css
+2020 by Thorsten Willert
+License: MIT
+
+15.02.2020*/
+
+/* decoration =================================================================*/
+body { margin: 1px; } /* backgrounds */
+
+.downlight {
+	box-shadow: 1px 1px 1em 0.1em black;
+}
+
+/* override bootstrap */
+/*
+.shadow {
+	box-shadow: 0 0 0 0 !important;
+}
+
+.card {
+	border: 0px;
+}
+*/
+
+/* page / frame ===============================================================*/
+#pageContainer {
+	margin-top: 4em;
+}
+.main {
+	position: absolute;
+	padding-top: 20px;
+}
+/* table ======================================================================*/
+/* ToDo: selectors to classes */
+
+#ID_Table_RecData th,
+#ID_Table_RecData td {
+	text-align:center;
+	padding: 0.3em;
+	width: 20%;
+}
+#ID_digital_out,
+#ID_digital_in {
+	width: 100%
+}
+#ID_analog_out th,
+#ID_analog_in th {
+	text-align: center;
+}
+#ID_DI td:nth-child(1),
+#ID_DO td:nth-child(1),
+#ID_AI td:nth-child(1),
+#ID_AO td:nth-child(1) {
+	width: 15em;
+	white-space: nowrap;
+	padding-right:3em;
+}
+.value_out {
+	text-align: right;
+	padding-right:1em;
+	padding-left:1em;
+	filter: brightness(130%)
+}
+.value_big {
+	font-size: 120%;
+}
+#ID_DI td:last-child,
+#ID_DO td:last-child {
+	padding-left:3em;
+	text-align:center;
+}
+
+/* main footer ===============================================================*/
+
+#ID_MainFooter {
+	color:var(--text-muted);
+	width:100%;
+	position:fixed;
+	bottom:0;
+	text-align:right;
+	box-shadow: 3px 3px 10px black;
+	padding-top:0.3em;
+	margin-bottom:0.1em
+}
+
+#ID_Connection_Status {
+	margin-left:0.3em;
+	padding-left:1em;
+	padding-right:1em;
+	transition: border ease 0.5s
+}
+
+#timeDiff {
+	margin-left:0.3em;
+	padding-right:1em;
+	padding-left:1em;
+	transition: border 0.5s ease
+}
+
+#IDtime, #IDcoord {
+	padding-left:1em;
+	padding-right:3em
+}
+
+/* Misc ======================================================================*/
+
+.cursor-pointer {cursor: pointer;}
+.cursor-help {cursor: help;}
+.nobr {white-space:nowrap;}
