@@ -17,7 +17,7 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 
 ![Start](/docs/images/SHMI_index.png)
 
-[Demo (statische Daten)](http://shmi.thorsten-willert.de/index.htm)
+[Demo (statische Daten)](http://shmi.thorsten-willert.de/)
 
 ### Features
 
