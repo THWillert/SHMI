@@ -1,3 +1,9 @@
+V0.7.1-beta
+ - changed all sources to FTL templates
+ - added CDN complete version
+ 
+ ___
+
 V0.7.0-beta
 
  - Updated libs and files:
