@@ -1,4 +1,9 @@
-<#assign version="0.7.1-beta">
+<#assign version="0.7.2-beta">
+<#if cdn??>
+	<#assign cdn=true>
+<#else>
+	<#assign cdn=false>
+</#if>
 <!DOCTYPE html>
 <html lang="en">
 <head>
