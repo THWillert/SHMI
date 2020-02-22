@@ -76,8 +76,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 	<script src="./js/main.js" async></script>
-	<script src="./js/SHMI_recorder.js"></script>
-
+	<script src="./js/SHMI_recorder.min.js"></script>
 </head>
 <#compress>
 <body>
@@ -134,7 +133,7 @@
 
 					<div class="card-body collapse show" id="collapsePrefs">
 						<form>
-							<div class="form-row p-2">
+							<div class="form-row p-1">
 								<div class="col">
 									Data source:
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="IDdataSelect"></select>
@@ -170,7 +169,7 @@
 									</select>
 								</div>-->
 							</div>
-							<div class="form-row p-2">
+							<div class="form-row p-1">
 								<div class="col">
 									Statistics:
 									<select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Statistic" size="1"
@@ -195,27 +194,19 @@
 										<option value="0">Off</option>
 										<option value="3">3</option>
 										<option value="5" selected>5</option>
-										<option value="7">7</option>
-										<option value="9">9</option>
-										<option value="11">11</option>
-										<option value="13">13</option>
-										<option value="15">15</option>
-										<option value="30">30</option>
-										<option value="45">45</option>
-										<option value="60">60</option>
-										<option value="120">120</option>
 									</select>
 								</div>
 								<div class="col">
-								Compensate time offset
-									<div class="form-check">
-										<input type="checkbox" class="form-check-input" id="ID_Compensate" checked>
+								&nbsp;
+									<div class="custom-control custom-switch">
+										<input type="checkbox" class="custom-control-input" id="ID_Compensate" checked="">
+										<label class="custom-control-label" for="ID_Compensate">Compensate time offset</label>
 									</div>
 								</div>
 							</div>
 						</form>
 
-						<div class="d-flex justify-content-center">
+						<div class="d-flex justify-content-center p-3">
 							<div class="btn-group-toggle" data-toggle="buttons" >
 									<label class="btn btn-secondary">
 										<input type="checkbox" id="IDsmooth"><i class="fas fa-bezier-curve"></i>&nbsp;&nbsp;Spline Curve
@@ -295,12 +286,8 @@
 					</div>
 				</div>
 			</div><!-- / Data -->
-
 		</div><!-- row -->
 	</div>
-
-	<script>UpdateIntervalOptions();</script>
-
 </body>
 </html>
 </#compress>
