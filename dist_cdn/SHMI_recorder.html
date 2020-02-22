@@ -10,11 +10,11 @@
 <meta name=DC.type content=Text />
 <meta name=DC.title content="Dublin Core" />
 <meta name=DC.publisher content="Thorsten Willert" />
-<meta name=DC.subject content="SHMI status page" />
+<meta name=DC.subject content="SHMI recorder" />
 <meta name=DC.creator content="Thorsten Willert" />
 <meta name=DCTERMS.license content=https://github.com/THWillert/SHMI/blob/master/LICENSE />
 <meta name=DCTERMS.rightsHolder content="Thorsten Willert" />
-<meta name=DCTERMS.modified content=2020-02-16 />
+<meta name=DCTERMS.modified content="Feb 22, 2020 3:37:03 PM" />
 <link rel=icon type=image/svg+xml href=./pict/logo.svg sizes=any>
 <link href=https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css rel=stylesheet integrity=sha384-G9YbB4o4U6WS4wCthMOpAeweY4gQJyyx0P3nZbEBHyz+AtNoeasfRChmek1C2iqV crossorigin=anonymous>
 <script src=https://code.jquery.com/jquery-3.4.1.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
@@ -36,7 +36,7 @@
 <link rel=stylesheet type=text/css href=./css/SHMI_instruments.css>
 <link rel=stylesheet type=text/css href=./css/SHMI_glow.css>
 <script src=./js/main.js async></script>
-<script src=./js/SHMI_recorder.js></script>
+<script src=./js/SHMI_recorder.min.js></script>
 </head>
 <body>
 <span id=Color_Curve style=background-color:var(--recorder_curve)></span>
@@ -85,7 +85,7 @@ Really reset data?
 </div>
 <div class="card-body collapse show" id=collapsePrefs>
 <form>
-<div class="form-row p-2">
+<div class="form-row p-1">
 <div class=col>
 Data source:
 <select class="form-control form-control-sm custom-select custom-select-sm" id=IDdataSelect></select>
@@ -106,7 +106,7 @@ Auto Zoom:
 </select>
 </div>
 </div>
-<div class="form-row p-2">
+<div class="form-row p-1">
 <div class=col>
 Statistics:
 <select class="form-control form-control-sm custom-select custom-select-sm" id=ID_Statistic size=1 onChange="smoothType=parseInt(this.value);document.getElementById('TXT_avg').textContent=this.options[this.selectedIndex].text">
@@ -124,26 +124,18 @@ Statistic samples:
 <option value=0>Off</option>
 <option value=3>3</option>
 <option value=5 selected>5</option>
-<option value=7>7</option>
-<option value=9>9</option>
-<option value=11>11</option>
-<option value=13>13</option>
-<option value=15>15</option>
-<option value=30>30</option>
-<option value=45>45</option>
-<option value=60>60</option>
-<option value=120>120</option>
 </select>
 </div>
 <div class=col>
-Compensate time offset
-<div class=form-check>
-<input type=checkbox class=form-check-input id=ID_Compensate checked>
+&nbsp;
+<div class="custom-control custom-switch">
+<input type=checkbox class=custom-control-input id=ID_Compensate checked>
+<label class=custom-control-label for=ID_Compensate>Compensate time offset</label>
 </div>
 </div>
 </div>
 </form>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center p-3">
 <div class=btn-group-toggle data-toggle=buttons>
 <label class="btn btn-secondary">
 <input type=checkbox id=IDsmooth><i class="fas fa-bezier-curve"></i>&nbsp;&nbsp;Spline Curve
@@ -221,6 +213,5 @@ Compensate time offset
 </div>
 </div>
 </div>
-<script>UpdateIntervalOptions();</script>
 </body>
 </html>
