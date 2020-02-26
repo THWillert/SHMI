@@ -1,4 +1,9 @@
-V0.7.1-beta
+V0.7.2-beta
+ - added: Online-Help (only the github page)
+ 
+___
+
+V0.7.1-beta 22.02.2020
  - changed all sources to FTL templates
  - added CDN complete version
  
