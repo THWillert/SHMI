@@ -4,16 +4,20 @@
 
 ## Übersicht
 
-Eine kleine, HTML, JavaScript und SVG basierte, Visualisierung im Webbrowser für SPS oder andere kleine Geräte.
+Eine kleine, webbasierte (HTML, JavaScript und SVG) Visualisierung für SPS oder andere kleine Geräte.
 
 Mit minimalen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
 In der einfachsten Variante nur ca. 700 KB groß!
 
+Als CDN-Version nur ca. 150 KB!
+
 Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch nicht möglich.
 
 ![Start](/images/SHMI_index.png)
+
+[Demo (statische Daten)](http://shmi.thorsten-willert.de/)
 
 ### Features
 
@@ -23,7 +27,7 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
 - Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden  
 ![Start](/images/SHMI_Recorder_2.png)
-- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Mini-Panels) ausgestattet werden:  
+- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Widgets) ausgestattet werden:  
 ![Start](/images/SHMI_RI_1.png)
 - Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:  
 ![Start](/images/SHMI_RI_03.png)  
@@ -216,12 +220,14 @@ Priorität beim Laden:
  - SVG
  - PNG (am besten transparent)
 
-Alle verfügbaren Datenpunkte können als kleine Anzeigen (Mini-Panels; Design noch nicht fertig) in das Bild eingefügt werden.  
+Alle verfügbaren Datenpunkte können als kleine Anzeigen (Widgets; Design noch nicht fertig) in das Bild eingefügt werden.  
 Momentan verfügbar:
 
 ![Start](/images/SHMI_Instruments.png)
 
 Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der entsprechenden Darstellungsart, aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
+
+> Für eine leichtere Positionierung ist eine "Snap to Grid" Option eingebaut. Diese ist standardmäßig auf 10px eingestellt.  
 
 ![Start](/images/SHMI_RI_02.png)
 
@@ -231,6 +237,7 @@ Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der ent
 - Analog:
   - Meter
   - Sparkline (Kurve)
+  - Gauge
   - Level mit Wertanzeige (vertikal z.B: als Füllstand für Tanks, frei skalierbar)
   
 #### Speichern / Laden / Löschen der Mini-Panels
@@ -305,81 +312,6 @@ Für ein anders Design, die Datei `css/_SGMI_glow.css` umbenennen in `css/SGMI_g
 
 ![Start](/images/SHMI_index_03.png)  
 
-#### Icons
-
-...
-
- ___
-## Diskussion / Vorschläge
-
-## ToDo
-
-Reihenfolge entspricht nicht der Priorität:
-
-#### Allgemein
-
-- [ ] Online-Demo
-- [x] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
-- [x] Bibliotheken aktualisieren
-- [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
-- [ ] Logo: Fallback auf PNG
-- [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
-- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
-- [ ] Einstellungen lokal speichern
-- [ ] Im/Export der Einstellungen
-- [x] CSS zusammenfassen
-- [x] Dateien vollständig hochladen
-- [ ] Wechsel der Anzeigensprache über die Oberfläche
-- [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
-- [ ] Fonts lokal speichern und abfragen
-- [ ] Dokumentation der Quelltexte überarbeiten
-- [ ] Dokumentation als Wiki
-- [ ] Minimierte Version aller Dateien
-- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
-- [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste und überflüssigen Code ...
-
-#### Übersicht
-
-- [ ] Variable Anzahl an Status-Seiten
-
-##### Analog
-- [ ] Skalierung Analog-Werte
-- [x] Peak-Hold für Analog-Anzeige
-- [X] Einstellung für die Haltezeit / Peak-Hold
-- [x] Analog-Anzeige optimieren
-- [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
-
-##### Digital
-
-- [X] Zeit-Anzeige für letzte Änderzung
-- [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
-
-#### Recorder
-
-- [x] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
-- [ ] Oberfläche optimieren
-- [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
-- [ ] Zeit-Format in CSV ändern (-> Timestamp)
-- [ ] Mehr Statistik Funktionen
-- [ ] Vorfilter für Analog-Werte
-- [ ] Trigger (Schwellwert)
-- [ ] Zeitliche Kompensation der Mittelwerte
-- [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
-- [ ] evtl. Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
-
-#### Kurven (noch nicht vorhanden)
-- [ ] D/A getrennt
-- [ ] Berechnungen zwischen den Kurven (Differenz, Summe usw.)
-- [ ] Trigger
-
-#### Fließbilder
-
-- [x] Werte in Bild anzeigen
-- [ ] Design der Anzeigen überarbeiten
-- [ ] Anzeigen rotierbar (90°) machen
-- [ ] mehr Darstellungsmöglichkeiten (Gauge, nur Werte, Panel mit allen Daten)
-- [ ] Animation (Färbung) der SVG-Bilder
-- [ ] Zusätzliche Datenpunkte für die Animation (z.B. um geschaltete Wege darzustellen)
 
 ## Benutzte Bibliotheken
 
