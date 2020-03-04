@@ -211,7 +211,7 @@ Example:
 ### Recorder
 
 > Attention!
-> Since everything is recorded in the browser, no other tabs may be open in the browser during recording. Also the browser window must not be minimized. In both cases there will be dropouts in the measured values. This can be compensated by a > correspondingly high update interval.
+> Since everything is recorded in the browser, no other tabs may be open in the browser during recording. Also the browser window must not be minimized. In both cases there will be dropouts in the measured values. This can be compensated by a correspondingly high update interval.
 
 ### Flowchart
 
