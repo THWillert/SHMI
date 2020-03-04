@@ -2,6 +2,8 @@
 
 > WIP - not suitable for productive use.
 
+[:gb:](README_en.md)
+
 ## Overview
 
 A small, web-based (HTML, JavaScript and SVG) visualization for PLC or other small devices
