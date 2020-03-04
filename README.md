@@ -1,8 +1,8 @@
+[:gb:](README_en.md)
+
 # SHMI
 
 > WIP - nicht für den Produktiv-Einsatz geeignet.
-
-[:gb:](README_en.md)
 
 ## Übersicht
 
