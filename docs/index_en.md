@@ -210,7 +210,7 @@ Example:
 
 ### Recorder
 
-> Attention!
+> :warning:
 > Since everything is recorded in the browser, no other tabs may be open in the browser during recording. Also the browser window must not be minimized. In both cases there will be dropouts in the measured values. This can be compensated by a correspondingly high update interval.
 
 ### Flowchart
@@ -250,10 +250,10 @@ It is not necessary to save the elements.
 
 As soon as they are positioned or resized, the position and size of the ads are saved in the local storage of the browser. A corresponding entry is saved for each element.
 
-#### Load
+##### Load
 When the page is loaded, the elements are automatically displayed again.
 
-#### Delete
+##### Delete
 To delete an element, deselect it in the settings.
 
 #### Direct animation in the image (SVG only):
