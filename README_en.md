@@ -15,7 +15,7 @@ As CDN version only about 150 KB!
 
 It is currently a pure display of values. A control of data is not yet possible.
 
-Start](/docs/images/SHMI_index.png)
+[Start](/docs/images/SHMI_index.png)
 
 [Demo (static data)](http://shmi.thorsten-willert.de/)
 
@@ -28,11 +28,11 @@ Start](/docs/images/SHMI_index.png)
 - Values can be displayed in curves, recorded and saved as CSV file
 Start](/docs/images/SHMI_Recorder_2.png)
 - Flow charts can be equipped with display elements (widgets) by drag and drop:
-Start](/docs/images/SHMI_RI_1.png)
+[Start](/docs/images/SHMI_RI_1.png)
 - The elements in an SVG image can be animated directly, e.g:
-Start](/docs/images/SHMI_RI_03.png)
+[Start](/docs/images/SHMI_RI_03.png)
 - Design easy to change via bootstrap theme (default design: [Slate](https://bootswatch.com/slate/)):
-Start](/docs/images/SHMI_index_02.png)
+[Start](/docs/images/SHMI_index_02.png)
   or by your own style sheets.
 ___
 ## Requirements
@@ -111,7 +111,7 @@ in which the values are entered.
 The structure of the file is self-explanatory.
 
 As an example:
-``json
+```json
 {
 "LIVE-BIT":0,
 "TIMESTAMP":1580716216,
@@ -182,7 +182,7 @@ The texts for labeling the data points are in the file:
 and are also read in the first time the page is called up.
 
 Example:
-``json
+```json
 {
 "DI0": "Control voltage",
 "DI1": "Lamp test",
@@ -230,7 +230,7 @@ To do this, select the corresponding data points in the settings, with the corre
 
 > For an easier positioning, a "Snap to Grid" option is built in. This is set to 10px by default.
 
-Start](/docs/images/SHMI_RI_02.png)
+[Start](/docs/images/SHMI_RI_02.png)
 
 #### The following display options (mini-panels) are currently available
 - Digital:
@@ -273,11 +273,11 @@ Axx = Analog data point
 
 Is output as text.
 
-Start](/docs/images/SHMI_Inkscape_1.png)
+[Start](/docs/images/SHMI_Inkscape_1.png)
 
 Operating result:
 
-Start](/docs/images/SHMI_RI_03.png)
+[Start](/docs/images/SHMI_RI_03.png)
 
 Design and colours are not yet fixed!
 
@@ -289,7 +289,7 @@ The texts for labelling the surface are in the file:
 
 The interface is not yet fully translated.
 
-``json
+```json
 {
 "DI": "Digital inputs",
 "DO": "Digital Outputs",
@@ -311,7 +311,7 @@ Replace the file `css/bootstrap.min.css` with the corresponding theme file.
 
 For a different design, rename the file `css/_SGMI_glow.css` to `css/SGMI_glow.css`
 
-Start](/docs/images/SHMI_index_03.png)
+[Start](/docs/images/SHMI_index_03.png)
 
 #### Icons
 
