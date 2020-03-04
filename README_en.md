@@ -88,7 +88,7 @@ DI/DO may take the following values.
    <dt>ALARM (not yet in use)</dt>
    <dd>number of the alarm message - or text</dd>
    <dt>MESSAGE (not yet in use)</dt>
-   <dd>number of the farm return - or text</dd>
+   <dd>number of the message - or string</dd>
    <dt>DIn (Format: Integer 0-9)</dt>
    <dd>digital input</dd>
    <dt>DOn (Format: Integer 0-9)</dt>
