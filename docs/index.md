@@ -1,3 +1,5 @@
+[:gb:](index_en.md)
+
 # SHMI
 
 > WIP - nicht für den Produktiv-Einsatz geeignet.
@@ -6,7 +8,7 @@
 
 Eine kleine, webbasierte (HTML, JavaScript und SVG) Visualisierung für SPS oder andere kleine Geräte.
 
-Mit minimalen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.  
+Mit minimalen Aufwand können damit Werte aus einer Steuerung (oder einem anderen Programm) visualisiert werden.
 Dazu sind keinerlei HTML, CSS oder JavaScript Kenntnisse nötig.
 
 In der einfachsten Variante nur ca. 700 KB groß!
@@ -25,14 +27,14 @@ Es ist aktuell eine reine Anzeige von Werten. Eine Steuerung von Daten ist noch 
 - Responsives Design
 - Für die grundlegende Konfiguration muß nur eine JSON-Datei, als Daten-Schnittstelle, von der Steuerung erzeugt werden
 - Die Darstellung aller Werte auf der Startseite wird automatisch anhand der Daten-Schnittstelle erzeugt
-- Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden  
+- Werte können in Kurven dargestellt, aufgezeichnet und als CSV-Datei gespeichert werden
 ![Start](/images/SHMI_Recorder_2.png)
-- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Widgets) ausgestattet werden:  
+- Fließbilder können per Drag und Drop mit Anzeige-Elementen (Widgets) ausgestattet werden:
 ![Start](/images/SHMI_RI_1.png)
-- Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:  
-![Start](/images/SHMI_RI_03.png)  
-- Design einfach per Bootstrap-Theme zu ändern (Standard-Design: [Slate](https://bootswatch.com/slate/)):  
-![Start](/images/SHMI_index_02.png)  
+- Die Elemente in einem SVG-Bild können direkt animiert werden z.B.:
+![Start](/images/SHMI_RI_03.png)
+- Design einfach per Bootstrap-Theme zu ändern (Standard-Design: [Slate](https://bootswatch.com/slate/)):
+![Start](/images/SHMI_index_02.png)
   oder per eigener Style-Sheets.
 ___
 ## Voraussetzungen
@@ -76,13 +78,13 @@ DI/DO dürfen folgende Werte annehmen.
 
 <dl>
    <dt>LIVE-BIT (Format: 1/0)</dt>
-   <dd>Muß bei jedem neuen Datensatz toggeln:  
+   <dd>Muß bei jedem neuen Datensatz toggeln:
    Anzeige in der Statusleiste</dd>
    <dt>TIMESTAMP (Format: UNIX-Timestamp in Sekunden)</dt>
-   <dd>Zeitstempel vom Gerät o. Anwendung :  
-     Hier wird die Differenz zur System-Zeit berechnet und in der Statusleiste angezeigt</dd>   
+   <dd>Zeitstempel vom Gerät o. Anwendung :
+     Hier wird die Differenz zur System-Zeit berechnet und in der Statusleiste angezeigt</dd>
    <dt>WARN (noch nicht in Gebrauch)</dt>
-   <dd>Nummer der Warnmeldung - oder Text</dd> 
+   <dd>Nummer der Warnmeldung - oder Text</dd>
    <dt>ALARM (noch nicht in Gebrauch)</dt>
    <dd>Nummer der Alarmmeldung - oder Text</dd>
    <dt>MESSAGE (noch nicht in Gebrauch)</dt>
@@ -103,8 +105,8 @@ DI/DO dürfen folgende Werte annehmen.
 
 ### Schnittstelle
 
-Von der Steuerung muss eine entsprechende Datei erzeugt werden:  
-`data/data.json`  
+Von der Steuerung muss eine entsprechende Datei erzeugt werden:
+`data/data.json`
 in der die Werte eingetragen werden.
 
 Der Aufbau der Datei ist selbsterklärend.
@@ -176,8 +178,8 @@ Siehe auch Siemens: [Eigene Webseiten für S7-1200 / S7-1500 erstellen und einse
 
 ### Beschriftung der Datenpunkte
 
-Die Texte für die Beschriftung der Datenpunkte befinden sich in der Datei:  
-`lng/de_dp.json`  
+Die Texte für die Beschriftung der Datenpunkte befinden sich in der Datei:
+`lng/de_dp.json`
 und werden ebenfalls beim ersten Aufruf der Seite eingelesen.
 
 Beispiel:
@@ -207,12 +209,12 @@ Beispiel:
 
 ### Recorder
 
-> Achtung!  
-> Da hier alles im Browser aufgezeichnet wird, dürfen während der Aufzeichnung, im Browser keinen weiteren Tabs offen sein. Auch > darf das Browser-Fenster nicht minimiert werden. In beiden Fällen entsehen Aussetzer bei den Messwerten. Dies kann durch einen > entsprechend hohen Update Interval evtl. kompensiert werden.
+> Achtung!
+> Da hier alles im Browser aufgezeichnet wird, dürfen während der Aufzeichnung, im Browser keinen weiteren Tabs offen sein. Auch > darf das Browser-Fenster nicht minimiert werden. In beiden Fällen entsehen Aussetzer bei den Messwerten. Dies kann durch einen entsprechend hohen Update Interval evtl. kompensiert werden.
 
 ### Fließbild
 
-Das Bild selbst wird als Hintergrundbild geladen. Es muß den gleichen Namen wie die HTML-Datei haben, nur mit dem Suffix "svg".  
+Das Bild selbst wird als Hintergrundbild geladen. Es muß den gleichen Namen wie die HTML-Datei haben, nur mit dem Suffix "svg".
 Alternativ kann auch ein PNG Bild geladen werden.
 > Nur SVG-Bilder können direkt animiert werden!
 
@@ -220,14 +222,14 @@ Priorität beim Laden:
  - SVG
  - PNG (am besten transparent)
 
-Alle verfügbaren Datenpunkte können als kleine Anzeigen (Widgets; Design noch nicht fertig) in das Bild eingefügt werden.  
+Alle verfügbaren Datenpunkte können als kleine Anzeigen (Widgets; Design noch nicht fertig) in das Bild eingefügt werden.
 Momentan verfügbar:
 
 ![Start](/images/SHMI_Instruments.png)
 
 Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der entsprechenden Darstellungsart, aus. Damit wird die entsprechende Anzeige oben rechts im Bild eingefügt. Anschließend kann man diese an die passende Stelle im Bild ziehen und evtl. in der Breite verändern.
 
-> Für eine leichtere Positionierung ist eine "Snap to Grid" Option eingebaut. Diese ist standardmäßig auf 10px eingestellt.  
+> Für eine leichtere Positionierung ist eine "Snap to Grid" Option eingebaut. Diese ist standardmäßig auf 10px eingestellt.
 
 ![Start](/images/SHMI_RI_02.png)
 
@@ -239,7 +241,7 @@ Dazu wählt man in den Einstellungen die entsprechenden Datenpunkte, mit der ent
   - Sparkline (Kurve)
   - Gauge
   - Level mit Wertanzeige (vertikal z.B: als Füllstand für Tanks, frei skalierbar)
-  
+
 #### Speichern / Laden / Löschen der Mini-Panels
 
 ##### Speichern
@@ -257,8 +259,8 @@ Zum Löschen eines Elementes dieses in den Einstellungen wieder abwählen.
 
 > Momentan nur DI/DO und Analog als Wert
 
-Dem Element eine entsprechende ID (bei Inkscape: "Kennung") geben.  
-Schema: `SHMI_Dxx_D`  
+Dem Element eine entsprechende ID (bei Inkscape: "Kennung") geben.
+Schema: `SHMI_Dxx_D`
 Dxx = Digitaler-Datenpunkt
 
 Wird als Farbe ausgegeben:
@@ -267,7 +269,7 @@ Wird als Farbe ausgegeben:
 - 2 = orange (warning)
 - 4 = rot (alert)
 
-Schema: `SHMI_Axx_A`  
+Schema: `SHMI_Axx_A`
 Axx = Analoger-Datenpunkt
 
 Wird als Text ausgegeben.
@@ -283,7 +285,7 @@ Design und Farben stehen noch nicht fest!
 
 ### Beschriftung der Oberfläche
 
-Die Texte für die Beschriftung der Oberflächje befinden sich in der Datei:  
+Die Texte für die Beschriftung der Oberflächje befinden sich in der Datei:
 `lng/de.json`
 
 Die Oberfläche ist noch nicht vollständig übersetzt.
@@ -310,8 +312,85 @@ Die Datei `css/bootstrap.min.css` gegen die entsprechende Theme-Datei austausche
 
 Für ein anders Design, die Datei `css/_SGMI_glow.css` umbenennen in `css/SGMI_glow.css`
 
-![Start](/images/SHMI_index_03.png)  
+![Start](/images/SHMI_index_03.png)
 
+#### Icons
+
+...
+
+ ___
+## Diskussion / Vorschläge
+
+## ToDo
+
+Reihenfolge entspricht nicht der Priorität:
+
+#### Allgemein
+
+- [x] Online-Demo
+- [x] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
+- [x] Bibliotheken aktualisieren
+- [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
+- [ ] Logo: Fallback auf PNG
+- [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
+- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
+- [ ] Einstellungen lokal speichern
+- [ ] Im/Export der Einstellungen
+- [x] CSS zusammenfassen
+- [x] Dateien vollständig hochladen
+- [ ] Wechsel der Anzeigensprache über die Oberfläche
+- [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
+- [ ] Fonts lokal speichern und abfragen
+- [ ] Dokumentation der Quelltexte überarbeiten
+- [ ] Dokumentation als Wiki
+- [ ] Minimierte Version aller Dateien
+- [ ] Zähler und Zeiten als zus#tzliche Datenpunkte
+- [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
+- [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste und überflüssigen Code ...
+
+#### Übersicht
+
+- [ ] Variable Anzahl an Status-Seiten
+- [ ] Unbenutzte Cards ausblenden
+
+##### Analog
+- [ ] Skalierung Analog-Werte
+- [x] Peak-Hold für Analog-Anzeige
+- [X] Einstellung für die Haltezeit / Peak-Hold
+- [x] Analog-Anzeige optimieren
+- [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
+
+##### Digital
+
+- [X] Zeit-Anzeige für letzte Änderzung
+- [X] Einstellung des Updateintervalls (Digital / Analog getrennt)
+
+#### Recorder
+
+- [x] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
+- [ ] Oberfläche optimieren
+- [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
+- [ ] Zeit-Format in CSV ändern (-> Timestamp)
+- [x] Mehr Statistik Funktionen
+- [ ] Vorfilter für Analog-Werte (Lowpass)
+- [ ] Trigger
+- [x] Zeitliche Kompensation der Mittelwerte
+- [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
+- [ ] evtl. Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
+
+#### Kurven (noch nicht vorhanden)
+- [ ] D/A getrennt
+- [ ] Berechnungen zwischen den Kurven (Differenz, Summe usw.)
+- [ ] Trigger
+
+#### Fließbilder
+
+- [x] Werte in Bild anzeigen
+- [x] Design der Anzeigen überarbeiten
+- [ ] Anzeigen rotierbar (90°) machen
+- [ ] mehr Darstellungsmöglichkeiten (Gauge, nur Werte, Panel mit allen Daten)
+- [x] Animation (Färbung) der SVG-Bilder
+- [ ] Zusätzliche Datenpunkte für die Animation (z.B. um geschaltete Wege darzustellen)
 
 ## Benutzte Bibliotheken
 
