@@ -80,7 +80,7 @@ DI/DO may take the following values.
    Display in the status bar</dd>
    <dt>TIMESTAMP (format: UNIX timestamp in seconds)</dt>
    <dd>Time stamp from device or application :
-     Here the difference to the system time is calculated and displayed in the status bar </dd>.
+     Here the difference to the system time is calculated and displayed in the status bar.</dd>
    <dt>WARN (not yet in use)</dt>
    <dd>number of the warning message - or text</dd>
    <dt>ALARM (not yet in use)</dt>
@@ -209,7 +209,7 @@ Example:
 ### Recorder
 
 > Attention!
-> Since everything is recorded in the browser, no other tabs may be open in the browser during recording. Also > the browser window must not be minimized. In both cases there will be dropouts in the measured values. This can be compensated by a > correspondingly high update interval.
+> Since everything is recorded in the browser, no other tabs may be open in the browser during recording. Also the browser window must not be minimized. In both cases there will be dropouts in the measured values. This can be compensated by a > correspondingly high update interval.
 
 ### Flowchart
 
