@@ -133,7 +133,7 @@ As an example:
 "DO10":1,
 "DO14":1,
 "AI0":14,
-"AI1":97.07
+"AI1":97.07,
 "AI2":44.96,
 "AI3":87.43,
 "AI0_SP":50,
@@ -192,7 +192,7 @@ Example:
 "DI4": "Flow measurement",
 "DI7": "Compressed air monitoring",
 "DO0": "Control voltage",
-"DO1": "Fault:"
+"DO1": "Fault:",
 "DO2": "Engine 1",
 "DO8": "Engine 1",
 "DO9": "Control valve 1",
