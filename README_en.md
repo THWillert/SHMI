@@ -1,8 +1,8 @@
+[:de:](README.md)
+
 # SHMI
 
 > WIP - not suitable for productive use.
-
-[:de:](README.md)
 
 ## Overview
 
