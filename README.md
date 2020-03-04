@@ -1,3 +1,5 @@
+[:de: Deutsch](https://thwillert.github.io/SHMI/) [:gb: English](https://thwillert.github.io/SHMI/index_en.html)
+
 # SHMI
 
 > WIP - nicht für den Produktiv-Einsatz geeignet.
@@ -38,9 +40,9 @@ ___
 
 ## Anleitung
 
-[:de: Deutsch](/docs/index.md)
+[:de: Deutsch](https://thwillert.github.io/SHMI/)
 
-[:gb: English](/docs/index_en.md)
+[:gb: English](https://thwillert.github.io/SHMI/index_en.html)
 
  ___
 
