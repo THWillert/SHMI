@@ -1,4 +1,4 @@
-[German](index.md)
+[German :de:](index.md)
 
 # SHMI
 
@@ -389,7 +389,7 @@ Order does not correspond to priority:
 
 - [x] Display values in image
 - [x] Revise the design of the displays
-- [ ] Make displays rotatable (90°)
+- [ ] Make displays rotatable (90Â°)
 - [ ] more display options (gauge, only values, panel with all data)
 - [x] Animation (coloring) of SVG images
 - [ ] Additional data points for the animation (e.g. to display switched paths)
