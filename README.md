@@ -2,7 +2,7 @@
 
 > WIP - nicht für den Produktiv-Einsatz geeignet.
 
-[:de:](README_en.md)
+[:gb:](README_en.md)
 
 ## Übersicht
 
