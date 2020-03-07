@@ -3,3 +3,7 @@
 dist/data/data_template.json
 dist/data/SHMI_randomdata.exe
 *.md~1~
+*.html~1~
+*.js~1~
+*.css~2~
+src/OUT/SHMI_RI_01.html

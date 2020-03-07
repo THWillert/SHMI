@@ -16,7 +16,7 @@
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="Feb 18, 2020 1:34:44 PM" />
+	<meta name="DCTERMS.modified" content="Mar 7, 2020 2:38:24 PM" />
 
 	<!--
 	Copyright (c)2014 - 2020 Thorsten Willert
@@ -66,7 +66,7 @@
 <h5 class="card-title" id="TXT_RI_Caption">Piping and instrumentation diagram</h5>
 </div><!-- /header -->
 <div class="card-body">
-<div id="IDpict" class="bg-light" style="overflow:auto;">
+<div id="IDpict" class="bg-white" style="overflow:auto;">
 </div>
 </div><!-- /body -->
 </div><!-- /card -->
@@ -116,7 +116,7 @@
 </div>
 <hr>
 <div class="row p-1">
-<div class="col col-md-3">
+<div class="col col-md-2">
 <label for="ID_Snap">Snap to grid:</label>
 <select id="ID_Snap" class="form-control form-control-sm custom-select custom-select-sm" style="width: 100%"
 onChange="
@@ -134,13 +134,23 @@ ig_Snap = parseInt(this.value);
 <option value='50'>50</option>
 </select>
 </div>
-<div class="col col-md-3">
+<div class="col col-md-2">
 <label for="ID_Style">Widget style:</label>
 <select id="ID_Style" class="form-control form-control-sm custom-select custom-select-sm" style="width: 100%">
 <option value='0' selected>Dark</option>
 <option value='1'>Light</option>
 <option value='2'>Primary</option>
 <option value='3'>Secondary</option>
+</select>
+</div>
+<div class="col col-md-2">
+<label for="ID_BGStyle">Background:</label>
+<select id="ID_BGStyle" class="form-control form-control-sm custom-select custom-select-sm" style="width: 100%">
+<option value='white' selected>White</option>
+<option value='dark'>Dark</option>
+<option value='light'>Light</option>
+<option value='primary'>Primary</option>
+<option value='secondary'>Secondary</option>
 </select>
 </div>
 </div>
