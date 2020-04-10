@@ -12,3 +12,5 @@ src/OUT/SHMI_RI_01.html
 dist/data/data.json
 src/OUT/SHMI_status.html
 *.html~2~
+*.html~3~
+src/OUT/SHMI_status.html
