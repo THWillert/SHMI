@@ -158,23 +158,19 @@ $( () => {
 				// append content
 				if (digital_in_append.length > 1) {
 					digital_in_container.append( digital_in_append )
-				} else {
-					$('#ID_DI').css('display','none')
+					$('#ID_DI').removeClass('d-none')
 				}
 				if (digital_out_append.length > 1) {
 					digital_out_container.append( digital_out_append )
-				} else {
-					$('#ID_DO').css('display','none')
+					$('#ID_DO').removeClass('d-none')
 				}
 				if (analog_in_append.length > 1) {
 					analog_in_container.append( analog_in_append )
-				} else {
-					$('#ID_AI').css('display','none')
+					$('#ID_AI').removeClass('d-none')
 				}
 				if (analog_out_append.length > 1) {
 					analog_out_container.append( analog_out_append )
-				} else {
-					$('#ID_AO').css('display','none')
+					$('#ID_AO').removeClass('d-none')
 				}
 			})
 				.done( () => {
@@ -349,7 +345,7 @@ $( () => {
 	<div class="main container-fluid W100">
 		<div class="row p-2">
 			<!-- Digital input ============================================= -->
-			<div class="col-md-6 p-2" id="ID_DI">
+			<div class="col-md-6 p-2 d-none" id="ID_DI">
 				<div class="card shadow">
 					<div class="card-header">
 						 <a class="" data-toggle="collapse" href="#collapseDI" role="button" aria-expanded="false" aria-controls="collapseDI">
@@ -362,7 +358,7 @@ $( () => {
 				</div>
 			</div>
 			<!-- Digital output ============================================ -->
-			<div class="col-md-6 p-2" id="ID_DO">
+			<div class="col-md-6 p-2 d-none" id="ID_DO">
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseDO" role="button" aria-expanded="false" aria-controls="collapseDO">
@@ -377,7 +373,7 @@ $( () => {
 		</div>
 		<div class="row p-2" id="IDAnalogIO">
 			<!-- Analog input ============================================== -->
-			<div class="col-md-12 p-2" ID="ID_AI">
+			<div class="col-md-12 p-2 d-none" ID="ID_AI">
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseAI" role="button" aria-expanded="false" aria-controls="collapseAI">
@@ -417,7 +413,7 @@ $( () => {
 				</div>
 			</div>
 			<!-- Analog output ============================================= -->
-			<div class="col-md-12 p-2" ID="ID_AO">
+			<div class="col-md-12 p-2 d-none" ID="ID_AO">
 				<div class="card shadow">
 					<div class="card-header">
 						<a class="" data-toggle="collapse" href="#collapseAO" role="button" aria-expanded="false" aria-controls="collapseAO">

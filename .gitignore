@@ -8,3 +8,5 @@ dist/data/SHMI_randomdata.exe
 *.css~2~
 src/OUT/SHMI_RI_01.html
 *.js~2~
+*.json~1~
+dist/data/data.json
