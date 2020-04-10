@@ -1,3 +1,9 @@
+V0.7.3-beta
+- changed: Renamed SHMI_status.html to SHMI_dashboard.html
+- changed: Splitted SHMI_status.html into SHMI_dashboard.html and SHMI_dashboard.min.js
+- changed: Unused panels are now no longer displayed on the dashboard
+___
+
 V0.7.2-beta
  - added: Online-Help (only the github page)
  
