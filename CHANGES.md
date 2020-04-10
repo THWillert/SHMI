@@ -1,4 +1,4 @@
-V0.7.3-beta
+V0.7.3-beta 10.04.2020
 - changed: Renamed SHMI_status.html to SHMI_dashboard.html
 - changed: Splitted SHMI_status.html into SHMI_dashboard.html and SHMI_dashboard.min.js
 - changed: Unused panels are now no longer displayed on the dashboard
