@@ -11,11 +11,11 @@
 	<meta name="DC.type"          content="Text" />
 	<meta name="DC.title"         content="Dublin Core" />
 	<meta name="DC.publisher"     content="Thorsten Willert" />
-	<meta name="DC.subject"       content="SHMI status page" />
+	<meta name="DC.subject"       content="SHMI status" />
 	<meta name="DC.creator"       content="Thorsten Willert" />
 	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
 	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="Feb 18, 2020 1:34:51 PM" />
+	<meta name="DCTERMS.modified" content="Apr 10, 2020 11:55:52 AM" />
 
 	<!--
 	Copyright (c)2014 - 2020 Thorsten Willert
@@ -65,14 +65,20 @@ $( () => {
 		moment.locale("de");
 	//==============================================================================
 		function init() {
+			let digital_in_append = '';
+			let digital_out_append = '';
+			let analog_in_append = '';
+			let analog_out_append = '';
 
-			// Anzeigen einfügen
+			// build interface
 			$.getJSON( "./data/data.json", ( data ) => {
+
 				$.each( data, ( id, val) => {
 
-				if ( id.indexOf("SP") == -1){
-					if ( id.indexOf("DI") != -1) {
-						digital_in_container.append(
+					if ( id.indexOf("SP") == -1){ // if not setpoint
+
+						if ( id.indexOf("DI") != -1) {
+							digital_in_append +=
 								`<tr>
 									<td id="TXT_${id}""></td>
 									<td>
@@ -82,10 +88,9 @@ $( () => {
 										</div>
 									</td>
 									<td id="TS_${id}" class="value_out"></td>
-								</tr>`
-								);
-					} else if ( id.indexOf("DO") != -1) {
-						digital_out_container.append(
+								</tr>`;
+						} else if ( id.indexOf("DO") != -1) {
+							digital_out_append +=
 								`<tr>
 									<td id="TXT_${id}"></td>
 									<td>
@@ -95,10 +100,9 @@ $( () => {
 										</div>
 									</td>
 									<td id="TS_${id}" class="value_out"></td>
-								</tr>`
-								);
-					} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
-						analog_in_container.append(
+								</tr>`;
+						} else if ( id.indexOf("AI") != -1 && id.indexOf("SP") == -1) {
+							analog_in_append +=
 								`<tr>
 									<td width="200em" id="TXT_${id}"></td>
 									<td  class="value_out">
@@ -117,11 +121,9 @@ $( () => {
 									</td>
 									<td  class="d-none"><input id="ID_${id}_LO" ><input analog" id="ID_${id}_PK" ></td>
 									<td class="d-none d-md-block sparkline"><span id="ID_${id}_spark" class="peity-ai chart-ai">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
-								</tr>`
-								);
-
-					}  else if ( id.indexOf("AO") != -1) {
-						analog_out_container.append(
+								</tr>`;
+						}  else if ( id.indexOf("AO") != -1) {
+							analog_out_append +=
 								`<tr>
 									<td width="200em" id="TXT_${id}"></td>
 									<td  class="value_out">
@@ -140,11 +142,32 @@ $( () => {
 									</td>
 									<td class="d-none"><input id="ID_${id}_LO" ><input id="ID_${id}_PK" ></td>
 									<td class="d-none d-md-block sparkline"><span id="ID_${id}_spark" class="peity-ao chart-ao">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span></td>
-								</tr>`
-								);
+								</tr>`;
+						};
 					};
-				};
 				});
+
+				// append content
+				if (digital_in_append.length > 1) {
+					digital_in_container.append( digital_in_append )
+				} else {
+					$('#ID_DI').css('display','none')
+				}
+				if (digital_out_append.length > 1) {
+					digital_out_container.append( digital_out_append )
+				} else {
+					$('#ID_DO').css('display','none')
+				}
+				if (analog_in_append.length > 1) {
+					analog_in_container.append( analog_in_append )
+				} else {
+					$('#ID_AI').css('display','none')
+				}
+				if (analog_out_append.length > 1) {
+					analog_out_container.append( analog_out_append )
+				} else {
+					$('#ID_AO').css('display','none')
+				}
 			})
 				.done( () => {
 					// UI
@@ -163,7 +186,7 @@ $( () => {
 							});
 						});
 					});
-
+					// sparkline AI
 					$(".peity-ai").peity("line", {
 							fill: ["var(--sparkline_ai_fill)"],
 							stroke: "var(--sparkline_ai_stroke)",
@@ -172,7 +195,7 @@ $( () => {
 							max: 100,
 							width: 128
 					});
-
+					// sparkline AO
 					$(".peity-ao").peity("line", {
 							fill: ["var(--sparkline_ao_fill)"],
 							stroke: "var(--sparkline_ao_stroke)",
