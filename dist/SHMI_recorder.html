@@ -1,65 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>SHMI - Recorder</title>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
-	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
-	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_recorder.html">
-	<meta name="DC.format"        content="text/html" />
-	<meta name="DC.type"          content="Text" />
-	<meta name="DC.title"         content="Dublin Core" />
-	<meta name="DC.publisher"     content="Thorsten Willert" />
-	<meta name="DC.subject"       content="SHMI status page" />
-	<meta name="DC.creator"       content="Thorsten Willert" />
-	<meta name="DCTERMS.license"  content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
-	<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
-	<meta name="DCTERMS.modified" content="Feb 18, 2020 1:34:37 PM" />
-
-	<!--
-	Copyright (c)2014 - 2020 Thorsten Willert
-
-	Permission is hereby granted, free of charge, to any person obtaining a copy of
-	this software and associated documentation files (the "Software"), to deal in
-	the Software without restriction, including without limitation the rights to use,
-	copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-	Software, and to permit persons to whom the Software is furnished to do so,
-	subject to the following conditions:
-
-	The above copyright notice and this permission notice shall be included in all
-	copies or substantial portions of the Software.
-
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-	INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-	PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-	-->
-	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/jquery.canvaswrapper.min.js"></script>
-	<script src="./js/jquery.colorhelpers.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/moment.min.js" async></script>
-	<script src="./js/simple-statistics.min.js"></script>
-	<script src="./js/jquery.flot.min.js"></script>
-	<script src="./js/jquery.flot.browser.min.js"></script>
-	<script src="./js/jquery.flot.drawSeries.min.js"></script>
-	<script src="./js/jquery.flot.hover.min.js"></script>
-	<script src="./js/jquery.flot.saturated.min.js"></script>
-	<script src="./js/jquery.flot.selection.min.js"></script>
-	<script src="./js/jquery.flot.spline.min.js"></script>
-	<script src="./js/jquery.flot.time.min.js"></script>
-	<script src="./js/jquery.flot.uiConstants.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
-	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
-	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
-	<script src="./js/main.js" async></script>
-	<script src="./js/SHMI_recorder.js"></script>
-
+<title>SHMI - Recorder</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/SHMI_recorder.html">
+<meta name="DC.format" content="text/html" />
+<meta name="DC.type" content="Text" />
+<meta name="DC.title" content="Dublin Core" />
+<meta name="DC.publisher" content="Thorsten Willert" />
+<meta name="DC.subject" content="SHMI recorder" />
+<meta name="DC.creator" content="Thorsten Willert" />
+<meta name="DCTERMS.license" content="https://github.com/THWillert/SHMI/blob/master/LICENSE" />
+<meta name="DCTERMS.rightsHolder" content="Thorsten Willert" />
+<meta name="DCTERMS.modified" content="Apr 11, 2020 2:43:41 PM" />
+<!--
+Copyright (c)2014 - 2020 Thorsten Willert
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/jquery.canvaswrapper.min.js"></script>
+<script src="./js/jquery.colorhelpers.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/moment.min.js" async></script>
+<script src="./js/simple-statistics.min.js"></script>
+<script src="./js/jquery.flot.min.js"></script>
+<script src="./js/jquery.flot.browser.min.js"></script>
+<script src="./js/jquery.flot.drawSeries.min.js"></script>
+<script src="./js/jquery.flot.hover.min.js"></script>
+<script src="./js/jquery.flot.saturated.min.js"></script>
+<script src="./js/jquery.flot.selection.min.js"></script>
+<script src="./js/jquery.flot.spline.min.js"></script>
+<script src="./js/jquery.flot.time.min.js"></script>
+<script src="./js/jquery.flot.uiConstants.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
+<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
+<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
+<script src="./js/SHMI.js" async></script>
+<script src="./js/SHMI_recorder.min.js"></script>
 </head>
 <body>
 <!-- colors for the chart -------------------------------------------------- -->
@@ -111,7 +105,7 @@ Really reset data?
 </div>
 <div class="card-body collapse show" id="collapsePrefs">
 <form>
-<div class="form-row p-2">
+<div class="form-row p-1">
 <div class="col">
 Data source:
 <select class="form-control form-control-sm custom-select custom-select-sm" id="IDdataSelect"></select>
@@ -147,7 +141,7 @@ Time Scale:
 </select>
 </div>-->
 </div>
-<div class="form-row p-2">
+<div class="form-row p-1">
 <div class="col">
 Statistics:
 <select class="form-control form-control-sm custom-select custom-select-sm" id="ID_Statistic" size="1"
@@ -172,26 +166,18 @@ fag_Average = [];smooth=parseFloat(this.value)
 <option value="0">Off</option>
 <option value="3">3</option>
 <option value="5" selected>5</option>
-<option value="7">7</option>
-<option value="9">9</option>
-<option value="11">11</option>
-<option value="13">13</option>
-<option value="15">15</option>
-<option value="30">30</option>
-<option value="45">45</option>
-<option value="60">60</option>
-<option value="120">120</option>
 </select>
 </div>
 <div class="col">
-Compensate time offset
-<div class="form-check">
-<input type="checkbox" class="form-check-input" id="ID_Compensate" checked>
+&nbsp;
+<div class="custom-control custom-switch">
+<input type="checkbox" class="custom-control-input" id="ID_Compensate" checked="">
+<label class="custom-control-label" for="ID_Compensate">Compensate time offset</label>
 </div>
 </div>
 </div>
 </form>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center p-3">
 <div class="btn-group-toggle" data-toggle="buttons" >
 <label class="btn btn-secondary">
 <input type="checkbox" id="IDsmooth"><i class="fas fa-bezier-curve"></i>&nbsp;&nbsp;Spline Curve
@@ -269,6 +255,5 @@ Compensate time offset
 </div><!-- / Data -->
 </div><!-- row -->
 </div>
-<script>UpdateIntervalOptions();</script>
 </body>
 </html>
