@@ -1,3 +1,7 @@
+V0.7.4-beta 10.04.2020
+- changed: renamed main.js to SHMI.js
+___
+
 V0.7.3-beta 10.04.2020
 - changed: Renamed SHMI_status.html to SHMI_dashboard.html
 - changed: Splitted SHMI_status.html into SHMI_dashboard.html and SHMI_dashboard.min.js
