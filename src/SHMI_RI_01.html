@@ -3,11 +3,11 @@
 <#else>
 	<#assign cdn=false>
 </#if>
+<#compress>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>SHMI- RI</title>
-
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
@@ -26,7 +26,6 @@
 	<#include 'copyright.html'>
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
-
 <#if cdn>
 	<#-- CSS CDN -->
 	<link
@@ -67,9 +66,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/clayfy.min.css" ><!-- must be in the last position (css) !!! -->
 
 	<script src="./js/clayfy.min.js"></script><!-- drag & drop | no versions on CDNs -->
-	<script src="./js/main.js" async></script>
+	<script src="./js/SHMI.js" async></script>
 	<script src="./js/SHMI_RI.min.js"></script>
-<#compress>
 </head>
 <body>
 	<div class="main w100 container-fluid">

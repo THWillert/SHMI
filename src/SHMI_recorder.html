@@ -3,6 +3,7 @@
 <#else>
 	<#assign cdn=false>
 </#if>
+<#compress>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,10 +76,9 @@
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
-	<script src="./js/main.js" async></script>
+	<script src="./js/SHMI.js" async></script>
 	<script src="./js/SHMI_recorder.min.js"></script>
 </head>
-<#compress>
 <body>
 <!-- colors for the chart -------------------------------------------------- -->
 	<span id="Color_Curve" style="background-color:var(--recorder_curve)"></span>
