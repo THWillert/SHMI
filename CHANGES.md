@@ -1,4 +1,4 @@
-V0.7.4-beta 10.04.2020
+V0.7.4-beta 11.04.2020
 - changed: renamed main.js to SHMI.js
 ___
 
