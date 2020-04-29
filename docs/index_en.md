@@ -329,70 +329,73 @@ Order does not correspond to priority:
 
 #### General
 
+- [ ] Save settings locally
+- [ ] Import/Export of settings
+- [ ] counters and times as additional data points
+- [ ] Changing the display language via the interface
+- [ ] Output messages from the control system (alarm, warning and operating messages)
+- [ ] Deactivation of animations for weaker display devices
+- [ ] Logo: Fallback to PNG
+- [ ] Save and retrieve fonts locally
+- [ ] Revise documentation of the source code
+- [ ] Documentation as Wiki
+- [ ] Minimized version of all files
+- [ ] Controlling values (only when the rest is stable)
+- [ ] Cleaning up the source code - the whole thing was an experimental project from 2014 with lots of copy & paste and superfluous code ...
+- [x] Split labels for data points and surface into single files
+- [x] Upload files completely
+- [x] Summarize CSS
+- [x] Live bit from controller to interface (visualize)
 - [x] Online demo
 - [x] Change I/O colors to better display errors and warnings
 - [x] Update libraries
 - [x] Update to the current bootstrap version 4
-- [ ] Logo: Fallback to PNG
-- [x] Live bit from controller to interface (visualize)
-- [ ] Output messages from control system (alarm, warning, operating messages)
-- [ ] Save settings locally
-- [ ] Import/Export of the settings
-- [x] Summarize CSS
-- [x] Upload files completely
-- [ ] Changing the display language via the interface
-- [x] Split labels for data points and surface into individual files
-- [ ] Store and retrieve fonts locally
-- [ ] Revise documentation of the source code
-- [ ] Documentation as Wiki
-- [ ] Minimized version of all files
-- [ ] counters and times as additional data points
-- [ ] Controlling values (only when the rest is stable)
-- [ ] Clean up the source code - the whole thing was an experimental project from 2014 with lots of copy & paste and superfluous code ...
 
-#### Overview
+#### Dashboard
 
-- [ ] Variable number of status pages
-- [ ] Hide unused cards
+- [ ] Variable number of pages
+- [ ] Adjustable grouping of the values
+- [x] Hide unused cards / panels
 
 ##### Analog
 - [ ] Scaling analog values
 - [x] Peak hold for analog display
-- [X] Setting for the hold time / peak hold
+- [x] Setting for the hold time / peak hold
 - [x] Optimize analog display
-- [X] Setting the update interval (digital / analog disconnected)
+- [x] Setting the update interval (digital / analog separated)
 
 ##### Digital
 
-- [X] Time display for last change
-- [X] Setting the update interval (digital / analog disconnected)
+- [x] Time display for last change
+- [x] Setting the update interval (digital / analog separated)
 
 #### Recorder
 
-- [x] Adapting and optimizing the recorder to the current library versions
 - [ ] Optimize surface
 - [ ] Possible change from Flot-Chart to Chart.js (because of size still to be clarified)
 - [ ] Change time format to CSV (-> Timestamp)
-- [x] More statistics functions
 - [ ] Prefilter for analog values (low pass)
-- [ ] Trigger
+- [ ] Trigger (High / Low / Band)
+- [ ] Adjust timeline to timestamp from interface (current: browser time)
+- [ ] possible measured value interpolation in case of missing or invalid measured values (optional)
+- [x] More statistics functions
+- [x] Adapting and optimizing the recorder to the current library versions
 - [x] Time compensation of the mean values
-- [ ] Adjust time axis to timestamp off Interface
-- [ ] possibly measured value interpolation in case of missing or invalid measured values (optional)
 
 #### Curves (not yet available)
 - [ ] D/A separated
-- [ ] Calculations between the curves (difference, sum, etc.)
+- [ ] Calculations between the curves (difference, sum etc.)
 - [ ] Trigger
 
 #### Flow charts
 
+- [ ] Make displays rotatable (90°)
+- [ ] Additional data points for the animation (e.g. to display switched paths)
+- [ ] more display options (only values, panel with all data)
+- [x] more display options (gauge)
 - [x] Display values in image
 - [x] Revise the design of the displays
-- [ ] Make displays rotatable (90°)
-- [ ] more display options (gauge, only values, panel with all data)
 - [x] Animation (coloring) of SVG images
-- [ ] Additional data points for the animation (e.g. to display switched paths)
 
 ## Used libraries
 
