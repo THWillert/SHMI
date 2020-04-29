@@ -327,31 +327,33 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
-- [x] Online-Demo
-- [x] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
-- [x] Bibliotheken aktualisieren
-- [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
-- [ ] Logo: Fallback auf PNG
-- [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
-- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
 - [ ] Einstellungen lokal speichern
 - [ ] Im/Export der Einstellungen
-- [x] CSS zusammenfassen
-- [x] Dateien vollständig hochladen
+- [ ] Zähler und Zeiten als zus#tzliche Datenpunkte
 - [ ] Wechsel der Anzeigensprache über die Oberfläche
-- [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
+- [ ] Meldungen von Steuerung ausgeben (Alarm-, Warn- Betriebsmeldungen)
+- [ ] Deaktivierung der Animationen für schwächere Anzeigegeräte
+- [ ] Logo: Fallback auf PNG
 - [ ] Fonts lokal speichern und abfragen
 - [ ] Dokumentation der Quelltexte überarbeiten
 - [ ] Dokumentation als Wiki
 - [ ] Minimierte Version aller Dateien
-- [ ] Zähler und Zeiten als zus#tzliche Datenpunkte
 - [ ] Steuern von Werten (erst wenn der Rest stabil läuft)
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste und überflüssigen Code ...
+- [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
+- [x] Dateien vollständig hochladen
+- [x] CSS zusammenfassen
+- [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
+- [x] Online-Demo
+- [x] I/O Farben ändern um Fehler und Warnungen besser darstellen zu können
+- [x] Bibliotheken aktualisieren
+- [x] Auf die aktuelle Bootstrap Version 4 aktualisieren
 
-#### Übersicht
+#### Dashboard
 
-- [ ] Variable Anzahl an Status-Seiten
-- [ ] Unbenutzte Cards ausblenden
+- [ ] Variable Anzahl an Seiten
+- [ ] Einstellbare Gruppierung der Werte
+- [x] Unbenutzte Cards / Panels ausblenden
 
 ##### Analog
 - [ ] Skalierung Analog-Werte
@@ -367,16 +369,16 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Recorder
 
-- [x] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
 - [ ] Oberfläche optimieren
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
-- [x] Mehr Statistik Funktionen
 - [ ] Vorfilter für Analog-Werte (Lowpass)
-- [ ] Trigger
-- [x] Zeitliche Kompensation der Mittelwerte
-- [ ] Zeitachse an Timestamp aus Schnittstelle anpassen
+- [ ] Trigger (High / Low / Band)
+- [ ] Zeitachse an Timestamp aus Schnittstelle anpassen (aktuell: Browser-Zeit)
 - [ ] evtl. Messwertinterpolation bei fehlenden oder ungültigen Messerten (optional)
+- [x] Mehr Statistik Funktionen
+- [x] Recorder an die aktuellen Bibliotheks-Versionen anpassen und optimieren
+- [x] Zeitliche Kompensation der Mittelwerte
 
 #### Kurven (noch nicht vorhanden)
 - [ ] D/A getrennt
@@ -385,12 +387,13 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Fließbilder
 
+- [ ] Anzeigen rotierbar (90°) machen
+- [ ] Zusätzliche Datenpunkte für die Animation (z.B. um geschaltete Wege darzustellen)
+- [ ] mehr Darstellungsmöglichkeiten (nur Werte, Panel mit allen Daten)
+- [x] mehr Darstellungsmöglichkeiten (Gauge)
 - [x] Werte in Bild anzeigen
 - [x] Design der Anzeigen überarbeiten
-- [ ] Anzeigen rotierbar (90°) machen
-- [ ] mehr Darstellungsmöglichkeiten (Gauge, nur Werte, Panel mit allen Daten)
 - [x] Animation (Färbung) der SVG-Bilder
-- [ ] Zusätzliche Datenpunkte für die Animation (z.B. um geschaltete Wege darzustellen)
 
 ## Benutzte Bibliotheken
 
