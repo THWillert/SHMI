@@ -370,6 +370,7 @@ Reihenfolge entspricht nicht der Priorität:
 #### Recorder
 
 - [ ] Oberfläche optimieren
+- [ ] Wechsel zu [FileSaver.js](https://github.com/eligrey/FileSaver.js)
 - [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
 - [ ] Vorfilter für Analog-Werte (Lowpass)
