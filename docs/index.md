@@ -327,6 +327,8 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
+- [ ] Wechsel von Moment.js nach Day.js
+- [ ] CSV in Rekorder mit FileSave.js speichern
 - [ ] Einstellungen lokal speichern
 - [ ] Im/Export der Einstellungen
 - [ ] Zähler und Zeiten als zus#tzliche Datenpunkte
