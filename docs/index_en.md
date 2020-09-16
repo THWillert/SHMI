@@ -329,6 +329,7 @@ Order does not correspond to priority:
 
 #### General
 
+- [ ] Replacing Moment.js with Day.js
 - [ ] Save settings locally
 - [ ] Import/Export of settings
 - [ ] counters and times as additional data points
