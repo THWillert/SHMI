@@ -412,7 +412,7 @@ Reihenfolge entspricht nicht der Priorität:
 ## Author
 Thorsten Willert
 
-[Homepage](http://www.thorsten-willert.de/)
+[Homepage](https://www.thorsten-willert.de/software/shmi)
 
 ## Lizenz
 Das ganze steht unter der [MIT](https://github.com/THWillert/SHMI/blob/master/LICENSE) Lizenz.
