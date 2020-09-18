@@ -412,7 +412,7 @@ Order does not correspond to priority:
 ## Author
 Thorsten Willert
 
-[Homepage](http://www.thorsten-willert.de/)
+[Homepage](https://www.thorsten-willert.de/software/shmi)
 
 ## License
 The whole thing is under the [MIT](https://github.com/THWillert/SHMI/blob/master/LICENSE) license.
