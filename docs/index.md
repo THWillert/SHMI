@@ -327,6 +327,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
+- [ ] Update auf Bootstrap 5, wenn es fertig ist
 - [ ] Wechsel von Moment.js nach Day.js
 - [ ] CSV in Rekorder mit FileSave.js speichern
 - [ ] Einstellungen lokal speichern
