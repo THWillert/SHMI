@@ -329,6 +329,7 @@ Order does not correspond to priority:
 
 #### General
 
+- [ ] Update to Bootstrap 5 - when it is ready
 - [ ] Replacing Moment.js with Day.js
 - [ ] Save settings locally
 - [ ] Import/Export of settings
