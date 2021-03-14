@@ -327,7 +327,8 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
-- [ ] Update auf Bootstrap 5, wenn es fertig ist
+- [ ] Update auf Bootstrap 5
+- [ ] Updata auf jQuery 3.6.0
 - [ ] Wechsel von Moment.js nach Day.js
 - [ ] CSV in Rekorder mit FileSave.js speichern
 - [ ] Einstellungen lokal speichern
