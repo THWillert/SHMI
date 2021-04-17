@@ -177,6 +177,15 @@ $( () => {
 				}
 			} catch (e) {  }; // ToDo - Error Message
 		}
+
+	//==========================================================================
+
+	$('#version').prepend(
+	"<li>jQuery " + jQuery.fn.jquery + "</li>" +
+	"<li>Bootstrap " + $.fn.tooltip.Constructor.VERSION + "</li>" +
+	"<li>Moment.js " + moment.version + "</li>" +
+	"<li>Flot " + $.plot.version + "</li>");
+
 	//==========================================================================
 	});
 	</script>
@@ -230,15 +239,11 @@ About Dialog -->
 				</div>
 				<div class="modal-body">
 					<h1><img src="pict/logo.svg" height="100" alt="Logo">  SHMI</h1>
-					&copy; 2014 - 2020, by Thorsten Willert, Version ${version}
+					&copy; 2014 - 2021, by Thorsten Willert, Version ${version}
 
 					<hr>
 					<h4>Verwendete Bilbliotheken:</h4>
 					<ul id="version">
-					<li>jQuery <script> document.write( jQuery.fn.jquery ) </script></li>
-					<li>Bootstrap <script> document.write( $.fn.tooltip.Constructor.VERSION ) </script></li>
-					<li>Moment.js <script> document.write( moment.version ) </script></li>
-					<li>Flot <script> document.write( $.plot.version ) </script></li>
 					<li>Peity 3.3.0</li>
 					<li>Select2 4.0.13</li>
 					<li>Clayfy (12.06.2020)</li>
