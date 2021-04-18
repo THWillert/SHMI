@@ -4,6 +4,9 @@
 
 > WIP - not suitable for productive use.
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/context:javascript)
+
 ## Overview
 
 A small, web-based (HTML, JavaScript and SVG) visualization for PLC or other small devices
