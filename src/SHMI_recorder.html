@@ -10,6 +10,12 @@
 	<title>SHMI - Recorder</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
+<#if cdn>
+	<#include 'csp_cdn.html'>
+<#else>
+	<#include 'csp.html'>
+</#if>
+
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
 	<link rel="DC.Source" href="https://github.com/THWillert/SHMI/blob/master/SHMI/${pp.sourceFileName}">
