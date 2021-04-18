@@ -1,3 +1,8 @@
+V0.7.6-beta 16.04.2021
+- security fix: update to jQuery 3.6.0 
+- fixed: warning in LGTM / document.write 
+___
+
 V0.7.4-beta 11.04.2020
 - changed: renamed main.js to SHMI.js
 ___
