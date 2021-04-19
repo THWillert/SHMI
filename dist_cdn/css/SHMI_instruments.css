@@ -1,8 +1,26 @@
 /* SHMI_Instruments.css
-2020 by Thorsten Willert
-License: MIT
+/*
+	Modified: 19.04.2021
 
-16.02.2020*/
+	Copyright (c) 2021 Thorsten Willert
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of
+	this software and associated documentation files (the "Software"), to deal in
+	the Software without restriction, including without limitation the rights to use,
+	copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is furnished to do so,
+	subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+	INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+	PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
 
 :root {
 /* analog meter + level */
@@ -54,4 +72,186 @@ License: MIT
  --recorder_max: rgb(255,170,0);
  --recorder_min: rgb(68,135,255);
 }
-.analog{width:5em;text-align:center;}.flot-y1-axis,.flot-x1-axis{fill:var(--secondary);}.progress{position:relative;height:2em;border:var(--dark) solid 1px;background:transparent;}.progress-bar{transition:width 1s ease-in-out;}.progress > .progress-setpoint{position:absolute;height:inherit;left:0;background-color:rgba(25,25,25,0.4);border-right:solid .3em var(--level_setpoint);}.progress > .progress-peak{position:absolute;height:inherit;transition:width .5s linear;border-right:solid .5em var(--level_peak);}.progress > .progress-low{position:absolute;height:inherit;transition:width .5s linear;border-right:solid .5em var(--level_valley);}#ID_AI .progress-bar{background:var(--level_ai_meter)!important;filter:saturate(50%);border-radius:.3em .3em .3em .3em;}#ID_AO .progress-bar{background:var(--level_ao_meter)!important;filter:saturate(120%);border-radius:.3em .3em .3em .3em;}.scale-table{table-layout:fixed;width:100%;color:var(--secondary);font-weight:400;font-size:.9em;text-align:center;}.scale td{width:10%;white-space:nowrap;}#ID_digital_in td,#ID_digital_out td{padding:.3em;}.digi_IO{position:relative;width:1.5em;height:1.5em;border-radius:.3em;border:solid .15em var(--dark);}.digi_back,.digi_in,.digi_out{position:absolute;width:inherit;height:inherit;border-radius:inherit;}.digi_in{background:var(--teal);filter:saturate(50%);}.digi_out{background:var(--teal);filter:saturate(120%);}.sparkline{border-bottom:solid 1px var(--dark)!important;}.gauge{max-width:55px;max-height:55px;}.SHMI_drag{position:absolute;display:block;width:5em;min-height:55px;color:var(--SHMI_drag_txt);border-radius:.3em;background-color:var(--SHMI_drag_bg);font-weight:700;padding:.5em;}.SHMI_drag_level{position:absolute;display:block;height:10em;width:10em;border-radius:inherit;border-top:transparent;border-bottom:1px solid grey;border-left:1px solid grey;border-right:1px solid grey;font-weight:700;}.SHMI_level{bottom:0;width:inherit;position:absolute;background:var(--SHMI_level_bg);border-radius:inherit;transition:height 1s ease;mix-blend-mode:multiply;}.SHMI_level_value{position:absolute;bottom:.3em;right:.3em;color:var(--SHMI_drag_txt);width:5em;height:2em;border-radius:.3em;background:var(--SHMI_drag_bg);text-align:center;padding:.3em;}.SHMI_drag .progress{border:1px solid rgba(0,0,0,0.2);}.coord{position:absolute;width:5em;color:var(--SHMI_drag_txt);background-color:var(--SHMI_drag_bg);border-radius:.3em;opacity:0.8;margin:.3em;}.digi_in,.digi_out,.SHMI_drag_DO,.SHMI_drag_DI{transition:opacity .5s ease;}
+
+.analog {
+	width: 5em;
+	text-align: center; }
+
+/* flot chart ================================================================ */
+.flot-y1-axis,
+.flot-x1-axis {
+	fill: var(--secondary);
+}
+
+/* analog meter ============================================================= */
+.progress {
+    position: relative;
+    height: 2em;
+    border: var(--dark) solid 1px;
+    background: transparent;
+
+}
+.progress-bar {
+	transition: width 1s ease-in-out;
+
+}
+.progress > .progress-setpoint {
+	position: absolute;
+	height: inherit;
+	left: 0em;
+	background-color: rgba(25, 25, 25, 0.4);
+	border-right: solid 0.3em var(--level_setpoint);
+}
+
+.progress > .progress-peak {
+	position: absolute;
+	height: inherit;
+	transition: width 0.5s linear;
+	border-right: solid 0.5em var(--level_peak);
+}
+.progress > .progress-low {
+	position: absolute;
+	height: inherit;
+	transition: width 0.5s linear;
+	border-right: solid 0.5em var(--level_valley);
+}
+#ID_AI .progress-bar {
+	background: var(--level_ai_meter) !important;
+	filter: saturate(50%);
+	border-radius: 0.3em  0.3em 0.3em 0.3em;
+}
+#ID_AO .progress-bar {
+	background: var(--level_ao_meter) !important;
+	filter: saturate(120%);
+		border-radius: 0.3em  0.3em 0.3em 0.3em;
+}
+
+/* scale --------------------------- */
+.scale-table {
+	table-layout: fixed;
+    width: 100%;
+	color: var(--secondary);
+	font-weight: normal;
+	font-size: 0.9em;
+    text-align: center;
+}
+.scale td  {
+    width: 10%;
+	white-space: nowrap;
+}
+
+/* digital IO =================================================================*/
+/* border are set in the jQuery init() */
+
+#ID_digital_in td, #ID_digital_out td {
+	padding:0.3em
+}
+.digi_IO {
+	position: relative;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 0.3em;
+	border: solid 0.15em var(--dark);
+}
+.digi_back,
+.digi_in,
+.digi_out {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+}
+.digi_in,
+.digi_out {
+	transition: opacity 0.5s ease;
+}
+
+.digi_in {
+	background: var(--teal);
+	filter: saturate(50%);
+}
+.digi_out {
+	background: var(--teal);
+	filter: saturate(120%);
+}
+
+.sparkline {
+	border-bottom: solid 1px var(--dark) !important;
+}
+
+.gauge {
+	max-width:65px;
+	max-height:65px;
+}
+
+/* RI =========================================================================*/
+
+.SHMI_drag {
+	position: absolute;
+	display: block;
+	width: 5em;
+	min-height: 65px;
+	padding: 0.5em;
+	color: var(--SHMI_drag_txt);
+	border-radius: 0.3em;
+	background-color: var(--SHMI_drag_bg);
+	font-weight: bold;
+	/*border: 1px solid var(--SHMI_drag_border); problems with size??? */
+}
+
+.SHMI_drag_level {
+	position: absolute;
+	display: block;
+	height: 10em;
+	width: 10em;
+	border-radius: inherit;
+	border-top: transparent;
+	border-bottom: 1px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	font-weight: bold;
+}
+.SHMI_level {
+	bottom: 0;
+	width: inherit;
+	position: absolute;
+    background:  var(--SHMI_level_bg);
+	border-radius: inherit;
+	transition: height 1s ease;
+	mix-blend-mode: multiply;
+}
+
+.SHMI_level_value {
+	position: absolute;
+	bottom: 0.3em;
+	right: 0.3em;
+	color: var(--SHMI_drag_txt);
+	width: 5em;
+	height: 2em;
+	padding:0.3em;
+	border-radius: 0.3em;
+	background:var(--SHMI_drag_bg);
+	text-align: center
+}
+
+.SHMI_drag_DO,
+.SHMI_drag_DI {
+	transition: opacity 0.5s ease;
+}
+.SHMI_drag_AI,
+.SHMI_drag_AO {
+}
+
+.SHMI_drag .progress {
+	border: 1px solid rgba(0,0,0,0.2);
+}
+
+.coord {
+	position:absolute;
+	width:5em;
+	color:var(--SHMI_drag_txt);
+	background-color:var(--SHMI_drag_bg);
+	border-radius:0.3em;
+	margin:0.3em;
+	opacity:0.8;
+}
