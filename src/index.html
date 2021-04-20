@@ -1,4 +1,4 @@
-<#assign version="0.7.7-beta">
+<#include 'versions.ftl'>
 <#if cdn??>
 	<#assign cdn=true>
 <#else>
@@ -49,17 +49,14 @@
 	<#-- JS CDN -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<script	src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/dist/es5/jquery.flot.js" integrity="sha256-f86EPKAj/0UrK6PdMEE+X8ncXezhQZQ+R5Hsq6onqsA=" crossorigin="anonymous"></script>
-	<script	src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.canvaswrapper.js" integrity="sha256-aXw6rg4pFmle6NIXz3juRI0MPwhYOt6JmzzEgt3HbKk=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js" integrity="sha256-NTsR4SOm3YHfJrmrmvBtEYqfQ6jQ5yvEKMhgQe3DIl0=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/locale/de.js" integrity="sha256-89lO5+Yj5jggMXiRgWI8PwRVOH2KjXYckkTYgPoLMec=" crossorigin="anonymous"></script>
 <#else>
 	<#-- JS local -->
 	<script src="./js/jquery-3.6.0.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/moment.min.js"></script>
-	<script src="./js/moment_locale/de.js"></script>
-	<script src="./js/jquery.canvaswrapper.min.js"></script>
-	<script src="./js/jquery.flot.min.js"></script>
+	<script src="./js/dayjs.min.js"></script>
+	<script src="./js/i18n/dayjs_de.js"></script>
 </#if>
 	<#-- always local -->
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
@@ -91,10 +88,10 @@ $( () => {
 
 	//==========================================================================
 	// Time in footer
-		moment.locale("de");
+		dayjs.locale("de");
 
 		function timeUpdate() {
-			$("#IDtime").text( moment().format('LLLL') );
+			$("#IDtime").text( dayjs().format('dddd, MMMM D, YYYY HH:mm') );
 
 			setTimeout(timeUpdate, 60000);
 		}
@@ -132,7 +129,7 @@ $( () => {
 						$(this).val( val );
 
 						if ( $(`#${id}_old`).val() != $(`#${id}`).val() )
-							$(`#${id}_TS_upd`).val(  moment().unix() ); // ToDo - TIMESTAMP not local time
+							$(`#${id}_TS_upd`).val(  dayjs().unix() ); // ToDo - TIMESTAMP not local time
 
 						$(`#${id}_old`).val( $(this).val() );
 					});
@@ -170,7 +167,7 @@ $( () => {
 			} catch (e) {  }; // ToDo - Error Message
 
 			try {
-				let diff = Math.abs( parseInt(document.getElementById('TIMESTAMP').value) - moment().unix() );
+				let diff = Math.abs( parseInt(document.getElementById('TIMESTAMP').value) - dayjs().unix() );
 
 				$('.timeDiff').text( diff + 's' )
 
@@ -188,9 +185,7 @@ $( () => {
 
 	$('#version').prepend(
 	"<li>jQuery " + jQuery.fn.jquery + "</li>" +
-	"<li>Bootstrap " + $.fn.tooltip.Constructor.VERSION + "</li>" +
-	"<li>Moment.js " + moment.version + "</li>" +
-	"<li>Flot " + $.plot.version + "</li>");
+	"<li>Bootstrap " + $.fn.tooltip.Constructor.VERSION + "</li>" );
 
 	//==========================================================================
 	});
@@ -250,9 +245,11 @@ About Dialog -->
 					<hr>
 					<h4>Verwendete Bilbliotheken:</h4>
 					<ul id="version">
-					<li>Peity 3.3.0</li>
-					<li>Select2 4.0.13</li>
-					<li>Clayfy (12.06.2020)</li>
+					<li>Day.js ${version_Dayjs}</li>
+					<li>Flot ${version_Flot}</li>
+					<li>Peity ${version_Peity}</li>
+					<li>Select2 ${version_Select2}</li>
+					<li>Clayfy ${version_Clayfy}</li>
 					<li>Theme: Bootswatch - Slate</li>
 					</ul>
 					<hr>
