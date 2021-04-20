@@ -1,3 +1,8 @@
+- replaced: moment.js with day.js (not complete)
+- changed: all version now "version.ftl"
+- fixed: widged sizes
+___
+
 V0.7.6-beta 16.04.2021
 - security fix: update to jQuery 3.6.0 
 - fixed: warning in LGTM / document.write 
