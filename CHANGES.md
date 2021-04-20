@@ -1,5 +1,5 @@
 - replaced: moment.js with day.js (not complete)
-- changed: all version now "version.ftl"
+- changed: all versions in "version.ftl" now
 - fixed: widged sizes
 ___
 
