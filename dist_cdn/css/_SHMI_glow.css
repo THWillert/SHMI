@@ -13,4 +13,36 @@ License: MIT
   --recorder_curve: #F00;
   --recorder_curve_avg: #00FF00aa;
 }
-.downlight{box-shadow:1px 1px 2em .1em red!important;}.shadow{-webkit-box-shadow:0 .5rem 1rem rgba(0,0,0,0.15)!important;box-shadow:0 .5rem 1rem rgba(0,0,0,0.15)!important;}#ID_AI .progress-bar{background:linear-gradient(toright,#000000000%,#00FF001150%,#00FF0055100%)!important;filter:saturate(100%);border-right:solid .35em #0F0;}#ID_AO .progress-bar{background:linear-gradient(toright,#000000000%,#FF00001150%,#FF000055100%)!important;filter:saturate(100%);border-right:solid .35em red;}.digi_in{background:radial-gradient(circle,#000000110%,#00FF005550%,#00FF0077100%)!important;border:1px solid #0F0;filter:saturate(100%);}.digi_out{background:radial-gradient(circle,#000000110%,#FF00005550%,#FF000077100%)!important;border:1px solid red;filter:saturate(100%);}.SHMI_level{background:linear-gradient(totop,#FFFFFF110%,#00ff003350%,#00FF0077100%)!important;border-top:3px solid #0F0;}
+
+.downlight {
+	box-shadow: 1px 1px 2em 0.1em red !important;
+}
+
+.shadow{-webkit-box-shadow:0 .5rem 1rem rgba(0,0,0,0.15)!important;box-shadow:0 .5rem 1rem rgba(0,0,0,0.15)!important}
+
+#ID_AI .progress-bar {
+	background: linear-gradient(to right, #00000000 0%, #00FF0011 50%, #00FF0055 100%) !important;
+	filter: saturate(100%);
+	border-right: solid 0.35em #0F0;
+}
+#ID_AO .progress-bar {
+	background: linear-gradient(to right, #00000000 0%, #FF000011 50%, #FF000055 100%) !important;
+	filter: saturate(100%);
+	border-right: solid 0.35em #F00;
+}
+
+.digi_in {
+	background: radial-gradient(circle, #00000011 0%, #00FF0055 50%, #00FF0077 100%) !important;
+	border: 1px solid #0F0;
+	filter: saturate(100%);
+}
+.digi_out {
+	background: radial-gradient(circle, #00000011 0%, #FF000055 50%, #FF000077 100%) !important;
+	border: 1px solid #F00;
+	filter: saturate(100%);
+}
+
+.SHMI_level {
+    background: linear-gradient(to top, #FFFFFF11 0%, #00ff0033 50%, #00FF0077 100%) !important;
+    border-top: 3px solid  #0F0;
+}
