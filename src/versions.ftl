@@ -1,4 +1,4 @@
-<#assign version = "0.7.8-beta">
+<#assign version = "0.7.7-beta">
 <#assign version_Dayjs = "1.10.4">
 <#assign version_Flot = "3.0.0">
 <#assign version_Peity = "3.3.0">
