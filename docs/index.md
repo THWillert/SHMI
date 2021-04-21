@@ -332,7 +332,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Update auf Bootstrap 5
 - [x] Update auf jQuery 3.6.0
-- [ ] Wechsel von Moment.js nach Day.js
+- [x] Wechsel von Moment.js nach Day.js
 - [ ] CSV in Rekorder mit FileSave.js speichern
 - [ ] Einstellungen lokal speichern
 - [ ] Im/Export der Einstellungen
