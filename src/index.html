@@ -1,9 +1,13 @@
 <#include 'versions.ftl'>
+
 <#if cdn??>
 	<#assign cdn=true>
 <#else>
 	<#assign cdn=false>
 </#if>
+
+<#include 'libs.ftl'>
+
 <#compress>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,11 +15,7 @@
 	<title>SHMI</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-<#if cdn>
-	<#include 'csp_cdn.html'>
-<#else>
 	<#include 'csp.html'>
-</#if>
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
@@ -45,152 +45,19 @@
 	<#-- CSS local -->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </#if>
-<#if cdn>
-	<#-- JS CDN -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js" integrity="sha256-NTsR4SOm3YHfJrmrmvBtEYqfQ6jQ5yvEKMhgQe3DIl0=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/locale/de.js" integrity="sha256-89lO5+Yj5jggMXiRgWI8PwRVOH2KjXYckkTYgPoLMec=" crossorigin="anonymous"></script>
-<#else>
-	<#-- JS local -->
-	<script src="./js/jquery-3.6.0.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/dayjs.min.js"></script>
-	<script src="./js/i18n/dayjs_de.js"></script>
-</#if>
+
+	${jquery}
+	${bootstrap}
+	${dayjs}
+
 	<#-- always local -->
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_glow.css">
 	<script src="./js/SHMI.js"></script>
+	<script src="./js/SHMI_index.min.js"></script>
 
 	<base target="vzfBVwMAo2PBTsBIb4Aa">
 </#compress>
-
-<#noparse>
-	<script>
-	//==========================================================================
-$( () => {
-
-	let updateRate = 500;
-	let restart = false;
-
-	//==========================================================================
-		function WatchDog()
-		{
-			if ( restart === true ) {
-				$('#ID_Connection_Status').removeClass('border-danger')
-				$('#ID_Connection_Status').addClass('border-dark')
-				updateVal();
-			}
-			setTimeout(WatchDog, updateRate * 2);
-		}
-		WatchDog();
-
-	//==========================================================================
-	// Time in footer
-		dayjs.locale("de");
-
-		function timeUpdate() {
-			$("#IDtime").text( dayjs().format('dddd, MMMM D, YYYY HH:mm') );
-
-			setTimeout(timeUpdate, 60000);
-		}
-		timeUpdate();
-
-	//==========================================================================
-	// Data for all pages
-		function writeIO() {
-			$.getJSON( "./data/data.json", ( data ) => {
-				var data_container = $("#IDdata");
-				$.each( data, ( id, val) => {
-					data_container.append(`
-						<tr>
-							<td>${id}</td>
-							<td><input id="${id}"></td>
-							<td><input id="${id}_old"></td>
-							<td><input readonly id="${id}_TS_upd">
-							</td><td id="TXT_${id}">
-						</tr>`
-					)
-				});
-			});
-		}
-		writeIO();
-
-	//==========================================================================
-	// Update values (shown in a hidden form - for debugging an as data for all
-	// other pages
-		function updateVal() {
-			restart = false;
-
-			$.getJSON( "./data/data.json", ( data ) => {
-				$.each( data, ( id, val) => {
-					$(`#${id}`).each( function() {
-						$(this).val( val );
-
-						if ( $(`#${id}_old`).val() != $(`#${id}`).val() )
-							$(`#${id}_TS_upd`).val(  dayjs().unix() ); // ToDo - TIMESTAMP not local time
-
-						$(`#${id}_old`).val( $(this).val() );
-					});
-
-					checkConnection();
-				})
-				setTimeout(updateVal, updateRate); // update intervall for all values
-			})
-				.fail(function() {
-						console.log( "updateVal: error" );
-						$('#ID_Connection_Status').text('Read error')
-						$('#ID_Connection_Status').removeClass('border-dark')
-						$('#ID_Connection_Status').addClass('border-danger')
-
-						restart = true;
-						return;
-				});
-
-		}
-		$(() => {updateVal();});
-
-		//======================================================================
-		function checkConnection(){
-
-			try {
-				if ( document.getElementById('LIVE-BIT').value == 1 )
-				{
-					$('#ID_Connection_Status').text('Connection')
-					$('#ID_Connection_Status').removeClass('border-dark')
-					$('#ID_Connection_Status').addClass('border-success')
-				} else {
-					$('#ID_Connection_Status').removeClass('border-dark')
-					$('#ID_Connection_Status').addClass('border-dark')
-				}
-			} catch (e) {  }; // ToDo - Error Message
-
-			try {
-				let diff = Math.abs( parseInt(document.getElementById('TIMESTAMP').value) - dayjs().unix() );
-
-				$('.timeDiff').text( diff + 's' )
-
-				if( diff > 2) {
-					$('.timeDiff').removeClass('border-dark')
-					$('.timeDiff').addClass('border-warning')
-				} else {
-					$('.timeDiff').removeClass('border-warning')
-					$('.timeDiff').addClass('border-dark')
-				}
-			} catch (e) {  }; // ToDo - Error Message
-		}
-
-	//==========================================================================
-
-	$('#version').prepend(
-	"<li>jQuery " + jQuery.fn.jquery + "</li>" +
-	"<li>Bootstrap " + $.fn.tooltip.Constructor.VERSION + "</li>" );
-
-	//==========================================================================
-	});
-	</script>
-</#noparse>
 </head>
 
 <#compress>
@@ -247,6 +114,7 @@ About Dialog -->
 					<ul id="version">
 					<li>Day.js ${version_Dayjs}</li>
 					<li>Flot ${version_Flot}</li>
+					<li>Simple Statistics ${version_SimpleStatistics}</li>
 					<li>Peity ${version_Peity}</li>
 					<li>Select2 ${version_Select2}</li>
 					<li>Clayfy ${version_Clayfy}</li>

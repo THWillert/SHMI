@@ -3,6 +3,9 @@
 <#else>
 	<#assign cdn=false>
 </#if>
+
+<#include 'libs.ftl'>
+
 <#compress>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +13,7 @@
 	<title>SHMI - Recorder</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-<#if cdn>
-	<#include 'csp_cdn.html'>
-<#else>
 	<#include 'csp.html'>
-</#if>
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
@@ -43,41 +42,13 @@
 	<#-- CSS local -->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </#if>
-<#if cdn>
-	<#-- JS CDN -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/dist/es5/jquery.flot.js" integrity="sha256-f86EPKAj/0UrK6PdMEE+X8ncXezhQZQ+R5Hsq6onqsA=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.canvaswrapper.js" integrity="sha256-aXw6rg4pFmle6NIXz3juRI0MPwhYOt6JmzzEgt3HbKk=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.colorhelpers.js" integrity="sha256-MJ7ymDQJt50zdCPoJUeWtZZCaj7u86i1S9X3y1IYEkY=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.browser.js" integrity="sha256-Ii3plD4sWWFJjLA7zqw0Z+ecORDpoTmShe7tbSW5aQo=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.drawSeries.js" integrity="sha256-wgRvSn+9zumUvQIRgI5bquTesYxXER27ijoVsU4vfFc=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.hover.js" integrity="sha256-ztCVAEFCqUOiJU51xYefgFUwVpOwlP+uZ0keNvZlCaI=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.time.js" integrity="sha256-imb80Q7TKXGYFyPA/t1abETHrIWWgneBZO8ubsgWPJE=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.uiConstants.js" integrity="sha256-ckGtLOLJdDdVWZHQ9rp8Vu0Z3QlYgmaVw28V/auhQ9U=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.saturated.js" integrity="sha256-rtVAhzVNNwzHEUZdcopSWXedTkvZA1jyPeb/fHO9vQo=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.selection.js" integrity="sha256-GP2yAuAo1QmFoGZbm0ymZ4sT5sFIhnYoE5hIRq7hBPA=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/simple-statistics@7.0.8/dist/simple-statistics.min.js" integrity="sha256-z0BIAFy69OW/uUuLOrhALN+H3VfUMTcbl9hScTlPjpo=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/peity@3.3.0/jquery.peity.min.js" integrity="sha256-B+xyblmehefmEUu8NIsuz32NsVFta9t+Y/SpAy6noc4=" crossorigin="anonymous"></script>
-<#else>
-	<#-- JS local -->
-	<script src="./js/jquery-3.6.0.min.js"></script>
-	<script src="./js/jquery.canvaswrapper.min.js"></script>
-	<script src="./js/jquery.colorhelpers.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/moment.min.js" async></script>
-	<script src="./js/simple-statistics.min.js"></script>
-	<script src="./js/jquery.flot.min.js"></script>
-	<script src="./js/jquery.flot.browser.min.js"></script>
-	<script src="./js/jquery.flot.drawSeries.min.js"></script>
-	<script src="./js/jquery.flot.hover.min.js"></script>
-	<script src="./js/jquery.flot.saturated.min.js"></script>
-	<script src="./js/jquery.flot.selection.min.js"></script>
-	<script src="./js/jquery.flot.spline.min.js"></script>
-	<script src="./js/jquery.flot.time.min.js"></script>
-	<script src="./js/jquery.flot.uiConstants.min.js"></script>
-</#if>
+
+	${jquery_flot}
+	${bootstrap}
+	${dayjs}
+	${flot}
+	${simpleStatistics}
+
 	<#-- alwaya local -->
 	<link rel="stylesheet" type="text/css" href="./css/SHMI.css">
 	<link rel="stylesheet" type="text/css" href="./css/SHMI_instruments.css">

@@ -3,6 +3,9 @@
 <#else>
 	<#assign cdn=false>
 </#if>
+
+<#include 'libs.ftl'>
+
 <#compress>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +13,8 @@
 	<title>SHMI - Status</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-<#if cdn>
-	<#include 'csp_cdn.html'>
-<#else>
+
 	<#include 'csp.html'>
-</#if>
 
 	<link rel="schema.DC"      href="http://purl.org/dc/elements/1.1/" />
 	<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
@@ -32,20 +32,12 @@
 	<#include 'copyright.html'>
 
 	<link rel="icon" type="image/svg+xml" href="./pict/logo.svg" sizes="any">
-<#if cdn>
-	<#-- JS CDN -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/peity@3.3.0/jquery.peity.min.js" integrity="sha256-B+xyblmehefmEUu8NIsuz32NsVFta9t+Y/SpAy6noc4=" crossorigin="anonymous"></script>
-<#else>
-	<#-- JS local-->
-	<script src="./js/jquery-3.6.0.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/moment.min.js"></script>
-	<script src="./js/moment_locale/de.js"></script>
-	<script src="./js/jquery.peity.min.js"></script>
-</#if>
+
+	${jquery}
+	${bootstrap}
+	${dayjs}
+	${peity}
+
 <#if cdn>
 	<#-- CSS CDN -->
 	<link
