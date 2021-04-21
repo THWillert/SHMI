@@ -1,6 +1,7 @@
-(update: Select2 V4.1.0-rc.0)
-(update: Simple Statistics V7.7.0)
-- replaced: moment.js with day.js (not complete)
+V0.7.7-beta 21.04.2021
+- update: Select2 V4.1.0-rc.0
+- update: Simple Statistics V7.7.0
+- replaced: moment.js with day.js
 - added: CSP (Content Security Policy)
 - changed: all version-numbers now in "versions.ftl"
 - fixed: widged sizes
