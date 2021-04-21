@@ -334,7 +334,7 @@ Order does not correspond to priority:
 
 - [ ] Update to Bootstrap 5
 - [x] Update to jQuery 3.6.0
-- [ ] Replacing Moment.js with Day.js
+- [x] Replacing Moment.js with Day.js
 - [ ] Save settings locally
 - [ ] Import/Export of settings
 - [ ] counters and times as additional data points
