@@ -349,6 +349,8 @@ Reihenfolge entspricht nicht der Priorität:
 - [ ] Quelltext aufräumen - das Ganze war ein Versuchs-Projekt von 2014 mit viel Copy & Paste und überflüssigen Code ...
 - [x] Beschriftungen für Datenpunkte und Oberfläche in einzelne Dateien auftrennen
 - [x] Dateien vollständig hochladen
+- [ ] Subsetting Icon-Font
+- [ ] CSS verkleinern
 - [x] CSS zusammenfassen
 - [x] Live-Bit von Steuerung in Schnittstelle (visualisieren)
 - [x] Online-Demo
