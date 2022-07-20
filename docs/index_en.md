@@ -350,6 +350,8 @@ Order does not correspond to priority:
 - [ ] Cleaning up the source code - the whole thing was an experimental project from 2014 with lots of copy & paste and superfluous code ...
 - [x] Split labels for data points and surface into single files
 - [x] Upload files completely
+- [ ] Icon-Font Subsetting
+- [ ] Remove unused CSS
 - [x] Summarize CSS
 - [x] Live bit from controller to interface (visualize)
 - [x] Online demo
@@ -408,7 +410,7 @@ Order does not correspond to priority:
 - [jQuery](https://jquery.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Flot](http://www.flotcharts.org/)
-- [Moment.js](https://momentjs.com/)
+- [Day.js](https://day.js.org/)
 - [Peity](http://benpickles.github.io/peity/)
 - [Simple Statistics](https://simplestatistics.org/)
 - [Select2](https://select2.org/)
