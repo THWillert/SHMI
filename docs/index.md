@@ -410,7 +410,7 @@ Reihenfolge entspricht nicht der Priorität:
 - [jQuery](https://jquery.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Flot](http://www.flotcharts.org/)
-- [Moment.js](https://momentjs.com/)
+- [Day.js](https://day.js.org/)
 - [Peity](http://benpickles.github.io/peity/)
 - [Simple Statistics](https://simplestatistics.org/)
 - [Select2](https://select2.org/)
