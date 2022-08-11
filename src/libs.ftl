@@ -18,9 +18,6 @@
 	<#assign simpleStatistics =
 	"<script src='https://cdn.jsdelivr.net/npm/simple-statistics@7.7.0/dist/simple-statistics.min.js' integrity='sha256-3InD7iRKVEg8jcqYe19yVV4/p5KRobZpIezVLfOu9+E=' crossorigin='anonymous'></script>">
 
-	<#assign moment =
-	"<script src='https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.js' integrity='sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=' crossorigin='anonymous'></script>">
-
 	<#assign flot = "
 	<script src='https://cdn.jsdelivr.net/npm/flot@4.2.0/dist/es5/jquery.flot.js' integrity='sha256-f86EPKAj/0UrK6PdMEE+X8ncXezhQZQ+R5Hsq6onqsA=' crossorigin='anonymous'></script>
 	<script src='https://cdn.jsdelivr.net/npm/flot@4.2.0/source/jquery.flot.browser.js' integrity='sha256-Ii3plD4sWWFJjLA7zqw0Z+ecORDpoTmShe7tbSW5aQo=' crossorigin='anonymous'></script>
@@ -50,10 +47,6 @@
 	"<script src='./js/dayjs.min.js'></script>
 	<script src='./js/dayjs/utc.js'></script>
 	<script src='./js/i18n/dayjs_de.js'></script>">
-
-	<#assign moment =
-	"<script src='./js/moment.min.js'></script>
-	<script src='./js/moment_locale/de.js'></script>">
 
 	<#assign simpleStatistics = "<script src='./js/simple-statistics.min.js'></script>">
 
