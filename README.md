@@ -4,9 +4,6 @@
 
 > WIP - nicht für den Produktiv-Einsatz geeignet.
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/context:javascript)
-
 
 ## Übersicht
 
