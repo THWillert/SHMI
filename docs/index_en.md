@@ -4,9 +4,6 @@
 
 > WIP - not suitable for productive use.
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/context:javascript)
-
 ## Overview
 
 A small, web-based (HTML, JavaScript and SVG) visualization for PLC or other small devices
@@ -332,8 +329,8 @@ Order does not correspond to priority:
 
 #### General
 
-- [ ] Update to Bootstrap 5
-- [x] Update to jQuery 3.6.0
+- [ ] Update to Bootstrap 5.3
+- [ ] Update to jQuery 3.6.3
 - [x] Replacing Moment.js with Day.js
 - [ ] Save settings locally
 - [ ] Import/Export of settings
@@ -380,7 +377,7 @@ Order does not correspond to priority:
 #### Recorder
 
 - [ ] Optimize surface
-- [ ] Possible change from Flot-Chart to Chart.js (because of size still to be clarified)
+- [ ] Change from Flot-Chart to Chart.js
 - [ ] Change time format to CSV (-> Timestamp)
 - [ ] Prefilter for analog values (low pass)
 - [ ] Trigger (High / Low / Band)
