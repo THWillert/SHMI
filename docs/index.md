@@ -4,9 +4,6 @@
 
 > WIP - nicht für den Produktiv-Einsatz geeignet.
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/THWillert/SHMI.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/THWillert/SHMI/context:javascript)
-
 ## Übersicht
 
 Eine kleine, webbasierte (HTML, JavaScript und SVG) Visualisierung für SPS oder andere kleine Geräte.
@@ -330,8 +327,8 @@ Reihenfolge entspricht nicht der Priorität:
 
 #### Allgemein
 
-- [ ] Update auf Bootstrap 5
-- [x] Update auf jQuery 3.6.0
+- [ ] Update auf Bootstrap 5.3
+- [ ] Update auf jQuery 3.6.3
 - [x] Wechsel von Moment.js nach Day.js
 - [ ] CSV in Rekorder mit FileSave.js speichern
 - [ ] Einstellungen lokal speichern
@@ -380,7 +377,7 @@ Reihenfolge entspricht nicht der Priorität:
 
 - [ ] Oberfläche optimieren
 - [ ] Wechsel zu [FileSaver.js](https://github.com/eligrey/FileSaver.js)
-- [ ] Evtl. Wechsel von Flot-Chart auf Chart.js (wegen Größe noch abklären)
+- [ ] Wechsel von Flot-Chart auf Chart.js
 - [ ] Zeit-Format in CSV ändern (-> Timestamp)
 - [ ] Vorfilter für Analog-Werte (Lowpass)
 - [ ] Trigger (High / Low / Band)
